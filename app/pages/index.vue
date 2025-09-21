@@ -1,33 +1,32 @@
 <template>
-  <div class="space-y-12">  
+  <div>
     <!-- Hero Section -->
-  <div class="relative bg-gradient-to-br from-primary/10 via-secondary/5 to-primary/10 py-24">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 class="text-5xl md:text-6xl font-bold mb-6">
-          <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-            Shrike Publishing
-          </span>
-        </h1>
-        <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-          Baltimore-based storytelling studio creating tabletop games and literature. Our output focuses on telling stories of action and characters across tabletop games, written fiction, and other media!
-        </p>
-        <NuxtLink
-          to="/games"
-          class="inline-flex items-center px-8 py-4 bg-primary hover:bg-primary/90 text-white font-semibold rounded-lg transition-colors shadow-lg hover:shadow-xl"
-        >
-          <Icon name="lucide:box" class="h-6 w-6 mr-2" />
-          Explore Our Games
-        </NuxtLink>
-      </div>
+    <div class="relative bg-gradient-to-br from-primary/10 via-secondary/5 to-primary/10 py-24">
+      <UContainer class="text-center">
+        <div class="max-w-4xl mx-auto">
+          <h1 class="text-5xl md:text-6xl font-bold mb-6">
+            <span class="shrike-text-gradient">Shrike Publishing</span>
+          </h1>
+          <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+            Baltimore-based storytelling studio creating tabletop games and literature. Our output focuses on telling stories of action and characters across tabletop games, written fiction, and other media!
+          </p>
+          <UButton
+            to="/games"
+            size="lg"
+          >
+            <Icon name="lucide:box" class="h-5 w-5 mr-2" />
+            Explore Our Games
+          </UButton>
+        </div>
+      </UContainer>
     </div>
 
     <!-- Featured Games -->
-    <UContainer>
-      <div class="space-y-6">
-        <div class="text-center">
-          <h2 class="text-3xl font-bold mb-2">Featured Games</h2>
-          <p class="text-gray-600 dark:text-gray-400">Discover our latest tabletop adventures</p>
-        </div>
+    <UPageSection
+      title="Featured Games"
+      description="Discover our latest tabletop adventures"
+      :ui="{ container: 'text-center' }"
+    >
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <NuxtLink
@@ -55,13 +54,12 @@
           </NuxtLink>
         </div>
 
-        <div class="text-center">
-          <UButton to="/games" variant="outline">
-            View All Games
-          </UButton>
-        </div>
+      <div class="text-center">
+        <UButton to="/games" variant="outline">
+          View All Games
+        </UButton>
       </div>
-    </UContainer>
+    </UPageSection>
 
     <!-- Latest Blog Posts & Announcements -->
     <UContainer>
@@ -76,12 +74,13 @@
           </div>
 
           <div class="space-y-4">
-            <UCard
+            <NuxtLink
               v-for="post in latestPosts"
               :key="post.slug"
               :to="`/blog/${post.slug}`"
-              class="game-card"
+              class="block"
             >
+              <UCard class="game-card">
               <div class="flex space-x-4">
                 <div class="w-16 h-16 bg-gray-200 dark:bg-gray-800 rounded-lg flex-shrink-0 flex items-center justify-center">
                   <Icon name="lucide:file-text" class="h-6 w-6 text-gray-400" />
@@ -92,7 +91,8 @@
                   <p class="text-xs text-gray-500 mt-2">{{ formatDate(post.date) }}</p>
                 </div>
               </div>
-            </UCard>
+              </UCard>
+            </NuxtLink>
           </div>
         </div>
 
@@ -106,12 +106,13 @@
           </div>
 
           <div class="space-y-4">
-            <UCard
+            <NuxtLink
               v-for="announcement in latestAnnouncements"
               :key="announcement.slug"
               :to="`/announcements/${announcement.slug}`"
-              class="game-card"
+              class="block"
             >
+              <UCard class="game-card">
               <div class="flex space-x-4">
                 <div class="w-16 h-16 bg-primary/10 rounded-lg flex-shrink-0 flex items-center justify-center">
                   <Icon name="lucide:megaphone" class="h-6 w-6 text-primary" />
@@ -122,7 +123,8 @@
                   <p class="text-xs text-gray-500 mt-2">{{ formatDate(announcement.date) }}</p>
                 </div>
               </div>
-            </UCard>
+              </UCard>
+            </NuxtLink>
           </div>
         </div>
       </div>
