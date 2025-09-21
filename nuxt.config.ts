@@ -35,18 +35,6 @@ export default defineNuxtConfig({
     fallbackToApi: true
   },
 
-  nitro: {
-    preset: 'github_pages'
-  },
-
-  content: {
-    preview: {
-      api: 'https://api.nuxt.studio'
-    },
-    experimental: {
-      sqliteConnector: 'native'
-    }
-  },
 
   app: {
     head: {
