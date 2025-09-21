@@ -2,8 +2,6 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  ssr: false,
-
   modules: [
     '@nuxt/content',
     '@nuxt/eslint',
@@ -35,6 +33,16 @@ export default defineNuxtConfig({
       collections: ['lucide']
     },
     fallbackToApi: true
+  },
+
+  nitro: {
+    preset: 'github_pages'
+  },
+
+  content: {
+    preview: {
+      api: 'https://api.nuxt.studio'
+    }
   },
 
   app: {
