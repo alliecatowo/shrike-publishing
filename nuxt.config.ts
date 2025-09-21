@@ -35,6 +35,9 @@ export default defineNuxtConfig({
     fallbackToApi: true
   },
 
+  nitro: {
+    preset: 'github_pages'
+  },
 
   app: {
     head: {
