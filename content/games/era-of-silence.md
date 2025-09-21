@@ -38,7 +38,7 @@ In a world where words can kill, silence is your greatest ally. *Era of Silence*
 
 Available now on our store for $29.99 USD plus shipping.
 
-[Buy Now](/contact) | [View Gallery](/games/era-of-silence/gallery)
+[Buy Now](/contact)
 
 ## Reviews
 

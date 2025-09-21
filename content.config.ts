@@ -1,9 +1,6 @@
 import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 
 export default defineContentConfig({
-  database: {
-    type: 'filesystem'
-  },
   collections: {
     games: defineCollection({
       type: 'page',
