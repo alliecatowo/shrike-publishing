@@ -1,7 +1,0 @@
-[tools]
-nodejs = "22.11.0"
-pnpm = "10.17.0"
-
-[vars]
-NODE_ENV = "development"
-
