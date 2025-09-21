@@ -22,7 +22,7 @@
         >
           <template #header>
             <div class="aspect-video bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900 dark:to-pink-900 rounded-t-lg flex items-center justify-center">
-              <Icon name="mdi:book-open-page-variant" class="h-12 w-12 text-purple-600 dark:text-purple-400" />
+              <Icon name="lucide:book-open" class="h-12 w-12 text-purple-600 dark:text-purple-400" />
             </div>
           </template>
 
@@ -66,7 +66,7 @@
 
       <!-- Empty State -->
       <div v-if="filteredStories.length === 0" class="text-center py-12">
-        <Icon name="mdi:book-open-page-variant" class="h-16 w-16 text-gray-400 mx-auto mb-4" />
+        <Icon name="lucide:book-open" class="h-16 w-16 text-gray-400 mx-auto mb-4" />
         <h3 class="text-lg font-semibold text-gray-600 dark:text-gray-400 mb-2">
           No {{ activeTab === 'all' ? 'stories' : activeTab }} yet
         </h3>

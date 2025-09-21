@@ -22,10 +22,11 @@
               v-for="item in navigationItems"
               :key="item.label"
               :to="item.to"
-              class="text-gray-600 hover:text-primary dark:text-gray-400 px-3 py-2 text-sm font-medium transition-colors"
+              class="flex items-center space-x-2 text-gray-600 hover:text-primary dark:text-gray-400 px-3 py-2 text-sm font-medium transition-colors"
               :class="{ 'text-primary': $route.path === item.to }"
             >
-              {{ item.label }}
+              <Icon :name="item.icon" class="h-4 w-4" />
+              <span>{{ item.label }}</span>
             </NuxtLink>
           </nav>
 
@@ -33,17 +34,18 @@
           <div class="flex items-center space-x-2">
             <UButton
               size="sm"
-              icon="mdi:moon-waning-crescent"
               variant="ghost"
               @click="toggleTheme"
-            />
-        
+            >
+              <Icon name="lucide:moon" class="h-4 w-4" />
+            </UButton>
+
             <UButton
               size="sm"
               variant="ghost"
               to="/contact"
-              icon="mdi:shopping-outline"
             >
+              <Icon name="lucide:shopping-cart" class="h-4 w-4" />
               Shop
             </UButton>
           </div>
@@ -112,7 +114,7 @@
                 target="_blank"
                 aria-label="Facebook"
               >
-                <Icon name="mdi:facebook" class="h-4 w-4" />
+                <Icon name="lucide:facebook" class="h-4 w-4" />
               </UButton>
               <UButton
                 size="sm"
@@ -121,7 +123,7 @@
                 target="_blank"
                 aria-label="Twitter"
               >
-                <Icon name="mdi:twitter" class="h-4 w-4" />
+                <Icon name="lucide:twitter" class="h-4 w-4" />
               </UButton>
               <UButton
                 size="sm"
@@ -130,7 +132,7 @@
                 target="_blank"
                 aria-label="Instagram"
               >
-                <Icon name="mdi:instagram" class="h-4 w-4" />
+                <Icon name="lucide:instagram" class="h-4 w-4" />
               </UButton>
             </div>
           </div>
@@ -145,42 +147,42 @@ const navigationItems = [
   {
     label: 'Home',
     to: '/',
-    icon: 'i-heroicons-home'
+    icon: 'lucide:home'
   },
   {
     label: 'Games',
     to: '/games',
-    icon: 'i-heroicons-cube'
+    icon: 'lucide:box'
   },
   {
     label: 'Blog',
     to: '/blog',
-    icon: 'i-heroicons-document-text'
+    icon: 'lucide:file-text'
   },
   {
     label: 'Stories',
     to: '/stories',
-    icon: 'i-heroicons-book-open'
+    icon: 'lucide:book-open'
   },
   {
     label: 'Announcements',
     to: '/announcements',
-    icon: 'i-heroicons-megaphone'
+    icon: 'lucide:megaphone'
   },
   {
     label: 'Manuals',
     to: '/manuals',
-    icon: 'i-heroicons-document'
+    icon: 'lucide:file'
   },
   {
     label: 'About',
     to: '/about',
-    icon: 'i-heroicons-information-circle'
+    icon: 'lucide:info'
   },
   {
     label: 'Contact',
     to: '/contact',
-    icon: 'i-heroicons-envelope'
+    icon: 'lucide:mail'
   }
 ]
 

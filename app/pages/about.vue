@@ -35,7 +35,7 @@
         <UCard>
           <div class="text-center space-y-4">
             <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto">
-              <Icon name="mdi:lightbulb-outline" class="h-8 w-8 text-blue-600 dark:text-blue-400" />
+              <Icon name="lucide:lightbulb" class="h-8 w-8 text-blue-600 dark:text-blue-400" />
             </div>
             <h3 class="text-xl font-semibold">Innovation</h3>
             <p class="text-gray-600 dark:text-gray-400">
@@ -47,7 +47,7 @@
         <UCard>
           <div class="text-center space-y-4">
             <div class="w-16 h-16 bg-red-100 dark:bg-red-900 rounded-full flex items-center justify-center mx-auto">
-              <Icon name="mdi:sword-cross" class="h-8 w-8 text-red-600 dark:text-red-400" />
+              <Icon name="lucide:sword" class="h-8 w-8 text-red-600 dark:text-red-400" />
             </div>
             <h3 class="text-xl font-semibold">Combat & Cooperation</h3>
             <p class="text-gray-600 dark:text-gray-400">
@@ -59,7 +59,7 @@
         <UCard>
           <div class="text-center space-y-4">
             <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto">
-              <Icon name="mdi:star-outline" class="h-8 w-8 text-purple-600 dark:text-purple-400" />
+              <Icon name="lucide:star" class="h-8 w-8 text-purple-600 dark:text-purple-400" />
             </div>
             <h3 class="text-xl font-semibold">Quality</h3>
             <p class="text-gray-600 dark:text-gray-400">
@@ -78,7 +78,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div class="text-center space-y-3">
             <div class="w-24 h-24 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto">
-              <Icon name="mdi:account-outline" class="h-12 w-12 text-white" />
+              <Icon name="lucide:user" class="h-12 w-12 text-white" />
             </div>
             <div>
               <h3 class="font-semibold">Alex Rivera</h3>
@@ -89,7 +89,7 @@
 
           <div class="text-center space-y-3">
             <div class="w-24 h-24 bg-gradient-to-br from-secondary to-primary rounded-full flex items-center justify-center mx-auto">
-              <Icon name="mdi:account-outline" class="h-12 w-12 text-white" />
+              <Icon name="lucide:user" class="h-12 w-12 text-white" />
             </div>
             <div>
               <h3 class="font-semibold">Jamie Chen</h3>
@@ -100,7 +100,7 @@
 
           <div class="text-center space-y-3">
             <div class="w-24 h-24 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center mx-auto">
-              <Icon name="mdi:account-outline" class="h-12 w-12 text-white" />
+              <Icon name="lucide:user" class="h-12 w-12 text-white" />
             </div>
             <div>
               <h3 class="font-semibold">Marcus Hale</h3>

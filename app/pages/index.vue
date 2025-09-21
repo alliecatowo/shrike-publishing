@@ -15,7 +15,7 @@
           to="/games"
           class="inline-flex items-center px-8 py-4 bg-primary hover:bg-primary/90 text-white font-semibold rounded-lg transition-colors shadow-lg hover:shadow-xl"
         >
-          <Icon name="mdi:cube-outline" class="h-6 w-6 mr-2" />
+          <Icon name="lucide:box" class="h-6 w-6 mr-2" />
           Explore Our Games
         </NuxtLink>
       </div>
@@ -38,7 +38,7 @@
           >
             <template #header>
               <div class="aspect-video bg-gray-200 dark:bg-gray-800 rounded-t-lg flex items-center justify-center">
-                <Icon name="mdi:cube-outline" class="h-12 w-12 text-gray-400" />
+                <Icon name="lucide:box" class="h-12 w-12 text-gray-400" />
               </div>
             </template>
 
@@ -82,7 +82,7 @@
             >
               <div class="flex space-x-4">
                 <div class="w-16 h-16 bg-gray-200 dark:bg-gray-800 rounded-lg flex-shrink-0 flex items-center justify-center">
-                  <Icon name="mdi:file-document-outline" class="h-6 w-6 text-gray-400" />
+                  <Icon name="lucide:file-text" class="h-6 w-6 text-gray-400" />
                 </div>
                 <div class="flex-1 min-w-0">
                   <h3 class="font-semibold text-sm line-clamp-2">{{ post.title }}</h3>
@@ -112,7 +112,7 @@
             >
               <div class="flex space-x-4">
                 <div class="w-16 h-16 bg-primary/10 rounded-lg flex-shrink-0 flex items-center justify-center">
-                  <Icon name="mdi:bullhorn-outline" class="h-6 w-6 text-primary" />
+                  <Icon name="lucide:megaphone" class="h-6 w-6 text-primary" />
                 </div>
                 <div class="flex-1 min-w-0">
                   <h3 class="font-semibold text-sm line-clamp-2">{{ announcement.title }}</h3>

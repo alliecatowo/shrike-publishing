@@ -15,7 +15,7 @@
         <UCard class="hover:shadow-lg transition-shadow">
           <div class="text-center space-y-4 p-6">
             <div class="w-16 h-16 bg-red-100 dark:bg-red-900 rounded-full flex items-center justify-center mx-auto">
-              <Icon name="mdi:heart-outline" class="h-8 w-8 text-red-600 dark:text-red-400" />
+              <Icon name="lucide:heart" class="h-8 w-8 text-red-600 dark:text-red-400" />
             </div>
             <div>
               <h3 class="text-xl font-semibold mb-2">Support Us</h3>
@@ -40,7 +40,7 @@
         <UCard class="hover:shadow-lg transition-shadow">
           <div class="text-center space-y-4 p-6">
             <div class="w-16 h-16 bg-indigo-100 dark:bg-indigo-900 rounded-full flex items-center justify-center mx-auto">
-              <Icon name="mdi:chat-outline" class="h-8 w-8 text-indigo-600 dark:text-indigo-400" />
+              <Icon name="lucide:message-circle" class="h-8 w-8 text-indigo-600 dark:text-indigo-400" />
             </div>
             <div>
               <h3 class="text-xl font-semibold mb-2">Join Our Community</h3>
@@ -65,7 +65,7 @@
         <UCard class="hover:shadow-lg transition-shadow">
           <div class="text-center space-y-4 p-6">
             <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto">
-              <Icon name="mdi:at" class="h-8 w-8 text-blue-600 dark:text-blue-400" />
+              <Icon name="lucide:at-sign" class="h-8 w-8 text-blue-600 dark:text-blue-400" />
             </div>
             <div>
               <h3 class="text-xl font-semibold mb-2">Follow on Twitter</h3>
@@ -90,7 +90,7 @@
         <UCard class="hover:shadow-lg transition-shadow">
           <div class="text-center space-y-4 p-6">
             <div class="w-16 h-16 bg-pink-100 dark:bg-pink-900 rounded-full flex items-center justify-center mx-auto">
-              <Icon name="mdi:camera-outline" class="h-8 w-8 text-pink-600 dark:text-pink-400" />
+              <Icon name="lucide:camera" class="h-8 w-8 text-pink-600 dark:text-pink-400" />
             </div>
             <div>
               <h3 class="text-xl font-semibold mb-2">Instagram</h3>
@@ -115,7 +115,7 @@
         <UCard class="hover:shadow-lg transition-shadow">
           <div class="text-center space-y-4 p-6">
             <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto">
-              <Icon name="mdi:web" class="h-8 w-8 text-blue-600 dark:text-blue-400" />
+              <Icon name="lucide:globe" class="h-8 w-8 text-blue-600 dark:text-blue-400" />
             </div>
             <div>
               <h3 class="text-xl font-semibold mb-2">Facebook</h3>
@@ -140,7 +140,7 @@
         <UCard class="hover:shadow-lg transition-shadow">
           <div class="text-center space-y-4 p-6">
             <div class="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto">
-              <Icon name="mdi:email-outline" class="h-8 w-8 text-green-600 dark:text-green-400" />
+              <Icon name="lucide:mail" class="h-8 w-8 text-green-600 dark:text-green-400" />
             </div>
             <div>
               <h3 class="text-xl font-semibold mb-2">Email Us</h3>

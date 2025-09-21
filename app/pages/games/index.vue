@@ -19,7 +19,7 @@
         >
           <template #header>
             <div class="aspect-video bg-gradient-to-br from-primary/10 to-secondary/10 rounded-t-lg flex items-center justify-center">
-              <Icon name="mdi:cube-outline" class="h-16 w-16 text-primary" />
+              <Icon name="lucide:box" class="h-16 w-16 text-primary" />
             </div>
           </template>
 

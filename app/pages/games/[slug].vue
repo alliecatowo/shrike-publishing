@@ -5,7 +5,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <!-- Game Image -->
         <div class="aspect-square bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg flex items-center justify-center">
-          <Icon name="mdi:cube-outline" class="h-32 w-32 text-primary" />
+          <Icon name="lucide:box" class="h-32 w-32 text-primary" />
         </div>
 
         <!-- Game Info -->
@@ -75,7 +75,7 @@
           <UCard to="/stories" class="hover:shadow-md transition-shadow">
             <div class="flex items-center space-x-4">
               <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center">
-                <Icon name="mdi:book-open-page-variant" class="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                <Icon name="lucide:book-open" class="h-6 w-6 text-blue-600 dark:text-blue-400" />
               </div>
               <div>
                 <h3 class="font-semibold">Stories & Literature</h3>
@@ -88,7 +88,7 @@
           <UCard to="/blog" class="hover:shadow-md transition-shadow">
             <div class="flex items-center space-x-4">
               <div class="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center">
-                <Icon name="mdi:file-document-outline" class="h-6 w-6 text-green-600 dark:text-green-400" />
+                <Icon name="lucide:file-text" class="h-6 w-6 text-green-600 dark:text-green-400" />
               </div>
               <div>
                 <h3 class="font-semibold">Development Blog</h3>

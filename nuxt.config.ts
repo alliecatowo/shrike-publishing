@@ -31,9 +31,8 @@ export default defineNuxtConfig({
   },
 
   icon: {
-    
     serverBundle: {
-      collections: ['mdi']
+      collections: ['lucide']
     },
     fallbackToApi: true
   },
