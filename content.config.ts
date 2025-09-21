@@ -1,6 +1,8 @@
 import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 
 export default defineContentConfig({
+  // Enable Nuxt Studio preview
+  preview: true,
   collections: {
     games: defineCollection({
       type: 'page',
