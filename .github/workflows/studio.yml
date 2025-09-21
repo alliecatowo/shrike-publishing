@@ -64,7 +64,7 @@ jobs:
         run: ${{ steps.pkgman.outputs.package_manager }} install
 
       - name: Generate
-        run: ${{ steps.pkgman.outputs.package_manager }} run build
+        run: ${{ steps.pkgman.outputs.package_manager }} run generate
         env:
           NITRO_PRESET: github_pages
           NUXT_CONTENT_PREVIEW_API: https://api.nuxt.studio
