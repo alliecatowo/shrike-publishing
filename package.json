@@ -15,7 +15,6 @@
     "@nuxt/icon": "^2.0.0",
     "@nuxt/image": "1.11.0",
     "@nuxt/ui": "4.0.0-alpha.2",
-    "better-sqlite3": "^12.2.0",
     "eslint": "^9.36.0",
     "nuxt": "^4.1.2",
     "typescript": "^5.9.2",
