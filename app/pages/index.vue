@@ -30,12 +30,13 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <UCard
+          <NuxtLink
             v-for="game in featuredGames"
             :key="game.slug"
             :to="`/games/${game.slug}`"
-            class="game-card"
+            class="block"
           >
+            <UCard class="game-card">
             <template #header>
               <div class="aspect-video bg-gray-200 dark:bg-gray-800 rounded-t-lg flex items-center justify-center">
                 <Icon name="lucide:box" class="h-12 w-12 text-gray-400" />
@@ -50,7 +51,8 @@
                 <UButton size="sm" variant="outline">Learn More</UButton>
               </div>
             </div>
-          </UCard>
+            </UCard>
+          </NuxtLink>
         </div>
 
         <div class="text-center">
@@ -128,30 +130,30 @@
 
     <!-- Call to Action -->
     <UContainer>
-      <div
+      <UPageHero
         title="Join Our Community"
         description="Stay updated with our latest releases, behind-the-scenes content, and exclusive offers."
         orientation="horizontal"
         :ui="{ container: 'max-w-4xl' }"
       >
-        <div>
+        <div class="flex gap-4 justify-center">
           <UButton
             to="/contact"
-            icon="i-heroicons-user-group"
             size="lg"
           >
+            <Icon name="lucide:users" class="h-5 w-5 mr-2" />
             Follow Us
           </UButton>
           <UButton
             to="/stories"
-            icon="i-heroicons-book-open"
             size="lg"
             variant="outline"
           >
+            <Icon name="lucide:book-open" class="h-5 w-5 mr-2" />
             Read Stories
           </UButton>
         </div>
-      </div>
+      </UPageHero>
     </UContainer>
   </div>
 </template>
