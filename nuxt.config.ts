@@ -46,5 +46,11 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/png', href: '/favicon.png' }
       ]
     }
+  },
+
+  content: {
+    preview: {
+      api: 'https://api.nuxt.studio'
+    }
   }
 })
