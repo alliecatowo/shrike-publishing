@@ -9,13 +9,13 @@
           </span>
         </h1>
         <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-          Independent publisher of tabletop games and literature. Crafting immersive worlds through strategic gameplay and compelling stories.
+          Baltimore-based storytelling studio creating tabletop games and literature. Our output focuses on telling stories of action and characters across tabletop games, written fiction, and other media!
         </p>
         <NuxtLink
           to="/games"
           class="inline-flex items-center px-8 py-4 bg-primary hover:bg-primary/90 text-white font-semibold rounded-lg transition-colors shadow-lg hover:shadow-xl"
         >
-          <UIcon name="i-heroicons-cube" class="h-6 w-6 mr-2" />
+          <Icon name="mdi:cube-outline" class="h-6 w-6 mr-2" />
           Explore Our Games
         </NuxtLink>
       </div>
@@ -38,7 +38,7 @@
           >
             <template #header>
               <div class="aspect-video bg-gray-200 dark:bg-gray-800 rounded-t-lg flex items-center justify-center">
-                <UIcon name="i-heroicons-cube" class="h-12 w-12 text-gray-400" />
+                <Icon name="mdi:cube-outline" class="h-12 w-12 text-gray-400" />
               </div>
             </template>
 
@@ -82,7 +82,7 @@
             >
               <div class="flex space-x-4">
                 <div class="w-16 h-16 bg-gray-200 dark:bg-gray-800 rounded-lg flex-shrink-0 flex items-center justify-center">
-                  <UIcon name="i-heroicons-document-text" class="h-6 w-6 text-gray-400" />
+                  <Icon name="mdi:file-document-outline" class="h-6 w-6 text-gray-400" />
                 </div>
                 <div class="flex-1 min-w-0">
                   <h3 class="font-semibold text-sm line-clamp-2">{{ post.title }}</h3>
@@ -112,7 +112,7 @@
             >
               <div class="flex space-x-4">
                 <div class="w-16 h-16 bg-primary/10 rounded-lg flex-shrink-0 flex items-center justify-center">
-                  <UIcon name="i-heroicons-megaphone" class="h-6 w-6 text-primary" />
+                  <Icon name="mdi:bullhorn-outline" class="h-6 w-6 text-primary" />
                 </div>
                 <div class="flex-1 min-w-0">
                   <h3 class="font-semibold text-sm line-clamp-2">{{ announcement.title }}</h3>
@@ -185,8 +185,8 @@ const formatDate = (date: string) => {
 
 // SEO
 useSeoMeta({
-  title: 'Shrike Publishing - Independent Tabletop Games & Literature',
-  description: 'Discover innovative tabletop games and immersive literature from Shrike Publishing. Featuring Era of Silence and Blood Neon.',
-  keywords: 'tabletop games, board games, card games, literature, publishing, Era of Silence, Blood Neon'
+  title: 'Shrike Publishing',
+  description: 'Shrike Tabletop makes Tabletop roleplaying games (RPGs) about combat and cooperation. Our games Era of Silence and Blood Neon are love letters to traditional game design!',
+  keywords: 'tabletop games, board games, card games, literature, publishing, Era of Silence, Blood Neon, TTRPG'
 })
 </script>

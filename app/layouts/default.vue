@@ -6,9 +6,15 @@
         <div class="flex justify-between items-center h-16">
           <!-- Left: Logo -->
           <div class="flex items-center">
-            <NuxtLink to="/" class="flex items-center space-x-2">
-              <UIcon name="i-heroicons-cube" class="h-8 w-8 text-primary" />
-              <span class="text-xl font-bold">Shrike Publishing</span>
+            <NuxtLink to="/" class="flex items-center">
+              <NuxtImg
+                src="/ShrikeLogoNov2021.png"
+                alt="Shrike Publishing"
+                class="h-10 w-auto"
+                format="webp"
+                sizes="40px sm:40px md:40px lg:40px"
+                loading="eager"
+              />
             </NuxtLink>
           </div>
 
@@ -28,17 +34,18 @@
           <!-- Right: Actions -->
           <div class="flex items-center space-x-2">
             <UButton
-              icon="i-heroicons-moon"
               size="sm"
               variant="ghost"
               @click="toggleTheme"
-            />
+            >
+              <Icon name="mdi:moon-waning-crescent" class="h-4 w-4" />
+            </UButton>
             <UButton
-              icon="i-heroicons-shopping-bag"
               size="sm"
               variant="ghost"
               to="/contact"
             >
+              <Icon name="mdi:shopping-outline" class="h-4 w-4" />
               Shop
             </UButton>
           </div>
@@ -101,19 +108,32 @@
             <h3 class="text-sm font-semibold text-gray-900 dark:text-white">Connect</h3>
             <div class="flex space-x-3">
               <UButton
-                icon="i-heroicons-globe-alt"
                 size="sm"
                 variant="ghost"
-                to="/contact"
-                aria-label="Social Links"
-              />
+                href="https://www.facebook.com/shrikepublishing"
+                target="_blank"
+                aria-label="Facebook"
+              >
+                <Icon name="mdi:facebook" class="h-4 w-4" />
+              </UButton>
               <UButton
-                icon="i-heroicons-envelope"
                 size="sm"
                 variant="ghost"
-                to="/contact"
-                aria-label="Contact"
-              />
+                href="https://twitter.com/ShrikePublisher"
+                target="_blank"
+                aria-label="Twitter"
+              >
+                <Icon name="mdi:twitter" class="h-4 w-4" />
+              </UButton>
+              <UButton
+                size="sm"
+                variant="ghost"
+                href="https://www.instagram.com/shrikepublishing"
+                target="_blank"
+                aria-label="Instagram"
+              >
+                <Icon name="mdi:instagram" class="h-4 w-4" />
+              </UButton>
             </div>
           </div>
         </div>

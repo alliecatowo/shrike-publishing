@@ -21,7 +21,7 @@
             <!-- Post Image -->
             <div class="md:col-span-1">
               <div class="aspect-square bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 rounded-lg flex items-center justify-center">
-                <UIcon name="i-heroicons-document-text" class="h-12 w-12 text-blue-600 dark:text-blue-400" />
+                <Icon name="mdi:file-document-outline" class="h-12 w-12 text-blue-600 dark:text-blue-400" />
               </div>
             </div>
 
@@ -60,7 +60,7 @@
 
       <!-- Pagination (if needed) -->
       <div v-if="postsValue.length === 0" class="text-center py-12">
-        <UIcon name="i-heroicons-document-text" class="h-16 w-16 text-gray-400 mx-auto mb-4" />
+        <Icon name="mdi:file-document-outline" class="h-16 w-16 text-gray-400 mx-auto mb-4" />
         <h3 class="text-lg font-semibold text-gray-600 dark:text-gray-400 mb-2">No blog posts yet</h3>
         <p class="text-gray-500">Check back soon for updates!</p>
       </div>

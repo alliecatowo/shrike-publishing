@@ -19,7 +19,7 @@
           <div class="p-6 space-y-4">
             <!-- Manual Icon -->
             <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center">
-              <UIcon name="i-heroicons-document" class="h-8 w-8 text-blue-600 dark:text-blue-400" />
+              <Icon name="mdi:file-outline" class="h-8 w-8 text-blue-600 dark:text-blue-400" />
             </div>
 
             <!-- Manual Info -->
@@ -55,7 +55,7 @@
 
       <!-- Empty State -->
       <div v-if="manualsValue.length === 0" class="text-center py-12">
-        <UIcon name="i-heroicons-document" class="h-16 w-16 text-gray-400 mx-auto mb-4" />
+        <Icon name="mdi:file-outline" class="h-16 w-16 text-gray-400 mx-auto mb-4" />
         <h3 class="text-lg font-semibold text-gray-600 dark:text-gray-400 mb-2">No manuals available yet</h3>
         <p class="text-gray-500">Check back soon for downloadable resources!</p>
       </div>

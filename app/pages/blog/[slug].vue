@@ -27,7 +27,7 @@
 
       <!-- Article Image -->
       <div class="aspect-video bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 rounded-lg flex items-center justify-center">
-        <UIcon name="i-heroicons-document-text" class="h-16 w-16 text-blue-600 dark:text-blue-400" />
+        <Icon name="mdi:file-document-outline" class="h-16 w-16 text-blue-600 dark:text-blue-400" />
       </div>
 
       <!-- Article Content -->

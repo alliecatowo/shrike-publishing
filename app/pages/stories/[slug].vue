@@ -35,7 +35,7 @@
 
       <!-- Story Image -->
       <div class="aspect-video bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900 dark:to-pink-900 rounded-lg flex items-center justify-center">
-        <UIcon name="i-heroicons-book-open" class="h-16 w-16 text-purple-600 dark:text-purple-400" />
+        <Icon name="mdi:book-open-page-variant" class="h-16 w-16 text-purple-600 dark:text-purple-400" />
       </div>
 
       <!-- Story Content -->
@@ -69,7 +69,7 @@
           >
             <div class="flex space-x-3">
               <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                <UIcon name="i-heroicons-book-open" class="h-6 w-6 text-purple-600 dark:text-purple-400" />
+                <Icon name="mdi:book-open-page-variant" class="h-6 w-6 text-purple-600 dark:text-purple-400" />
               </div>
               <div class="flex-1 min-w-0">
                 <h3 class="font-semibold text-sm line-clamp-1">{{ relatedStory.title }}</h3>

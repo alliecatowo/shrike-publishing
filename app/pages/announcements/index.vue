@@ -20,7 +20,7 @@
           <div class="flex items-start space-x-4">
             <!-- Announcement Icon -->
             <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-              <UIcon name="i-heroicons-megaphone" class="h-6 w-6 text-primary" />
+              <Icon name="mdi:bullhorn-outline" class="h-6 w-6 text-primary" />
             </div>
 
             <!-- Announcement Content -->
@@ -55,7 +55,7 @@
 
       <!-- Empty State -->
       <div v-if="announcementsValue.length === 0" class="text-center py-12">
-        <UIcon name="i-heroicons-megaphone" class="h-16 w-16 text-gray-400 mx-auto mb-4" />
+        <Icon name="mdi:bullhorn-outline" class="h-16 w-16 text-gray-400 mx-auto mb-4" />
         <h3 class="text-lg font-semibold text-gray-600 dark:text-gray-400 mb-2">No announcements yet</h3>
         <p class="text-gray-500">Check back soon for updates!</p>
       </div>

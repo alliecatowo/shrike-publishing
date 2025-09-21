@@ -4,7 +4,7 @@
       <!-- Hero Section -->
       <UPageHero
         title="About Shrike Publishing"
-        description="Independent publisher of innovative tabletop games and immersive literature."
+        description="Baltimore-based storytelling studio creating tabletop games and literature. Our output focuses on telling stories of action and characters across tabletop games, written fiction, and other media!"
         :ui="{ container: 'text-center' }"
       />
 
@@ -35,7 +35,7 @@
         <UCard>
           <div class="text-center space-y-4">
             <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto">
-              <UIcon name="i-heroicons-light-bulb" class="h-8 w-8 text-blue-600 dark:text-blue-400" />
+              <Icon name="mdi:lightbulb-outline" class="h-8 w-8 text-blue-600 dark:text-blue-400" />
             </div>
             <h3 class="text-xl font-semibold">Innovation</h3>
             <p class="text-gray-600 dark:text-gray-400">
@@ -47,7 +47,7 @@
         <UCard>
           <div class="text-center space-y-4">
             <div class="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto">
-              <UIcon name="i-heroicons-users" class="h-8 w-8 text-green-600 dark:text-green-400" />
+              <Icon name="mdi:account-group-outline" class="h-8 w-8 text-green-600 dark:text-green-400" />
             </div>
             <h3 class="text-xl font-semibold">Community</h3>
             <p class="text-gray-600 dark:text-gray-400">
@@ -59,7 +59,7 @@
         <UCard>
           <div class="text-center space-y-4">
             <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto">
-              <UIcon name="i-heroicons-star" class="h-8 w-8 text-purple-600 dark:text-purple-400" />
+              <Icon name="mdi:star-outline" class="h-8 w-8 text-purple-600 dark:text-purple-400" />
             </div>
             <h3 class="text-xl font-semibold">Quality</h3>
             <p class="text-gray-600 dark:text-gray-400">
@@ -78,7 +78,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div class="text-center space-y-3">
             <div class="w-24 h-24 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto">
-              <UIcon name="i-heroicons-user" class="h-12 w-12 text-white" />
+              <Icon name="mdi:account-outline" class="h-12 w-12 text-white" />
             </div>
             <div>
               <h3 class="font-semibold">Alex Rivera</h3>
@@ -89,7 +89,7 @@
 
           <div class="text-center space-y-3">
             <div class="w-24 h-24 bg-gradient-to-br from-secondary to-primary rounded-full flex items-center justify-center mx-auto">
-              <UIcon name="i-heroicons-user" class="h-12 w-12 text-white" />
+              <Icon name="mdi:account-outline" class="h-12 w-12 text-white" />
             </div>
             <div>
               <h3 class="font-semibold">Jamie Chen</h3>
@@ -100,7 +100,7 @@
 
           <div class="text-center space-y-3">
             <div class="w-24 h-24 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center mx-auto">
-              <UIcon name="i-heroicons-user" class="h-12 w-12 text-white" />
+              <Icon name="mdi:account-outline" class="h-12 w-12 text-white" />
             </div>
             <div>
               <h3 class="font-semibold">Marcus Hale</h3>
