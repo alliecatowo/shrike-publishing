@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
+  ssr: true,
 
   modules: [
     '@nuxt/content',
@@ -13,6 +14,38 @@ export default defineNuxtConfig({
   ],
 
   css: ['~/assets/css/main.css'],
+
+  image: {
+    // Enable global $img helper
+    inject: true,
+
+    // Image quality (default 80, good balance)
+    quality: 80,
+
+    // Default formats (webp first for modern browsers)
+    format: ['webp', 'png', 'jpg'],
+
+    // Screen sizes for responsive images
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536,
+    },
+
+    // Allowed domains for external images
+    domains: ['localhost'],
+
+    // IPX configuration for development
+    ipx: {
+      maxAge: 0, // Disable caching for development
+    },
+
+    // Densities for high-DPI displays
+    densities: [1, 2],
+  },
 
   fonts: {
     families: [

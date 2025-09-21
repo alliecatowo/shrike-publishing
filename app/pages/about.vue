@@ -6,26 +6,26 @@
         title="About Shrike Publishing"
         description="Baltimore-based storytelling studio creating tabletop games and literature. Our output focuses on telling stories of action and characters across tabletop games, written fiction, and other media!"
         :ui="{ container: 'text-center' }"
+        class="shrike-heading"
       />
 
       <!-- Our Story -->
       <UCard>
         <template #header>
-          <h2 class="text-2xl font-bold">Our Story</h2>
+          <h2 class="shrike-heading text-2xl">Our Story</h2>
         </template>
 
         <div class="prose prose-lg dark:prose-invert max-w-none">
           <p>
-            Founded in 2020, Shrike Publishing emerged from a passion for creating meaningful gaming experiences
-            that challenge players and spark imagination. What started as a small indie project has grown into
-            a dedicated team of game designers, writers, and artists committed to pushing the boundaries of
-            tabletop gaming.
+            Shrike Tabletop makes tabletop roleplaying games (RPGs) about combat and cooperation. Our games Era of Silence and Blood Neon are love letters to traditional game design!
           </p>
 
           <p>
-            Our name, inspired by the shrike bird known for its cunning hunting techniques, reflects our approach
-            to game design: strategic, intelligent, and always one step ahead. We believe that great games are
-            not just about rules and components, but about the stories they tell and the experiences they create.
+            Founded in 2020 as a Baltimore-based storytelling studio, Shrike Publishing emerged from a passion for creating meaningful gaming experiences that challenge players and spark imagination. What started as a small indie project has grown into a dedicated team committed to pushing the boundaries of tabletop gaming.
+          </p>
+
+          <p>
+            Our name, inspired by the shrike bird known for its cunning hunting techniques, reflects our approach to game design: strategic, intelligent, and always one step ahead. We believe that great games are not just about rules and components, but about the stories they tell and the experiences they create across tabletop games, written fiction, and other media.
           </p>
         </div>
       </UCard>
@@ -46,12 +46,12 @@
 
         <UCard>
           <div class="text-center space-y-4">
-            <div class="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto">
-              <Icon name="mdi:account-group-outline" class="h-8 w-8 text-green-600 dark:text-green-400" />
+            <div class="w-16 h-16 bg-red-100 dark:bg-red-900 rounded-full flex items-center justify-center mx-auto">
+              <Icon name="mdi:sword-cross" class="h-8 w-8 text-red-600 dark:text-red-400" />
             </div>
-            <h3 class="text-xl font-semibold">Community</h3>
+            <h3 class="text-xl font-semibold">Combat & Cooperation</h3>
             <p class="text-gray-600 dark:text-gray-400">
-              We build games for players, with players, fostering an inclusive and supportive community.
+              Our games emphasize strategic combat mechanics alongside cooperative storytelling, creating balanced experiences that challenge and unite players.
             </p>
           </div>
         </UCard>
@@ -72,7 +72,7 @@
       <!-- Team Section -->
       <UCard>
         <template #header>
-          <h2 class="text-2xl font-bold">Meet the Team</h2>
+          <h2 class="shrike-heading text-2xl">Meet the Team</h2>
         </template>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -34,7 +34,7 @@
             v-for="game in featuredGames"
             :key="game.slug"
             :to="`/games/${game.slug}`"
-            class="hover:shadow-lg transition-shadow"
+            class="game-card"
           >
             <template #header>
               <div class="aspect-video bg-gray-200 dark:bg-gray-800 rounded-t-lg flex items-center justify-center">
@@ -78,7 +78,7 @@
               v-for="post in latestPosts"
               :key="post.slug"
               :to="`/blog/${post.slug}`"
-              class="hover:shadow-md transition-shadow"
+              class="game-card"
             >
               <div class="flex space-x-4">
                 <div class="w-16 h-16 bg-gray-200 dark:bg-gray-800 rounded-lg flex-shrink-0 flex items-center justify-center">
@@ -108,7 +108,7 @@
               v-for="announcement in latestAnnouncements"
               :key="announcement.slug"
               :to="`/announcements/${announcement.slug}`"
-              class="hover:shadow-md transition-shadow"
+              class="game-card"
             >
               <div class="flex space-x-4">
                 <div class="w-16 h-16 bg-primary/10 rounded-lg flex-shrink-0 flex items-center justify-center">
