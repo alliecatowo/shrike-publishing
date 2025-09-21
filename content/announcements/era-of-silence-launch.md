@@ -1,4 +1,5 @@
 ---
+slug: era-of-silence-launch
 title: Era of Silence - Now Available!
 description: Our latest strategic card game is now shipping worldwide.
 image: /images/announcements/era-of-silence-launch.jpg

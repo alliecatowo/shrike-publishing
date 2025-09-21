@@ -56,7 +56,7 @@
                   {{ tag }}
                 </UBadge>
               </div>
-              <UButton size="sm">
+              <UButton size="sm" :to="`/stories/${story.slug}`">
                 Read {{ story.type === 'free' ? 'Free' : 'More' }}
               </UButton>
             </div>

@@ -62,7 +62,7 @@
                 ${{ game.price }}
                 <span class="text-sm text-gray-500">{{ game.currency }}</span>
               </div>
-              <UButton size="sm">
+              <UButton size="sm" :to="`/games/${game.slug}`">
                 Learn More
               </UButton>
             </div>

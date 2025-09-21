@@ -1,4 +1,5 @@
 ---
+slug: blood-neon
 title: Blood Neon
 description: Cyberpunk adventure in the neon-lit streets of Neo-Tokyo.
 image: /images/blood-neon-cover.jpg

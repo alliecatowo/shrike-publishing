@@ -1,4 +1,5 @@
 ---
+slug: designing-era-of-silence
 title: Designing the Silent World of Era of Silence
 description: A deep dive into the design philosophy behind our latest game, Era of Silence.
 image: /images/blog/era-of-silence-design.jpg

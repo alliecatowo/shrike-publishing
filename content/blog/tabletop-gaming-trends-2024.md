@@ -1,4 +1,5 @@
 ---
+slug: tabletop-gaming-trends-2024
 title: Tabletop Gaming Trends for 2024
 description: Our predictions and observations on where the tabletop gaming industry is heading this year.
 image: /images/blog/tabletop-trends.jpg

@@ -1,4 +1,5 @@
 ---
+slug: era-of-silence
 title: Era of Silence
 description: A strategic tabletop game set in a dystopian future where silence is the ultimate weapon.
 image: /images/era-of-silence-cover.jpg

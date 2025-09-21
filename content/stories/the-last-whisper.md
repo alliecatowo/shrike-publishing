@@ -1,4 +1,5 @@
 ---
+slug: the-last-whisper
 title: The Last Whisper
 description: A short story set in the world of Era of Silence, exploring the origins of the silence plague.
 image: /images/stories/last-whisper.jpg

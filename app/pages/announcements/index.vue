@@ -44,7 +44,7 @@
                 <span class="text-sm text-gray-500">
                   {{ formatDate(announcement.date) }}
                 </span>
-                <UButton size="sm" variant="ghost">
+                <UButton size="sm" variant="ghost" :to="`/announcements/${announcement.slug}`">
                   Read More →
                 </UButton>
               </div>

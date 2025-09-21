@@ -1,4 +1,5 @@
 ---
+slug: blood-neon-expansion
 title: Blood Neon Expansion - Corporate Shadows
 description: New expansion adds corporate intrigue and advanced cybernetics to your campaigns.
 image: /images/announcements/blood-neon-expansion.jpg

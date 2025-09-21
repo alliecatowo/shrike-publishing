@@ -1,4 +1,5 @@
 ---
+slug: echoes-of-neo-tokyo
 title: Echoes of Neo-Tokyo
 description: A published novella exploring the cyberpunk underworld of Blood Neon.
 image: /images/stories/neo-tokyo.jpg
