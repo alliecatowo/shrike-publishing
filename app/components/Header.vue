@@ -14,10 +14,10 @@
         <UButton
           size="sm"
           variant="outline"
-          to="/contact"
-          leading-icon="i-lucide-shopping-cart"
+          to="/support"
+          leading-icon="i-lucide-heart"
         >
-          Shop
+          Support Us
         </UButton>
       </div>
     </template>
