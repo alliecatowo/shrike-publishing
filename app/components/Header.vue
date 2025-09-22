@@ -1,8 +1,9 @@
 <template>
   <UHeader class="border-b border-primary/15 bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60 dark:bg-primary/5">
     <template #left>
-      <NuxtLink to="/" class="flex items-center">
+      <NuxtLink to="/" class="flex items-center gap-2">
         <img src="/ShrikeLogoNov2021.png" alt="Shrike Publishing" class="h-8 w-auto" />
+        <span class="text-xl font-bold text-gray-900 dark:text-white">Shrike Publishing</span>
       </NuxtLink>
     </template>
 
