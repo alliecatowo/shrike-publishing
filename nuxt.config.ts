@@ -11,6 +11,12 @@ export default defineNuxtConfig({
     '@nuxt/icon'
   ],
 
+  ui: {
+    icons: {
+      collections: ['lucide']
+    }
+  },
+
   css: ['~/assets/css/main.css'],
 
   image: {

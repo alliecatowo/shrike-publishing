@@ -30,9 +30,12 @@
           class="group hover:shadow-xl transition-all duration-300 hover:border-primary/30 hover:-translate-y-1"
         >
           <template #header>
-            <div class="aspect-video bg-gradient-to-br from-primary/5 to-secondary/5 rounded-t-lg flex items-center justify-center group-hover:from-primary/10 group-hover:to-secondary/10 transition-colors">
-              <UIcon name="i-lucide-gamepad-2" class="size-16 text-primary/60 group-hover:text-primary transition-colors" />
-            </div>
+            <NuxtImg
+              :src="game.image"
+              :alt="game.title"
+              class="w-full h-48 object-cover rounded-t-lg"
+              loading="lazy"
+            />
           </template>
 
           <div class="space-y-4">
