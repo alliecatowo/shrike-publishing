@@ -10,7 +10,7 @@
       </div>
     </UPageHero>
 
-    <UPageSection title="Game Details" description="Everything you need to know">
+    <UContainer class="py-8">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <!-- Main content -->
         <div class="lg:col-span-2 space-y-8">
@@ -79,7 +79,7 @@
           </UCard>
         </div>
       </div>
-    </UPageSection>
+    </UContainer>
   </div>
 </template>
 
