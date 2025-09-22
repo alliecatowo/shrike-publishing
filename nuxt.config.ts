@@ -26,14 +26,13 @@ export default defineNuxtConfig({
     }
   },
 
-  fonts: {
-    families: [
-      { name: 'Merriweather Sans', provider: 'google', weights: [700] },
-      { name: 'Volkhov', provider: 'google', weights: [700] },
-      { name: 'Lato', provider: 'google', weights: [700] }
-    ]
-  },
-
+        fonts: {
+          families: [
+            { name: 'Merriweather Sans', provider: 'google', weights: [400, 700, 800] },
+            { name: 'Volkhov', provider: 'google', weights: [400, 700, 800] },
+            { name: 'Lato', provider: 'google', weights: [400, 700, 800] }
+          ]
+        },
   icon: {
     serverBundle: {
       collections: ['lucide']

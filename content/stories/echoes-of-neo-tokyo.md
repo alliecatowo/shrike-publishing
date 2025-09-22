@@ -45,8 +45,8 @@ Too big.
 
 ## Reviews
 
-*"Hale masterfully captures the gritty essence of cyberpunk while delivering a thrilling narrative. A must-read for fans of the genre."*
-- Cyberpunk Literature Review
+> "Hale masterfully captures the gritty essence of cyberpunk while delivering a thrilling narrative. A must-read for fans of the genre."
+> - Cyberpunk Literature Review
 
-*"The perfect companion piece to the Blood Neon tabletop game. Immersive world-building that enhances the gaming experience."*
-- Tabletop RPG Magazine
+> "The perfect companion piece to the Blood Neon tabletop game. Immersive world-building that enhances the gaming experience."
+> - Tabletop RPG Magazine

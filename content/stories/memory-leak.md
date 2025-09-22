@@ -14,11 +14,9 @@ published: true
 ---
 # Memory Leak
 
-## A wasteland thriller
+**A wasteland thriller in the Era of Silence**
 
-## in the Era of Silence
-
-### R. Val
+R. Val
 
 [DOWNLOAD PDF HERE](/docs/Ashen-Silence_-Memory-Leak-Final.pdf)
 
@@ -28,32 +26,22 @@ And to Willabee, the backbone of Shrike Tabletop, and constant companion.
 
 Thank you for helping with editing and feedback, and every other magnificent thing you each bring to my life. 
 
-\*\*\*\*\*
+> “The old days were long gone. That wonderful world didn't exist anymore. There was no use spending your life whining about it. You had to spit on its grave and never look back.”
+>
+> — Dimitriv Glukhovsky, Metro 2033
 
-  
-“The old days were long gone. That wonderful world didn't exist anymore. There was no use spending your life whining about it. You had to spit on its grave and never look back.” 
-
-— Dimitriv Glukhovsky, Metro 2033
-
-\*\*\*\*\*  
+---
 
 ## TABLE OF CONTENTS
 
-1.  ## [Mercenary](memory-leak.html)
-    
-2.  ## [Waster](../memory-leak-2.html)
-    
-3.  ## [Thief](../memory-leak-3.html)
-    
-4.  ## [Soldier](../memory-leak-end.html)
-    
-    ## [Epilogue](../memory-leak-end.html) 
+1.  [Mercenary](memory-leak.html)
+2.  [Waster](../memory-leak-2.html)
+3.  [Thief](../memory-leak-3.html)
+4.  [Soldier](../memory-leak-end.html)
+5.  [Epilogue](../memory-leak-end.html)
     
 
-##   
-  
-  
-1\. Mercenary
+**1. Mercenary**
 
 The “sky” above East Bekton Park was a bright baby blue, painted by white cottony blobs that lazily drifted across it. A faint breeze ran through the trees and shrubbery, brushing a few strands of auburn hair into my face. I scowled, this was all so fucking fake! 
 

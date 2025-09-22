@@ -53,7 +53,7 @@
       </div>
 
       <!-- Story Content -->
-      <div class="prose prose-lg dark:prose-invert max-w-none">
+      <div class="prose prose-lg dark:prose-invert">
         <ContentRenderer :value="storyValue" />
       </div>
 
