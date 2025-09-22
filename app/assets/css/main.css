@@ -179,11 +179,7 @@
 }
 
 /* Typography enhancements */
-.shrike-heading {
-  font-family: 'Volkhov', serif;
-  font-weight: 700;
-  color: var(--shrike-primary);
-}
+
 
 .shrike-subheading {
   font-family: 'Merriweather Sans', sans-serif;
