@@ -26,10 +26,22 @@
 
     <UPageBody>
       <!-- Article Image -->
-      <div class="mb-8">
-        <div class="aspect-video bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg flex items-center justify-center">
-          <Icon name="lucide:file-text" class="h-16 w-16 text-primary" />
-        </div>
+      <div>
+        <template v-if="postValue.image">
+          <NuxtImg
+            :src="postValue.image"
+            :alt="postValue.title"
+            class="w-full aspect-video object-cover rounded-lg"
+            format="webp"
+            sizes="(max-width: 768px) 100vw, 1024px"
+            :placeholder="true"
+          />
+        </template>
+        <template v-else>
+          <div class="aspect-video bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg flex items-center justify-center">
+            <Icon name="lucide:file-text" class="h-16 w-16 text-primary" />
+          </div>
+        </template>
       </div>
 
       <!-- Article Content -->

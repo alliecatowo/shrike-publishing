@@ -15,7 +15,7 @@ items:
         icon: 'lucide:book-heart'
       - label: 'Blood Neon'
         to: '/games/blood-neon'
-        icon: 'lucide:radioactive'
+        icon: 'lucide:radiation'
       - label: 'Manuals & Downloads'
         to: '/manuals'
         icon: 'lucide:file-down'
