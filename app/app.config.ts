@@ -26,7 +26,8 @@ export default defineAppConfig({
     },
     icon: {
         mode: 'css',
-        cssLayer: 'base'
+        cssLayer: 'base',
+        size: '24px' // Set default icon size
       }
   })
   
