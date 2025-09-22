@@ -1,98 +1,156 @@
 <template>
-  <UContainer class="py-8">
-    <div class="space-y-8">
-      <!-- Page Header -->
-      <div class="text-center space-y-4">
-        <h1 class="text-4xl font-bold">Our Games</h1>
-        <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-          Discover our collection of innovative tabletop games, from strategic card games to immersive RPGs.
-        </p>
-      </div>
+  <div>
+    <!-- Page Header -->
+    <UPageSection
+      :title="pageContent?.games?.header?.title || 'Our Games'"
+      :description="pageContent?.games?.header?.description || 'Discover our collection of innovative tabletop games, from strategic card games to immersive RPGs.'"
+      :ui="{ container: 'text-center' }"
+    />
 
-      <!-- Games Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Games Grid -->
+    <UPageSection class="pt-0 -mt-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
         <UCard
           v-for="game in games"
           :key="game.slug"
           :to="`/games/${game.slug}`"
-          class="hover:shadow-lg transition-shadow"
+          variant="outline"
+          class="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
         >
           <template #header>
-            <div class="aspect-video bg-gradient-to-br from-primary/10 to-secondary/10 rounded-t-lg flex items-center justify-center">
-              <Icon name="lucide:box" class="h-16 w-16 text-primary" />
+            <div class="relative overflow-hidden">
+              <!-- Game Cover Art -->
+              <div class="aspect-[16/9] bg-gradient-to-br from-primary/15 via-purple-500/10 to-amber-500/10 dark:from-primary/25 dark:via-purple-500/15 dark:to-amber-500/15 rounded-t-lg relative">
+                <NuxtImg
+                  v-if="game.image"
+                  :src="game.image"
+                  :alt="`${game.title} Cover`"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+                <div v-else class="w-full h-full flex items-center justify-center">
+                  <UIcon name="i-lucide-gamepad-2" class="size-20 text-primary/60" />
+                </div>
+                
+                <!-- Overlay -->
+                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
+                
+                <!-- Status Badge -->
+                <div class="absolute top-3 right-3">
+                  <UBadge
+                    :variant="game.available ? 'solid' : 'soft'"
+                    :color="game.available ? 'success' : 'warning'"
+                    size="sm"
+                  >
+                    {{ game.available ? 'Available' : 'Coming Soon' }}
+                  </UBadge>
+                </div>
+
+                <!-- Preview Button -->
+                <div class="absolute bottom-3 left-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <UButton
+                    variant="solid"
+                    color="primary"
+                    size="sm"
+                    class="w-full"
+                    trailing-icon="i-lucide-arrow-right"
+                  >
+                    Explore Game
+                  </UButton>
+                </div>
+              </div>
             </div>
           </template>
 
-          <div class="p-6">
-            <div class="flex items-start justify-between mb-3">
-              <h3 class="text-xl font-semibold">{{ game.title }}</h3>
-              <UBadge
-                v-if="!game.available"
-                color="error"
-                variant="soft"
-              >
-                Coming Soon
-              </UBadge>
-              <UBadge
-                v-else
-                color="success"
-                variant="soft"
-              >
-                Available
-              </UBadge>
+          <div class="space-y-3">
+            <!-- Title and Price -->
+            <div class="flex items-start justify-between">
+              <h3 class="text-xl font-bold text-highlighted group-hover:text-primary transition-colors line-clamp-2">
+                {{ game.title }}
+              </h3>
+              <div v-if="game.price" class="text-right flex-shrink-0 ml-3">
+                <div class="text-lg font-bold text-primary">
+                  ${{ game.price }}
+                </div>
+                <div class="text-xs text-muted">{{ game.currency || 'USD' }}</div>
+              </div>
             </div>
 
-            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3">
+            <!-- Description -->
+            <p class="text-muted leading-relaxed line-clamp-2">
               {{ game.description }}
             </p>
 
-            <div class="flex flex-wrap gap-1 mb-4">
-              <UBadge
-                v-for="tag in game.tags"
-                :key="tag"
-                size="sm"
-                variant="outline"
-              >
+            <!-- Game Meta -->
+            <div class="flex flex-wrap gap-2 text-sm">
+              <UBadge v-for="tag in (game.tags || []).slice(0,3)" :key="tag" variant="subtle" size="sm">
                 {{ tag }}
               </UBadge>
             </div>
 
-            <div class="flex items-center justify-between">
-              <div class="text-2xl font-bold text-primary">
-                ${{ game.price }}
-                <span class="text-sm text-gray-500">{{ game.currency }}</span>
-              </div>
-              <UButton size="sm" :to="`/games/${game.slug}`">
+            <!-- Tags overflow counter -->
+            <div v-if="(game.tags?.length || 0) > 3" class="flex">
+              <UBadge variant="outline" size="sm">
+                +{{ (game.tags?.length || 0) - 3 }}
+              </UBadge>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex gap-2 pt-2">
+              <UButton
+                :to="`/games/${game.slug}`"
+                variant="outline"
+                size="sm"
+                class="flex-1"
+                trailing-icon="i-lucide-book-open"
+              >
                 Learn More
+              </UButton>
+              <UButton
+                variant="soft"
+                color="primary"
+                size="sm"
+                icon="i-lucide-arrow-right"
+                :to="`/games/${game.slug}`"
+              >
+                View Details
               </UButton>
             </div>
           </div>
         </UCard>
       </div>
+    </UPageSection>
 
-      <!-- Call to Action -->
-      <div class="text-center space-y-4 bg-gray-50 dark:bg-gray-800 rounded-lg p-8">
-        <h2 class="text-2xl font-bold">Want to Stay Updated?</h2>
-        <p class="text-gray-600 dark:text-gray-400">
-          Get notified about new releases and special offers.
-        </p>
-        <UButton to="/contact" icon="i-heroicons-envelope">
-          Contact Us
-        </UButton>
-      </div>
-    </div>
-  </UContainer>
+    <!-- Call to Action -->
+    <UPageCTA
+      :title="components?.cta?.title || 'Want to Stay Updated?'"
+      :description="components?.cta?.description || 'Get notified about new releases and special offers.'"
+      :links="components?.cta?.cta ? [{
+        label: components.cta.cta.text,
+        to: components.cta.cta.to,
+        ...(components.cta.cta.icon && { leadingIcon: components.cta.cta.icon })
+      }] : []"
+      :class="components?.cta?.background ? '' : 'bg-gray-50 dark:bg-gray-800'"
+    />
+  </div>
 </template>
 
 <script setup lang="ts">
+import { usePageContent } from '~/composables/usePageContent'
+import { useComponents } from '~/composables/useComponents'
+
+// Fetch page content and components
+const pageContent = await usePageContent('games')
+const components = await useComponents()
+
 // Fetch all games
-const { data: games } = await useAsyncData('games', () =>
+const { data: games } = await useAsyncData('games-page', () =>
   queryCollection('games').order('date', 'DESC').all()
 )
 
 // SEO
 useSeoMeta({
-  title: 'Games - Shrike Publishing',
-  description: 'Explore our collection of tabletop games including Era of Silence and Blood Neon.'
+  title: pageContent.value?.games?.meta?.title || 'Games - Shrike Publishing',
+  description: pageContent.value?.games?.meta?.description || 'Explore our collection of tabletop games.'
 })
 </script>

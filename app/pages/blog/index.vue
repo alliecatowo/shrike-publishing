@@ -49,9 +49,14 @@
                     {{ tag }}
                   </UBadge>
                 </div>
-                <span class="text-sm text-gray-500">
-                  {{ formatDate(post.date) }}
-                </span>
+                <div class="flex items-center gap-3">
+                  <span class="text-sm text-gray-500">
+                    {{ formatDate(post.date) }}
+                  </span>
+                  <UButton :to="`/blog/${post.slug}`" size="sm" variant="ghost" trailing-icon="i-lucide-arrow-right">
+                    Read Post
+                  </UButton>
+                </div>
               </div>
             </div>
           </div>

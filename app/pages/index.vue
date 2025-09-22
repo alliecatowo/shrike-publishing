@@ -1,62 +1,63 @@
 <template>
   <div>
     <!-- Hero Section -->
-    <div class="relative bg-gradient-to-br from-primary/10 via-secondary/5 to-primary/10 py-24">
-      <UContainer class="text-center">
-        <div class="max-w-4xl mx-auto">
-          <h1 class="text-5xl md:text-6xl font-bold mb-6">
-            <span class="shrike-text-gradient">Shrike Publishing</span>
-          </h1>
-          <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-            Baltimore-based storytelling studio creating tabletop games and literature. Our output focuses on telling stories of action and characters across tabletop games, written fiction, and other media!
-          </p>
-          <UButton
-            to="/games"
-            size="lg"
-          >
-            <Icon name="lucide:box" class="h-5 w-5 mr-2" />
-            Explore Our Games
-          </UButton>
-        </div>
-      </UContainer>
-    </div>
+    <UPageHero
+      :title="components?.hero?.title || 'Welcome to Shrike Publishing'"
+      :description="components?.hero?.subtitle || 'Independent tabletop game publisher creating immersive worlds and unforgettable stories.'"
+      :links="components?.hero?.cta ? [{
+        label: components.hero.cta.text,
+        to: components.hero.cta.to,
+        variant: components.hero.cta.variant || 'primary',
+        ...(components.hero.cta.icon && { trailingIcon: components.hero.cta.icon })
+      }] : []"
+      class="bg-gradient-to-br from-primary/15 via-neutral-900/20 to-tertiary/10 dark:from-primary/25 dark:via-neutral-900/30 dark:to-tertiary/20"
+    >
+      <div class="absolute inset-0 bg-gradient-to-r from-primary/15 to-transparent pointer-events-none" />
+    </UPageHero>
 
     <!-- Featured Games -->
     <UPageSection
-      title="Featured Games"
-      description="Discover our latest tabletop adventures"
+      :title="pageContent?.home?.featuredGames?.title || 'Featured Games'"
+      :description="pageContent?.home?.featuredGames?.description || 'Discover our latest tabletop adventures'"
       :ui="{ container: 'text-center' }"
     >
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <NuxtLink
-            v-for="game in featuredGames"
-            :key="game.slug"
-            :to="`/games/${game.slug}`"
-            class="block"
-          >
-            <UCard class="game-card">
-            <template #header>
-              <div class="aspect-video bg-gray-200 dark:bg-gray-800 rounded-t-lg flex items-center justify-center">
-                <Icon name="lucide:box" class="h-12 w-12 text-gray-400" />
-              </div>
-            </template>
-
-            <div class="p-6">
-              <h3 class="text-xl font-semibold mb-2">{{ game.title }}</h3>
-              <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">{{ game.description }}</p>
-              <div class="flex items-center justify-between">
-                <span class="text-lg font-bold text-primary">${{ game.price }}</span>
-                <UButton size="sm" variant="outline">Learn More</UButton>
-              </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <UCard
+          v-for="game in featuredGames"
+          :key="game.slug"
+          :to="`/games/${game.slug}`"
+          variant="outline"
+          class="group hover:shadow-xl transition-all duration-300 hover:border-primary/30 hover:-translate-y-1"
+        >
+          <template #header>
+            <div class="aspect-video bg-gradient-to-br from-primary/5 to-secondary/5 rounded-t-lg flex items-center justify-center group-hover:from-primary/10 group-hover:to-secondary/10 transition-colors">
+              <UIcon name="i-lucide-gamepad-2" class="size-16 text-primary/60 group-hover:text-primary transition-colors" />
             </div>
-            </UCard>
-          </NuxtLink>
-        </div>
+          </template>
 
-      <div class="text-center">
-        <UButton to="/games" variant="outline">
-          View All Games
+          <div class="space-y-4">
+            <div class="space-y-2">
+              <h3 class="text-xl font-bold text-highlighted group-hover:text-primary transition-colors">{{ game.title }}</h3>
+              <p class="text-muted leading-relaxed">{{ game.description }}</p>
+            </div>
+            <div class="flex items-center justify-between pt-2">
+              <div class="flex items-center gap-2">
+                <UBadge variant="soft" color="success" size="sm">
+                  ${{ game.price }}
+                </UBadge>
+                <span class="text-sm text-muted">Available</span>
+              </div>
+              <UButton size="sm" variant="soft" color="primary" trailing-icon="i-lucide-arrow-right">
+                Learn More
+              </UButton>
+            </div>
+          </div>
+        </UCard>
+      </div>
+
+      <div class="text-center mt-12">
+        <UButton to="/games" variant="outline" size="lg" trailing-icon="i-lucide-arrow-right">
+          {{ pageContent?.home?.featuredGames?.viewAllText || 'View All Games' }}
         </UButton>
       </div>
     </UPageSection>
@@ -67,118 +68,181 @@
         <!-- Latest Blog Posts -->
         <div class="space-y-6">
           <div class="flex items-center justify-between">
-            <h2 class="text-2xl font-bold">Latest from the Blog</h2>
-            <UButton to="/blog" variant="ghost" size="sm">
-              View All
+            <h2 class="text-2xl font-bold text-highlighted">{{ pageContent?.home?.latestBlog?.title || 'Latest from the Blog' }}</h2>
+            <UButton to="/blog" variant="outline" size="sm" trailing-icon="i-lucide-arrow-right">
+              {{ pageContent?.home?.latestBlog?.viewAllText || 'View All' }}
             </UButton>
           </div>
 
-          <div class="space-y-4">
-            <NuxtLink
+          <div class="space-y-4" :class="'group/card'">
+            <UCard
               v-for="post in latestPosts"
               :key="post.slug"
               :to="`/blog/${post.slug}`"
-              class="block"
+              variant="outline"
+              class="group hover:shadow-md transition-all duration-200 hover:border-primary/20"
             >
-              <UCard class="game-card">
-              <div class="flex space-x-4">
-                <div class="w-16 h-16 bg-gray-200 dark:bg-gray-800 rounded-lg flex-shrink-0 flex items-center justify-center">
-                  <Icon name="lucide:file-text" class="h-6 w-6 text-gray-400" />
+              <div class="flex gap-4">
+                <div class="flex-shrink-0">
+                  <div class="size-14 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg flex items-center justify-center group-hover:from-primary/20 group-hover:to-secondary/20 transition-colors">
+                    <UIcon name="i-lucide-file-text" class="size-6 text-primary" />
+                  </div>
                 </div>
-                <div class="flex-1 min-w-0">
-                  <h3 class="font-semibold text-sm line-clamp-2">{{ post.title }}</h3>
-                  <p class="text-xs text-gray-600 dark:text-gray-400 mt-1 line-clamp-2">{{ post.description }}</p>
-                  <p class="text-xs text-gray-500 mt-2">{{ formatDate(post.date) }}</p>
+                <div class="flex-1 min-w-0 space-y-3">
+                  <div class="flex items-center gap-2">
+                    <UBadge variant="soft" size="sm" color="primary">{{ post.author || 'Author' }}</UBadge>
+                    <span class="text-sm text-muted">{{ formatDate(post.date) }}</span>
+                  </div>
+                  <h3 class="font-semibold text-lg line-clamp-2 text-highlighted group-hover:text-primary transition-colors">{{ post.title }}</h3>
+                  <p class="text-muted text-sm line-clamp-2 leading-relaxed">{{ post.description }}</p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex flex-wrap gap-1">
+                      <UBadge
+                        v-for="tag in post.tags?.slice(0, 2)"
+                        :key="tag"
+                        size="sm"
+                        variant="subtle"
+                        color="neutral"
+                      >
+                        {{ tag }}
+                      </UBadge>
+                    </div>
+                    <UButton size="sm" variant="ghost" color="primary" trailing-icon="i-lucide-arrow-right">
+                      Read More
+                    </UButton>
+                  </div>
                 </div>
               </div>
-              </UCard>
-            </NuxtLink>
+            </UCard>
           </div>
         </div>
 
         <!-- Latest Announcements -->
         <div class="space-y-6">
           <div class="flex items-center justify-between">
-            <h2 class="text-2xl font-bold">Announcements</h2>
-            <UButton to="/announcements" variant="ghost" size="sm">
-              View All
+            <h2 class="text-2xl font-bold text-highlighted">{{ pageContent?.home?.latestAnnouncements?.title || 'Announcements' }}</h2>
+            <UButton to="/announcements" variant="outline" size="sm" trailing-icon="i-lucide-arrow-right">
+              {{ pageContent?.home?.latestAnnouncements?.viewAllText || 'View All' }}
             </UButton>
           </div>
 
           <div class="space-y-4">
-            <NuxtLink
+            <UCard
               v-for="announcement in latestAnnouncements"
               :key="announcement.slug"
               :to="`/announcements/${announcement.slug}`"
-              class="block"
+              variant="outline"
+              class="group hover:shadow-md transition-all duration-200 hover:border-warning/20"
             >
-              <UCard class="game-card">
-              <div class="flex space-x-4">
-                <div class="w-16 h-16 bg-primary/10 rounded-lg flex-shrink-0 flex items-center justify-center">
-                  <Icon name="lucide:megaphone" class="h-6 w-6 text-primary" />
+              <div class="flex gap-4">
+                <div class="flex-shrink-0">
+                  <div class="size-14 bg-gradient-to-br from-warning/10 to-info/10 rounded-lg flex items-center justify-center group-hover:from-warning/20 group-hover:to-info/20 transition-colors">
+                    <UIcon name="i-lucide-megaphone" class="size-6 text-warning" />
+                  </div>
                 </div>
-                <div class="flex-1 min-w-0">
-                  <h3 class="font-semibold text-sm line-clamp-2">{{ announcement.title }}</h3>
-                  <p class="text-xs text-gray-600 dark:text-gray-400 mt-1 line-clamp-2">{{ announcement.description }}</p>
-                  <p class="text-xs text-gray-500 mt-2">{{ formatDate(announcement.date) }}</p>
+                <div class="flex-1 min-w-0 space-y-3">
+                  <div class="flex items-center gap-2">
+                    <UBadge variant="soft" size="sm" color="warning">{{ announcement.author || 'Shrike Team' }}</UBadge>
+                    <span class="text-sm text-muted">{{ formatDate(announcement.date) }}</span>
+                  </div>
+                  <h3 class="font-semibold text-lg line-clamp-2 text-highlighted group-hover:text-primary transition-colors">{{ announcement.title }}</h3>
+                  <p class="text-muted text-sm line-clamp-2 leading-relaxed">{{ announcement.description }}</p>
+                  <div class="flex items-center justify-between">
+                    <div class="flex flex-wrap gap-1">
+                      <UBadge
+                        v-for="tag in announcement.tags?.slice(0, 2)"
+                        :key="tag"
+                        size="sm"
+                        variant="subtle"
+                        color="neutral"
+                      >
+                        {{ tag }}
+                      </UBadge>
+                    </div>
+                    <UButton size="sm" variant="ghost" color="primary" trailing-icon="i-lucide-arrow-right">
+                      Read More
+                    </UButton>
+                  </div>
                 </div>
               </div>
-              </UCard>
-            </NuxtLink>
+            </UCard>
           </div>
         </div>
       </div>
     </UContainer>
 
     <!-- Call to Action -->
-    <UContainer>
-      <UPageHero
-        title="Join Our Community"
-        description="Stay updated with our latest releases, behind-the-scenes content, and exclusive offers."
-        orientation="horizontal"
-        :ui="{ container: 'max-w-4xl' }"
-      >
-        <div class="flex gap-4 justify-center">
-          <UButton
-            to="/contact"
-            size="lg"
-          >
-            <Icon name="lucide:users" class="h-5 w-5 mr-2" />
-            Follow Us
-          </UButton>
-          <UButton
-            to="/stories"
-            size="lg"
-            variant="outline"
-          >
-            <Icon name="lucide:book-open" class="h-5 w-5 mr-2" />
-            Read Stories
-          </UButton>
-        </div>
-      </UPageHero>
-    </UContainer>
+    <UPageCTA
+      :title="pageContent?.home?.community?.title || 'Join Our Community'"
+      :description="pageContent?.home?.community?.description || 'Stay updated with our latest releases, behind-the-scenes content, and exclusive offers.'"
+      :links="[
+        {
+          label: pageContent?.home?.community?.primaryCta?.text || 'Follow Us',
+          to: pageContent?.home?.community?.primaryCta?.to || '/contact',
+          leadingIcon: 'i-lucide-users'
+        },
+        {
+          label: pageContent?.home?.community?.secondaryCta?.text || 'Read Stories',
+          to: pageContent?.home?.community?.secondaryCta?.to || '/stories',
+          variant: 'outline',
+          leadingIcon: 'i-lucide-book-open'
+        }
+      ]"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
-// Fetch featured games
-const { data: games } = await useAsyncData('games', () =>
-  queryCollection('games').order('date', 'DESC').all()
-)
-const featuredGames = computed(() => games.value?.slice(0, 2) || [])
+// Composables for content management
+const pageContent = await usePageContent('home')
+const components = await useComponents()
 
-// Fetch latest blog posts
-const { data: posts } = await useAsyncData('blog', () =>
-  queryCollection('blog').where('published', '=', true).order('date', 'DESC').all()
+// Fetch content collections with optimized queries
+const { data: games } = await useAsyncData('home-games', () =>
+  queryCollection('games').order('date', 'DESC').limit(2).all()
 )
-const latestPosts = computed(() => posts.value?.slice(0, 3) || [])
 
-// Fetch latest announcements
-const { data: announcements } = await useAsyncData('announcements', () =>
-  queryCollection('announcements').where('published', '=', true).order('date', 'DESC').all()
+const { data: posts } = await useAsyncData('home-blog', () =>
+  queryCollection('blog')
+    .where('published', '=', true)
+    .order('date', 'DESC')
+    .limit(3)
+    .all()
 )
-const latestAnnouncements = computed(() => announcements.value?.slice(0, 3) || [])
 
+const { data: announcements } = await useAsyncData('home-announcements', () =>
+  queryCollection('announcements')
+    .where('published', '=', true)
+    .order('date', 'DESC')
+    .limit(3)
+    .all()
+)
+
+// Computed values for clean template usage
+const featuredGames = computed(() => games.value || [])
+const latestPosts = computed(() => posts.value || [])
+interface AnnouncementView {
+  slug: string
+  title: string
+  description?: string
+  date: string
+  author?: string
+  tags?: string[]
+}
+
+const latestAnnouncements = computed<AnnouncementView[]>(() => {
+  const items = announcements.value || []
+  return items.map((a: any) => ({
+    slug: a.slug,
+    title: a.title,
+    description: a.description,
+    date: a.date,
+    author: a.author ?? 'Shrike Team',
+    tags: a.tags ?? []
+  }))
+})
+
+// Utility function for consistent date formatting
 const formatDate = (date: string) => {
   return new Date(date).toLocaleDateString('en-US', {
     year: 'numeric',
@@ -187,10 +251,10 @@ const formatDate = (date: string) => {
   })
 }
 
-// SEO
+// SEO configuration
 useSeoMeta({
-  title: 'Shrike Publishing',
-  description: 'Shrike Tabletop makes Tabletop roleplaying games (RPGs) about combat and cooperation. Our games Era of Silence and Blood Neon are love letters to traditional game design!',
-  keywords: 'tabletop games, board games, card games, literature, publishing, Era of Silence, Blood Neon, TTRPG'
+  title: pageContent.value?.home?.meta?.title || 'Shrike Publishing - Independent Tabletop Games',
+  description: pageContent.value?.home?.meta?.description || 'Discover innovative tabletop games from Shrike Publishing. From cyberpunk adventures to strategic card games, we create immersive worlds and unforgettable stories.',
+  keywords: pageContent.value?.home?.meta?.keywords || 'tabletop games, board games, card games, RPG, cyberpunk, indie publisher'
 })
 </script>

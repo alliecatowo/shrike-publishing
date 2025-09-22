@@ -1,0 +1,27 @@
+copyright: '© 2025 Shrike Publishing. All rights reserved.'
+tagline: 'Independent tabletop game publisher'
+
+sections:
+  - title: 'Quick Links'
+    links:
+      - label: 'Blog'
+        to: '/blog'
+      - label: 'Announcements'
+        to: '/announcements'
+      - label: 'Games'
+        to: '/games'
+      - label: 'Stories'
+        to: '/stories'
+
+social:
+  title: 'Connect'
+  links:
+    - platform: 'Facebook'
+      url: 'https://www.facebook.com/shrikepublishing'
+      icon: 'lucide:facebook'
+    - platform: 'Twitter'
+      url: 'https://twitter.com/ShrikePublisher'
+      icon: 'lucide:twitter'
+    - platform: 'Instagram'
+      url: 'https://www.instagram.com/shrikepublishing'
+      icon: 'lucide:instagram'

@@ -1,0 +1,30 @@
+hero:
+  title: 'Welcome to Shrike Publishing'
+  subtitle: 'Independent tabletop game publisher creating immersive worlds and unforgettable stories.'
+  cta:
+    text: 'Explore Our Games'
+    to: '/games'
+    variant: 'primary'
+    icon: 'lucide:arrow-right'
+  background:
+    type: 'gradient'
+    value: 'from-primary/10 to-secondary/10'
+
+games:
+  title: 'Our Games'
+  description: 'Discover our collection of innovative tabletop games, from strategic card games to immersive RPGs.'
+  emptyState:
+    title: 'No games found'
+    description: 'Check back later for new releases!'
+    cta:
+      text: 'Browse All Games'
+      to: '/games'
+
+cta:
+  title: 'Want to Stay Updated?'
+  description: 'Get notified about new releases and special offers.'
+  cta:
+    text: 'Contact Us'
+    to: '/contact'
+    icon: 'i-heroicons-envelope'
+  background: 'bg-gray-50 dark:bg-gray-800'

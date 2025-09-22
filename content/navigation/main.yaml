@@ -1,0 +1,33 @@
+items:
+  - label: 'Home'
+    to: '/'
+    icon: 'lucide:home'
+    active: true
+  - label: 'Games'
+    to: '/games'
+    icon: 'lucide:box'
+    active: true
+  - label: 'Blog'
+    to: '/blog'
+    icon: 'lucide:file-text'
+    active: true
+  - label: 'Stories'
+    to: '/stories'
+    icon: 'lucide:book-open'
+    active: true
+  - label: 'Announcements'
+    to: '/announcements'
+    icon: 'lucide:megaphone'
+    active: true
+  - label: 'Manuals'
+    to: '/manuals'
+    icon: 'lucide:file'
+    active: true
+  - label: 'About'
+    to: '/about'
+    icon: 'lucide:info'
+    active: true
+  - label: 'Contact'
+    to: '/contact'
+    icon: 'lucide:mail'
+    active: true

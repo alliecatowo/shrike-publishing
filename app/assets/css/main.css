@@ -1,19 +1,49 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
+:root {
+  --font-headings: 'Volkhov', serif;
+  --font-body: 'Merriweather Sans', sans-serif;
+  --line-height-body: 1.75;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-headings);
+    font-weight: var(--font-weight-headings);
+  }
+
+  body, p, div, span, a, button, input, textarea, select {
+    font-family: var(--font-body);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+  }
+
+  /* Ensure prose content uses brand typography */
+  .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+    font-family: var(--font-headings) !important;
+    font-weight: var(--font-weight-headings) !important;
+  }
+
+  .prose p, .prose div, .prose span, .prose a {
+    font-family: var(--font-body) !important;
+    line-height: var(--line-height-body) !important;
+  }
+}
+
 @theme {
   /* Shrike Publishing Brand Color Overrides */
-  /* Red = Primary (Deep Maroon/Burgundy) */
-  --color-red-50: #fef2f2;
-  --color-red-100: #fde3e3;
-  --color-red-200: #fbcdcd;
-  --color-red-300: #f5a9a9;
-  --color-red-400: #e97777;
-  --color-red-500: #8B1538; /* Deep maroon/burgundy */
-  --color-red-600: #6b0f2d;
-  --color-red-700: #5a0d26;
-  --color-red-800: #4a0a20;
-  --color-red-900: #3d081a;
+  /* Map Nuxt UI 'rose' palette to our maroon brand */
+  --color-rose-50: #fff1f5;
+  --color-rose-100: #ffe4ea;
+  --color-rose-200: #fdcbd7;
+  --color-rose-300: #f7a4b8;
+  --color-rose-400: #ea7892;
+  --color-rose-500: #8B1538; /* Deep maroon */
+  --color-rose-600: #6b0f2d;
+  --color-rose-700: #5a0d26;
+  --color-rose-800: #4a0a20;
+  --color-rose-900: #3d081a;
 
   /* Amber = Secondary (Gold/Amber Accent) */
   --color-amber-50: #fffbeb;
