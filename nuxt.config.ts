@@ -34,10 +34,10 @@ export default defineNuxtConfig({
           ]
         },
   icon: {
-    serverBundle: {
-      collections: ['lucide']
-    },
-    fallbackToApi: true
+    // Use Iconify API for client-side fetching
+    provider: 'iconify',
+    // Ensure all Lucide icons are available
+    collections: ['lucide']
   },
 
   nitro: {
