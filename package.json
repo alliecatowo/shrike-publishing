@@ -7,7 +7,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "migrate:squarespace": "node scripts/migrate-squarespace.js"
   },
   "dependencies": {
     "@nuxt/content": "3.7.1",
@@ -25,6 +26,9 @@
   "packageManager": "pnpm@10.17.0+sha512.fce8a3dd29a4ed2ec566fb53efbb04d8c44a0f05bc6f24a73046910fb9c3ce7afa35a0980500668fa3573345bd644644fa98338fa168235c80f4aa17aa17fbef",
   "devDependencies": {
     "@iconify-json/lucide": "^1.2.68",
-    "tailwindcss": "^4.1.13"
+    "cheerio": "^1.1.2",
+    "node-fetch": "^3.3.2",
+    "tailwindcss": "^4.1.13",
+    "turndown": "^7.2.1"
   }
 }

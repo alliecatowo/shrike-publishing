@@ -34,8 +34,22 @@
       </div>
 
       <!-- Story Image -->
-      <div class="aspect-video bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900 dark:to-pink-900 rounded-lg flex items-center justify-center">
-        <Icon name="lucide:book-open" class="h-16 w-16 text-purple-600 dark:text-purple-400" />
+      <div>
+        <template v-if="storyValue.thumbnail || storyValue.image">
+          <NuxtImg
+            :src="storyValue.thumbnail || storyValue.image"
+            :alt="storyValue.title"
+            class="w-full aspect-video object-cover rounded-lg"
+            format="webp"
+            sizes="(max-width: 768px) 100vw, 1024px"
+            :placeholder="true"
+          />
+        </template>
+        <template v-else>
+          <div class="aspect-video bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900 dark:to-pink-900 rounded-lg flex items-center justify-center">
+            <Icon name="lucide:book-open" class="h-16 w-16 text-purple-600 dark:text-purple-400" />
+          </div>
+        </template>
       </div>
 
       <!-- Story Content -->
