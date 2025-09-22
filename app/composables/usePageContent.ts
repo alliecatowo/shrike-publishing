@@ -64,3 +64,4 @@ function getDefaultPageContent(page: string) {
 
   return defaults[page] || {}
 }
+

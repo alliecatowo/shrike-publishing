@@ -1,6 +1,6 @@
 <template>
   <UContainer class="py-8">
-    <div class="max-w-4xl mx-auto space-y-8">
+    <div class="max-w-6xl mx-auto space-y-8">
       <!-- Page Header -->
       <div class="text-center space-y-4">
         <h1 class="text-4xl font-bold">Stories & Literature</h1>
@@ -13,20 +13,33 @@
       <UTabs v-model="activeTab" :items="tabs" />
 
       <!-- Stories Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         <UCard
           v-for="story in filteredStories"
           :key="story.slug"
           :to="`/stories/${story.slug}`"
-          class="hover:shadow-lg transition-shadow"
+          class="card-hover"
         >
           <template #header>
-            <div class="aspect-video bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900 dark:to-pink-900 rounded-t-lg flex items-center justify-center">
-              <Icon name="lucide:book-open" class="h-12 w-12 text-purple-600 dark:text-purple-400" />
+            <div class="aspect-[4/3] overflow-hidden rounded-t-md">
+              <template v-if="story.image || story.thumbnail">
+                <NuxtImg
+                  :src="story.image || story.thumbnail"
+                  :alt="story.title"
+                  class="w-full h-full object-cover block"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </template>
+              <template v-else>
+                <div class="h-full w-full bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900 dark:to-pink-900 flex items-center justify-center">
+                  <Icon name="lucide:book-open" class="h-12 w-12 text-purple-600 dark:text-purple-400" />
+                </div>
+              </template>
             </div>
           </template>
 
-          <div class="p-6">
+          <div class="p-5 space-y-3">
             <div class="flex items-center justify-between mb-3">
               <UBadge
                 :color="story.type === 'free' ? 'success' : 'primary'"
@@ -39,9 +52,9 @@
               </span>
             </div>
 
-            <h3 class="text-xl font-semibold mb-2">{{ story.title }}</h3>
+            <h3 class="text-lg font-semibold line-clamp-2">{{ story.title }}</h3>
 
-            <p class="text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3">
+            <p class="text-gray-600 dark:text-gray-400 text-sm line-clamp-3">
               {{ story.description }}
             </p>
 
@@ -50,14 +63,14 @@
                 <UBadge
                   v-for="tag in story.tags"
                   :key="tag"
-                  size="sm"
-                  variant="outline"
+                  size="xs"
+                  variant="soft"
                 >
                   {{ tag }}
                 </UBadge>
               </div>
-              <UButton size="sm" :to="`/stories/${story.slug}`">
-                Read {{ story.type === 'free' ? 'Free' : 'More' }}
+              <UButton size="xs" variant="outline" :to="`/stories/${story.slug}`" trailing-icon="i-lucide-arrow-right">
+                Read
               </UButton>
             </div>
           </div>

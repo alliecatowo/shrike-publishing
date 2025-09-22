@@ -1,0 +1,1216 @@
+<!doctype html>
+<html xmlns:og="http://opengraphprotocol.org/schema/" xmlns:fb="http://www.facebook.com/2008/fbml" lang="en-US"  class="touch-styles">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- This is Squarespace. --><!-- goose-dog-jwyl -->
+<base href="">
+<meta charset="utf-8" />
+<title>3. Thief &mdash; Shrike Publishing</title>
+<meta http-equiv="Accept-CH" content="Sec-CH-UA-Platform-Version, Sec-CH-UA-Model" /><link rel="icon" type="image/x-icon" href="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/7dd3e272-e29c-4adb-a381-32a564719fdb/favicon.ico?format=100w"/>
+<link rel="canonical" href="memory-leak-3.html"/>
+<meta property="og:site_name" content="Shrike Publishing"/>
+<meta property="og:title" content="3. Thief &mdash; Shrike Publishing"/>
+<meta property="og:url" content="https://shrikepublishing.com/memory-leak-3"/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="http://static1.squarespace.com/static/5da7b6542a4fea6a5c523390/t/6192debe0bc5fe5a7586a43b/1637015230668/ShrikeLogoNov2021.png?format=1500w"/>
+<meta property="og:image:width" content="1024"/>
+<meta property="og:image:height" content="1024"/>
+<meta itemprop="name" content="3. Thief — Shrike Publishing"/>
+<meta itemprop="url" content="https://shrikepublishing.com/memory-leak-3"/>
+<meta itemprop="thumbnailUrl" content="http://static1.squarespace.com/static/5da7b6542a4fea6a5c523390/t/6192debe0bc5fe5a7586a43b/1637015230668/ShrikeLogoNov2021.png?format=1500w"/>
+<link rel="image_src" href="http://static1.squarespace.com/static/5da7b6542a4fea6a5c523390/t/6192debe0bc5fe5a7586a43b/1637015230668/ShrikeLogoNov2021.png?format=1500w" />
+<meta itemprop="image" content="http://static1.squarespace.com/static/5da7b6542a4fea6a5c523390/t/6192debe0bc5fe5a7586a43b/1637015230668/ShrikeLogoNov2021.png?format=1500w"/>
+<meta name="twitter:title" content="3. Thief — Shrike Publishing"/>
+<meta name="twitter:image" content="http://static1.squarespace.com/static/5da7b6542a4fea6a5c523390/t/6192debe0bc5fe5a7586a43b/1637015230668/ShrikeLogoNov2021.png?format=1500w"/>
+<meta name="twitter:url" content="https://shrikepublishing.com/memory-leak-3"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="description" content="" />
+<link rel="preconnect" href="https://images.squarespace-cdn.com">
+<link rel="preconnect" href="https://use.typekit.net" crossorigin>
+<link rel="preconnect" href="https://p.typekit.net" crossorigin>
+<script type="text/javascript" src="https://use.typekit.net/ik/9k08jh3cC14XZkFmZqWmZi6UQHZ-gzSa0CfuFkXagcXfeTtffFHN4UJLFRbh52jhWDmqjQiKFR9XwcIXZcmyFcIujD9kwDwowgGMJ6U3ScNt-AuyOAozicIK2ABKSc8COAsTSagCjWqKIcBqdh48OAiyScBldhoqOWgkdkJwSai8ZWblZhNX-e8RJ6yhdhUC-hNkdKG4f5J7IMMjMkMfH6qJn3IbMg6IJMJ7f6K3UMIbMg6BJMJ7fbKlMsMMeMj6MKG4fJCgIMMjgkMfH6qJn6IbMg6bJMJ7fbKwMsMMegI6MKG4f5glIMIjgfMfH6qJvDbbMy6IJMJ7f6RtabJbMU6IJMJ7f6RoabJbMU6BJMJ7fM6qIMbjgfMfH6qJUWvbgg6YJMJ7fbRYLUMIeMt6MKG4fwZxIMbjIPMfqMeRCSHhg6.js" async fetchpriority="high" onload="try{Typekit.load();}catch(e){} document.documentElement.classList.remove('wf-loading');"></script>
+<script>document.documentElement.classList.add('wf-loading')</script>
+<style>@keyframes fonts-loading { 0%, 99% { color: transparent; } } html.wf-loading * { animation: fonts-loading 3s; }</style>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Volkhov:ital,wght@0,700&family=Lato:ital,wght@0,700&family=Merriweather+Sans:ital,wght@0,700"><script type="text/javascript" crossorigin="anonymous" defer="true" nomodule="nomodule" src="https://assets.squarespace.com/@sqs/polyfiller/1.6/legacy.js"></script>
+<script type="text/javascript" crossorigin="anonymous" defer="true" src="https://assets.squarespace.com/@sqs/polyfiller/1.6/modern.js"></script>
+<script type="text/javascript">SQUARESPACE_ROLLUPS = {};</script>
+<script>(function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = ["//assets.squarespace.com/universal/scripts-compressed/extract-css-runtime-2849b2404e71ce18-min.en-US.js"]; })(SQUARESPACE_ROLLUPS, 'squarespace-extract_css_runtime');</script>
+<script crossorigin="anonymous" src="https://assets.squarespace.com/universal/scripts-compressed/extract-css-runtime-2849b2404e71ce18-min.en-US.js" defer ></script><script>(function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = ["//assets.squarespace.com/universal/scripts-compressed/extract-css-moment-js-vendor-6f2a1f6ec9a41489-min.en-US.js"]; })(SQUARESPACE_ROLLUPS, 'squarespace-extract_css_moment_js_vendor');</script>
+<script crossorigin="anonymous" src="https://assets.squarespace.com/universal/scripts-compressed/extract-css-moment-js-vendor-6f2a1f6ec9a41489-min.en-US.js" defer ></script><script>(function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = ["//assets.squarespace.com/universal/scripts-compressed/cldr-resource-pack-c5175d8ac6fd7505-min.en-US.js"]; })(SQUARESPACE_ROLLUPS, 'squarespace-cldr_resource_pack');</script>
+<script crossorigin="anonymous" src="https://assets.squarespace.com/universal/scripts-compressed/cldr-resource-pack-c5175d8ac6fd7505-min.en-US.js" defer ></script><script>(function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = ["//assets.squarespace.com/universal/scripts-compressed/common-vendors-stable-fbd854d40b0804b7-min.en-US.js"]; })(SQUARESPACE_ROLLUPS, 'squarespace-common_vendors_stable');</script>
+<script crossorigin="anonymous" src="https://assets.squarespace.com/universal/scripts-compressed/common-vendors-stable-fbd854d40b0804b7-min.en-US.js" defer ></script><script>(function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = ["//assets.squarespace.com/universal/scripts-compressed/common-vendors-8db1dcd32d6f0232-min.en-US.js"]; })(SQUARESPACE_ROLLUPS, 'squarespace-common_vendors');</script>
+<script crossorigin="anonymous" src="https://assets.squarespace.com/universal/scripts-compressed/common-vendors-8db1dcd32d6f0232-min.en-US.js" defer ></script><script>(function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = ["//assets.squarespace.com/universal/scripts-compressed/common-e7d195686291d18f-min.en-US.js"]; })(SQUARESPACE_ROLLUPS, 'squarespace-common');</script>
+<script crossorigin="anonymous" src="https://assets.squarespace.com/universal/scripts-compressed/common-e7d195686291d18f-min.en-US.js" defer ></script><script>(function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = ["//assets.squarespace.com/universal/scripts-compressed/commerce-64de08e2acd18a7f-min.en-US.js"]; })(SQUARESPACE_ROLLUPS, 'squarespace-commerce');</script>
+<script crossorigin="anonymous" src="https://assets.squarespace.com/universal/scripts-compressed/commerce-64de08e2acd18a7f-min.en-US.js" defer ></script><script>(function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].css = ["//assets.squarespace.com/universal/styles-compressed/commerce-2bd20f6587654ec4-min.en-US.css"]; })(SQUARESPACE_ROLLUPS, 'squarespace-commerce');</script>
+<link rel="stylesheet" type="text/css" href="https://assets.squarespace.com/universal/styles-compressed/commerce-2bd20f6587654ec4-min.en-US.css"><script>(function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = ["//assets.squarespace.com/universal/scripts-compressed/performance-0e65ff2576fd6ed9-min.en-US.js"]; })(SQUARESPACE_ROLLUPS, 'squarespace-performance');</script>
+<script crossorigin="anonymous" src="https://assets.squarespace.com/universal/scripts-compressed/performance-0e65ff2576fd6ed9-min.en-US.js" defer ></script><script data-name="static-context">Static = window.Static || {}; Static.SQUARESPACE_CONTEXT = {"betaFeatureFlags":["campaigns_discount_section_in_blasts","campaigns_merch_state","i18n_beta_website_locales","campaigns_thumbnail_layout","campaigns_import_discounts","marketing_automations","campaigns_discount_section_in_automations","enable_form_submission_trigger","marketing_landing_page","section-sdk-plp-mobile-optimizations","contacts_and_campaigns_redesign","order_status_page_checkout_landing_enabled","campaigns_new_image_layout_picker"],"facebookAppId":"314192535267336","facebookApiVersion":"v6.0","rollups":{"squarespace-announcement-bar":{"js":"//assets.squarespace.com/universal/scripts-compressed/announcement-bar-3316d08dea05a6dc-min.en-US.js"},"squarespace-audio-player":{"css":"//assets.squarespace.com/universal/styles-compressed/audio-player-b05f5197a871c566-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/audio-player-44a098896b47809b-min.en-US.js"},"squarespace-blog-collection-list":{"css":"//assets.squarespace.com/universal/styles-compressed/blog-collection-list-b4046463b72f34e2-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/blog-collection-list-d311389abad5cb4e-min.en-US.js"},"squarespace-calendar-block-renderer":{"css":"//assets.squarespace.com/universal/styles-compressed/calendar-block-renderer-b72d08ba4421f5a0-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/calendar-block-renderer-13419e6cf216eec5-min.en-US.js"},"squarespace-chartjs-helpers":{"css":"//assets.squarespace.com/universal/styles-compressed/chartjs-helpers-96b256171ee039c1-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/chartjs-helpers-9dceb144c7651c6b-min.en-US.js"},"squarespace-comments":{"css":"//assets.squarespace.com/universal/styles-compressed/comments-3c0201f524dedf70-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/comments-9e51da57c146416c-min.en-US.js"},"squarespace-custom-css-popup":{"css":"//assets.squarespace.com/universal/styles-compressed/custom-css-popup-3548b2c6ee1a27f3-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/custom-css-popup-7f00256e2843272c-min.en-US.js"},"squarespace-dialog":{"css":"//assets.squarespace.com/universal/styles-compressed/dialog-f9093f2d526b94df-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/dialog-6aafad120d26e31d-min.en-US.js"},"squarespace-events-collection":{"css":"//assets.squarespace.com/universal/styles-compressed/events-collection-b72d08ba4421f5a0-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/events-collection-b6ebe3e3390bb33f-min.en-US.js"},"squarespace-form-rendering-utils":{"js":"//assets.squarespace.com/universal/scripts-compressed/form-rendering-utils-75594e03f062ca56-min.en-US.js"},"squarespace-forms":{"css":"//assets.squarespace.com/universal/styles-compressed/forms-0afd3c6ac30bbab1-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/forms-b38184e820d0bfa8-min.en-US.js"},"squarespace-gallery-collection-list":{"css":"//assets.squarespace.com/universal/styles-compressed/gallery-collection-list-b4046463b72f34e2-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/gallery-collection-list-576f85f760af6e95-min.en-US.js"},"squarespace-image-zoom":{"css":"//assets.squarespace.com/universal/styles-compressed/image-zoom-b4046463b72f34e2-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/image-zoom-48fa25f53a8051bf-min.en-US.js"},"squarespace-pinterest":{"css":"//assets.squarespace.com/universal/styles-compressed/pinterest-b4046463b72f34e2-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/pinterest-64fc8191a170faf0-min.en-US.js"},"squarespace-popup-overlay":{"css":"//assets.squarespace.com/universal/styles-compressed/popup-overlay-b742b752f5880972-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/popup-overlay-c727d4157ca4e6a2-min.en-US.js"},"squarespace-product-quick-view":{"css":"//assets.squarespace.com/universal/styles-compressed/product-quick-view-9052fb446c5800ee-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/product-quick-view-b07dfd8303fd80b2-min.en-US.js"},"squarespace-products-collection-item-v2":{"css":"//assets.squarespace.com/universal/styles-compressed/products-collection-item-v2-b4046463b72f34e2-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/products-collection-item-v2-18f8dd35f59f518d-min.en-US.js"},"squarespace-products-collection-list-v2":{"css":"//assets.squarespace.com/universal/styles-compressed/products-collection-list-v2-b4046463b72f34e2-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/products-collection-list-v2-de04c98879eafaa3-min.en-US.js"},"squarespace-search-page":{"css":"//assets.squarespace.com/universal/styles-compressed/search-page-90a67fc09b9b32c6-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/search-page-f769c51ba5989f52-min.en-US.js"},"squarespace-search-preview":{"js":"//assets.squarespace.com/universal/scripts-compressed/search-preview-0f36a61e7eaeaf3f-min.en-US.js"},"squarespace-simple-liking":{"css":"//assets.squarespace.com/universal/styles-compressed/simple-liking-701bf8bbc05ec6aa-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/simple-liking-8213887e30899090-min.en-US.js"},"squarespace-social-buttons":{"css":"//assets.squarespace.com/universal/styles-compressed/social-buttons-95032e5fa98e47a5-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/social-buttons-0534c8b1b75555eb-min.en-US.js"},"squarespace-tourdates":{"css":"//assets.squarespace.com/universal/styles-compressed/tourdates-b4046463b72f34e2-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/tourdates-9a4107a89e1b78e5-min.en-US.js"},"squarespace-website-overlays-manager":{"css":"//assets.squarespace.com/universal/styles-compressed/website-overlays-manager-07ea5a4e004e6710-min.en-US.css","js":"//assets.squarespace.com/universal/scripts-compressed/website-overlays-manager-d8a1074e14b8a460-min.en-US.js"}},"pageType":2,"website":{"id":"5da7b6542a4fea6a5c523390","identifier":"goose-dog-jwyl","websiteType":4,"contentModifiedOn":1753309244390,"cloneable":false,"hasBeenCloneable":false,"siteStatus":{},"language":"en-US","translationLocale":"en-US","timeZone":"America/New_York","machineTimeZoneOffset":-14400000,"timeZoneOffset":-14400000,"timeZoneAbbr":"EDT","siteTitle":"Shrike Publishing","fullSiteTitle":"3. Thief \u2014 Shrike Publishing","siteTagLine":"A nest of tabletop games and fiction!","siteDescription":"","location":{},"logoImageId":"6192dea16e69104244d20caf","socialLogoImageId":"6192debe0bc5fe5a7586a43b","shareButtonOptions":{"2":true,"1":true,"8":true,"3":true,"6":true,"7":true,"4":true},"logoImageUrl":"//images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/4add1faf-303d-4ebf-ad29-4fbeb61e20e1/ShrikeLogoNov2021.png","socialLogoImageUrl":"//images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/d3fd9c5b-8cbd-4439-83eb-8a84019520a6/ShrikeLogoNov2021.png","authenticUrl":"https://shrikepublishing.com","internalUrl":"https://goose-dog-jwyl.squarespace.com","baseUrl":"https://shrikepublishing.com","primaryDomain":"shrikepublishing.com","sslSetting":3,"isHstsEnabled":false,"socialAccounts":[{"serviceId":60,"screenname":"Facebook","addedOn":1637015122921,"profileUrl":"https://www.facebook.com/shrikepublishing","iconEnabled":true,"serviceName":"facebook-unauth"},{"serviceId":62,"screenname":"Twitter","addedOn":1637015139100,"profileUrl":"https://twitter.com/ShrikePublisher","iconEnabled":true,"serviceName":"twitter-unauth"},{"serviceId":64,"screenname":"Instagram","addedOn":1637015367130,"profileUrl":"https://www.instagram.com/shrikepublishing","iconEnabled":true,"serviceName":"instagram-unauth"}],"typekitId":"","statsMigrated":false,"imageMetadataProcessingEnabled":false,"screenshotId":"3c0068c58b10ec4d696d4f8ea76bb7ae53194f97d2cf0fe3acd3b35cd5333b8e","captchaSettings":{"enabledForDonations":false},"showOwnerLogin":false},"websiteSettings":{"id":"5da7b6542a4fea6a5c523392","websiteId":"5da7b6542a4fea6a5c523390","type":"Business","subjects":[],"country":"US","state":"MD","simpleLikingEnabled":true,"popupOverlaySettings":{"style":1,"enabledPages":[]},"commentLikesAllowed":true,"commentAnonAllowed":true,"commentThreaded":true,"commentApprovalRequired":false,"commentAvatarsOn":true,"commentSortType":2,"commentFlagThreshold":0,"commentFlagsAllowed":true,"commentEnableByDefault":false,"commentDisableAfterDaysDefault":0,"disqusShortname":"","commentsEnabled":true,"businessHours":{},"storeSettings":{"returnPolicy":null,"termsOfService":null,"privacyPolicy":null,"expressCheckout":false,"continueShoppingLinkUrl":"/","useLightCart":false,"showNoteField":false,"shippingCountryDefaultValue":"US","billToShippingDefaultValue":false,"showShippingPhoneNumber":true,"isShippingPhoneRequired":false,"showBillingPhoneNumber":true,"isBillingPhoneRequired":false,"currenciesSupported":["USD","CAD","GBP","AUD","EUR","CHF","NOK","SEK","DKK","NZD","SGD","MXN","HKD","CZK","ILS","MYR","RUB","PHP","PLN","THB"],"defaultCurrency":"USD","selectedCurrency":"USD","measurementStandard":1,"showCustomCheckoutForm":false,"checkoutPageMarketingOptInEnabled":false,"enableMailingListOptInByDefault":false,"sameAsRetailLocation":false,"merchandisingSettings":{"scarcityEnabledOnProductItems":false,"scarcityEnabledOnProductBlocks":false,"scarcityMessageType":"DEFAULT_SCARCITY_MESSAGE","scarcityThreshold":10,"multipleQuantityAllowedForServices":true,"restockNotificationsEnabled":false,"restockNotificationsSuccessText":"","restockNotificationsMailingListSignUpEnabled":false,"relatedProductsEnabled":false,"relatedProductsOrdering":"random","soldOutVariantsDropdownDisabled":false,"productComposerOptedIn":false,"productComposerABTestOptedOut":false,"productReviewsEnabled":false,"displayImportedProductReviewsEnabled":false,"hasOptedToCollectNativeReviews":false},"minimumOrderSubtotalEnabled":false,"isLive":true,"multipleQuantityAllowedForServices":true},"useEscapeKeyToLogin":true,"ssBadgeType":1,"ssBadgePosition":4,"ssBadgeVisibility":1,"ssBadgeDevices":1,"pinterestOverlayOptions":{"mode":"disabled"},"userAccountsSettings":{"loginAllowed":false,"signupAllowed":false}},"cookieSettings":{"isCookieBannerEnabled":false,"isRestrictiveCookiePolicyEnabled":false,"cookieBannerText":"","cookieBannerTheme":"","cookieBannerVariant":"","cookieBannerPosition":"","cookieBannerCtaVariant":"","cookieBannerCtaText":"","cookieBannerAcceptType":"OPT_IN","cookieBannerOptOutCtaText":"","cookieBannerHasOptOut":false,"cookieBannerHasManageCookies":true,"cookieBannerManageCookiesLabel":"","cookieBannerSavedPreferencesText":"","cookieBannerSavedPreferencesLayout":"PILL"},"websiteCloneable":false,"collection":{"title":"3. Thief","id":"6510e9f30093a42f58cd11ce","fullUrl":"/memory-leak-3","type":10,"permissionType":1},"subscribed":false,"appDomain":"squarespace.com","templateTweakable":true,"tweakJSON":{"aspect-ratio":"Auto","banner-slideshow-controls":"Arrows","gallery-arrow-style":"No Background","gallery-aspect-ratio":"3:2 Standard","gallery-auto-crop":"true","gallery-autoplay":"false","gallery-design":"Grid","gallery-info-overlay":"Show on Hover","gallery-loop":"false","gallery-navigation":"Bullets","gallery-show-arrows":"true","gallery-transitions":"Fade","galleryArrowBackground":"rgba(34,34,34,1)","galleryArrowColor":"rgba(255,255,255,1)","galleryAutoplaySpeed":"3","galleryCircleColor":"rgba(255,255,255,1)","galleryInfoBackground":"rgba(0, 0, 0, .7)","galleryThumbnailSize":"100px","gridSize":"280px","gridSpacing":"10px","logoContainerWidth":"200px","product-gallery-auto-crop":"false","product-image-auto-crop":"true","siteTitleContainerWidth":"220px","tweak-v1-related-products-title-spacing":"50px"},"templateId":"52a74dafe4b073a80cd253c5","templateVersion":"7","pageFeatures":[1,2,4],"gmRenderKey":"QUl6YVN5Q0JUUk9xNkx1dkZfSUUxcjQ2LVQ0QWVUU1YtMGQ3bXk4","templateScriptsRootUrl":"https://static1.squarespace.com/static/ta/52a74d9ae4b0253945d2aee9/1054/scripts/","impersonatedSession":false,"tzData":{"zones":[[-300,"US","E%sT",null]],"rules":{"US":[[1967,2006,null,"Oct","lastSun","2:00","0","S"],[1987,2006,null,"Apr","Sun>=1","2:00","1:00","D"],[2007,"max",null,"Mar","Sun>=8","2:00","1:00","D"],[2007,"max",null,"Nov","Sun>=1","2:00","0","S"]]}},"showAnnouncementBar":false,"recaptchaEnterpriseContext":{"recaptchaEnterpriseSiteKey":"6LdDFQwjAAAAAPigEvvPgEVbb7QBm-TkVJdDTlAv"},"i18nContext":{"timeZoneData":{"id":"America/New_York","name":"Eastern Time"}},"env":"PRODUCTION","visitorFormContext":{"formFieldFormats":{"initialNameOrder":"GIVEN_FIRST","initialPhoneFormat":{"id":0,"type":"PHONE_NUMBER","country":"US","labelLocale":"en-US","fields":[{"type":"SEPARATOR","label":"(","identifier":"LeftParen","length":0,"required":false,"metadata":{}},{"type":"FIELD","label":"1","identifier":"1","length":3,"required":false,"metadata":{}},{"type":"SEPARATOR","label":")","identifier":"RightParen","length":0,"required":false,"metadata":{}},{"type":"SEPARATOR","label":" ","identifier":"Space","length":0,"required":false,"metadata":{}},{"type":"FIELD","label":"2","identifier":"2","length":3,"required":false,"metadata":{}},{"type":"SEPARATOR","label":"-","identifier":"Dash","length":0,"required":false,"metadata":{}},{"type":"FIELD","label":"3","identifier":"3","length":14,"required":false,"metadata":{}}]},"countries":[{"name":"Afghanistan","code":"AF","phoneCode":"+93"},{"name":"\u00C5land Islands","code":"AX","phoneCode":"+358"},{"name":"Albania","code":"AL","phoneCode":"+355"},{"name":"Algeria","code":"DZ","phoneCode":"+213"},{"name":"American Samoa","code":"AS","phoneCode":"+1"},{"name":"Andorra","code":"AD","phoneCode":"+376"},{"name":"Angola","code":"AO","phoneCode":"+244"},{"name":"Anguilla","code":"AI","phoneCode":"+1"},{"name":"Antigua & Barbuda","code":"AG","phoneCode":"+1"},{"name":"Argentina","code":"AR","phoneCode":"+54"},{"name":"Armenia","code":"AM","phoneCode":"+374"},{"name":"Aruba","code":"AW","phoneCode":"+297"},{"name":"Ascension Island","code":"AC","phoneCode":"+247"},{"name":"Australia","code":"AU","phoneCode":"+61"},{"name":"Austria","code":"AT","phoneCode":"+43"},{"name":"Azerbaijan","code":"AZ","phoneCode":"+994"},{"name":"Bahamas","code":"BS","phoneCode":"+1"},{"name":"Bahrain","code":"BH","phoneCode":"+973"},{"name":"Bangladesh","code":"BD","phoneCode":"+880"},{"name":"Barbados","code":"BB","phoneCode":"+1"},{"name":"Belarus","code":"BY","phoneCode":"+375"},{"name":"Belgium","code":"BE","phoneCode":"+32"},{"name":"Belize","code":"BZ","phoneCode":"+501"},{"name":"Benin","code":"BJ","phoneCode":"+229"},{"name":"Bermuda","code":"BM","phoneCode":"+1"},{"name":"Bhutan","code":"BT","phoneCode":"+975"},{"name":"Bolivia","code":"BO","phoneCode":"+591"},{"name":"Bosnia & Herzegovina","code":"BA","phoneCode":"+387"},{"name":"Botswana","code":"BW","phoneCode":"+267"},{"name":"Brazil","code":"BR","phoneCode":"+55"},{"name":"British Indian Ocean Territory","code":"IO","phoneCode":"+246"},{"name":"British Virgin Islands","code":"VG","phoneCode":"+1"},{"name":"Brunei","code":"BN","phoneCode":"+673"},{"name":"Bulgaria","code":"BG","phoneCode":"+359"},{"name":"Burkina Faso","code":"BF","phoneCode":"+226"},{"name":"Burundi","code":"BI","phoneCode":"+257"},{"name":"Cambodia","code":"KH","phoneCode":"+855"},{"name":"Cameroon","code":"CM","phoneCode":"+237"},{"name":"Canada","code":"CA","phoneCode":"+1"},{"name":"Cape Verde","code":"CV","phoneCode":"+238"},{"name":"Caribbean Netherlands","code":"BQ","phoneCode":"+599"},{"name":"Cayman Islands","code":"KY","phoneCode":"+1"},{"name":"Central African Republic","code":"CF","phoneCode":"+236"},{"name":"Chad","code":"TD","phoneCode":"+235"},{"name":"Chile","code":"CL","phoneCode":"+56"},{"name":"China","code":"CN","phoneCode":"+86"},{"name":"Christmas Island","code":"CX","phoneCode":"+61"},{"name":"Cocos (Keeling) Islands","code":"CC","phoneCode":"+61"},{"name":"Colombia","code":"CO","phoneCode":"+57"},{"name":"Comoros","code":"KM","phoneCode":"+269"},{"name":"Congo - Brazzaville","code":"CG","phoneCode":"+242"},{"name":"Congo - Kinshasa","code":"CD","phoneCode":"+243"},{"name":"Cook Islands","code":"CK","phoneCode":"+682"},{"name":"Costa Rica","code":"CR","phoneCode":"+506"},{"name":"C\u00F4te d\u2019Ivoire","code":"CI","phoneCode":"+225"},{"name":"Croatia","code":"HR","phoneCode":"+385"},{"name":"Cuba","code":"CU","phoneCode":"+53"},{"name":"Cura\u00E7ao","code":"CW","phoneCode":"+599"},{"name":"Cyprus","code":"CY","phoneCode":"+357"},{"name":"Czechia","code":"CZ","phoneCode":"+420"},{"name":"Denmark","code":"DK","phoneCode":"+45"},{"name":"Djibouti","code":"DJ","phoneCode":"+253"},{"name":"Dominica","code":"DM","phoneCode":"+1"},{"name":"Dominican Republic","code":"DO","phoneCode":"+1"},{"name":"Ecuador","code":"EC","phoneCode":"+593"},{"name":"Egypt","code":"EG","phoneCode":"+20"},{"name":"El Salvador","code":"SV","phoneCode":"+503"},{"name":"Equatorial Guinea","code":"GQ","phoneCode":"+240"},{"name":"Eritrea","code":"ER","phoneCode":"+291"},{"name":"Estonia","code":"EE","phoneCode":"+372"},{"name":"Eswatini","code":"SZ","phoneCode":"+268"},{"name":"Ethiopia","code":"ET","phoneCode":"+251"},{"name":"Falkland Islands","code":"FK","phoneCode":"+500"},{"name":"Faroe Islands","code":"FO","phoneCode":"+298"},{"name":"Fiji","code":"FJ","phoneCode":"+679"},{"name":"Finland","code":"FI","phoneCode":"+358"},{"name":"France","code":"FR","phoneCode":"+33"},{"name":"French Guiana","code":"GF","phoneCode":"+594"},{"name":"French Polynesia","code":"PF","phoneCode":"+689"},{"name":"Gabon","code":"GA","phoneCode":"+241"},{"name":"Gambia","code":"GM","phoneCode":"+220"},{"name":"Georgia","code":"GE","phoneCode":"+995"},{"name":"Germany","code":"DE","phoneCode":"+49"},{"name":"Ghana","code":"GH","phoneCode":"+233"},{"name":"Gibraltar","code":"GI","phoneCode":"+350"},{"name":"Greece","code":"GR","phoneCode":"+30"},{"name":"Greenland","code":"GL","phoneCode":"+299"},{"name":"Grenada","code":"GD","phoneCode":"+1"},{"name":"Guadeloupe","code":"GP","phoneCode":"+590"},{"name":"Guam","code":"GU","phoneCode":"+1"},{"name":"Guatemala","code":"GT","phoneCode":"+502"},{"name":"Guernsey","code":"GG","phoneCode":"+44"},{"name":"Guinea","code":"GN","phoneCode":"+224"},{"name":"Guinea-Bissau","code":"GW","phoneCode":"+245"},{"name":"Guyana","code":"GY","phoneCode":"+592"},{"name":"Haiti","code":"HT","phoneCode":"+509"},{"name":"Honduras","code":"HN","phoneCode":"+504"},{"name":"Hong Kong SAR China","code":"HK","phoneCode":"+852"},{"name":"Hungary","code":"HU","phoneCode":"+36"},{"name":"Iceland","code":"IS","phoneCode":"+354"},{"name":"India","code":"IN","phoneCode":"+91"},{"name":"Indonesia","code":"ID","phoneCode":"+62"},{"name":"Iran","code":"IR","phoneCode":"+98"},{"name":"Iraq","code":"IQ","phoneCode":"+964"},{"name":"Ireland","code":"IE","phoneCode":"+353"},{"name":"Isle of Man","code":"IM","phoneCode":"+44"},{"name":"Israel","code":"IL","phoneCode":"+972"},{"name":"Italy","code":"IT","phoneCode":"+39"},{"name":"Jamaica","code":"JM","phoneCode":"+1"},{"name":"Japan","code":"JP","phoneCode":"+81"},{"name":"Jersey","code":"JE","phoneCode":"+44"},{"name":"Jordan","code":"JO","phoneCode":"+962"},{"name":"Kazakhstan","code":"KZ","phoneCode":"+7"},{"name":"Kenya","code":"KE","phoneCode":"+254"},{"name":"Kiribati","code":"KI","phoneCode":"+686"},{"name":"Kosovo","code":"XK","phoneCode":"+383"},{"name":"Kuwait","code":"KW","phoneCode":"+965"},{"name":"Kyrgyzstan","code":"KG","phoneCode":"+996"},{"name":"Laos","code":"LA","phoneCode":"+856"},{"name":"Latvia","code":"LV","phoneCode":"+371"},{"name":"Lebanon","code":"LB","phoneCode":"+961"},{"name":"Lesotho","code":"LS","phoneCode":"+266"},{"name":"Liberia","code":"LR","phoneCode":"+231"},{"name":"Libya","code":"LY","phoneCode":"+218"},{"name":"Liechtenstein","code":"LI","phoneCode":"+423"},{"name":"Lithuania","code":"LT","phoneCode":"+370"},{"name":"Luxembourg","code":"LU","phoneCode":"+352"},{"name":"Macao SAR China","code":"MO","phoneCode":"+853"},{"name":"Madagascar","code":"MG","phoneCode":"+261"},{"name":"Malawi","code":"MW","phoneCode":"+265"},{"name":"Malaysia","code":"MY","phoneCode":"+60"},{"name":"Maldives","code":"MV","phoneCode":"+960"},{"name":"Mali","code":"ML","phoneCode":"+223"},{"name":"Malta","code":"MT","phoneCode":"+356"},{"name":"Marshall Islands","code":"MH","phoneCode":"+692"},{"name":"Martinique","code":"MQ","phoneCode":"+596"},{"name":"Mauritania","code":"MR","phoneCode":"+222"},{"name":"Mauritius","code":"MU","phoneCode":"+230"},{"name":"Mayotte","code":"YT","phoneCode":"+262"},{"name":"Mexico","code":"MX","phoneCode":"+52"},{"name":"Micronesia","code":"FM","phoneCode":"+691"},{"name":"Moldova","code":"MD","phoneCode":"+373"},{"name":"Monaco","code":"MC","phoneCode":"+377"},{"name":"Mongolia","code":"MN","phoneCode":"+976"},{"name":"Montenegro","code":"ME","phoneCode":"+382"},{"name":"Montserrat","code":"MS","phoneCode":"+1"},{"name":"Morocco","code":"MA","phoneCode":"+212"},{"name":"Mozambique","code":"MZ","phoneCode":"+258"},{"name":"Myanmar (Burma)","code":"MM","phoneCode":"+95"},{"name":"Namibia","code":"NA","phoneCode":"+264"},{"name":"Nauru","code":"NR","phoneCode":"+674"},{"name":"Nepal","code":"NP","phoneCode":"+977"},{"name":"Netherlands","code":"NL","phoneCode":"+31"},{"name":"New Caledonia","code":"NC","phoneCode":"+687"},{"name":"New Zealand","code":"NZ","phoneCode":"+64"},{"name":"Nicaragua","code":"NI","phoneCode":"+505"},{"name":"Niger","code":"NE","phoneCode":"+227"},{"name":"Nigeria","code":"NG","phoneCode":"+234"},{"name":"Niue","code":"NU","phoneCode":"+683"},{"name":"Norfolk Island","code":"NF","phoneCode":"+672"},{"name":"Northern Mariana Islands","code":"MP","phoneCode":"+1"},{"name":"North Korea","code":"KP","phoneCode":"+850"},{"name":"North Macedonia","code":"MK","phoneCode":"+389"},{"name":"Norway","code":"NO","phoneCode":"+47"},{"name":"Oman","code":"OM","phoneCode":"+968"},{"name":"Pakistan","code":"PK","phoneCode":"+92"},{"name":"Palau","code":"PW","phoneCode":"+680"},{"name":"Palestinian Territories","code":"PS","phoneCode":"+970"},{"name":"Panama","code":"PA","phoneCode":"+507"},{"name":"Papua New Guinea","code":"PG","phoneCode":"+675"},{"name":"Paraguay","code":"PY","phoneCode":"+595"},{"name":"Peru","code":"PE","phoneCode":"+51"},{"name":"Philippines","code":"PH","phoneCode":"+63"},{"name":"Poland","code":"PL","phoneCode":"+48"},{"name":"Portugal","code":"PT","phoneCode":"+351"},{"name":"Puerto Rico","code":"PR","phoneCode":"+1"},{"name":"Qatar","code":"QA","phoneCode":"+974"},{"name":"R\u00E9union","code":"RE","phoneCode":"+262"},{"name":"Romania","code":"RO","phoneCode":"+40"},{"name":"Russia","code":"RU","phoneCode":"+7"},{"name":"Rwanda","code":"RW","phoneCode":"+250"},{"name":"Samoa","code":"WS","phoneCode":"+685"},{"name":"San Marino","code":"SM","phoneCode":"+378"},{"name":"S\u00E3o Tom\u00E9 & Pr\u00EDncipe","code":"ST","phoneCode":"+239"},{"name":"Saudi Arabia","code":"SA","phoneCode":"+966"},{"name":"Senegal","code":"SN","phoneCode":"+221"},{"name":"Serbia","code":"RS","phoneCode":"+381"},{"name":"Seychelles","code":"SC","phoneCode":"+248"},{"name":"Sierra Leone","code":"SL","phoneCode":"+232"},{"name":"Singapore","code":"SG","phoneCode":"+65"},{"name":"Sint Maarten","code":"SX","phoneCode":"+1"},{"name":"Slovakia","code":"SK","phoneCode":"+421"},{"name":"Slovenia","code":"SI","phoneCode":"+386"},{"name":"Solomon Islands","code":"SB","phoneCode":"+677"},{"name":"Somalia","code":"SO","phoneCode":"+252"},{"name":"South Africa","code":"ZA","phoneCode":"+27"},{"name":"South Korea","code":"KR","phoneCode":"+82"},{"name":"South Sudan","code":"SS","phoneCode":"+211"},{"name":"Spain","code":"ES","phoneCode":"+34"},{"name":"Sri Lanka","code":"LK","phoneCode":"+94"},{"name":"St. Barth\u00E9lemy","code":"BL","phoneCode":"+590"},{"name":"St. Helena","code":"SH","phoneCode":"+290"},{"name":"St. Kitts & Nevis","code":"KN","phoneCode":"+1"},{"name":"St. Lucia","code":"LC","phoneCode":"+1"},{"name":"St. Martin","code":"MF","phoneCode":"+590"},{"name":"St. Pierre & Miquelon","code":"PM","phoneCode":"+508"},{"name":"St. Vincent & Grenadines","code":"VC","phoneCode":"+1"},{"name":"Sudan","code":"SD","phoneCode":"+249"},{"name":"Suriname","code":"SR","phoneCode":"+597"},{"name":"Svalbard & Jan Mayen","code":"SJ","phoneCode":"+47"},{"name":"Sweden","code":"SE","phoneCode":"+46"},{"name":"Switzerland","code":"CH","phoneCode":"+41"},{"name":"Syria","code":"SY","phoneCode":"+963"},{"name":"Taiwan","code":"TW","phoneCode":"+886"},{"name":"Tajikistan","code":"TJ","phoneCode":"+992"},{"name":"Tanzania","code":"TZ","phoneCode":"+255"},{"name":"Thailand","code":"TH","phoneCode":"+66"},{"name":"Timor-Leste","code":"TL","phoneCode":"+670"},{"name":"Togo","code":"TG","phoneCode":"+228"},{"name":"Tokelau","code":"TK","phoneCode":"+690"},{"name":"Tonga","code":"TO","phoneCode":"+676"},{"name":"Trinidad & Tobago","code":"TT","phoneCode":"+1"},{"name":"Tristan da Cunha","code":"TA","phoneCode":"+290"},{"name":"Tunisia","code":"TN","phoneCode":"+216"},{"name":"T\u00FCrkiye","code":"TR","phoneCode":"+90"},{"name":"Turkmenistan","code":"TM","phoneCode":"+993"},{"name":"Turks & Caicos Islands","code":"TC","phoneCode":"+1"},{"name":"Tuvalu","code":"TV","phoneCode":"+688"},{"name":"U.S. Virgin Islands","code":"VI","phoneCode":"+1"},{"name":"Uganda","code":"UG","phoneCode":"+256"},{"name":"Ukraine","code":"UA","phoneCode":"+380"},{"name":"United Arab Emirates","code":"AE","phoneCode":"+971"},{"name":"United Kingdom","code":"GB","phoneCode":"+44"},{"name":"United States","code":"US","phoneCode":"+1"},{"name":"Uruguay","code":"UY","phoneCode":"+598"},{"name":"Uzbekistan","code":"UZ","phoneCode":"+998"},{"name":"Vanuatu","code":"VU","phoneCode":"+678"},{"name":"Vatican City","code":"VA","phoneCode":"+39"},{"name":"Venezuela","code":"VE","phoneCode":"+58"},{"name":"Vietnam","code":"VN","phoneCode":"+84"},{"name":"Wallis & Futuna","code":"WF","phoneCode":"+681"},{"name":"Western Sahara","code":"EH","phoneCode":"+212"},{"name":"Yemen","code":"YE","phoneCode":"+967"},{"name":"Zambia","code":"ZM","phoneCode":"+260"},{"name":"Zimbabwe","code":"ZW","phoneCode":"+263"}],"initialAddressFormat":{"id":0,"type":"ADDRESS","country":"US","labelLocale":"en","fields":[{"type":"FIELD","label":"Address Line 1","identifier":"Line1","length":0,"required":true,"metadata":{"autocomplete":"address-line1"}},{"type":"SEPARATOR","label":"\n","identifier":"Newline","length":0,"required":false,"metadata":{}},{"type":"FIELD","label":"Address Line 2","identifier":"Line2","length":0,"required":false,"metadata":{"autocomplete":"address-line2"}},{"type":"SEPARATOR","label":"\n","identifier":"Newline","length":0,"required":false,"metadata":{}},{"type":"FIELD","label":"City","identifier":"City","length":0,"required":true,"metadata":{"autocomplete":"address-level2"}},{"type":"SEPARATOR","label":",","identifier":"Comma","length":0,"required":false,"metadata":{}},{"type":"SEPARATOR","label":" ","identifier":"Space","length":0,"required":false,"metadata":{}},{"type":"FIELD","label":"State","identifier":"State","length":0,"required":true,"metadata":{"autocomplete":"address-level1"}},{"type":"SEPARATOR","label":" ","identifier":"Space","length":0,"required":false,"metadata":{}},{"type":"FIELD","label":"ZIP Code","identifier":"Zip","length":0,"required":true,"metadata":{"autocomplete":"postal-code"}}]}},"localizedStrings":{"validation":{"noValidSelection":"A valid selection must be made.","invalidUrl":"Must be a valid URL.","stringTooLong":"Value should have a length no longer than {0}.","containsInvalidKey":"{0} contains an invalid key.","invalidTwitterUsername":"Must be a valid Twitter username.","valueOutsideRange":"Value must be in the range {0} to {1}.","invalidPassword":"Passwords should not contain whitespace.","missingRequiredSubfields":"{0} is missing required subfields: {1}","invalidCurrency":"Currency value should be formatted like 1234 or 123.99.","invalidMapSize":"Value should contain exactly {0} elements.","subfieldsRequired":"All fields in {0} are required.","formSubmissionFailed":"Form submission failed. Review the following information: {0}.","invalidCountryCode":"Country code should have an optional plus and up to 4 digits.","invalidDate":"This is not a real date.","required":"{0} is required.","invalidStringLength":"Value should be {0} characters long.","invalidEmail":"Email addresses should follow the format user@domain.com.","invalidListLength":"Value should be {0} elements long.","allEmpty":"Please fill out at least one form field.","missingRequiredQuestion":"Missing a required question.","invalidQuestion":"Contained an invalid question.","captchaFailure":"Captcha validation failed. Please try again.","stringTooShort":"Value should have a length of at least {0}.","invalid":"{0} is not valid.","formErrors":"Form Errors","containsInvalidValue":"{0} contains an invalid value.","invalidUnsignedNumber":"Numbers must contain only digits and no other characters.","invalidName":"Valid names contain only letters, numbers, spaces, ', or - characters."},"submit":"Submit","status":{"title":"{@} Block","learnMore":"Learn more"},"name":{"firstName":"First Name","lastName":"Last Name"},"lightbox":{"openForm":"Open Form"},"likert":{"agree":"Agree","stronglyDisagree":"Strongly Disagree","disagree":"Disagree","stronglyAgree":"Strongly Agree","neutral":"Neutral"},"time":{"am":"AM","second":"Second","pm":"PM","minute":"Minute","amPm":"AM/PM","hour":"Hour"},"notFound":"Form not found.","date":{"yyyy":"YYYY","year":"Year","mm":"MM","day":"Day","month":"Month","dd":"DD"},"phone":{"country":"Country","number":"Number","prefix":"Prefix","areaCode":"Area Code","line":"Line"},"submitError":"Unable to submit form. Please try again later.","address":{"stateProvince":"State/Province","country":"Country","zipPostalCode":"Zip/Postal Code","address2":"Address 2","address1":"Address 1","city":"City"},"email":{"signUp":"Sign up for news and updates"},"cannotSubmitDemoForm":"This is a demo form and cannot be submitted.","required":"(required)","invalidData":"Invalid form data."}}};</script><script type="module">Squarespace.load(window);</script>
+<script data-sqs-type="imageloader-bootstrapper" type="module">if(window.ImageLoader) window.ImageLoader.bootstrap({}, document);</script>
+<script type="module">Squarespace.afterBodyLoad(Y);</script>
+<script type="application/ld+json">{"url":"https://shrikepublishing.com","name":"Shrike Publishing","description":"","image":"//images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/4add1faf-303d-4ebf-ad29-4fbeb61e20e1/ShrikeLogoNov2021.png","@context":"http://schema.org","@type":"WebSite"}</script><script type="application/ld+json">{"address":"","image":"https://static1.squarespace.com/static/5da7b6542a4fea6a5c523390/t/6192dea16e69104244d20caf/1753309244390/","openingHours":"","@context":"http://schema.org","@type":"LocalBusiness"}</script><link rel="stylesheet" type="text/css" href="https://static1.squarespace.com/static/sitecss/5da7b6542a4fea6a5c523390/104/52a74dafe4b073a80cd253c5/5e5b0b57118337590d98a32b/1054/site.css"/><script>Static.COOKIE_BANNER_CAPABLE = true;</script>
+<!-- End of Squarespace Headers -->
+    <script>/* Must be below squarespace-headers */(function(){var e='ontouchstart'in window||navigator.msMaxTouchPoints;var t=document.documentElement;if(!e&&t){t.className=t.className.replace(/touch-styles/,'')}})()
+    </script>
+  </head>
+  <body id="collection-6510e9f30093a42f58cd11ce" class="transparent-header enable-nav-button nav-button-style-solid nav-button-corner-style-pill banner-button-style-solid banner-button-corner-style-pill banner-slideshow-controls-arrows meta-priority-date  hide-entry-author hide-list-entry-footer    hide-blog-sidebar center-navigation--info    event-show-past-events event-thumbnails event-thumbnail-size-32-standard event-date-label  event-list-show-cats event-list-date event-list-time event-list-address   event-icalgcal-links  event-excerpts      gallery-design-grid aspect-ratio-auto lightbox-style-light gallery-navigation-bullets gallery-info-overlay-show-on-hover gallery-aspect-ratio-32-standard gallery-arrow-style-no-background gallery-transitions-fade gallery-show-arrows gallery-auto-crop   product-list-titles-under product-list-alignment-center product-item-size-11-square product-image-auto-crop product-gallery-size-11-square  show-product-price show-product-item-nav product-social-sharing tweak-v1-related-products-image-aspect-ratio-11-square tweak-v1-related-products-details-alignment-center newsletter-style-dark hide-opentable-icons opentable-style-dark small-button-style-solid small-button-shape-square medium-button-style-solid medium-button-shape-pill large-button-style-solid large-button-shape-square image-block-poster-text-alignment-center image-block-card-dynamic-font-sizing image-block-card-content-position-center image-block-card-text-alignment-center image-block-overlap-dynamic-font-sizing image-block-overlap-content-position-center image-block-overlap-text-alignment-left image-block-collage-dynamic-font-sizing image-block-collage-content-position-top image-block-collage-text-alignment-left image-block-stack-dynamic-font-sizing image-block-stack-text-alignment-left button-style-solid button-corner-style-square tweak-product-quick-view-button-style-floating tweak-product-quick-view-button-position-bottom tweak-product-quick-view-lightbox-excerpt-display-truncate tweak-product-quick-view-lightbox-show-arrows tweak-product-quick-view-lightbox-show-close-button tweak-product-quick-view-lightbox-controls-weight-light native-currency-code-usd collection-6510e9f30093a42f58cd11ce collection-type-page collection-layout-default mobile-style-available">
+    <div class="body-overlay"></div>
+    <div class="sqs-announcement-bar-dropzone"></div>
+    <div id="sidecarNav">
+      
+
+  <div id="mobileNavWrapper" class="nav-wrapper" data-content-field="navigation-mobileNav">
+    <nav id="mobileNavigation">
+      
+
+      
+        
+          
+          <div class="index homepage">
+            <a href="index.html">
+              Home
+            </a>
+          </div>
+          
+        
+
+      
+        
+          
+
+          
+
+            
+            <div class="collection">
+              <a href="talonborne.html">
+                Fiction
+              </a>
+            </div>
+            
+
+          
+        
+        
+
+      
+        
+          
+
+          
+
+            
+            <div class="collection">
+              <a href="ttrpgs.html">
+                TTRPGs
+              </a>
+            </div>
+            
+
+          
+        
+        
+
+      
+        
+          
+
+          
+
+            
+            <div class="collection">
+              <a href="licenses.html">
+                Licenses
+              </a>
+            </div>
+            
+
+          
+        
+        
+
+      
+        
+          
+          <div class="external">
+            <a href="https://www.patreon.com/shrikepublishing">
+              Patreon
+            </a>
+          </div>
+          
+
+        
+
+      
+        
+          
+
+          
+
+            
+            <div class="collection">
+              <a href="shrikeshop.html">
+                Shop
+              </a>
+            </div>
+            
+
+          
+        
+        
+
+      
+    </nav>
+  </div>
+
+
+
+    </div>
+    <div id="siteWrapper" class="clearfix">
+
+      <div class="sqs-cart-dropzone"></div>
+
+      <header id="header" class="show-on-scroll" data-offset-el=".index-section" data-offset-behavior="bottom" role="banner">
+        <div class="header-inner">
+          <div id="logoWrapper" class="wrapper" data-content-field="site-title">
+            
+              <h1 id="logoImage"><a href="index.html"><img src="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/4add1faf-303d-4ebf-ad29-4fbeb61e20e1/ShrikeLogoNov2021.png?format=1500w" alt="Shrike Publishing" /></a></h1>
+            
+          </div><!--
+          --><div class="mobile-nav-toggle"><div class="top-bar"></div><div class="middle-bar"></div><div class="bottom-bar"></div></div><div class="mobile-nav-toggle fixed-nav-toggle"><div class="top-bar"></div><div class="middle-bar"></div><div class="bottom-bar"></div></div><!--
+          --><div id="headerNav">
+
+  <div id="mainNavWrapper" class="nav-wrapper" data-content-field="navigation-mainNav">
+    <nav id="mainNavigation" data-content-field="navigation-mainNav">
+      
+
+      
+        
+          
+          <div class="index homepage">
+            <a href="index.html">
+              Home
+            </a>
+          </div>
+          
+        
+
+      
+        
+          
+
+          
+
+            
+            <div class="collection">
+              <a href="talonborne.html">
+                Fiction
+              </a>
+            </div>
+            
+
+          
+        
+        
+
+      
+        
+          
+
+          
+
+            
+            <div class="collection">
+              <a href="ttrpgs.html">
+                TTRPGs
+              </a>
+            </div>
+            
+
+          
+        
+        
+
+      
+        
+          
+
+          
+
+            
+            <div class="collection">
+              <a href="licenses.html">
+                Licenses
+              </a>
+            </div>
+            
+
+          
+        
+        
+
+      
+        
+          
+          <div class="external">
+            <a href="https://www.patreon.com/shrikepublishing">
+              Patreon
+            </a>
+          </div>
+          
+
+        
+
+      
+        
+          
+
+          
+
+            
+            <div class="collection">
+              <a href="shrikeshop.html">
+                Shop
+              </a>
+            </div>
+            
+
+          
+        
+        
+
+      
+    </nav>
+  </div>
+  <!-- style below blocks out the mobile nav toggle only when nav is loaded -->
+  <style>.mobile-nav-toggle-label { display: inline-block !important; }</style>
+
+
+</div>
+        </div>
+      </header>
+
+      
+        
+          
+            
+              
+                <div id="promotedGalleryWrapper" class="sqs-layout promoted-gallery-wrapper"><div class="row"><div class="col"></div></div></div>
+                
+                  
+                
+              
+            
+          
+        
+      
+
+
+      
+      
+      
+
+      <main id="page" role="main">
+        
+        <!--
+        --><!--
+        --><!--
+        --><div id="content" class="main-content" data-content-field="main-content" data-collection-id="6510e9f30093a42f58cd11ce" data-edit-main-image="">
+         <div class="sqs-layout sqs-grid-12 columns-12" data-type="page" data-updated-on="1741576498929" id="page-6510e9f30093a42f58cd11ce"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block image-block sqs-block-image" data-block-type="5" id="block-yui_3_17_2_1_1695607824999_14133"><div class="sqs-block-content">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+    
+  
+    <div
+        class="
+          image-block-outer-wrapper
+          layout-caption-below
+          design-layout-inline
+          combination-animation-none
+          individual-animation-none
+          individual-text-animation-none
+        "
+        data-test="image-block-inline-outer-wrapper"
+    >
+
+      
+
+      
+        <figure
+            class="
+              sqs-block-image-figure
+              intrinsic
+            "
+            style="max-width:1439px;"
+        >
+          
+        
+        
+
+        
+          
+            
+          <div
+              
+              
+              class="image-block-wrapper"
+              data-animation-role="image"
+              
+  
+
+          >
+            <div class="sqs-image-shape-container-element
+              
+          
+        
+              has-aspect-ratio
+            " style="
+                position: relative;
+                
+                  padding-bottom:85.40653228759766%;
+                
+                overflow: hidden;-webkit-mask-image: -webkit-radial-gradient(white, black);
+              "
+              >
+                
+                
+                
+                
+                
+                
+                
+                <img data-stretch="false" data-src="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/673a8d09-66b2-4135-a4ef-b5fc71abc813/C03EDD96-4B29-4935-A73F-FB872DD16B1D.jpeg" data-image="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/673a8d09-66b2-4135-a4ef-b5fc71abc813/C03EDD96-4B29-4935-A73F-FB872DD16B1D.jpeg" data-image-dimensions="1439x1229" data-image-focal-point="0.5,0.5" alt="" data-load="false" elementtiming="system-image-block"  src="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/673a8d09-66b2-4135-a4ef-b5fc71abc813/C03EDD96-4B29-4935-A73F-FB872DD16B1D.jpeg" width="1439" height="1229" alt="" sizes="(max-width: 640px) 100vw, (max-width: 767px) 100vw, 100vw" style="display:block;object-fit: cover; width: 100%; height: 100%; object-position: 50% 50%" onload="this.classList.add(&quot;loaded&quot;)" srcset="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/673a8d09-66b2-4135-a4ef-b5fc71abc813/C03EDD96-4B29-4935-A73F-FB872DD16B1D.jpeg?format=100w 100w, https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/673a8d09-66b2-4135-a4ef-b5fc71abc813/C03EDD96-4B29-4935-A73F-FB872DD16B1D.jpeg?format=300w 300w, https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/673a8d09-66b2-4135-a4ef-b5fc71abc813/C03EDD96-4B29-4935-A73F-FB872DD16B1D.jpeg?format=500w 500w, https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/673a8d09-66b2-4135-a4ef-b5fc71abc813/C03EDD96-4B29-4935-A73F-FB872DD16B1D.jpeg?format=750w 750w, https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/673a8d09-66b2-4135-a4ef-b5fc71abc813/C03EDD96-4B29-4935-A73F-FB872DD16B1D.jpeg?format=1000w 1000w, https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/673a8d09-66b2-4135-a4ef-b5fc71abc813/C03EDD96-4B29-4935-A73F-FB872DD16B1D.jpeg?format=1500w 1500w, https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/673a8d09-66b2-4135-a4ef-b5fc71abc813/C03EDD96-4B29-4935-A73F-FB872DD16B1D.jpeg?format=2500w 2500w" loading="lazy" decoding="async" data-loader="sqs">
+
+            </div>
+          </div>
+        
+          
+        
+
+        
+      
+        </figure>
+      
+
+    </div>
+  
+
+
+  
+
+
+</div></div><div class="sqs-block html-block sqs-block-html" data-block-type="2" data-border-radii="&#123;&quot;topLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;topRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;&#125;" data-sqsp-block="text" id="block-6510e9f30093a42f58cd11cf"><div class="sqs-block-content">
+
+<div class="sqs-html-content" data-sqsp-text-block-content>
+  <h1 style="text-align:center;white-space:pre-wrap;">Ashen Silence: Memory Leak</h1><h3 style="white-space:pre-wrap;"><a href="memory-leak-2.html" target="">Previous: 2. Waster</a></h3><p class="" data-rte-preserve-empty="true" style="white-space:pre-wrap;"></p><h2 style="white-space:pre-wrap;">3. Thief</h2><p class="" style="white-space:pre-wrap;">We made camp in a concealed crevasse we found. Celadon green rays of moonlight reached down and graced us. I was pleased with such a good omen. We packed up as soon as it was light enough to see without extra lights.&nbsp;</p><p class="" style="white-space:pre-wrap;">We were getting close now, this was the run. I consulted the map Birdie had given me carefully. We geared up.&nbsp;</p><p class="" style="white-space:pre-wrap;">Arina took the backpack-sized communications relay. She had become the on-ground tech of our operation.&nbsp; The rest of us took receivers. She activated Dotty and had it fly upwards as far as it could go in control range. She grabbed a rifle and sat on her tablet while the rest of us got ready.</p><p class="" style="white-space:pre-wrap;">Temperance had a bag full of different explosives and solvents. A small sack of cremation capsules too. If all went according to plan, we wouldn’t need to burn anyone. They insisted, nonetheless. They clutched another rifle.&nbsp;</p><p class="" style="white-space:pre-wrap;">For Dorian, it was a pistol, a set of knives, and not much else. Though their enchanter’s gauntlet could do almost anything they needed it to. His was an impressively ornate construction. Like something an old-world knight would have worn, but covered in modern runework.&nbsp;</p><p class="" style="white-space:pre-wrap;">Two-handed weapons were no good for me, but I had other options. I pressed a button on the side of my arm and two beams popped out of the metalwork. I fashioned a piece of flexible steel cable between the edges of it, loaded a bolt, and fired it into a purple cactus. Full impact, nearly went clean through. Temperance laughed and cheered. I smirked. For good measure, I also kept a blade in a hidden compartment in my leg. Finally, I grabbed a pistol from our arsenal. Just in case.</p><p class="" style="white-space:pre-wrap;">After an hour we had all finished prep. I looked at Arina. “What you got, A?”&nbsp;</p><p class="" style="white-space:pre-wrap;">“Compound in sight. Walled and sealed from the top like we expected. I count two guards at the front gate. Couldn’t get close enough to get a count of the inside. Ravine a quarter of a mile away. Probably where drainage is.”</p><p class="" style="white-space:pre-wrap;">“I’m so glad I’m not going with you.” Dorian was putting a blue worker’s jumpsuit over his clothes.&nbsp;</p><p class="" style="white-space:pre-wrap;">I craned my neck towards him, “Good point. Are you going to be okay getting in on your own?”</p><p class="" style="white-space:pre-wrap;">“They’ll let me in.”</p><p class="" style="white-space:pre-wrap;">“How do you figure?”</p><p class="" style="white-space:pre-wrap;">“They’ll let me in.” he fit on the gauntlet.</p><p class="" style="white-space:pre-wrap;">I didn’t have any real counterpoints, “Fair enough. Do you need any bundling?”</p><p class="" style="white-space:pre-wrap;">“It’s better this way.”</p><p class="" style="white-space:pre-wrap;">I nodded, and looked at the other two. “Well girls, let’s get moving.” One last glance at Dorian, “Divine Will be with you.”</p><p class="" style="white-space:pre-wrap;">“Yeah sure, whatever.”</p><p style="text-align:center;white-space:pre-wrap;" class="">*****&nbsp;</p><p class="" style="white-space:pre-wrap;">The three of us started to make our way towards our entry point. Dorian would hold back until we made sufficient progress, then make his way toward his side. I tensed up, but there was something of a thrill in all this. Back in the saddle. Everything was on the line. It was time to prove I wasn’t just a common merc.</p><p class="" style="white-space:pre-wrap;">I took us through a petrified forest for cover. There was something so beautiful about trees standing so resolute, centuries after they had died. I broke a branch off of one that fell and used it as a walking stick. I looked around. As I suspected, the patrols seemed to stay closer to the estate.&nbsp;</p><p class="" style="white-space:pre-wrap;">In the ravine was a sealed grate, sure enough. I stopped the other two. It was being guarded by another spore drone. An off-green slimy one. Also floating. I waited to see what its route was. It wasn’t leaving. I ditched the stick and loaded a bolt outfitted with copper wiring and a battery, aimed, and fired.&nbsp;</p><p class="" style="white-space:pre-wrap;">A hit. The drone’s mechanics were pierced and it caught aflame. It plummeted to the ground. The stench of burning fungus was sickening, even through the rebreathers.&nbsp;</p><p class="" style="white-space:pre-wrap;">The smell of the drainage leaking from the grate out into the ravine was worse. I pulled on it hoping for an easy break. No luck. Kanra’Las wasn’t fucking around with security.&nbsp;</p><p class="" style="white-space:pre-wrap;">Temperance set down their bag and pulled out a vial of yellow-orange liquid. “Ah, it’s nothing. I have this, just stand back.” Arina and I both obeyed. The yasre applied a few drops of the liquid to several points across the grate’s surface. The solution hissed and bubbled, and it was like watching centuries of wear and tear happen in real-time. Strong metal turned to rust, and Temperance gave it a good yank. It ripped a hole into it. The displaced bars rattled on the dusty ground. All of us could fit inside. They beamed, “I thought about putting ‘door-making specialist’ on business cards once.” They gave the ‘after you’ gesture with their arms. I went first.&nbsp;</p><p class="" style="white-space:pre-wrap;">Climbing into any kind of active sewage system was one of the least pleasant things any person could experience. We kept our rebreathers on but the smell of mortal waste of all sorts fought against our filters. Arina wretched a few times, and I was worried she was going to throw up into her mask. Our clothes and environmental gear would need triple sanitation when we were done.&nbsp;</p><p class="" style="white-space:pre-wrap;">I followed Birdie’s map faithfully. These underworks were shared by a few local installations. A right turn would have taken us to a colonial processing center for KAS Extraction, a left too soon or too late would take us to another drainage output on the other side of the plains. I found the correct turn and we wound our way towards the estate.</p><p class="" style="white-space:pre-wrap;">We found our access ladder. The sewage was less present but wafted down the hall toward us. I thumbed my communicator. “Hey D, we’re in position. What’s your status? Praise.”</p><p style="text-align:center;white-space:pre-wrap;" class="">*****</p><p class="" style="white-space:pre-wrap;">“V, almost to the delivery entrance. Keeping my mic hot.” Dorian sauntered up the side road to the delivery entrance at a steady pace. He knew the inhabitants were aware of his presence, and he wasn’t going to give them anything to be worried about.</p><p class="" style="white-space:pre-wrap;">“...Are you done talking? Praise.” Vulture’s voice was a bit too high, no control over resonance. Needed more vocal training. Maybe he just found her annoying.</p><p class="" style="white-space:pre-wrap;">He stopped and sighed. “Yes, I’m done.”</p><p class="" style="white-space:pre-wrap;">“You’re supposed to say praise or praise be if you’re completely done. Praise.”</p><p class="" style="white-space:pre-wrap;">Dorian rolled his eyes and made an obscene gesture that no one but the resograph cameras could see. These fucking losers. “Yes I’m almost there, I’m keeping the mic hot. I didn’t think I needed to tag my statement. Praise be, or whatever.”</p><p class="" style="white-space:pre-wrap;">He made his way up to the entrance. A single metal door next to a large cargo shutter. There was an intercom and a blood lock. If they had been professionals about this, they would’ve gotten the means to open the lock. They didn’t, so he pressed the buzzer. He waited and internally recited the character profile he’d established.&nbsp;</p><p class="" style="white-space:pre-wrap;">A woman’s voice came over the door’s speaker, “This is private property, state your business.”</p><p class="" style="white-space:pre-wrap;">He adopted an accent like something he’d heard in the southwest, “G’Evening ma’am. This is New Millennium Enchantment and Repair. We got a service request and they sent me out.”</p><p class="" style="white-space:pre-wrap;">“We didn’t call for an enchanter.”</p><p class="" style="white-space:pre-wrap;">“Well sure y’all did! Why else would they send me out here? I got the order right here in my hands” he waved a clipboard to the resograph watching him. “Says right here ya need us to fortify the enchantments on the ebonsteel support beams in this fancy wall ya got here!”&nbsp;</p><p class="" style="white-space:pre-wrap;">“I don’t know what you’re talking about. I’m going to need you to leave before I have to call security.”&nbsp;</p><p class="" style="white-space:pre-wrap;">Good. Dorian only played games he knew he was going to win. Having them come to him, or having them let him in, the same outcome. Still, he was enjoying the sport of it.&nbsp;</p><p class="" style="white-space:pre-wrap;">“Well, golly ma’am. I don’t know if my boss would like it if I went all the way back without the job being done! I don’t think your boss would like it much either if the magic failed and, merciful Council forbid, a part of the wall goes down. You’d be dealing with open-air exposure, wild critters, marauders-”</p><p class="" style="white-space:pre-wrap;">“-Okay okay. I’ll call the security chief and they’ll come meet you.”</p><p class="" style="white-space:pre-wrap;">Dorian grinned. Victory. “Glad to be of service, ma’am. I promise I’ll be faster than a crawler through mud!” He turned off his mic.</p><p style="text-align:center;white-space:pre-wrap;" class="">*****</p><p class="" style="white-space:pre-wrap;">I looked at the others. “Crawler in mud. That’s our signal!” We gathered up our things. Rebreathers on, though more for anonymity than breathing safety. I began to climb up the ladder, then Arina, then Temperance.</p><p class="" style="white-space:pre-wrap;">We reached the hatch. I pushed it open and slid out onto the pavement. When we were all up we closed the hatch. The whole place was surprisingly bright. Sterile white light panels had been installed at the base of the wall, and more hung from the metal framework of the glass roof. We were behind a shed. I peeked around the side. A lush green meditation garden, marked with a spiral pattern of stones toward the center. Birdie’s interior map was accurate. I would have to ask her how she sourced it. Temperance peeked out from behind me. “Rather pretty,” they observed.&nbsp;</p><p class="" style="white-space:pre-wrap;">I ducked back behind the shed. “Artificial. Did you see anyone?”</p><p class="" style="white-space:pre-wrap;">“2 guards, a custodian, and it looks like a busser from their kitchen.”</p><p class="" style="white-space:pre-wrap;">“Guardhouse should be to our right… follow me.”</p><p class="" style="white-space:pre-wrap;">We ducked left into the shrubs that bordered the garden. Not too far from it was a pool cleaned by a tread-mobile drone. It paid us no mind. Arina rereleased Dotty and had it fly into an exposed vent. When a guard wandered too close to us, she had it start blaring noises through its loudspeakers. They ran towards the vent, and we slipped past toward another shed. Close to the villa itself now.</p><p class="" style="white-space:pre-wrap;">One sentry between us and the front door. We could go around back but that would be close to where Dorian was distracting the security chief. The sentry stood in place. Fuck. I felt Temperance’s long talons on my shoulder. They gave me that kind of diagonal head bob that’s meant to say ‘I got this.’&nbsp;</p><p style="text-align:center;white-space:pre-wrap;" class="">*****</p><p class="" style="white-space:pre-wrap;">Temperance stood back. Spellwork wasn’t their forte, or they would have pursued becoming a full-fledged mage. They took a long breath and closed their eyes. They focused on chanting. Drawing on this kind of power took a mix of concentration and the right set of invocations. </p><p class="" style="white-space:pre-wrap;">Something beyond themself began to push at their mind. The Barrier that all spellcasters must pass. They focused harder and imagined themselves pushing a pin through that Barrier. Power began to seep out, and they grabbed it.</p><p class="" style="white-space:pre-wrap;">Magic manifested into the Threads of reality. Either modifying them or creating new ones. They focused on the Threads and felt their natural resonance flow around them. The energy flowed into their hands, which began to pulse and glow. Soon, their whole body was enveloped in the shimmering field.&nbsp;</p><p class="" style="white-space:pre-wrap;">Neither Vulture nor Arina could focus on them. Cloaking spells didn’t turn the caster truly invisible but rather bent the Threads around them so that looking at them directly became impossible.&nbsp;</p><p class="" style="white-space:pre-wrap;">“Can you all see me?” They made a couple of rude gestures and stuck out their tongue. Vulture and Arina shook their heads and averted their gaze out of discomfort. “Good, then grab onto my shoulders!”</p><p class="" style="white-space:pre-wrap;">The other two complied, though with a bit of extra effort. Soon the shimmering field spread around us as well. Vulture tried to look at Temperance. No luck, like butter sliding on a hot pan. The group turned and started walking. Making a wide U shape around the sentry with their back turned to them. At one point he started turning his head in their direction, but it was like he couldn’t completely. He didn’t seem to mind.</p><p class="" style="white-space:pre-wrap;">They made it to the grand natural birchwood double doors. Alice grabbed a doorknob and stared at the metalwork. It looked like Restoration Age craftsmanship. Rich bastard. Vulture tried it. Unlocked. Dumb bastard. It opened inward. She looked inside for any immediate sentries. She made a motion to Temperance and Arina, and let go of the priest’s arm.</p><p class="" style="white-space:pre-wrap;">It was an open floorplan, very modern. Contrasted by centuries-old decor. Paintings of nobles, and a couple of landscapes. Even some Parathan era swag, like a grand blue vase that had been apparently reassembled with bronze.&nbsp; Temperance looked at Vulture, and saw in her eyes the hungry look of a scavver who was staring at one of the biggest hauls of her life. Then a shake of the head and her focus was back on the job. Temperance appreciated Vulture more than other would-be crew leaders. She had good priorities. This was too clean to risk with extra loot. That was the safe play. Though, maybe if the team got some extra time…</p><p style="text-align:center;white-space:pre-wrap;" class="">*****</p><p class="" style="white-space:pre-wrap;">I made my way toward the far end of the room, where the sole occupant was dusting some shelves. The custodian had his back to me. It was as if the gods had ordained this run.&nbsp; I kept low, to avoid being seen through the wide windows. Temperance held back and Arina was messing with the tablet. I closed the distance quickly. I opened my arms to grab him.&nbsp;</p><p class="" style="white-space:pre-wrap;">He started turning around.&nbsp;</p><p class="" style="white-space:pre-wrap;">Fuck. Impulse took over, I swung my metal arm in a punch. It connected with his skull and he tumbled back into the wall. He slumped, and blood started to trickle down the side of his head.&nbsp;</p><p class="" style="white-space:pre-wrap;">The other two ran up. “Holy shit,” Temperance said, mirroring my thoughts. I held out my hand to Arina, “The mirror you have. Now.” She passed it. Temperance held up his head. I held it under his nose. Still breathing. That was going to need some treatment though. At least-</p><p class="" style="white-space:pre-wrap;">A rifle’s hammer clicked.&nbsp;</p><p class="" style="white-space:pre-wrap;">I looked over my shoulder. Arina was holding a gun to a woman in a nightgown. Our intel said his wife was supposed to be in Sidersberg. His wife who was a human… This is an elek… younger too… Ah. I stepped forward and tried to reassure her. She shriveled at the sight of blood on my hands. “Please don’t scream.” An empty appeal to a foregone conclusion. She let out a piercing wail.&nbsp;</p><p class="" style="white-space:pre-wrap;">The gun fired and the woman went to the ground in a seizure. A fake bullet stuck to her and sent an electrical burst through her. She’d live but it’d hurt for a while. I nodded to Arina who had a look in her eyes that indicated that was her first time doing that. I tapped her on the shoulder and led us up the stairs. I heard shouts, followed by alarms. The bad outcome. I loaded a stun bolt.&nbsp;&nbsp;</p><p class="" style="white-space:pre-wrap;">Up the stairs. One door guard, armored. He raised a gun. I raised my wrist and ducked. I fired just a second before him. The bolt struck him in the chest and the rifle’s shot went wide. He started convulsing on the ground, but would probably be fine. Probably. I checked behind me. The others had gone to ground. I smirked. We might be able to take this. I tapped my communicator. “D, how are you holding up out there? Praise.”&nbsp;</p><p class="" style="white-space:pre-wrap;">No answer.</p><p class="" style="white-space:pre-wrap;">With worry, “D?”&nbsp;</p><p class="" style="white-space:pre-wrap;">Static.</p><p class="" style="white-space:pre-wrap;">I looked to the others, who were looking down the stairwell. Arina called out “I count at least 3 more. They sound heavy.” I started eyeing the hallway we were in. I tried the door to Kanra’Las’ room. Locked, figures. I tried the others. No luck. I eyed the available furniture for cover. A few tables. Antique wood, but nothing that’d take a bullet.&nbsp;</p><p class="" style="white-space:pre-wrap;">“T, got a smoke grenade?”&nbsp;</p><p class="" style="white-space:pre-wrap;">They looked at me like I said something dumb. Then reached into their bag and grabbed a canister. Activated it, and threw it into the center of the room. A plume of red-grey smoke began to fill the hallway. Perfect. These two weren’t soldiers but I figured we had a fighting chance. I stepped back and loaded another bolt. Lethal this time. Pistol in my other hand. Let’s go.&nbsp;</p><p class="" style="white-space:pre-wrap;">I heard a click behind me and the opening of the door behind me. I spun around. The deafening bang of a gunshot. I felt a deep heat in my abdomen. Blood soaked the clothes around my gut. An elek standing with a pistol in his shaky hands. Blonde hair, balding. Kanra’Las. The pain caught up to me. I crumpled to the ground.&nbsp;</p><p class="" style="white-space:pre-wrap;">Temperance screamed and rushed towards me. I couldn’t think or see straight. It was like I was viewing the events through a few layers of removal. There was an Alice on the ground, bleeding out, but I was watching her from way high up. From the sky. Maybe from the void. I tried to remember the advice I had been given for this back in the service. My mind was too cloudy. From my aerial view, I saw guards swarming our position. Then I saw nothing.</p><p style="text-align:center;white-space:pre-wrap;" class="">*****</p><p class="" style="white-space:pre-wrap;">Ice-cold water splashed my face. For a moment it was like I was drowning. I thrashed weakly, like a caught fish. “He’s alive.” some distant voice said Then I felt someone grab my jaw and pull my mouth open. More water went down my gullet.&nbsp; Some instinct took over in me and I drank it greedily. There was so much pain in my abdomen. I had never understood why people wanted water when they were dying, but it made more sense now.&nbsp;</p><p class="" style="white-space:pre-wrap;">My vision returned to me. The two armed men who had been dousing me with a bucket of water left the cell. The cell. I looked around, my vision blurry. Pain too serious to think. The others were there. Or at least so I thought. Temperance ran up to me. Arina stood over. I saw Dorian in the corner of the large dark holding cell, arms folded. “Where… were you?” I spat out blood and groaned in pain.&nbsp;</p><p class="" style="white-space:pre-wrap;">“I was hiding. Key, *was.* Until someone started blowing up my radio and gave me away.”</p><p class="" style="white-space:pre-wrap;">Some twinge of regret, muted by the agony. “S-so-sor-” I was shaking.&nbsp;</p><p class="" style="white-space:pre-wrap;">Temperance shot their head back “This isn’t the time. She’s hurt.” They looked at me. “Healing potions don’t work on you, right? They tried to apply Formula Y and it just wouldn’t take.”</p><p class="" style="white-space:pre-wrap;">I nodded. I thought about dying. About my soul. I wondered how soon I’d get to see the beautiful land they said the gods took us to. I looked at the priest, “You’ll burn me…”</p><p class="" style="white-space:pre-wrap;">Temperance shook their head. “No, I won’t. I don’t burn the living. You’re not dead yet girl, come on. Stay with me.”</p><p class="" style="white-space:pre-wrap;">“Can’t you just magic it or something? You’re a priest right?” Dorian was sitting and sulking now.&nbsp;</p><p class="" style="white-space:pre-wrap;">Arina agreed, “Yeah you could! You showed us that cool cloak technique out there!”</p><p class="" style="white-space:pre-wrap;">Temperance frowned. “Healing magic is difficult even for a full-fledged mage. The Lady of Magick doesn’t like us messing with the forms of others.” They paused, “I can try. Arina, keep her awake and alive. Dorian, just brood, I guess.”</p><p class="" style="white-space:pre-wrap;">The young elek ran up. “What do I do? What do I say?” She looked terrified. I imagined what I looked like from her point of view, pallid and dying.</p><p class="" style="white-space:pre-wrap;">“Just ask her questions.” Temperance was chanting something to themself and wringing their hands together.</p><p class="" style="white-space:pre-wrap;">“Okay… Hey Vulture. It’s Arina! You’re going to be okay. Just focus on my voice. Look in my eyes. My mom says she likes my eyes… Sorry, I’m nervous.”&nbsp;</p><p class="" style="white-space:pre-wrap;">“It’s okay... They’re… a good shade of gold.” I offered. I was having trouble staying conscious. Maybe I could just sleep.&nbsp;</p><p class="" style="white-space:pre-wrap;">Temperance smacked my face firmly a couple of times. “Hey, no sleeping. Arina, keep her awake at all costs.”</p><p class="" style="white-space:pre-wrap;">Arina jumped and ran up and repeated the face-smacking motion, though hesitantly. She looked like she was about to cry. “Hey, please stay awake. Uhm- tell me your name.”</p><p class="" style="white-space:pre-wrap;">“Alice…”</p><p class="" style="white-space:pre-wrap;">“Okay, great, what’s your last name?”</p><p class="" style="white-space:pre-wrap;">“Alice… Mercier-Durante.”</p><p class="" style="white-space:pre-wrap;">There was a pause. I knew I had said something I wasn’t meant to. It didn’t matter. I gnashed my teeth as Temperance put their hands in my wound. After a second they pulled back and tossed a piece of metal to the side. “The bullet is out.” They poured some of the water bucket on it. Then put their hands back on my wound. A strange warmth filled my side.&nbsp;</p><p class="" style="white-space:pre-wrap;">“Okay… Alice Mercier-Durante. Where are you from?”</p><p class="" style="white-space:pre-wrap;">“My family is from Saliana… I grew up in New Bekton… s-since I was f-f-four.” I was shivering.&nbsp;</p><p class="" style="white-space:pre-wrap;">“That’s a long way to go. Why’d your family move out here?”</p><p class="" style="white-space:pre-wrap;">“Doctors. For me. Organic.”</p><p class="" style="white-space:pre-wrap;">“That makes sense. Your parents must love you a lot.”</p><p class="" style="white-space:pre-wrap;">“They do. I was… I was their only…” I screamed, something sharp in my side, almost like getting shot again.&nbsp;</p><p class="" style="white-space:pre-wrap;">Temperance made eye contact with me. Yasres had such intense yellow and red eyes. “We’re almost there Alice. Just hold on.”</p><p class="" style="white-space:pre-wrap;">Arina kept going, “You… were in the military right? Violetcoats. So was my dad! What was your battalion?”</p><p class="" style="white-space:pre-wrap;">“11th.”</p><p class="" style="white-space:pre-wrap;">“The Hand of Providence right? I never served, too young, but I heard a lot about you all!”</p><p class="" style="white-space:pre-wrap;">“Y-eah.” the pain was disappearing. Not like shock. Like the wound itself was leaving me.&nbsp;</p><p class="" style="white-space:pre-wrap;">“Almost there.” Temperance was massaging the wound now.&nbsp;</p><p class="" style="white-space:pre-wrap;">Arina looked up and tried to think of something to say. “Okay, Alice Mercier-Durante, tell me about some music you like.”</p><p class="" style="white-space:pre-wrap;">“Guitars… Folk instruments. Big fan of Natasha Irinde before…” Her turn towards Imperial sympathy was well known.</p><p class="" style="white-space:pre-wrap;">“Yeah, I was too.” Arina consoled.&nbsp;</p><p class="" style="white-space:pre-wrap;">The pain was still present, but lessened and dull. Like being poked with the blunt edge of a pen. I looked down, and it had been replaced with a bulging mound of flesh. Temperance looked up at me. “It should be safe. It’ll probably leave a scar. I am not a professional healer.”</p><p class="" style="white-space:pre-wrap;">I smiled weakly, “Thanks.”</p><p class="" style="white-space:pre-wrap;">They stood up and went to take a seat on another bench, panting to catch their breath. My bench, I realized, was covered in blood.&nbsp;</p><p class="" style="white-space:pre-wrap;">Arina did the same. Then she started sobbing, which triggered a look of disgust from Dorian.&nbsp;</p><p class="" style="white-space:pre-wrap;">We stayed there in that scene for a while. I rested my head against the wall.&nbsp; Dorian glared at Arina’s sobbing, and eventually, Temperance went over to console them. I realized their nose was bleeding. “You good, T?”</p><p class="" style="white-space:pre-wrap;">They nodded, putting an arm around our youngest. “Don’t worry about me, V. Get some rest. You lost a lot of blood.”</p><p class="" style="white-space:pre-wrap;">Arina stopped crying, going to that sniffling phase that often followed. Dorian eventually said something to her. “Is this your first job?”</p><p class="" style="white-space:pre-wrap;">The elek raised her head. “No, I’ve done a couple… No one’s ever gotten hurt before. We just took some stuff. Maybe we fired guns over people. Ykno.”</p><p class="" style="white-space:pre-wrap;">He scoffed, “They put me with amateurs.”</p><p class="" style="white-space:pre-wrap;">I turned my head, “Hey, leave her alone. She’s been doing fine.”</p><p class="" style="white-space:pre-wrap;">He looked back at me, “It wasn’t just her I meant.”</p><p class="" style="white-space:pre-wrap;">I forced myself to sit up and face him. “Why did you even take this job? It’s not like you need the money.”</p><p class="" style="white-space:pre-wrap;">“What do you mean?”</p><p class="" style="white-space:pre-wrap;">“Come on, your whole high maintenance, low awareness, fancy vibe. That’s someone who never has to worry where their next meal is coming from.”</p><p class="" style="white-space:pre-wrap;">“Not what this is about, but okay. Sure. I come from money. We even have a big stake in STARCAST. That’s why I’m here. What about you Ms. Mercier-Durante? I had you pegged for some poor first-generation immigrant, but I know your family. Made a huge fortune on the terraforming projects out east. You’re telling me that’s not money?”</p><p class="" style="white-space:pre-wrap;">I regretted my mindless confession. “I don’t take a dime from them.”</p><p class="" style="white-space:pre-wrap;">“And I don’t take a dime from mine! But the fact that you could, any time things got too bad. That’s what matters. You talk about being real, about wanting the real, but you’re just as fake as me. As the rest of us.”</p><p class="" style="white-space:pre-wrap;">I lowered my gaze, at a loss for words. I leaned back against the wall of our cell.&nbsp;</p><p class="" style="white-space:pre-wrap;">After a few minutes, “I’m a Varan.” Arina volunteered, wiping her eyes.</p><p class="" style="white-space:pre-wrap;">“Good for you, sweetie.” Dorian’s tone was hollow.&nbsp;</p><p class="" style="white-space:pre-wrap;">“Am I the only one here who isn’t secretly rich?” Temperance half shouted, half laughed.&nbsp;</p><p class="" style="white-space:pre-wrap;">I looked at Arina, “Varan like…”</p><p class="" style="white-space:pre-wrap;">“Like Varanskeep yeah. That was my dad.” A doomed city, blamed on the failings of its rulers. A story known to all in recent memory.&nbsp;</p><p class="" style="white-space:pre-wrap;">“I’ve met survivors but… why didn’t your family leave the country? Can’t imagine you have many friends here.”</p><p class="" style="white-space:pre-wrap;">“I don’t tell people my last name. I go by Arina Greencroft in my classes.”&nbsp;</p><p class="" style="white-space:pre-wrap;">Classes. “How old are you?”</p><p class="" style="white-space:pre-wrap;">“21. I’m a senior at NBU… Or I was. I don’t think they’ll let me graduate if we get booked for this.”</p><p class="" style="white-space:pre-wrap;">My attention turned to the area around the cell door. A long mercrete hallway in either direction. No sign of any guards. They probably would’ve just let me die. There was a vent but nothing we could reach. “Did they say what they were going to do with us?”</p><p class="" style="white-space:pre-wrap;">Temperance had recovered, “Something about reaching out to STARCAST security to come pick us up. No one else with jurisdiction, I reckon.”</p><p class="" style="white-space:pre-wrap;">“Okay, so that can’t happen. How do we get out of here?”</p><p class="" style="white-space:pre-wrap;">“If I had my glove it’d be easy.” Dorian then pointed a finger at the priest. “I mean can’t you just magic the bars open or something? I’ve seen spell types bend metal before.”</p><p class="" style="white-space:pre-wrap;">Temperance shook their head, “Healing Vulture took a lot of energy out of me. I don’t think I’m casting again for a while.”&nbsp;</p><p class="" style="white-space:pre-wrap;">Dorian shot daggers at me with his eyes, “So we’re stuck here because you had to save her.”</p><p class="" style="white-space:pre-wrap;">“What if it was you?” Arina snapped.</p><p class="" style="white-space:pre-wrap;">Dorian sneered, “It wouldn’t have been.”</p><p class="" style="white-space:pre-wrap;">I pulled myself to a stand and wobbled a bit. My muscles were weak and I was lightheaded. “It doesn’t matter. D’s right, I botched the job. So it’s on me to get us out of here. I don’t know how, but there’s got to be a way. Maybe we call the guards, and say I’m dying.. They don’t know I’m healed. Or-”&nbsp; I became acutely aware that none of them were paying attention to me. Something was behind me.</p><p class="" style="white-space:pre-wrap;">I turned around and faced a purple drone with white spots floating at eye level.&nbsp; Dotty. It adjusted its resograph lens to look at me. “Huh.”</p><p class="" style="white-space:pre-wrap;">We all looked at Arina, who held up her small hands. “Not me, they took my slate.”</p><p class="" style="white-space:pre-wrap;">I turned around again. The drone had protruded an exterior metal arm and was messing with the lock. “I think I know who it is.” I made a silent, solemn vow to fuck that woman senseless when I got back to the city.&nbsp;</p><p class="" style="white-space:pre-wrap;">The lock relented and the door opened slightly. I thanked the drone and Arina and Temperance did too. Dotty, and presumably Birdie, gave an affirmative bounce. I peeked my head out into the hallway. One led to another cell. These cells were decently sized. Why did this place have the capacity to hold like 20 people? I shook the thought from my mind. The other way must lead out. I beckoned for the others to follow.</p><p class="" style="white-space:pre-wrap;">We stayed low and quiet. There was a resograph above us but it seemed powered off. Another gift from Birdie? The hallway turned. This building wasn’t big, we had to be nearing an office. I popped my head around the corner. Yeah, an office. Two guards in there. They were armed and armored, and we weren’t either. Though we had numbers. I looked at Dotty, not a combat model. I tried to think. What would we do in the service?</p><p class="" style="white-space:pre-wrap;">Shock and awe.&nbsp;</p><p class="" style="white-space:pre-wrap;">I explained my plan through a series of complex gestures and whispers. They communicated back something along the lines of ‘you’re crazy.’ I retorted with a motion that meant ‘trust me.’ Then I reached into my leg and checked the hidden compartment. The knife was still there. Merciful gods.</p><p class="" style="white-space:pre-wrap;">I started to move forward. Once I was sure they didn’t notice us I stood up. Then I steadily worked up to a sprint, fighting past my body’s protests.</p><p class="" style="white-space:pre-wrap;">I rushed in and picked the one at the desk, a Primas-ika, judging by the slots for horns on the armor and their large size. I started stabbing in every weakness in their armor I could find. Several strikes to the neck. Their arm flailed for their pistol, which I wrenched out of their hand.</p><p class="" style="white-space:pre-wrap;">I didn’t think. I just stood back, disengaged the safety, and fired twice in the chest. Blood spattered on the chair, the wall, and the floor, and merged with some of my own on my clothes. Temperance, Arina, and Dorian were beating the shit out of the other one. They turned her in her swivel chair toward me. I gave her one shot to the head.</p><p class="" style="white-space:pre-wrap;">With both guards in the station dead, we collected ourselves. I tried to clear my mind of what just happened, and my eyes scanned the office. 6 guards in the facility, 6 desks. I looked at the primas-ika, with a special badge on their chest. Security chief. I figured the dead lady was the second in command. Good… good. I saw a row of lockers and footlockers. Several bags of items were placed on the ground. Our gear.&nbsp;</p><p class="" style="white-space:pre-wrap;">We rushed over and reclaimed our things. Dotty was inert, whatever remote control was exerted over it having been released. How Birdie pulled this off at such a range was beyond me. Arina grabbed her slate and regained control of it. Temperance began the rites of the dead for the slain security officers. The stench of burning flesh filled the room and set off the smoke alarms. I opened a locker left open by someone careless. The contents within gave me an idea. “Hey, do any of you know how to pick locks?”</p><p class="" style="white-space:pre-wrap;">Dorian nodded and Arina raised a hand. Temperance stood up from the burned bodies, “What are you thinking V?”</p><p class="" style="white-space:pre-wrap;">I stroked my chin. “No way they don’t know we’re coming. We’ve been caught once, and *that.*” I motioned to the piles of ash from the dead. “We tried doing this the subtle way.”</p><p class="" style="white-space:pre-wrap;">Temperance looked at the lockers, opened by the other two. Arina fished out a heavy-duty vest, and Dorian was weighing a riot shield in his free hand. The priest got a wicked smirk. “So we go loud.”</p><p class="" style="white-space:pre-wrap;">I flashed my teeth. “We go loud.”</p><h2 style="white-space:pre-wrap;"><a href="memory-leak-end.html" target="">4. Soldier &amp; Epilogue</a></h2><h2 style="white-space:pre-wrap;"><a href="talonborne/memory-leak.html" target="">RETURN TO MAIN PAGE</a></h2>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+</div></div></div></div></div>
+        </div><!--
+        -->
+        
+      </main>
+
+      <div id="preFooter">
+        <div class="pre-footer-inner">
+          <div class="sqs-layout sqs-grid-12 columns-12" data-layout-label="Pre-Footer Content" data-type="block-field" data-updated-on="1724515218101" id="preFooterBlocks"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block instagram-block sqs-block-instagram" data-block-json="&#123;&quot;title&quot;:true,&quot;thumbnail&quot;:true,&quot;excerpt&quot;:true,&quot;pageSize&quot;:12,&quot;filter&quot;:&#123;&#125;,&quot;hSize&quot;:null,&quot;floatDir&quot;:null,&quot;pageCollectionId&quot;:null,&quot;containingItemId&quot;:null,&quot;search-deprecated-warning&quot;:null,&quot;connectedAccountId&quot;:&quot;6192dfe69e9c81633bfe2ef4&quot;,&quot;enable-search&quot;:false,&quot;enable-search-disabled&quot;:null,&quot;socialCollectionId&quot;:&quot;&quot;,&quot;previewCollectionId&quot;:&quot;&quot;,&quot;status&quot;:&quot;&quot;,&quot;searchId&quot;:&quot;&quot;,&quot;searchTerm&quot;:&quot;&quot;,&quot;refresh&quot;:null,&quot;newWindow&quot;:false,&quot;unsafeSearch&quot;:null,&quot;aspect-ratio&quot;:&quot;square&quot;,&quot;aspectRatio&quot;:null,&quot;auto-crop&quot;:true,&quot;blockAnimation&quot;:&quot;none&quot;,&quot;collectionId&quot;:&quot;6192dfe69e9c81633bfe2ef4&quot;,&quot;design&quot;:&quot;grid&quot;,&quot;lightbox&quot;:false,&quot;padding&quot;:20,&quot;show-meta&quot;:true,&quot;show-meta-basic&quot;:true,&quot;show-meta-only-title&quot;:false,&quot;show-meta-only-description&quot;:false,&quot;square-thumbs&quot;:true,&quot;thumbnails-per-row&quot;:4,&quot;vSize&quot;:null&#125;" data-block-type="25" id="block-yui_3_17_2_1_1637015314177_9262"><div class="sqs-block-content">
+
+
+  
+
+  
+
+
+<div class="
+  sqs-gallery-container
+  sqs-gallery-block-grid
+  sqs-gallery-aspect-ratio-square
+  sqs-gallery-thumbnails-per-row-4
+  
+  
+
+  
+    
+    
+  
+  sqs-gallery-block-show-meta
+  
+  
+
+  
+  
+
+  
+  block-animation-none
+  clear"
+  
+  data-async-rendering-enabled="true"
+>
+  <div class="sqs-gallery">
+    
+      
+
+        
+
+        
+
+        
+          
+            <div class="slide" data-type="image" data-animation-role="image">
+              <div class="margin-wrapper">
+                
+                <a
+                  
+                    
+                      href="https://www.instagram.com/p/CgCiUX8uU86/" 
+                    
+                  
+
+                  class="
+                    image-slide-anchor
+                    
+                    content-fill
+                  "
+                >
+                  
+                  <noscript><img src="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1657904811725-H32AIMY65AEZNTCYOKN5/image-asset.jpeg" alt="STARCAST and LazBotanic present Chytri Ganoda live in concert! See the Sporeborn idol in all her metallic-fungal beauty as she performs hit songs from her new album Nulcelium Heart! Live at the PAS Stadium in Midtown, New Bekton! 
+
+#EraofSilence
+#TTR" /></noscript><img class="thumb-image" elementtiming="system-gallery-block-grid" data-src="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1657904811725-H32AIMY65AEZNTCYOKN5/image-asset.jpeg" data-image="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1657904811725-H32AIMY65AEZNTCYOKN5/image-asset.jpeg" data-image-dimensions="1440x1440" data-image-focal-point="0.5,0.5" alt="STARCAST and LazBotanic present Chytri Ganoda live in concert! See the Sporeborn idol in all her metallic-fungal beauty as she performs hit songs from her new album Nulcelium Heart! Live at the PAS Stadium in Midtown, New Bekton! 
+
+#EraofSilence
+#TTR" data-load="false" data-image-id="62d19eab4bbe036d2517fa26" data-type="image" />
+                </a>
+                
+              </div>
+            </div>
+          
+
+          
+        
+
+      
+
+        
+
+        
+
+        
+          
+            <div class="slide" data-type="image" data-animation-role="image">
+              <div class="margin-wrapper">
+                
+                <a
+                  
+                    
+                      href="https://www.instagram.com/p/CgAI6a1u4cy/" 
+                    
+                  
+
+                  class="
+                    image-slide-anchor
+                    
+                    content-fill
+                  "
+                >
+                  
+                  <noscript><img src="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1657827522383-AIUB7R9RZOG0LK84B2X4/image-asset.jpeg" alt="Combat chairs in the #EraofSilence
+
+This chair, beyond providing accessible mobility, is also kitted out with hovering pads and two back mounted laser cannons! All available in Gear: Machines and Upgrades. 
+
+#TTRPG #DnD #combatwheelchair
+
+September 2" /></noscript><img class="thumb-image" elementtiming="system-gallery-block-grid" data-src="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1657827522383-AIUB7R9RZOG0LK84B2X4/image-asset.jpeg" data-image="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1657827522383-AIUB7R9RZOG0LK84B2X4/image-asset.jpeg" data-image-dimensions="1440x1800" data-image-focal-point="0.5,0.5" alt="Combat chairs in the #EraofSilence
+
+This chair, beyond providing accessible mobility, is also kitted out with hovering pads and two back mounted laser cannons! All available in Gear: Machines and Upgrades. 
+
+#TTRPG #DnD #combatwheelchair
+
+September 2" data-load="false" data-image-id="62d070c1283b1b26947ac1a4" data-type="image" />
+                </a>
+                
+              </div>
+            </div>
+          
+
+          
+        
+
+      
+
+        
+
+        
+
+        
+          
+            <div class="slide" data-type="image" data-animation-role="image">
+              <div class="margin-wrapper">
+                
+                <a
+                  
+                    
+                      href="https://www.instagram.com/p/Cf7A-Nou6v-/" 
+                    
+                  
+
+                  class="
+                    image-slide-anchor
+                    
+                    content-fill
+                  "
+                >
+                  
+                  <noscript><img src="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1657653701217-6GAWJFXNM74PRQP3RN0W/image-asset.jpeg" alt="Show no mercy because you will be shown none. Die again and again, and gain momentum to Ascend to new heights of power. 
+
+Blood Neon releases July 31st 2022. 
+
+Art by @party_in_the_front 
+.
+.
+.
+.
+.
+#ttrpg #ttrpgart #rpg #rpgart #fantasy #fantasyart" /></noscript><img class="thumb-image" elementtiming="system-gallery-block-grid" data-src="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1657653701217-6GAWJFXNM74PRQP3RN0W/image-asset.jpeg" data-image="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1657653701217-6GAWJFXNM74PRQP3RN0W/image-asset.jpeg" data-image-dimensions="1080x1080" data-image-focal-point="0.5,0.5" alt="Show no mercy because you will be shown none. Die again and again, and gain momentum to Ascend to new heights of power. 
+
+Blood Neon releases July 31st 2022. 
+
+Art by @party_in_the_front 
+.
+.
+.
+.
+.
+#ttrpg #ttrpgart #rpg #rpgart #fantasy #fantasyart" data-load="false" data-image-id="62cdc9c470f7674ac9759bda" data-type="image" />
+                </a>
+                
+              </div>
+            </div>
+          
+
+          
+        
+
+      
+
+        
+
+        
+
+        
+          
+            <div class="slide" data-type="image" data-animation-role="image">
+              <div class="margin-wrapper">
+                
+                <a
+                  
+                    
+                      href="https://www.instagram.com/p/Cf2dBuVuj7Y/" 
+                    
+                  
+
+                  class="
+                    image-slide-anchor
+                    
+                    content-fill
+                  "
+                >
+                  
+                  <noscript><img src="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1657510592192-3XEHBFCWBXBV5CP44BPA/image-asset.jpeg" alt="&amp;quot;What'sa matter babe?&amp;quot;
+
+&amp;quot;Sometimes I just wonder what it would be like to feel the outside air without one of these. Just like, breathe, ykno?&amp;quot;
+
+#EraofSilence
+
+Art: @sugarmountalns 
+.
+.
+.
+.
+.
+#ttrpg #scifi #scifiart #dungeonsanddr" /></noscript><img class="thumb-image" elementtiming="system-gallery-block-grid" data-src="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1657510592192-3XEHBFCWBXBV5CP44BPA/image-asset.jpeg" data-image="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1657510592192-3XEHBFCWBXBV5CP44BPA/image-asset.jpeg" data-image-dimensions="1440x1440" data-image-focal-point="0.5,0.5" alt="&amp;quot;What'sa matter babe?&amp;quot;
+
+&amp;quot;Sometimes I just wonder what it would be like to feel the outside air without one of these. Just like, breathe, ykno?&amp;quot;
+
+#EraofSilence
+
+Art: @sugarmountalns 
+.
+.
+.
+.
+.
+#ttrpg #scifi #scifiart #dungeonsanddr" data-load="false" data-image-id="62cb9abf550cbc208222d8d5" data-type="image" />
+                </a>
+                
+              </div>
+            </div>
+          
+
+          
+        
+
+      
+
+        
+
+        
+
+        
+          
+            <div class="slide" data-type="image" data-animation-role="image">
+              <div class="margin-wrapper">
+                
+                <a
+                  
+                    
+                      href="https://www.instagram.com/p/CfxQAdkuEjk/" 
+                    
+                  
+
+                  class="
+                    image-slide-anchor
+                    
+                    content-fill
+                  "
+                >
+                  
+                  <noscript><img src="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1657329136998-14K70TPDFPQ4SER1WKZF/image-asset.jpeg" alt="Sometimes the best way to win a fight is to hit them before they know what's coming. 
+
+Art: @sugarmountalns
+.
+.
+.
+.
+.
+#ttrpg #EraofSilence #combat #scifi #fantasy #scifiart #dnd #dndart #dungeonsanddragons #dungeonsanddragonsart #game #gameart #conce" /></noscript><img class="thumb-image" elementtiming="system-gallery-block-grid" data-src="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1657329136998-14K70TPDFPQ4SER1WKZF/image-asset.jpeg" data-image="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1657329136998-14K70TPDFPQ4SER1WKZF/image-asset.jpeg" data-image-dimensions="1440x945" data-image-focal-point="0.5,0.5" alt="Sometimes the best way to win a fight is to hit them before they know what's coming. 
+
+Art: @sugarmountalns
+.
+.
+.
+.
+.
+#ttrpg #EraofSilence #combat #scifi #fantasy #scifiart #dnd #dndart #dungeonsanddragons #dungeonsanddragonsart #game #gameart #conce" data-load="false" data-image-id="62c8d5f068260052cc240a5c" data-type="image" />
+                </a>
+                
+              </div>
+            </div>
+          
+
+          
+        
+
+      
+
+        
+
+        
+
+        
+          
+            <div class="slide" data-type="image" data-animation-role="image">
+              <div class="margin-wrapper">
+                
+                <a
+                  
+                    
+                      href="https://www.instagram.com/p/CfcnE9IuZ5N/" 
+                    
+                  
+
+                  class="
+                    image-slide-anchor
+                    
+                    content-fill
+                  "
+                >
+                  
+                  <noscript><img src="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1656632045322-SS303OFG05FP6Q4QIIWH/image-asset.jpeg" alt="The Old World never really left us. In forgotten corners of Vian its structures still linger, a reminder of what we lost. 
+
+Art: @sugarmountalns 
+.
+.
+.
+.
+.
+#EraofSilence #TTRPG #game #gameart #ttrpgart #tabletopgames #tabletoproleplayinggame #dnd #dn" /></noscript><img class="thumb-image" elementtiming="system-gallery-block-grid" data-src="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1656632045322-SS303OFG05FP6Q4QIIWH/image-asset.jpeg" data-image="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1656632045322-SS303OFG05FP6Q4QIIWH/image-asset.jpeg" data-image-dimensions="1440x1800" data-image-focal-point="0.5,0.5" alt="The Old World never really left us. In forgotten corners of Vian its structures still linger, a reminder of what we lost. 
+
+Art: @sugarmountalns 
+.
+.
+.
+.
+.
+#EraofSilence #TTRPG #game #gameart #ttrpgart #tabletopgames #tabletoproleplayinggame #dnd #dn" data-load="false" data-image-id="62be32ecb1f3b952bffffb39" data-type="image" />
+                </a>
+                
+              </div>
+            </div>
+          
+
+          
+        
+
+      
+
+        
+
+        
+
+        
+          
+            <div class="slide" data-type="image" data-animation-role="image">
+              <div class="margin-wrapper">
+                
+                <a
+                  
+                    
+                      href="https://www.instagram.com/p/CfYIQrUOQ_i/" 
+                    
+                  
+
+                  class="
+                    image-slide-anchor
+                    
+                    content-fill
+                  "
+                >
+                  
+                  <noscript><img src="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1656480180492-ZIH3MTBX8Y4TBC5CETS5/image-asset.jpeg" alt="Sometimes at night, when the clouds part and the moon is just right, you can see the colonies. A little reminder that we reached heights our creators never intended for us. Something new. Something ours. 
+
+#EraofSilence #TTRPG
+
+Art: @SUGARMOUNTAlNS 
+" /></noscript><img class="thumb-image" elementtiming="system-gallery-block-grid" data-src="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1656480180492-ZIH3MTBX8Y4TBC5CETS5/image-asset.jpeg" data-image="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1656480180492-ZIH3MTBX8Y4TBC5CETS5/image-asset.jpeg" data-image-dimensions="1440x1440" data-image-focal-point="0.5,0.5" alt="Sometimes at night, when the clouds part and the moon is just right, you can see the colonies. A little reminder that we reached heights our creators never intended for us. Something new. Something ours. 
+
+#EraofSilence #TTRPG
+
+Art: @SUGARMOUNTAlNS 
+" data-load="false" data-image-id="62bbe1b4ba11921ac4016388" data-type="image" />
+                </a>
+                
+              </div>
+            </div>
+          
+
+          
+        
+
+      
+
+        
+
+        
+
+        
+          
+            <div class="slide" data-type="image" data-animation-role="image">
+              <div class="margin-wrapper">
+                
+                <a
+                  
+                    
+                      href="https://www.instagram.com/p/CfW-V2Vunao/" 
+                    
+                  
+
+                  class="
+                    image-slide-anchor
+                    
+                    content-fill
+                  "
+                >
+                  
+                  <noscript><img src="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1656443742687-KUA0DCD7U60Y69PHQ8ON/image-asset.jpeg" alt="To weather the Long Silence, horses were spliced with reptilian and arachnid DNA. These &amp;quot;horses&amp;quot; are tougher and more lethal than their simple mammalian ancestors. 
+
+Art: @sugarmountalns 
+.
+.
+.
+.
+.
+#horse #fantasy #scifi #dnd #dungeonsanddr" /></noscript><img class="thumb-image" elementtiming="system-gallery-block-grid" data-src="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1656443742687-KUA0DCD7U60Y69PHQ8ON/image-asset.jpeg" data-image="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1656443742687-KUA0DCD7U60Y69PHQ8ON/image-asset.jpeg" data-image-dimensions="1080x1080" data-image-focal-point="0.5,0.5" alt="To weather the Long Silence, horses were spliced with reptilian and arachnid DNA. These &amp;quot;horses&amp;quot; are tougher and more lethal than their simple mammalian ancestors. 
+
+Art: @sugarmountalns 
+.
+.
+.
+.
+.
+#horse #fantasy #scifi #dnd #dungeonsanddr" data-load="false" data-image-id="62bb535e878ac2664674ef7b" data-type="image" />
+                </a>
+                
+              </div>
+            </div>
+          
+
+          
+        
+
+      
+
+        
+
+        
+
+        
+          
+            <div class="slide" data-type="image" data-animation-role="image">
+              <div class="margin-wrapper">
+                
+                <a
+                  
+                    
+                      href="https://www.instagram.com/p/CfHPhJ_uJYs/" 
+                    
+                  
+
+                  class="
+                    image-slide-anchor
+                    
+                    content-fill
+                  "
+                >
+                  
+                  <noscript><img src="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1655913836064-XBKRCPORPV9K3C76EPAJ/image-asset.jpeg" alt="The Parathan saw themselves as the successors of the gods. When the Judgment came, these ambitions were buried in ash. 
+
+Art @SUGARMOUNTAlNS
+.
+.
+.
+.
+.
+#TTRPG #DnD #EraofSilence #ttrpgart
+#dndart #tabletopgames
+#tabletop
+#tabletoproleplayinggame #art " /></noscript><img class="thumb-image" elementtiming="system-gallery-block-grid" data-src="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1655913836064-XBKRCPORPV9K3C76EPAJ/image-asset.jpeg" data-image="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1655913836064-XBKRCPORPV9K3C76EPAJ/image-asset.jpeg" data-image-dimensions="1440x959" data-image-focal-point="0.5,0.5" alt="The Parathan saw themselves as the successors of the gods. When the Judgment came, these ambitions were buried in ash. 
+
+Art @SUGARMOUNTAlNS
+.
+.
+.
+.
+.
+#TTRPG #DnD #EraofSilence #ttrpgart
+#dndart #tabletopgames
+#tabletop
+#tabletoproleplayinggame #art " data-load="false" data-image-id="62b33d6bcc592f26459c001c" data-type="image" />
+                </a>
+                
+              </div>
+            </div>
+          
+
+          
+        
+
+      
+
+        
+
+        
+
+        
+          
+            <div class="slide" data-type="image" data-animation-role="image">
+              <div class="margin-wrapper">
+                
+                <a
+                  
+                    
+                      href="https://www.instagram.com/p/CezXcwGurMZ/" 
+                    
+                  
+
+                  class="
+                    image-slide-anchor
+                    
+                    content-fill
+                  "
+                >
+                  
+                  <noscript><img src="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1655246958876-JL5C3ZYURX53GFZF05NV/image-asset.jpeg" alt="When the threads of reality give way, a Tear forms. These pockets of uncreation destroy anything within and mutate anything else nearby. To contain these threats, the Tear Guard formed, volunteers willing to give whatever it takes.
+
+Art: @SUGARMOUNTA" /></noscript><img class="thumb-image" elementtiming="system-gallery-block-grid" data-src="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1655246958876-JL5C3ZYURX53GFZF05NV/image-asset.jpeg" data-image="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1655246958876-JL5C3ZYURX53GFZF05NV/image-asset.jpeg" data-image-dimensions="1440x1081" data-image-focal-point="0.5,0.5" alt="When the threads of reality give way, a Tear forms. These pockets of uncreation destroy anything within and mutate anything else nearby. To contain these threats, the Tear Guard formed, volunteers willing to give whatever it takes.
+
+Art: @SUGARMOUNTA" data-load="false" data-image-id="62a9106e80b96d1f5c53a0c7" data-type="image" />
+                </a>
+                
+              </div>
+            </div>
+          
+
+          
+        
+
+      
+
+        
+
+        
+
+        
+          
+            <div class="slide" data-type="image" data-animation-role="image">
+              <div class="margin-wrapper">
+                
+                <a
+                  
+                    
+                      href="https://www.instagram.com/p/CeeV4jCOw4n/" 
+                    
+                  
+
+                  class="
+                    image-slide-anchor
+                    
+                    content-fill
+                  "
+                >
+                  
+                  <noscript><img src="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1654543428722-EHJ6DKEKAHZ4SSTIYA5B/image-asset.jpeg" alt="Saliana Dreams, from the largest city state in the world. 
+
+Era of Silence coming August 2022
+
+By Moss @sugarmountalns 
+.
+.
+.
+.
+.
+#ttrpg #dnd #ttrpgart #dndart #rpg #rpgart #gameart #game #city #cityart #dungeonsanddragons #dungeonsanddragonsart #che" /></noscript><img class="thumb-image" elementtiming="system-gallery-block-grid" data-src="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1654543428722-EHJ6DKEKAHZ4SSTIYA5B/image-asset.jpeg" data-image="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1654543428722-EHJ6DKEKAHZ4SSTIYA5B/image-asset.jpeg" data-image-dimensions="1440x1024" data-image-focal-point="0.5,0.5" alt="Saliana Dreams, from the largest city state in the world. 
+
+Era of Silence coming August 2022
+
+By Moss @sugarmountalns 
+.
+.
+.
+.
+.
+#ttrpg #dnd #ttrpgart #dndart #rpg #rpgart #gameart #game #city #cityart #dungeonsanddragons #dungeonsanddragonsart #che" data-load="false" data-image-id="629e54446b04516942d3f673" data-type="image" />
+                </a>
+                
+              </div>
+            </div>
+          
+
+          
+        
+
+      
+
+        
+
+        
+
+        
+          
+            <div class="slide" data-type="image" data-animation-role="image">
+              <div class="margin-wrapper">
+                
+                <a
+                  
+                    
+                      href="https://www.instagram.com/p/CdyfbR9O6o6/" 
+                    
+                  
+
+                  class="
+                    image-slide-anchor
+                    
+                    content-fill
+                  "
+                >
+                  
+                  <noscript><img src="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1653072992031-4HM6TRV1N4RDR8DN6J2B/image-asset.jpeg" alt="Little mushroom orb buddy! Spore Drone by @willapaints for the #EraofSilence
+
+These semi-intelligent fungus units perform basic tasks for sentient life. 
+.
+.
+.
+.
+.
+#fungus #mushroom #scifi #fantasy #sciencefantasy #gameart #game #ttrpg #tabletopgames" /></noscript><img class="thumb-image" elementtiming="system-gallery-block-grid" data-src="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1653072992031-4HM6TRV1N4RDR8DN6J2B/image-asset.jpeg" data-image="https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/1653072992031-4HM6TRV1N4RDR8DN6J2B/image-asset.jpeg" data-image-dimensions="1440x1440" data-image-focal-point="0.5,0.5" alt="Little mushroom orb buddy! Spore Drone by @willapaints for the #EraofSilence
+
+These semi-intelligent fungus units perform basic tasks for sentient life. 
+.
+.
+.
+.
+.
+#fungus #mushroom #scifi #fantasy #sciencefantasy #gameart #game #ttrpg #tabletopgames" data-load="false" data-image-id="6287e45e81cb6312bde17366" data-type="image" />
+                </a>
+                
+              </div>
+            </div>
+          
+
+          
+        
+
+      
+    
+  </div>
+
+  
+
+</div>
+
+
+
+
+<style type="text/css" id="design-grid-css">
+#block-yui_3_17_2_1_1637015314177_9262 .sqs-gallery-block-grid .sqs-gallery-design-grid { margin-right: -20px; }
+#block-yui_3_17_2_1_1637015314177_9262 .sqs-gallery-block-grid .sqs-gallery-design-grid-slide .margin-wrapper { margin-right: 20px; margin-bottom: 20px; }
+</style>
+
+
+
+</div></div></div></div><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block html-block sqs-block-html" data-block-type="2" data-border-radii="&#123;&quot;topLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;topRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomLeft&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;,&quot;bottomRight&quot;:&#123;&quot;unit&quot;:&quot;px&quot;,&quot;value&quot;:0.0&#125;&#125;" data-sqsp-block="text" id="block-yui_3_17_2_1_1637015314177_6821"><div class="sqs-block-content">
+
+<div class="sqs-html-content" data-sqsp-text-block-content>
+  <p class="" style="white-space:pre-wrap;">Follow us on Instagram! @ShrikePublishing</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+</div></div></div></div></div>
+        </div>
+      </div>
+
+      <footer id="footer" role="contentinfo">
+        <div class="footer-inner">
+          <div class="nav-wrapper back-to-top-nav"><nav><div class="back-to-top"><a href="memory-leak-3.html#header">Back to Top</a></div></nav></div>
+          
+
+
+          
+          <div class="sqs-layout sqs-grid-12 columns-12" data-layout-label="Footer Content" data-type="block-field" id="footerBlocks"><div class="row sqs-row"><div class="col sqs-col-12 span-12"><div class="sqs-block html-block sqs-block-html" data-block-type="2" data-sqsp-block="text" id="block-946f639067323e113749"><div class="sqs-block-content">
+
+<div class="sqs-html-content" data-sqsp-text-block-content>
+  <p class="text-align-center">Powered by <a target="_blank" href="http://www.squarespace.com?channel=word_of_mouth&amp;subchannel=customer&amp;source=footer&amp;campaign=4fd1028ee4b02be53c65dfb3">Squarespace</a></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div></div></div></div></div>
+        </div>
+      </footer>
+
+    </div>
+
+    <script defer="true" src="https://static1.squarespace.com/static/ta/52a74d9ae4b0253945d2aee9/1054/scripts/site-bundle.js" type="text/javascript"></script>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" style="display:none" data-usage="social-icons-svg"><symbol id="facebook-unauth-icon" viewBox="0 0 64 64"><path d="M34.1,47V33.3h4.6l0.7-5.3h-5.3v-3.4c0-1.5,0.4-2.6,2.6-2.6l2.8,0v-4.8c-0.5-0.1-2.2-0.2-4.1-0.2 c-4.1,0-6.9,2.5-6.9,7V28H24v5.3h4.6V47H34.1z"/></symbol><symbol id="facebook-unauth-mask" viewBox="0 0 64 64"><path d="M0,0v64h64V0H0z M39.6,22l-2.8,0c-2.2,0-2.6,1.1-2.6,2.6V28h5.3l-0.7,5.3h-4.6V47h-5.5V33.3H24V28h4.6V24 c0-4.6,2.8-7,6.9-7c2,0,3.6,0.1,4.1,0.2V22z"/></symbol><symbol id="twitter-unauth-icon" viewBox="0 0 64 64"><path d="M48,22.1c-1.2,0.5-2.4,0.9-3.8,1c1.4-0.8,2.4-2.1,2.9-3.6c-1.3,0.8-2.7,1.3-4.2,1.6 C41.7,19.8,40,19,38.2,19c-3.6,0-6.6,2.9-6.6,6.6c0,0.5,0.1,1,0.2,1.5c-5.5-0.3-10.3-2.9-13.5-6.9c-0.6,1-0.9,2.1-0.9,3.3 c0,2.3,1.2,4.3,2.9,5.5c-1.1,0-2.1-0.3-3-0.8c0,0,0,0.1,0,0.1c0,3.2,2.3,5.8,5.3,6.4c-0.6,0.1-1.1,0.2-1.7,0.2c-0.4,0-0.8,0-1.2-0.1 c0.8,2.6,3.3,4.5,6.1,4.6c-2.2,1.8-5.1,2.8-8.2,2.8c-0.5,0-1.1,0-1.6-0.1c2.9,1.9,6.4,2.9,10.1,2.9c12.1,0,18.7-10,18.7-18.7 c0-0.3,0-0.6,0-0.8C46,24.5,47.1,23.4,48,22.1z"/></symbol><symbol id="twitter-unauth-mask" viewBox="0 0 64 64"><path d="M0,0v64h64V0H0z M44.7,25.5c0,0.3,0,0.6,0,0.8C44.7,35,38.1,45,26.1,45c-3.7,0-7.2-1.1-10.1-2.9 c0.5,0.1,1,0.1,1.6,0.1c3.1,0,5.9-1,8.2-2.8c-2.9-0.1-5.3-2-6.1-4.6c0.4,0.1,0.8,0.1,1.2,0.1c0.6,0,1.2-0.1,1.7-0.2 c-3-0.6-5.3-3.3-5.3-6.4c0,0,0-0.1,0-0.1c0.9,0.5,1.9,0.8,3,0.8c-1.8-1.2-2.9-3.2-2.9-5.5c0-1.2,0.3-2.3,0.9-3.3 c3.2,4,8.1,6.6,13.5,6.9c-0.1-0.5-0.2-1-0.2-1.5c0-3.6,2.9-6.6,6.6-6.6c1.9,0,3.6,0.8,4.8,2.1c1.5-0.3,2.9-0.8,4.2-1.6 c-0.5,1.5-1.5,2.8-2.9,3.6c1.3-0.2,2.6-0.5,3.8-1C47.1,23.4,46,24.5,44.7,25.5z"/></symbol><symbol id="instagram-unauth-icon" viewBox="0 0 64 64"><path d="M46.91,25.816c-0.073-1.597-0.326-2.687-0.697-3.641c-0.383-0.986-0.896-1.823-1.73-2.657c-0.834-0.834-1.67-1.347-2.657-1.73c-0.954-0.371-2.045-0.624-3.641-0.697C36.585,17.017,36.074,17,32,17s-4.585,0.017-6.184,0.09c-1.597,0.073-2.687,0.326-3.641,0.697c-0.986,0.383-1.823,0.896-2.657,1.73c-0.834,0.834-1.347,1.67-1.73,2.657c-0.371,0.954-0.624,2.045-0.697,3.641C17.017,27.415,17,27.926,17,32c0,4.074,0.017,4.585,0.09,6.184c0.073,1.597,0.326,2.687,0.697,3.641c0.383,0.986,0.896,1.823,1.73,2.657c0.834,0.834,1.67,1.347,2.657,1.73c0.954,0.371,2.045,0.624,3.641,0.697C27.415,46.983,27.926,47,32,47s4.585-0.017,6.184-0.09c1.597-0.073,2.687-0.326,3.641-0.697c0.986-0.383,1.823-0.896,2.657-1.73c0.834-0.834,1.347-1.67,1.73-2.657c0.371-0.954,0.624-2.045,0.697-3.641C46.983,36.585,47,36.074,47,32S46.983,27.415,46.91,25.816z M44.21,38.061c-0.067,1.462-0.311,2.257-0.516,2.785c-0.272,0.7-0.597,1.2-1.122,1.725c-0.525,0.525-1.025,0.85-1.725,1.122c-0.529,0.205-1.323,0.45-2.785,0.516c-1.581,0.072-2.056,0.087-6.061,0.087s-4.48-0.015-6.061-0.087c-1.462-0.067-2.257-0.311-2.785-0.516c-0.7-0.272-1.2-0.597-1.725-1.122c-0.525-0.525-0.85-1.025-1.122-1.725c-0.205-0.529-0.45-1.323-0.516-2.785c-0.072-1.582-0.087-2.056-0.087-6.061s0.015-4.48,0.087-6.061c0.067-1.462,0.311-2.257,0.516-2.785c0.272-0.7,0.597-1.2,1.122-1.725c0.525-0.525,1.025-0.85,1.725-1.122c0.529-0.205,1.323-0.45,2.785-0.516c1.582-0.072,2.056-0.087,6.061-0.087s4.48,0.015,6.061,0.087c1.462,0.067,2.257,0.311,2.785,0.516c0.7,0.272,1.2,0.597,1.725,1.122c0.525,0.525,0.85,1.025,1.122,1.725c0.205,0.529,0.45,1.323,0.516,2.785c0.072,1.582,0.087,2.056,0.087,6.061S44.282,36.48,44.21,38.061z M32,24.297c-4.254,0-7.703,3.449-7.703,7.703c0,4.254,3.449,7.703,7.703,7.703c4.254,0,7.703-3.449,7.703-7.703C39.703,27.746,36.254,24.297,32,24.297z M32,37c-2.761,0-5-2.239-5-5c0-2.761,2.239-5,5-5s5,2.239,5,5C37,34.761,34.761,37,32,37z M40.007,22.193c-0.994,0-1.8,0.806-1.8,1.8c0,0.994,0.806,1.8,1.8,1.8c0.994,0,1.8-0.806,1.8-1.8C41.807,22.999,41.001,22.193,40.007,22.193z"/></symbol><symbol id="instagram-unauth-mask" viewBox="0 0 64 64"><path d="M43.693,23.153c-0.272-0.7-0.597-1.2-1.122-1.725c-0.525-0.525-1.025-0.85-1.725-1.122c-0.529-0.205-1.323-0.45-2.785-0.517c-1.582-0.072-2.056-0.087-6.061-0.087s-4.48,0.015-6.061,0.087c-1.462,0.067-2.257,0.311-2.785,0.517c-0.7,0.272-1.2,0.597-1.725,1.122c-0.525,0.525-0.85,1.025-1.122,1.725c-0.205,0.529-0.45,1.323-0.516,2.785c-0.072,1.582-0.087,2.056-0.087,6.061s0.015,4.48,0.087,6.061c0.067,1.462,0.311,2.257,0.516,2.785c0.272,0.7,0.597,1.2,1.122,1.725s1.025,0.85,1.725,1.122c0.529,0.205,1.323,0.45,2.785,0.516c1.581,0.072,2.056,0.087,6.061,0.087s4.48-0.015,6.061-0.087c1.462-0.067,2.257-0.311,2.785-0.516c0.7-0.272,1.2-0.597,1.725-1.122s0.85-1.025,1.122-1.725c0.205-0.529,0.45-1.323,0.516-2.785c0.072-1.582,0.087-2.056,0.087-6.061s-0.015-4.48-0.087-6.061C44.143,24.476,43.899,23.682,43.693,23.153z M32,39.703c-4.254,0-7.703-3.449-7.703-7.703s3.449-7.703,7.703-7.703s7.703,3.449,7.703,7.703S36.254,39.703,32,39.703z M40.007,25.793c-0.994,0-1.8-0.806-1.8-1.8c0-0.994,0.806-1.8,1.8-1.8c0.994,0,1.8,0.806,1.8,1.8C41.807,24.987,41.001,25.793,40.007,25.793z M0,0v64h64V0H0z M46.91,38.184c-0.073,1.597-0.326,2.687-0.697,3.641c-0.383,0.986-0.896,1.823-1.73,2.657c-0.834,0.834-1.67,1.347-2.657,1.73c-0.954,0.371-2.044,0.624-3.641,0.697C36.585,46.983,36.074,47,32,47s-4.585-0.017-6.184-0.09c-1.597-0.073-2.687-0.326-3.641-0.697c-0.986-0.383-1.823-0.896-2.657-1.73c-0.834-0.834-1.347-1.67-1.73-2.657c-0.371-0.954-0.624-2.044-0.697-3.641C17.017,36.585,17,36.074,17,32c0-4.074,0.017-4.585,0.09-6.185c0.073-1.597,0.326-2.687,0.697-3.641c0.383-0.986,0.896-1.823,1.73-2.657c0.834-0.834,1.67-1.347,2.657-1.73c0.954-0.371,2.045-0.624,3.641-0.697C27.415,17.017,27.926,17,32,17s4.585,0.017,6.184,0.09c1.597,0.073,2.687,0.326,3.641,0.697c0.986,0.383,1.823,0.896,2.657,1.73c0.834,0.834,1.347,1.67,1.73,2.657c0.371,0.954,0.624,2.044,0.697,3.641C46.983,27.415,47,27.926,47,32C47,36.074,46.983,36.585,46.91,38.184z M32,27c-2.761,0-5,2.239-5,5s2.239,5,5,5s5-2.239,5-5S34.761,27,32,27z"/></symbol></svg>
+
+  </body>
+</html>

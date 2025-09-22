@@ -31,14 +31,23 @@
 <script setup lang="ts">
 import type { NavigationMenuItem } from '@nuxt/ui'
 
-// Navigation items (content-driven can replace later)
-const navigationItems: NavigationMenuItem[] = [
-  { label: 'Home', to: '/', icon: 'i-lucide-home' },
-  { label: 'Games', to: '/games', icon: 'i-lucide-gamepad-2' },
-  { label: 'Blog', to: '/blog', icon: 'i-lucide-book-open' },
-  { label: 'Stories', to: '/stories', icon: 'i-lucide-library' },
-  { label: 'Announcements', to: '/announcements', icon: 'i-lucide-megaphone' },
-  { label: 'About', to: '/about', icon: 'i-lucide-info' },
-  { label: 'Contact', to: '/contact', icon: 'i-lucide-mail' }
-]
+const { data: navData } = await useAsyncData('main-navigation', () =>
+  queryCollection('navigation').first()
+)
+
+function toIcon(name?: string) {
+  if (!name) return undefined
+  return `i-${name.replace(':', '-')}`
+}
+
+function mapItems(items: any[] | undefined): NavigationMenuItem[] {
+  return (items || []).map((it) => ({
+    label: it.label,
+    to: it.to,
+    icon: toIcon(it.icon),
+    children: it.children ? mapItems(it.children) : undefined
+  }))
+}
+
+const navigationItems = computed<NavigationMenuItem[]>(() => mapItems((navData.value as any)?.items))
 </script>

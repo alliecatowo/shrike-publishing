@@ -28,3 +28,4 @@ cta:
     to: '/contact'
     icon: 'i-heroicons-envelope'
   background: 'bg-gray-50 dark:bg-gray-800'
+

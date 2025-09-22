@@ -2,7 +2,8 @@
 slug: echoes-of-neo-tokyo
 title: Echoes of Neo-Tokyo
 description: A published novella exploring the cyberpunk underworld of Blood Neon.
-image: /images/stories/neo-tokyo.jpg
+thumbnail: /images/stories/the-rider.png
+image: /images/stories/the-rider.png
 date: 2024-06-15
 author: Marcus Hale
 type: published

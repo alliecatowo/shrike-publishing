@@ -2,7 +2,8 @@
 slug: the-last-whisper
 title: The Last Whisper
 description: A short story set in the world of Era of Silence, exploring the origins of the silence plague.
-image: /images/stories/last-whisper.jpg
+thumbnail: /images/stories/banner.png
+image: /images/stories/banner.png
 date: 2024-08-01
 author: Sarah Mitchell
 type: free

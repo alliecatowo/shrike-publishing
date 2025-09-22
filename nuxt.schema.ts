@@ -508,9 +508,9 @@ export default defineNuxtSchema({
                     title: 'Icon',
                     description: 'Icon name for the platform.',
                     icon: 'i-ph-image'
-                  }),
+                  })
                 }
-              }),
+              }
             })
           }
         }),
