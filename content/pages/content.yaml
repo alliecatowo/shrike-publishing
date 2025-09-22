@@ -1,0 +1,104 @@
+home:
+  meta:
+    title: 'Shrike Publishing'
+    description: 'Shrike Tabletop makes Tabletop roleplaying games (RPGs) about combat and cooperation. Our games Era of Silence and Blood Neon are love letters to traditional game design!'
+    keywords: 'tabletop games, board games, card games, literature, publishing, Era of Silence, Blood Neon, TTRPG'
+  hero:
+    title: 'Shrike Publishing'
+    subtitle: 'Baltimore-based storytelling studio creating tabletop games and literature. Our output focuses on telling stories of action and characters across tabletop games, written fiction, and other media!'
+    cta:
+      text: 'Explore Our Games'
+      to: '/games'
+  featuredGames:
+    title: 'Featured Games'
+    description: 'Discover our latest tabletop adventures'
+    viewAllText: 'View All Games'
+  latestBlog:
+    title: 'Latest from the Blog'
+    viewAllText: 'View All'
+  latestAnnouncements:
+    title: 'Announcements'
+    viewAllText: 'View All'
+  community:
+    title: 'Join Our Community'
+    description: 'Stay updated with our latest releases, behind-the-scenes content, and exclusive offers.'
+    primaryCta:
+      text: 'Follow Us'
+      to: '/contact'
+    secondaryCta:
+      text: 'Read Stories'
+      to: '/stories'
+
+games:
+  meta:
+    title: 'Games - Shrike Publishing'
+    description: 'Explore our collection of tabletop games including Era of Silence and Blood Neon.'
+  header:
+    title: 'Our Games'
+    description: 'Discover our collection of innovative tabletop games, from strategic card games to immersive RPGs.'
+  cta:
+    title: 'Want to Stay Updated?'
+    description: 'Get notified about new releases and special offers.'
+    buttonText: 'Contact Us'
+    buttonLink: '/contact'
+
+blog:
+  meta:
+    title: 'Blog - Shrike Publishing'
+    description: 'Read our latest articles about tabletop gaming, game design, and storytelling.'
+  header:
+    title: 'Blog'
+    description: 'Insights, tutorials, and stories from the world of tabletop gaming.'
+
+stories:
+  meta:
+    title: 'Stories - Shrike Publishing'
+    description: 'Explore our collection of written fiction and tabletop RPG stories.'
+  header:
+    title: 'Stories'
+    description: 'Immersive tales and narratives from our tabletop gaming universe.'
+
+announcements:
+  meta:
+    title: 'Announcements - Shrike Publishing'
+    description: 'Stay updated with the latest news and announcements from Shrike Publishing.'
+  header:
+    title: 'Announcements'
+    description: 'News, updates, and announcements from our studio.'
+
+manuals:
+  meta:
+    title: 'Manuals - Shrike Publishing'
+    description: 'Download character sheets, rule references, and other gaming resources.'
+  header:
+    title: 'Manuals'
+    description: 'Character sheets, quick reference guides, and downloadable resources.'
+
+about:
+  meta:
+    title: 'About - Shrike Publishing'
+    description: 'Learn about Shrike Publishing, our mission, and our team.'
+  content: |
+    ## About Shrike Publishing
+
+    Shrike Publishing is an independent tabletop game publisher based in Baltimore, Maryland. We specialize in creating immersive tabletop roleplaying games (RPGs) that focus on storytelling, character development, and cooperative gameplay.
+
+    ### Our Mission
+
+    We believe that tabletop gaming is a powerful medium for storytelling and social connection. Our games are designed to create memorable experiences that bring players together around the table.
+
+    ### Our Approach
+
+    Each of our games is crafted with care, combining traditional game design principles with innovative mechanics that encourage creativity and collaboration. We work closely with our community to create games that players love.
+
+contact:
+  meta:
+    title: 'Contact - Shrike Publishing'
+    description: 'Get in touch with Shrike Publishing for inquiries, partnerships, and support.'
+  header:
+    title: 'Contact Us'
+    description: 'Have a question or want to get in touch? We''d love to hear from you.'
+  form:
+    title: 'Send us a message'
+    description: 'Fill out the form below and we''ll get back to you as soon as possible.'
+    submitText: 'Send Message'

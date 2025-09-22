@@ -1,19 +1,17 @@
 <template>
-  <UContainer class="py-8">
-    <div class="max-w-3xl mx-auto space-y-8">
-      <!-- Article Header -->
-      <div class="space-y-4">
-        <div class="flex items-center space-x-3">
+  <UPage>
+    <UPageHeader
+      :title="postValue.title"
+      :description="postValue.description"
+    >
+      <template #top>
+        <div class="flex items-center gap-3 mb-4">
           <UBadge variant="outline">{{ postValue.author }}</UBadge>
-          <span class="text-gray-500">•</span>
-          <span class="text-gray-500">{{ formatDate(postValue.date) }}</span>
+          <span class="text-muted">•</span>
+          <span class="text-muted">{{ formatDate(postValue.date) }}</span>
         </div>
 
-        <h1 class="text-4xl font-bold">{{ postValue.title }}</h1>
-
-        <p class="text-xl text-gray-600 dark:text-gray-400">{{ postValue.description }}</p>
-
-        <div class="flex flex-wrap gap-2">
+        <div class="flex flex-wrap gap-2 mb-6">
           <UBadge
             v-for="tag in postValue.tags"
             :key="tag"
@@ -23,62 +21,71 @@
             {{ tag }}
           </UBadge>
         </div>
-      </div>
+      </template>
+    </UPageHeader>
 
+    <UPageBody>
       <!-- Article Image -->
-      <div class="aspect-video bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 rounded-lg flex items-center justify-center">
-        <Icon name="lucide:file-text" class="h-16 w-16 text-blue-600 dark:text-blue-400" />
+      <div class="mb-8">
+        <div class="aspect-video bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg flex items-center justify-center">
+          <Icon name="lucide:file-text" class="h-16 w-16 text-primary" />
+        </div>
       </div>
 
       <!-- Article Content -->
-      <div class="prose prose-lg dark:prose-invert max-w-none">
+      <div class="prose prose-lg dark:prose-invert max-w-none mb-8">
         <ContentRenderer :value="postValue" />
       </div>
 
-      <!-- Article Footer -->
-      <div class="border-t pt-8 space-y-6">
-        <!-- Share Buttons -->
-        <div class="flex items-center justify-between">
-          <h3 class="text-lg font-semibold">Share this post</h3>
-          <div class="flex space-x-2">
-            <UButton
-              icon="i-heroicons-share"
-              size="sm"
-              variant="outline"
-              @click="sharePost"
-            >
-              Share
-            </UButton>
-          </div>
-        </div>
+      <!-- Share Buttons -->
+      <div class="flex items-center justify-between border-t pt-8 mb-8">
+        <h3 class="text-lg font-semibold">Share this post</h3>
+        <UButton
+          icon="i-heroicons-share"
+          size="sm"
+          variant="outline"
+          @click="sharePost"
+        >
+          Share
+        </UButton>
+      </div>
 
-        <!-- Related Posts -->
-        <div class="space-y-4">
-          <h3 class="text-lg font-semibold">More from the blog</h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <UCard
-              v-for="relatedPost in relatedPosts"
-              :key="relatedPost.slug"
-              :to="`/blog/${relatedPost.slug}`"
-              class="hover:shadow-md transition-shadow"
-            >
-              <h4 class="font-semibold text-sm">{{ relatedPost.title }}</h4>
-              <p class="text-xs text-gray-600 dark:text-gray-400 mt-1 line-clamp-2">
-                {{ relatedPost.description }}
-              </p>
-            </UCard>
-          </div>
-        </div>
-
-        <!-- Back to Blog -->
-        <div class="text-center">
-          <UButton to="/blog" variant="outline" icon="i-heroicons-arrow-left">
-            Back to Blog
-          </UButton>
+      <!-- Related Posts -->
+      <div class="space-y-4">
+        <h3 class="text-lg font-semibold">More from the blog</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <UBlogPost
+            v-for="relatedPost in relatedPosts"
+            :key="relatedPost.slug"
+            :title="relatedPost.title"
+            :description="relatedPost.description"
+            :date="relatedPost.date"
+            :authors="relatedPost.author ? [{ name: relatedPost.author }] : []"
+            :to="`/blog/${relatedPost.slug}`"
+            variant="outline"
+          />
         </div>
       </div>
-    </div>
-  </UContainer>
+    </UPageBody>
+
+    <template #right>
+      <!-- Table of Contents -->
+      <UContentToc
+        v-if="postValue?.body?.toc?.links?.length"
+        :links="postValue.body.toc.links"
+        title="On this page"
+      />
+    </template>
+
+    <template #bottom>
+      <!-- Back to Blog -->
+      <div class="text-center pt-8">
+        <UButton to="/blog" variant="outline" icon="i-heroicons-arrow-left">
+          Back to Blog
+        </UButton>
+      </div>
+    </template>
+  </UPage>
 </template>
 
 <script setup lang="ts">
