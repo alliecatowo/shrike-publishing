@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="g">
     <UPageHero
       :title="g.title"
       :description="g.description"
@@ -16,9 +16,7 @@
         <div class="lg:col-span-2 space-y-8">
           <UCard variant="outline">
             <div class="prose prose-neutral dark:prose-invert max-w-none">
-              <ContentDoc v-slot="{ doc }" :path="`/games/${slug}`">
-                <ContentRenderer :value="doc" />
-              </ContentDoc>
+                <ContentRenderer :value="g" />
             </div>
           </UCard>
         </div>
@@ -92,6 +90,13 @@ const slug = route.params.slug as string
 const { data: game } = await useAsyncData(`game-${slug}`, () =>
   queryCollection('games').where('slug', '=', slug).first()
 )
+
+if (!game.value) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Game not found'
+  })
+}
 
 const { data: related } = await useAsyncData('related-games', () =>
   queryCollection('games').all()
