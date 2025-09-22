@@ -18,7 +18,7 @@
               <Icon name="lucide:heart" class="h-8 w-8 text-red-600 dark:text-red-400" />
             </div>
             <div>
-              <h3 class="text-xl font-semibold mb-2">Support Us</h3>
+              <h3 class="text-xl font-semibold mb-2">Patreon</h3>
               <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
                 Become a patron and get exclusive content, early access, and behind-the-scenes updates.
               </p>
@@ -31,6 +31,31 @@
                 href="https://patreon.com/shrikepublishing"
               >
                 Become a Patron
+              </UButton>
+            </div>
+          </div>
+        </UCard>
+
+        <!-- Ko-fi -->
+        <UCard class="hover:shadow-lg transition-shadow">
+          <div class="text-center space-y-4 p-6">
+            <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto">
+              <Icon name="lucide:coffee" class="h-8 w-8 text-blue-600 dark:text-blue-400" />
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold mb-2">Ko-fi</h3>
+              <p class="text-gray-600 dark:text-gray-400 text-sm mb-4">
+                Buy us a coffee to show your support.
+              </p>
+              <UButton
+                icon="i-heroicons-sparkles"
+                color="info"
+                variant="solid"
+                target="_blank"
+                rel="noopener"
+                href="https://ko-fi.com/shrikepublishing"
+              >
+                Buy us a coffee
               </UButton>
             </div>
           </div>
