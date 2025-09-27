@@ -31,11 +31,11 @@
       </UCard>
 
       <!-- Our Values -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <UPageGrid :cols="{ default: 1, md: 3 }" class="gap-6">
         <UCard>
           <div class="text-center space-y-4">
             <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto">
-              <Icon name="lucide:lightbulb" class="h-8 w-8 text-blue-600 dark:text-blue-400" />
+              <UIcon name="i-lucide-lightbulb" class="h-8 w-8 text-blue-600 dark:text-blue-400" />
             </div>
             <h3 class="text-xl font-semibold">Innovation</h3>
             <p class="text-gray-600 dark:text-gray-400">
@@ -47,7 +47,7 @@
         <UCard>
           <div class="text-center space-y-4">
             <div class="w-16 h-16 bg-red-100 dark:bg-red-900 rounded-full flex items-center justify-center mx-auto">
-              <Icon name="lucide:sword" class="h-8 w-8 text-red-600 dark:text-red-400" />
+              <UIcon name="i-lucide-sword" class="h-8 w-8 text-red-600 dark:text-red-400" />
             </div>
             <h3 class="text-xl font-semibold">Combat & Cooperation</h3>
             <p class="text-gray-600 dark:text-gray-400">
@@ -59,7 +59,7 @@
         <UCard>
           <div class="text-center space-y-4">
             <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto">
-              <Icon name="lucide:star" class="h-8 w-8 text-purple-600 dark:text-purple-400" />
+              <UIcon name="i-lucide-star" class="h-8 w-8 text-purple-600 dark:text-purple-400" />
             </div>
             <h3 class="text-xl font-semibold">Quality</h3>
             <p class="text-gray-600 dark:text-gray-400">
@@ -67,7 +67,7 @@
             </p>
           </div>
         </UCard>
-      </div>
+      </UPageGrid>
 
       <!-- Team Section -->
       <UCard>
@@ -75,10 +75,10 @@
           <h2 class="shrike-heading text-2xl">Meet the Team</h2>
         </template>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <UPageGrid :cols="{ default: 1, md: 2, lg: 3 }" class="gap-6">
           <div class="text-center space-y-3">
             <div class="w-24 h-24 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto">
-              <Icon name="lucide:user" class="h-12 w-12 text-white" />
+              <UIcon name="i-lucide-user" class="h-12 w-12 text-white" />
             </div>
             <div>
               <h3 class="font-semibold">Alex Rivera</h3>
@@ -89,7 +89,7 @@
 
           <div class="text-center space-y-3">
             <div class="w-24 h-24 bg-gradient-to-br from-secondary to-primary rounded-full flex items-center justify-center mx-auto">
-              <Icon name="lucide:user" class="h-12 w-12 text-white" />
+              <UIcon name="i-lucide-user" class="h-12 w-12 text-white" />
             </div>
             <div>
               <h3 class="font-semibold">Jamie Chen</h3>
@@ -100,7 +100,7 @@
 
           <div class="text-center space-y-3">
             <div class="w-24 h-24 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center mx-auto">
-              <Icon name="lucide:user" class="h-12 w-12 text-white" />
+              <UIcon name="i-lucide-user" class="h-12 w-12 text-white" />
             </div>
             <div>
               <h3 class="font-semibold">Marcus Hale</h3>
@@ -108,7 +108,7 @@
               <p class="text-xs text-gray-500 mt-1">Creator of Shrike Publishing artwork</p>
             </div>
           </div>
-        </div>
+        </UPageGrid>
       </UCard>
 
       <!-- Contact CTA -->

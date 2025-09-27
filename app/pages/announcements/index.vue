@@ -20,7 +20,7 @@
           <div class="flex items-start space-x-4">
             <!-- Announcement Icon -->
             <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-              <Icon name="lucide:megaphone" class="h-6 w-6 text-primary" />
+              <UIcon name="lucide:megaphone" class="h-6 w-6 text-primary" />
             </div>
 
             <!-- Announcement Content -->

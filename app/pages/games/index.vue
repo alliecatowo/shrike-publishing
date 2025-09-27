@@ -9,7 +9,7 @@
 
     <!-- Games Grid -->
     <UPageSection>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+      <UPageGrid :cols="{ default: 1, md: 2, lg: 2 }" class="gap-8">
         <UCard
           v-for="game in games"
           :key="game.slug"
@@ -46,18 +46,6 @@
                   </UBadge>
                 </div>
 
-                <!-- Preview Button -->
-                <div class="absolute bottom-3 left-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <UButton
-                    variant="solid"
-                    color="primary"
-                    size="sm"
-                    class="w-full"
-                    trailing-icon="i-lucide-arrow-right"
-                  >
-                    Explore Game
-                  </UButton>
-                </div>
               </div>
             </div>
           </template>
@@ -118,7 +106,7 @@
             </div>
           </div>
         </UCard>
-      </div>
+      </UPageGrid>
     </UPageSection>
 
     <!-- Call to Action -->

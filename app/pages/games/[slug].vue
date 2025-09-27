@@ -3,15 +3,16 @@
     <UPageHero
       :title="g.title"
       :description="g.description"
-      class="bg-gradient-to-br from-primary/15 via-purple-500/10 to-amber-500/10 dark:from-primary/25 dark:via-purple-500/15 dark:to-amber-500/15 py-10 md:py-14"
+      orientation="horizontal"
+      class="bg-gradient-to-br from-primary/15 via-purple-500/10 to-amber-500/10 dark:from-primary/25 dark:via-purple-500/15 dark:to-amber-500/15"
     >
-      <div v-if="g.image" class="mt-6">
-        <NuxtImg :src="g.image" :alt="`${g.title} Cover`" class="w-full max-w-3xl mx-auto rounded-lg shadow" />
+      <div v-if="g.image" class="max-w-3xl">
+        <NuxtImg :src="g.image" :alt="`${g.title} Cover`" class="w-full rounded-lg shadow" />
       </div>
     </UPageHero>
 
     <UContainer class="py-8">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <UPageGrid :cols="{ default: 1, lg: 3 }" class="gap-8">
         <!-- Main content -->
         <div class="lg:col-span-2 space-y-8">
           <UCard variant="outline">
@@ -23,62 +24,59 @@
 
         <!-- Sidebar -->
         <div class="space-y-6">
-          <UCard variant="outline">
-            <div class="space-y-4">
-              <h3 class="font-bold text-highlighted">Game Information</h3>
-              <div class="space-y-3 text-sm">
-                <div class="flex justify-between">
-                  <span class="text-muted">Price:</span>
-                  <span class="text-highlighted font-bold">${{ g.price }}</span>
-                </div>
-                <div v-if="(g.tags?.length || 0)" class="flex flex-wrap gap-2">
-                  <UBadge v-for="tag in g.tags" :key="tag" variant="subtle" size="sm">{{ tag }}</UBadge>
-                </div>
-              </div>
+          <UPageCard
+            title="Game Information"
+            :description="`Price: $${g.price}`"
+            variant="outline"
+          >
+            <div v-if="(g.tags?.length || 0)" class="flex flex-wrap gap-2 mt-4">
+              <UBadge v-for="tag in g.tags" :key="tag" variant="subtle" size="sm">{{ tag }}</UBadge>
             </div>
-          </UCard>
+          </UPageCard>
 
-          <UCard variant="outline">
-            <div class="space-y-4">
-              <h3 class="font-bold text-highlighted">Get the Game</h3>
-              <div class="space-y-3">
-                <UButton to="/contact" variant="outline" size="sm" leading-icon="i-lucide-shopping-cart" class="w-full justify-start">
-                  Contact to Purchase
-                </UButton>
-              </div>
-            </div>
-          </UCard>
+          <UPageCard
+            title="Get the Game"
+            description="Contact to Purchase"
+            variant="outline"
+          >
+            <template #footer>
+              <UButton to="/contact" variant="outline" size="sm" leading-icon="i-lucide-shopping-cart" class="w-full">
+                Contact to Purchase
+              </UButton>
+            </template>
+          </UPageCard>
 
-          <UCard variant="outline">
-            <div class="space-y-4">
-              <h3 class="font-bold text-highlighted">Related Games</h3>
-              <div class="space-y-3">
-                <NuxtLink
-                  v-for="relatedGame in relatedGames"
-                  :key="relatedGame.slug"
-                  :to="`/games/${relatedGame.slug}`"
-                  class="block group"
-                >
-                  <div class="flex gap-3">
-                    <NuxtImg
-                      :src="relatedGame.image"
-                      :alt="relatedGame.title"
-                      class="w-16 h-20 object-cover rounded group-hover:opacity-80 transition-opacity"
-                    />
-                    <div class="flex-1 min-w-0">
-                      <h4 class="font-medium text-highlighted group-hover:text-primary transition-colors line-clamp-2">
-                        {{ relatedGame.title }}
-                      </h4>
-                      <p class="text-sm text-muted line-clamp-2">{{ relatedGame.description }}</p>
-                      <p class="text-sm font-bold text-primary">${{ relatedGame.price }}</p>
-                    </div>
+          <UPageCard
+            title="Related Games"
+            description="Discover more games"
+            variant="outline"
+          >
+            <div class="space-y-3">
+              <NuxtLink
+                v-for="relatedGame in relatedGames"
+                :key="relatedGame.slug"
+                :to="`/games/${relatedGame.slug}`"
+                class="block group"
+              >
+                <div class="flex gap-3">
+                  <NuxtImg
+                    :src="relatedGame.image"
+                    :alt="relatedGame.title"
+                    class="w-16 h-20 object-cover rounded group-hover:opacity-80 transition-opacity"
+                  />
+                  <div class="flex-1 min-w-0">
+                    <h4 class="font-medium text-highlighted group-hover:text-primary transition-colors line-clamp-2">
+                      {{ relatedGame.title }}
+                    </h4>
+                    <p class="text-sm text-muted line-clamp-2">{{ relatedGame.description }}</p>
+                    <p class="text-sm font-bold text-primary">${{ relatedGame.price }}</p>
                   </div>
-                </NuxtLink>
-              </div>
+                </div>
+              </NuxtLink>
             </div>
-          </UCard>
+          </UPageCard>
         </div>
-      </div>
+      </UPageGrid>
     </UContainer>
   </div>
 </template>

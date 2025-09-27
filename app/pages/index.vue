@@ -21,7 +21,7 @@
       :description="pageContent?.home?.featuredGames?.description || 'Discover our latest tabletop adventures'"
       :ui="{ container: 'text-center' }"
     >
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <UPageGrid :cols="{ default: 1, md: 2 }" class="gap-8">
         <UCard
           v-for="game in featuredGames"
           :key="game.slug"
@@ -56,7 +56,7 @@
             </div>
           </div>
         </UCard>
-      </div>
+      </UPageGrid>
 
       <div class="text-center mt-12">
         <UButton to="/games" variant="outline" size="lg" trailing-icon="i-lucide-arrow-right">
@@ -65,9 +65,197 @@
       </div>
     </UPageSection>
 
+    <!-- Stats & Highlights -->
+    <UPageSection
+      title="Our Impact"
+      description="Join thousands of players in immersive storytelling adventures"
+      :ui="{ container: 'text-center' }"
+    >
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <UCard variant="outline" class="text-center">
+          <div class="space-y-2">
+            <div class="text-3xl font-bold text-primary">50K+</div>
+            <div class="text-muted">Stories Created</div>
+          </div>
+        </UCard>
+        <UCard variant="outline" class="text-center">
+          <div class="space-y-2">
+            <div class="text-3xl font-bold text-primary">12K+</div>
+            <div class="text-muted">Active Players</div>
+          </div>
+        </UCard>
+        <UCard variant="outline" class="text-center">
+          <div class="space-y-2">
+            <div class="text-3xl font-bold text-primary">8</div>
+            <div class="text-muted">Published Games</div>
+          </div>
+        </UCard>
+        <UCard variant="outline" class="text-center">
+          <div class="space-y-2">
+            <div class="text-3xl font-bold text-primary">4.9★</div>
+            <div class="text-muted">Average Rating</div>
+          </div>
+        </UCard>
+      </div>
+    </UPageSection>
+
+    <!-- Testimonials -->
+    <UPageSection
+      title="What Players Say"
+      description="Don't just take our word for it - hear from our community"
+      :ui="{ container: 'text-center' }"
+    >
+      <UPageGrid :cols="{ default: 1, md: 2, lg: 3 }" class="gap-6">
+        <UPageCard
+          title="Absolutely incredible storytelling"
+          description="Era of Silence completely changed how I think about tabletop RPGs. The world-building is phenomenal and every session leaves me wanting more."
+          variant="soft"
+          orientation="horizontal"
+        >
+          <template #leading>
+            <UAvatar
+              src="https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=100&h=100&fit=crop&crop=face"
+              alt="Sarah Johnson"
+              size="lg"
+            />
+          </template>
+          <template #footer>
+            <div class="text-sm text-muted">Sarah Johnson - Game Master</div>
+          </template>
+        </UPageCard>
+
+        <UPageCard
+          title="Best investment in gaming"
+          description="Blood Neon has become our weekly ritual. The mechanics are innovative and the story keeps us engaged for hours."
+          variant="soft"
+          orientation="horizontal"
+        >
+          <template #leading>
+            <UAvatar
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
+              alt="Mike Chen"
+              size="lg"
+            />
+          </template>
+          <template #footer>
+            <div class="text-sm text-muted">Mike Chen - Player</div>
+          </template>
+        </UPageCard>
+
+        <UPageCard
+          title="Professional quality"
+          description="The production value and attention to detail in these games rivals anything from major publishers. Truly impressive work."
+          variant="soft"
+          orientation="horizontal"
+        >
+          <template #leading>
+            <UAvatar
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
+              alt="Alex Rivera"
+              size="lg"
+            />
+          </template>
+          <template #footer>
+            <div class="text-sm text-muted">Alex Rivera - Content Creator</div>
+          </template>
+        </UPageCard>
+      </UPageGrid>
+    </UPageSection>
+
+    <!-- Newsletter Signup -->
+    <UPageSection
+      title="Stay Updated"
+      description="Get the latest news, exclusive content, and early access to new releases"
+      :ui="{ container: 'text-center' }"
+    >
+      <UCard class="max-w-2xl mx-auto">
+        <div class="space-y-6">
+          <div class="space-y-4">
+            <h3 class="text-2xl font-bold text-highlighted">Join Our Newsletter</h3>
+            <p class="text-muted">
+              Subscribe to receive updates about new games, behind-the-scenes content, and exclusive offers.
+            </p>
+          </div>
+
+          <UForm :schema="newsletterSchema" :state="newsletterForm" @submit="onNewsletterSubmit" class="space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <UFieldGroup label="First Name" name="firstName">
+                <UInput
+                  v-model="newsletterForm.firstName"
+                  placeholder="Enter your first name"
+                  required
+                />
+              </UFieldGroup>
+              <UFieldGroup label="Email" name="email">
+                <UInput
+                  v-model="newsletterForm.email"
+                  type="email"
+                  placeholder="your@email.com"
+                  required
+                />
+              </UFieldGroup>
+            </div>
+            <UButton type="submit" size="lg" :loading="newsletterLoading" class="w-full">
+              Subscribe to Newsletter
+            </UButton>
+          </UForm>
+
+          <p class="text-sm text-muted">
+            We respect your privacy. Unsubscribe at any time.
+          </p>
+        </div>
+      </UCard>
+    </UPageSection>
+
+    <!-- Recent Releases Timeline -->
+    <UPageSection
+      title="Recent Releases"
+      description="Check out our latest games and updates"
+      :ui="{ container: 'text-center' }"
+    >
+      <UTimeline
+        :items="recentReleases"
+        class="max-w-4xl mx-auto"
+        orientation="vertical"
+      />
+    </UPageSection>
+
+    <!-- Featured Story -->
+    <UPageSection
+      title="Featured Story"
+      description="Read our latest published work"
+      :ui="{ container: 'text-center' }"
+    >
+      <UPageCard
+        title="Echoes of Neo-Tokyo"
+        description="In the neon-drenched streets of a dystopian future, a rogue hacker discovers a digital ghost haunting the city's neural network. As corporate overlords tighten their grip, she must choose between exposing the truth or joining the shadows that hide it."
+        :to="'/stories/echoes-of-neo-tokyo'"
+        orientation="horizontal"
+        variant="outline"
+        class="max-w-4xl mx-auto"
+      >
+        <template #leading>
+          <div class="w-48 h-64 bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900 dark:to-pink-900 rounded-lg flex items-center justify-center">
+            <UIcon name="i-lucide-book-open" class="h-16 w-16 text-purple-600 dark:text-purple-400" />
+          </div>
+        </template>
+        <template #footer>
+          <div class="flex items-center gap-2 text-sm text-muted">
+            <UIcon name="i-lucide-clock" class="h-4 w-4" />
+            <span>12 min read</span>
+            <span>•</span>
+            <span>Cyberpunk</span>
+            <span>•</span>
+            <span>Published Nov 2024</span>
+          </div>
+        </template>
+      </UPageCard>
+    </UPageSection>
+
     <!-- Latest Blog Posts & Announcements -->
     <UContainer>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <!-- Latest Blog Posts -->
         <div class="space-y-6">
           <div class="flex items-center justify-between">
@@ -171,6 +359,7 @@
             </UCard>
           </div>
         </div>
+        </div>
       </div>
     </UContainer>
 
@@ -232,6 +421,72 @@ interface AnnouncementView {
   author?: string
   tags?: string[]
 }
+
+// Newsletter form
+const newsletterForm = reactive({
+  firstName: '',
+  email: ''
+})
+
+const newsletterLoading = ref(false)
+
+const newsletterSchema = {
+  firstName: { type: 'string', required: true, minLength: 2 },
+  email: { type: 'string', required: true, format: 'email' }
+}
+
+const onNewsletterSubmit = async () => {
+  newsletterLoading.value = true
+  try {
+    // In a real app, you'd send this to your backend
+    console.log('Newsletter signup:', newsletterForm)
+
+    // Simulate API call
+    await new Promise(resolve => setTimeout(resolve, 1000))
+
+    // Reset form
+    Object.assign(newsletterForm, {
+      firstName: '',
+      email: ''
+    })
+
+    // Show success message
+    alert('Thank you for subscribing! Check your email for confirmation.')
+  } catch (error) {
+    console.error('Error subscribing to newsletter:', error)
+    alert('There was an error subscribing. Please try again.')
+  } finally {
+    newsletterLoading.value = false
+  }
+}
+
+// Recent releases data
+const recentReleases = [
+  {
+    date: 'Dec 2024',
+    title: 'The Silent Observer',
+    description: 'New cyberpunk short story published on our stories page.',
+    icon: 'i-lucide-book-open'
+  },
+  {
+    date: 'Nov 2024',
+    title: 'Era of Silence - Quick Reference Guide',
+    description: 'Updated quick reference guide with clarifications and new content.',
+    icon: 'i-lucide-file-text'
+  },
+  {
+    date: 'Oct 2024',
+    title: 'Blood Neon Expansion',
+    description: 'Corporate Shadows expansion released with new mechanics and story content.',
+    icon: 'i-lucide-gamepad-2'
+  },
+  {
+    date: 'Sep 2024',
+    title: 'Community Newsletter Launch',
+    description: 'Monthly newsletter featuring behind-the-scenes content and player spotlights.',
+    icon: 'i-lucide-mail'
+  }
+]
 
 const latestAnnouncements = computed<AnnouncementView[]>(() => {
   const items = announcements.value || []

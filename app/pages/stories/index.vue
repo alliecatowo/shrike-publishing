@@ -13,7 +13,7 @@
       <UTabs v-model="activeTab" :items="tabs" />
 
       <!-- Stories Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <UPageGrid :cols="{ default: 1, sm: 2, lg: 3, xl: 4 }" class="gap-6">
         <UCard
           v-for="story in filteredStories"
           :key="story.slug"
@@ -33,7 +33,7 @@
               </template>
               <template v-else>
                 <div class="h-full w-full bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900 dark:to-pink-900 flex items-center justify-center">
-                  <Icon name="lucide:book-open" class="h-12 w-12 text-purple-600 dark:text-purple-400" />
+                  <UIcon name="i-lucide-book-open" class="h-12 w-12 text-purple-600 dark:text-purple-400" />
                 </div>
               </template>
             </div>
@@ -75,11 +75,11 @@
             </div>
           </div>
         </UCard>
-      </div>
+      </UPageGrid>
 
       <!-- Empty State -->
       <div v-if="filteredStories.length === 0" class="text-center py-12">
-        <Icon name="lucide:book-open" class="h-16 w-16 text-gray-400 mx-auto mb-4" />
+        <UIcon name="i-lucide-book-open" class="h-16 w-16 text-gray-400 mx-auto mb-4" />
         <h3 class="text-lg font-semibold text-gray-600 dark:text-gray-400 mb-2">
           No {{ activeTab === 'all' ? 'stories' : activeTab }} yet
         </h3>
@@ -92,7 +92,7 @@
         <p class="text-gray-600 dark:text-gray-400">
           We're always looking for talented writers to expand our worlds.
         </p>
-        <UButton to="/contact" icon="i-heroicons-envelope">
+        <UButton to="/contact" icon="i-lucide-mail">
           Get in Touch
         </UButton>
       </div>
