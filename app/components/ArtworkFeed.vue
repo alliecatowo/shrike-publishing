@@ -17,8 +17,8 @@
       </UButton>
     </div>
 
-    <!-- Masonry Grid Layout -->
-    <div class="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
+    <!-- Artwork Grid -->
+    <UPageGrid :cols="{ default: 1, md: 2, lg: 3, xl: 4 }" class="gap-6">
       <UModal
         v-for="artwork in filteredArtwork"
         :key="artwork.id"
@@ -26,7 +26,7 @@
         <!-- Artwork Card -->
         <UCard
           variant="outline"
-          class="group cursor-pointer hover:shadow-xl transition-all duration-300 break-inside-avoid hover:-translate-y-1"
+          class="group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
         >
           <template #header>
             <div class="relative overflow-hidden">
@@ -38,12 +38,12 @@
                 loading="lazy"
               />
               <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                <UIcon 
-                  name="i-lucide-expand" 
+                <UIcon
+                  name="i-lucide-expand"
                   class="size-8 text-white opacity-0 group-hover:opacity-100 transition-opacity"
                 />
               </div>
-              
+
               <!-- Overlay Info -->
               <div class="absolute top-3 right-3">
                 <UBadge
@@ -67,14 +67,14 @@
 
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2">
-                <UAvatar 
+                <UAvatar
                   :src="artwork.artistAvatar || '/default-avatar.png'"
                   :alt="artwork.artist"
                   size="xs"
                 />
                 <span class="text-sm font-medium text-highlighted">{{ artwork.artist }}</span>
               </div>
-              
+
               <div class="flex items-center gap-1 text-muted">
                 <UIcon name="i-lucide-heart" class="size-4" />
                 <span class="text-sm">{{ artwork.likes || 0 }}</span>
@@ -107,12 +107,12 @@
                   class="w-full h-auto max-h-[70vh] object-contain rounded-lg"
                 />
               </div>
-              
+
               <!-- Details -->
               <div class="space-y-6">
                 <div class="space-y-3">
                   <div class="flex items-center gap-3">
-                    <UAvatar 
+                    <UAvatar
                       :src="artwork.artistAvatar || '/default-avatar.png'"
                       :alt="artwork.artist"
                       size="sm"
@@ -122,7 +122,7 @@
                       <p class="text-sm text-muted">Artist</p>
                     </div>
                   </div>
-                  
+
                   <h2 class="text-2xl font-bold text-highlighted">{{ artwork.title }}</h2>
                   <p class="text-muted leading-relaxed">{{ artwork.description }}</p>
                 </div>
@@ -165,15 +165,15 @@
                   </div>
 
                   <div class="flex gap-2">
-                    <UButton 
-                      variant="soft" 
+                    <UButton
+                      variant="soft"
                       color="primary"
                       leading-icon="i-lucide-heart"
                       size="sm"
                     >
                       Like ({{ artwork.likes || 0 }})
                     </UButton>
-                    <UButton 
+                    <UButton
                       variant="outline"
                       leading-icon="i-lucide-share-2"
                       size="sm"
@@ -208,7 +208,7 @@
           </div>
         </template>
       </UModal>
-    </div>
+    </UPageGrid>
 
     <!-- Load More -->
     <div v-if="hasMore" class="text-center mt-12">

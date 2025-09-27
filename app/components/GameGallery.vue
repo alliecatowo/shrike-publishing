@@ -15,7 +15,7 @@
       </div>
     </div>
 
-    <!-- Artwork Carousel -->
+    <!-- Artwork Gallery -->
     <UPageSection title="Artwork Gallery" description="Explore the visual world of the game">
       <UCarousel
         v-slot="{ item }"
@@ -34,8 +34,8 @@
               loading="lazy"
             />
             <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors rounded-lg flex items-center justify-center">
-              <UIcon 
-                name="i-lucide-expand" 
+              <UIcon
+                name="i-lucide-expand"
                 class="size-8 text-white opacity-0 group-hover:opacity-100 transition-opacity"
               />
             </div>
@@ -62,9 +62,9 @@
       </UCarousel>
     </UPageSection>
 
-    <!-- Character Art Grid -->
+    <!-- Character Gallery -->
     <UPageSection title="Character Gallery" description="Meet the heroes and villains">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <UPageGrid :cols="{ default: 1, md: 2, lg: 3 }" class="gap-6">
         <UCard
           v-for="character in characterArt"
           :key="character.id"
@@ -100,7 +100,7 @@
             </div>
           </div>
         </UCard>
-      </div>
+      </UPageGrid>
     </UPageSection>
 
     <!-- Concept Art Timeline -->
@@ -130,7 +130,7 @@
               </UButton>
             </div>
           </div>
-          
+
           <div class="flex-1">
             <UCarousel
               v-slot="{ item }"
@@ -156,9 +156,9 @@
       </div>
     </UPageSection>
 
-    <!-- Download Section -->
+    <!-- Game Materials -->
     <UPageSection title="Game Materials" description="Download PDFs and resources">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <UPageGrid :cols="{ default: 1, md: 2 }" class="gap-8">
         <UCard
           v-for="download in gameDownloads"
           :key="download.id"
@@ -190,7 +190,7 @@
             </UButton>
           </div>
         </UCard>
-      </div>
+      </UPageGrid>
     </UPageSection>
   </div>
 </template>

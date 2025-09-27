@@ -27,130 +27,123 @@
       </div>
     </div>
 
-    <!-- PDF Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <UCard
-        v-for="pdf in filteredPDFs"
-        :key="pdf.id"
-        variant="outline"
-        class="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-      >
-        <template #header>
+    <!-- PDF Table -->
+    <UTable
+      :data="filteredPDFs"
+      :columns="columns"
+      class="flex-1"
+    >
+      <template #title-cell="{ row }">
+        <div class="flex items-start gap-3">
           <div class="relative">
             <!-- PDF Preview/Cover -->
-            <div class="aspect-[3/4] bg-gradient-to-br from-primary/5 to-secondary/5 rounded-lg flex items-center justify-center relative overflow-hidden">
+            <div class="w-16 h-20 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-lg flex items-center justify-center relative overflow-hidden">
               <NuxtImg
-                v-if="pdf.coverImage"
-                :src="pdf.coverImage"
-                :alt="`${pdf.title} Cover`"
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                v-if="row.original.coverImage"
+                :src="row.original.coverImage"
+                :alt="`${row.original.title} Cover`"
+                class="w-full h-full object-cover"
               />
-              <div v-else class="text-center space-y-3">
-                <UIcon :name="getPDFIcon(pdf.type)" class="size-16 text-primary/60" />
-                <p class="text-sm text-muted font-medium">{{ pdf.type }}</p>
-              </div>
-              
-              <!-- Overlay -->
-              <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                <UIcon 
-                  name="i-lucide-download" 
-                  class="size-8 text-white opacity-0 group-hover:opacity-100 transition-opacity"
-                />
+              <div v-else class="text-center space-y-1">
+                <UIcon :name="getPDFIcon(row.original.type)" class="size-4 text-primary/60" />
+                <p class="text-xs text-muted font-medium">{{ row.original.type }}</p>
               </div>
             </div>
 
             <!-- Badges -->
-            <div class="absolute top-3 left-3 right-3 flex justify-between">
+            <div class="absolute -top-1 -right-1">
               <UBadge
-                :variant="getGameVariant(pdf.game)"
-                :color="getGameColor(pdf.game)"
-                size="sm"
-              >
-                {{ pdf.game }}
-              </UBadge>
-              <UBadge
-                v-if="pdf.isNew"
+                v-if="row.original.isNew"
                 variant="solid"
                 color="success"
-                size="sm"
+                size="xs"
               >
                 New
               </UBadge>
             </div>
           </div>
-        </template>
-
-        <div class="space-y-4">
-          <div class="space-y-2">
-            <h3 class="font-bold text-lg text-highlighted group-hover:text-primary transition-colors line-clamp-2">
-              {{ pdf.title }}
+          <div class="flex-1 min-w-0">
+            <h3 class="font-bold text-highlighted line-clamp-2">
+              {{ row.original.title }}
             </h3>
-            <p class="text-muted text-sm line-clamp-3">{{ pdf.description }}</p>
-          </div>
-
-          <!-- PDF Details -->
-          <div class="space-y-3">
-            <div class="flex items-center justify-between text-sm">
-              <span class="text-muted">File Size:</span>
-              <span class="text-highlighted font-medium">{{ pdf.fileSize }}</span>
-            </div>
-            <div class="flex items-center justify-between text-sm">
-              <span class="text-muted">Pages:</span>
-              <span class="text-highlighted font-medium">{{ pdf.pageCount }}</span>
-            </div>
-            <div class="flex items-center justify-between text-sm">
-              <span class="text-muted">Version:</span>
-              <span class="text-highlighted font-medium">{{ pdf.version }}</span>
-            </div>
-          </div>
-
-          <!-- Tags -->
-          <div class="flex flex-wrap gap-2">
-            <UBadge
-              v-for="tag in pdf.tags"
-              :key="tag"
-              variant="subtle"
-              size="sm"
-            >
-              {{ tag }}
-            </UBadge>
-          </div>
-
-          <!-- Actions -->
-          <div class="flex gap-2 pt-2">
-            <UButton
-              :to="pdf.downloadUrl"
-              variant="solid"
-              color="primary"
-              size="sm"
-              leading-icon="i-lucide-download"
-              target="_blank"
-              class="flex-1"
-              @click="trackDownload(pdf)"
-            >
-              Download
-            </UButton>
-            <UButton
-              v-if="pdf.previewUrl"
-              :to="pdf.previewUrl"
-              variant="outline"
-              size="sm"
-              icon="i-lucide-eye"
-              target="_blank"
-            >
-              Preview
-            </UButton>
-            <UDropdownMenu :items="getActionItems(pdf)">
-              <UButton
-                variant="ghost"
-                size="sm"
-                icon="i-lucide-more-horizontal"
-              />
-            </UDropdownMenu>
+            <p class="text-muted text-sm line-clamp-2 mt-1">{{ row.original.description }}</p>
           </div>
         </div>
-      </UCard>
-    </div>
+      </template>
+
+      <template #game-cell="{ row }">
+        <UBadge
+          :variant="getGameVariant(row.original.game)"
+          :color="getGameColor(row.original.game)"
+          size="sm"
+        >
+          {{ row.original.game }}
+        </UBadge>
+      </template>
+
+      <template #details-cell="{ row }">
+        <div class="space-y-1 text-sm">
+          <div class="flex justify-between">
+            <span class="text-muted">Size:</span>
+            <span class="text-highlighted font-medium">{{ row.original.fileSize }}</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-muted">Pages:</span>
+            <span class="text-highlighted font-medium">{{ row.original.pageCount }}</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-muted">Version:</span>
+            <span class="text-highlighted font-medium">{{ row.original.version }}</span>
+          </div>
+        </div>
+      </template>
+
+      <template #tags-cell="{ row }">
+        <div class="flex flex-wrap gap-1">
+          <UBadge
+            v-for="tag in row.original.tags"
+            :key="tag"
+            variant="subtle"
+            size="sm"
+          >
+            {{ tag }}
+          </UBadge>
+        </div>
+      </template>
+
+      <template #actions-cell="{ row }">
+        <div class="flex gap-1">
+          <UButton
+            :to="row.original.downloadUrl"
+            variant="solid"
+            color="primary"
+            size="xs"
+            leading-icon="i-lucide-download"
+            target="_blank"
+            @click="trackDownload(row.original)"
+          >
+            Download
+          </UButton>
+          <UButton
+            v-if="row.original.previewUrl"
+            :to="row.original.previewUrl"
+            variant="outline"
+            size="xs"
+            icon="i-lucide-eye"
+            target="_blank"
+          >
+            Preview
+          </UButton>
+          <UDropdownMenu :items="getActionItems(row.original)">
+            <UButton
+              variant="ghost"
+              size="xs"
+              icon="i-lucide-more-horizontal"
+            />
+          </UDropdownMenu>
+        </div>
+      </template>
+    </UTable>
 
     <!-- Empty State -->
     <div v-if="filteredPDFs.length === 0" class="text-center py-12">
@@ -197,6 +190,8 @@
 </template>
 
 <script setup lang="ts">
+import type { TableColumn } from '@nuxt/ui'
+
 interface PDFItem {
   id: string
   title: string
@@ -224,6 +219,42 @@ const props = defineProps<PDFLibraryProps>()
 const searchQuery = ref('')
 const selectedCategory = ref('')
 const selectedGame = ref('')
+
+const columns = computed(() => [
+  {
+    accessorKey: 'title',
+    header: 'Title',
+    cell: ({ row }) => row.getValue('title')
+  },
+  {
+    accessorKey: 'game',
+    header: 'Game',
+    cell: ({ row }) => row.getValue('game')
+  },
+  {
+    accessorKey: 'type',
+    header: 'Type',
+    cell: ({ row }) => {
+      const type = row.getValue('type') as string
+      return type.charAt(0).toUpperCase() + type.slice(1).replace('-', ' ')
+    }
+  },
+  {
+    accessorKey: 'details',
+    header: 'Details',
+    cell: ({ row }) => row.getValue('details')
+  },
+  {
+    accessorKey: 'tags',
+    header: 'Tags',
+    cell: ({ row }) => row.getValue('tags')
+  },
+  {
+    id: 'actions',
+    header: 'Actions',
+    cell: ({ row }) => row.getValue('actions')
+  }
+])
 
 const categoryOptions = computed(() => [
   { label: 'All Categories', value: '' },

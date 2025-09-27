@@ -39,7 +39,7 @@
         </template>
         <template v-else>
           <div class="aspect-video bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg flex items-center justify-center">
-            <Icon name="lucide:file-text" class="h-16 w-16 text-primary" />
+            <UIcon name="i-lucide-file-text" class="h-16 w-16 text-primary" />
           </div>
         </template>
       </div>

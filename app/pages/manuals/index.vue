@@ -10,7 +10,7 @@
       </div>
 
       <!-- Manuals Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <UPageGrid :cols="{ default: 1, md: 2 }" class="gap-6">
         <UCard
           v-for="manual in manualsValue"
           :key="manual.slug"
@@ -19,7 +19,7 @@
           <div class="p-6 space-y-4">
             <!-- Manual Icon -->
             <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center">
-              <Icon name="lucide:file" class="h-8 w-8 text-blue-600 dark:text-blue-400" />
+              <UIcon name="i-lucide-file" class="h-8 w-8 text-blue-600 dark:text-blue-400" />
             </div>
 
             <!-- Manual Info -->
@@ -42,7 +42,7 @@
             <!-- Download Button -->
             <UButton
               :href="manual.download"
-              icon="i-heroicons-arrow-down-tray"
+              icon="i-lucide-download"
               target="_blank"
               rel="noopener"
               block
@@ -51,11 +51,11 @@
             </UButton>
           </div>
         </UCard>
-      </div>
+      </UPageGrid>
 
       <!-- Empty State -->
       <div v-if="manualsValue.length === 0" class="text-center py-12">
-        <Icon name="lucide:file" class="h-16 w-16 text-gray-400 mx-auto mb-4" />
+        <UIcon name="i-lucide-file" class="h-16 w-16 text-gray-400 mx-auto mb-4" />
         <h3 class="text-lg font-semibold text-gray-600 dark:text-gray-400 mb-2">No manuals available yet</h3>
         <p class="text-gray-500">Check back soon for downloadable resources!</p>
       </div>

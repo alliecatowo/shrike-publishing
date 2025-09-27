@@ -6,9 +6,9 @@
       :ui="{ container: 'text-center' }"
     />
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+    <UPageGrid :cols="{ default: 1, md: 2 }" class="gap-8 mt-8">
       <UPageCard
-        icon="simple-icons:patreon"
+        icon="i-lucide-users"
         title="Become a Patron"
         description="Get exclusive access to behind-the-scenes content, early releases, and a special role in our Discord community. Your support helps us create more of the content you love!"
         to="https://patreon.com/shrikepublishing"
@@ -19,12 +19,12 @@
       >
         <template #leading>
           <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center mx-auto">
-            <Icon name="simple-icons:patreon" class="h-8 w-8 text-primary-600 dark:text-primary-400" />
+            <UIcon name="i-lucide-users" class="h-8 w-8 text-primary-600 dark:text-primary-400" />
           </div>
         </template>
         <template #footer>
           <UButton
-            icon="i-simple-icons-patreon"
+            icon="i-lucide-users"
             color="primary"
             variant="solid"
             target="_blank"
@@ -37,7 +37,7 @@
       </UPageCard>
 
       <UPageCard
-        icon="simple-icons:kofi"
+        icon="i-lucide-coffee"
         title="Buy Us a Coffee"
         description="A one-time donation to show your appreciation. Every coffee helps us stay fueled and focused on creating great games and stories for you to enjoy!"
         to="https://ko-fi.com/shrikepublishing"
@@ -48,12 +48,12 @@
       >
         <template #leading>
           <div class="w-16 h-16 bg-secondary-100 dark:bg-secondary-900 rounded-full flex items-center justify-center mx-auto">
-            <Icon name="simple-icons:kofi" class="h-8 w-8 text-secondary-600 dark:text-secondary-400" />
+            <UIcon name="i-lucide-coffee" class="h-8 w-8 text-secondary-600 dark:text-secondary-400" />
           </div>
         </template>
         <template #footer>
           <UButton
-            icon="i-simple-icons-kofi"
+            icon="i-lucide-coffee"
             color="secondary"
             variant="solid"
             target="_blank"
@@ -64,7 +64,7 @@
           </UButton>
         </template>
       </UPageCard>
-    </div>
+    </UPageGrid>
   </UContainer>
 </template>
 

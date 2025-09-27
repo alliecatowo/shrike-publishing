@@ -11,7 +11,7 @@
 
       <!-- Blog Posts -->
       <!-- Blog Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <UPageGrid :cols="{ default: 1, sm: 2, lg: 3, xl: 4 }" class="gap-6">
         <UCard
           v-for="post in postsValue"
           :key="post.slug"
@@ -25,7 +25,7 @@
               </template>
               <template v-else>
                 <div class="h-full w-full bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 flex items-center justify-center">
-                  <Icon name="lucide:file-text" class="h-12 w-12 text-blue-600 dark:text-blue-400" />
+                  <UIcon name="i-lucide-file-text" class="h-12 w-12 text-blue-600 dark:text-blue-400" />
                 </div>
               </template>
             </div>
@@ -46,11 +46,11 @@
             </div>
           </div>
         </UCard>
-      </div>
+      </UPageGrid>
 
       <!-- Pagination (if needed) -->
       <div v-if="postsValue.length === 0" class="text-center py-12">
-        <Icon name="lucide:file-text" class="h-16 w-16 text-gray-400 mx-auto mb-4" />
+        <UIcon name="i-lucide-file-text" class="h-16 w-16 text-gray-400 mx-auto mb-4" />
         <h3 class="text-lg font-semibold text-gray-600 dark:text-gray-400 mb-2">No blog posts yet</h3>
         <p class="text-gray-500">Check back soon for updates!</p>
       </div>
