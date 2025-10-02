@@ -11,6 +11,12 @@ tags:
   - strategy
   - dystopian
   - card-game
+manualUrl: "https://www.drivethrurpg.com/en/product/411680/era-of-silence-starter-kit"
+resources:
+  - title: "Quick Reference Guide"
+    url: "/manuals/era-of-silence-quick-reference"
+  - title: "Character Sheets"
+    url: "/resources"
 published: true
 ---
 
@@ -39,6 +45,10 @@ In a world where words can kill, silence is your greatest ally. *Era of Silence*
 Available now on our store for $29.99 USD plus shipping.
 
 [Buy Now](/contact)
+
+## License & Open Gaming
+
+*Era of Silence* is published under the **Open Gaming License (OGL)**. The core mechanics are freely available for others to use, modify, and build upon in their own games. Visit [DriveThruRPG](https://www.drivethrurpg.com/en/product/411680/era-of-silence-starter-kit) for the complete OGL terms and starter kit materials.
 
 ## Reviews
 

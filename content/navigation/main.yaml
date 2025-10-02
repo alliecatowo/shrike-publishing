@@ -2,10 +2,9 @@ items:
   - label: 'Home'
     to: '/'
     icon: 'lucide:home'
-    active: true
+
   - label: 'Games'
     icon: 'lucide:gamepad-2'
-    active: true
     children:
       - label: 'All Games'
         to: '/games'
@@ -16,39 +15,57 @@ items:
       - label: 'Blood Neon'
         to: '/games/blood-neon'
         icon: 'lucide:radiation'
-      - label: 'Manuals & Downloads'
-        to: '/manuals'
-        icon: 'lucide:file-down'
-  - label: 'Stories'
-    icon: 'lucide:library'
-    active: true
+      - label: 'Steal the Kilogram'
+        to: '/games/steal-the-kilogram'
+        icon: 'lucide:scale'
+
+  - label: 'Writing'
+    icon: 'lucide:pen-line'
     children:
-      - label: 'All Stories'
+      - label: 'Stories'
         to: '/stories'
         icon: 'lucide:library'
-      - label: 'Free Stories'
-        to: '/stories?tab=free'
-        icon: 'lucide:hand'
-      - label: 'Published Works'
-        to: '/stories?tab=published'
-        icon: 'lucide:stamp'
-  - label: 'Blog'
-    icon: 'lucide:file-text'
-    active: true
+      - label: 'Poetry'
+        to: '/poetry'
+        icon: 'lucide:feather'
+
+  - label: 'Shop'
+    icon: 'lucide:shopping-bag'
     children:
-      - label: 'All Posts'
-        to: '/blog'
+      - label: 'itch.io Store'
+        to: 'https://shrikepublishing.itch.io/'
+        icon: 'lucide:external-link'
+      - label: 'DriveThruRPG'
+        to: 'https://www.drivethrurpg.com/en/product/411680/era-of-silence-starter-kit'
+        icon: 'lucide:external-link'
+      - label: 'Ko-fi'
+        to: 'https://ko-fi.com/shrikepublishing'
+        icon: 'lucide:external-link'
+
+  - label: 'Resources'
+    icon: 'lucide:folder'
+    children:
+      - label: 'Downloads'
+        to: '/resources'
+        icon: 'lucide:download'
+      - label: 'Licenses'
+        to: '/licenses'
         icon: 'lucide:file-text'
-      - label: 'Announcements'
-        to: '/announcements'
-        icon: 'lucide:megaphone'
+
   - label: 'About'
-    to: '/about'
     icon: 'lucide:info'
-    active: true
-  - label: 'Contact'
-    to: '/contact'
-    icon: 'lucide:mail'
-    active: true
+    children:
+      - label: 'About Robin'
+        to: '/about'
+        icon: 'lucide:user'
+      - label: 'Portfolio'
+        to: '/portfolio'
+        icon: 'lucide:briefcase'
+      - label: 'Blog'
+        to: '/blog'
+        icon: 'lucide:rss'
+      - label: 'Contact'
+        to: '/contact'
+        icon: 'lucide:mail'
 
 

@@ -57,17 +57,18 @@
   --color-amber-800: #92400e;
   --color-amber-900: #78350f;
 
-  /* Stone = Neutral (Warm Stone Palette) */
-  --color-stone-50: #fafaf9;
-  --color-stone-100: #f5f5f4;
-  --color-stone-200: #e7e5e4;
-  --color-stone-300: #d6d3d1;
-  --color-stone-400: #a8a29e;
-  --color-stone-500: #78716c;
-  --color-stone-600: #57534e;
-  --color-stone-700: #44403c;
-  --color-stone-800: #292524;
-  --color-stone-900: #1c1917;
+  /* Slate = Neutral (Cool slate with subtle burgundy tints) */
+  --color-slate-50: #faf9fa;   /* Barely pinkish white */
+  --color-slate-100: #f4f3f5;  /* Very subtle pink-gray */
+  --color-slate-200: #e9e7eb;
+  --color-slate-300: #d4d1d9;
+  --color-slate-400: #a8a3b0;
+  --color-slate-500: #78717f;
+  --color-slate-600: #5a5361;
+  --color-slate-700: #46404c;
+  --color-slate-800: #342f3a;
+  --color-slate-900: #2d1821;  /* Deep burgundy-brown */
+  --color-slate-950: #1a0f14;  /* Burgundy-black */
 
   /* Green = Success (Warm green to match brand) */
   --color-green-50: #f0fdf4;
@@ -117,84 +118,40 @@
   --color-purple-800: #6b21a8;
   --color-purple-900: #581c87;
 
-  /* Pink = Accent (Light pink accent) */
-  --color-pink-50: #fdf2f8;
-  --color-pink-100: #fce7f3;
-  --color-pink-200: #fbcfe8;
-  --color-pink-300: #f9a8d4;
-  --color-pink-400: #f472b6;
-  --color-pink-500: #F4C2C2; /* Light pink accent matching brand */
-  --color-pink-600: #db2777;
-  --color-pink-700: #be185d;
-  --color-pink-800: #9d174d;
-  --color-pink-900: #831843;
+  /* Violet = Lavender (Light lavender palette) */
+  --color-violet-50: #fdf5ff;
+  --color-violet-100: #f9ebff;
+  --color-violet-200: #f3d9ff;
+  --color-violet-300: #e9bdff;
+  --color-violet-400: #d899ff;
+  --color-violet-500: #C8A8E9; /* Soft lavender accent */
+  --color-violet-600: #a855f7;
+  --color-violet-700: #8b3fd9;
+  --color-violet-800: #7333b8;
+  --color-violet-900: #5e2a99;
+
+  /* Pink = Secondary (Enhanced warm pink palette) */
+  --color-pink-50: #fff5f7;
+  --color-pink-100: #ffe8ee;
+  --color-pink-200: #ffd0de;
+  --color-pink-300: #ffadc5;
+  --color-pink-400: #ff7fa3;
+  --color-pink-500: #F4A6BA; /* Warm pink accent */
+  --color-pink-600: #e8729e;
+  --color-pink-700: #d14a80;
+  --color-pink-800: #b32d66;
+  --color-pink-900: #921b52;
 }
 
-/* Shrike Publishing Brand Theme Variables */
-:root {
-  /* Primary brand colors inspired by the logo */
-  --shrike-primary: #8B1538; /* Deep maroon/burgundy */
-  --shrike-secondary: #D4AF37; /* Gold/amber accent */
-  --shrike-accent: #F4C2C2; /* Light pink accent */
-  --shrike-dark: #2D1B1B; /* Dark brown/black */
-  --shrike-light: #F8F4F0; /* Warm off-white */
-}
-
-/* Custom styles for Shrike Publishing brand personality */
-.shrike-gradient {
-  background: linear-gradient(135deg, var(--shrike-primary) 0%, var(--shrike-secondary) 100%);
-}
-
-.shrike-text-gradient {
-  background: linear-gradient(135deg, var(--shrike-primary), var(--shrike-secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Enhanced card styling for game/content cards */
-.game-card {
-  transition: all 0.3s ease;
-  border: 1px solid rgba(139, 21, 56, 0.1);
-}
-
-.game-card:hover {
-  border-color: var(--shrike-primary);
-  box-shadow: 0 10px 25px rgba(139, 21, 56, 0.15);
-}
-
-/* Custom button styling */
-.btn-shrike {
-  background: var(--shrike-primary);
-  color: white;
-  border: 2px solid var(--shrike-primary);
-  transition: all 0.3s ease;
-}
-
-.btn-shrike:hover {
-  background: transparent;
-  color: var(--shrike-primary);
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(139, 21, 56, 0.3);
-}
-
-/* Typography enhancements */
-
-
-.shrike-subheading {
-  font-family: 'Merriweather Sans', sans-serif;
-  font-weight: 700;
-  color: var(--shrike-dark);
-}
 
 /* Custom prose styling for markdown content */
 .prose {
-  color: var(--shrike-dark);
+  color: var(--ui-text);
   max-width: none;
 }
 
 .prose h1 {
-  color: var(--shrike-primary);
+  color: var(--ui-primary);
   font-family: 'Volkhov', serif;
   font-weight: 700;
   font-size: 2.25em;
@@ -204,7 +161,7 @@
 }
 
 .prose h2 {
-  color: var(--shrike-primary);
+  color: var(--ui-primary);
   font-family: 'Volkhov', serif;
   font-weight: 700;
   font-size: 1.5em;
@@ -214,7 +171,7 @@
 }
 
 .prose h3 {
-  color: var(--shrike-primary);
+  color: var(--ui-primary);
   font-family: 'Volkhov', serif;
   font-weight: 700;
   font-size: 1.25em;
@@ -224,7 +181,7 @@
 }
 
 .prose h4 {
-  color: var(--shrike-primary);
+  color: var(--ui-primary);
   font-weight: 600;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
@@ -237,42 +194,41 @@
 }
 
 .prose strong {
-  color: var(--shrike-dark);
+  color: var(--ui-text-highlighted);
   font-weight: 600;
 }
 
 .prose a {
-  color: var(--shrike-primary);
+  color: var(--ui-primary);
   text-decoration: underline;
   font-weight: 500;
-  text-decoration-color: rgba(139, 21, 56, 0.4);
 }
 
 .prose a:hover {
-  color: var(--shrike-secondary);
-  text-decoration-color: var(--shrike-secondary);
+  color: var(--ui-secondary);
+  text-decoration-color: var(--ui-secondary);
 }
 
 .prose blockquote {
-  color: var(--shrike-dark);
-  border-left-color: var(--shrike-primary);
+  color: var(--ui-text-muted);
+  border-left-color: var(--ui-primary);
   border-left-width: 4px;
   font-style: italic;
   padding-left: 1em;
 }
 
 .prose code {
-  color: var(--shrike-dark);
+  color: var(--ui-text);
   font-weight: 600;
   font-size: 0.875em;
-  background-color: rgba(139, 21, 56, 0.1);
+  background-color: var(--ui-bg-elevated);
   padding: 0.25em 0.375em;
   border-radius: 0.25rem;
 }
 
 .prose pre {
-  color: var(--shrike-light);
-  background-color: var(--shrike-dark);
+  color: var(--ui-text);
+  background-color: var(--ui-bg-elevated);
   overflow-x: auto;
   font-size: 0.875em;
   line-height: 1.7142857;
@@ -317,7 +273,7 @@
   margin-top: 3em;
   margin-bottom: 3em;
   border-top-width: 1px;
-  border-color: rgba(139, 21, 56, 0.2);
+  border-color: var(--ui-border);
 }
 
 .prose table {
@@ -330,15 +286,15 @@
 }
 
 .prose thead {
-  color: var(--shrike-dark);
+  color: var(--ui-text);
   font-weight: 600;
   border-bottom-width: 1px;
-  border-bottom-color: rgba(139, 21, 56, 0.2);
+  border-bottom-color: var(--ui-border);
 }
 
 .prose tbody tr {
   border-bottom-width: 1px;
-  border-bottom-color: rgba(139, 21, 56, 0.1);
+  border-bottom-color: var(--ui-border-subtle);
 }
 
 .prose tbody tr:last-child {
@@ -349,55 +305,6 @@
   vertical-align: top;
 }
 
-/* Dark mode prose styling */
-.dark .prose {
-  color: var(--shrike-light);
-}
-
-.dark .prose h1,
-.dark .prose h2,
-.dark .prose h3,
-.dark .prose h4 {
-  color: var(--shrike-accent);
-}
-
-.dark .prose strong {
-  color: var(--shrike-light);
-}
-
-.dark .prose blockquote {
-  color: var(--shrike-light);
-}
-
-.dark .prose code {
-  color: var(--shrike-light);
-  background-color: rgba(244, 194, 194, 0.1);
-}
-
-.dark .prose pre {
-  color: var(--shrike-light);
-  background-color: rgba(45, 27, 27, 0.8);
-}
-
-.dark .prose a {
-  color: var(--shrike-accent);
-}
-
-.dark .prose a:hover {
-  color: var(--shrike-secondary);
-}
-
-.dark .prose hr {
-  border-color: rgba(244, 194, 194, 0.2);
-}
-
-.dark .prose thead {
-  color: var(--shrike-light);
-}
-
-.dark .prose tbody tr {
-  border-bottom-color: rgba(244, 194, 194, 0.1);
-}
 
 /* Card hover polish */
 .card-hover {

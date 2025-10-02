@@ -5,7 +5,7 @@ description: A short story set in the world of Era of Silence, exploring the ori
 thumbnail: /images/stories/banner.png
 image: /images/stories/banner.png
 date: 2024-08-01
-author: Sarah Mitchell
+author: R. Val
 type: free
 tags:
   - era-of-silence

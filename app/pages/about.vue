@@ -17,15 +17,11 @@
 
         <div class="prose prose-lg dark:prose-invert max-w-none">
           <p>
-            Shrike Tabletop makes tabletop roleplaying games (RPGs) about combat and cooperation. Our games Era of Silence and Blood Neon are love letters to traditional game design!
+            Founded in 2019 as Shrike Tabletop (DBA Shrike Publishing), this Baltimore-based storytelling studio is the work of Robin Val, creating left-wing science fantasy for ages 16-60. What started as a passion project has grown into a catalog of innovative tabletop games, fiction, and poetry that challenges players and readers to think differently.
           </p>
 
           <p>
-            Founded in 2020 as a Baltimore-based storytelling studio, Shrike Publishing emerged from a passion for creating meaningful gaming experiences that challenge players and spark imagination. What started as a small indie project has grown into a dedicated team committed to pushing the boundaries of tabletop gaming.
-          </p>
-
-          <p>
-            Our name, inspired by the shrike bird known for its cunning hunting techniques, reflects our approach to game design: strategic, intelligent, and always one step ahead. We believe that great games are not just about rules and components, but about the stories they tell and the experiences they create across tabletop games, written fiction, and other media.
+            The name comes from the shrike bird, known for its cunning hunting techniques—a perfect metaphor for the strategic, intelligent game design you'll find here. Whether it's Era of Silence, Blood Neon, or the chaotic heist of Steal the Kilogram, every game is crafted to tell meaningful stories and create memorable experiences.
           </p>
         </div>
       </UCard>
@@ -69,46 +65,25 @@
         </UCard>
       </UPageGrid>
 
-      <!-- Team Section -->
+      <!-- About Robin -->
       <UCard>
         <template #header>
-          <h2 class="shrike-heading text-2xl">Meet the Team</h2>
+          <h2 class="shrike-heading text-2xl">About Robin</h2>
         </template>
 
-        <UPageGrid :cols="{ default: 1, md: 2, lg: 3 }" class="gap-6">
-          <div class="text-center space-y-3">
-            <div class="w-24 h-24 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto">
-              <UIcon name="i-lucide-user" class="h-12 w-12 text-white" />
-            </div>
-            <div>
-              <h3 class="font-semibold">Alex Rivera</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Game Designer & CEO</p>
-              <p class="text-xs text-gray-500 mt-1">Designer of Era of Silence</p>
-            </div>
+        <div class="flex flex-col md:flex-row gap-6 items-start">
+          <div class="w-32 h-32 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center flex-shrink-0">
+            <UIcon name="i-lucide-user" class="h-16 w-16 text-white" />
           </div>
-
-          <div class="text-center space-y-3">
-            <div class="w-24 h-24 bg-gradient-to-br from-secondary to-primary rounded-full flex items-center justify-center mx-auto">
-              <UIcon name="i-lucide-user" class="h-12 w-12 text-white" />
-            </div>
-            <div>
-              <h3 class="font-semibold">Jamie Chen</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Lead Writer & Editor</p>
-              <p class="text-xs text-gray-500 mt-1">Author of Blood Neon campaign</p>
-            </div>
+          <div class="prose prose-lg dark:prose-invert max-w-none">
+            <p>
+              Robin Val (they/them) is a Baltimore-based game designer, writer, and creator. With a focus on narrative-driven tabletop experiences, Robin brings years of experience in game mechanics, storytelling, and world-building to every project.
+            </p>
+            <p>
+              When not designing games or writing stories, Robin can be found exploring Baltimore's creative community, reading science fiction, or advocating for more inclusive and progressive narratives in gaming.
+            </p>
           </div>
-
-          <div class="text-center space-y-3">
-            <div class="w-24 h-24 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center mx-auto">
-              <UIcon name="i-lucide-user" class="h-12 w-12 text-white" />
-            </div>
-            <div>
-              <h3 class="font-semibold">Marcus Hale</h3>
-              <p class="text-sm text-gray-600 dark:text-gray-400">Artist & Illustrator</p>
-              <p class="text-xs text-gray-500 mt-1">Creator of Shrike Publishing artwork</p>
-            </div>
-          </div>
-        </UPageGrid>
+        </div>
       </UCard>
 
       <!-- Contact CTA -->
@@ -118,7 +93,7 @@
         orientation="horizontal"
         :ui="{ container: 'max-w-4xl' }"
       >
-        <UButton to="/contact" icon="i-heroicons-envelope" size="lg">
+        <UButton to="/contact" icon="i-lucide-mail" size="lg">
           Get in Touch
         </UButton>
       </UPageHero>

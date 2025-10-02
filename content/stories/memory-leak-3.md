@@ -2,9 +2,12 @@
 slug: "memory-leak-3"
 title: "3. Thief"
 description: ""
-author: "Unknown"
+author: "R. Val"
 type: "free"
 tags: []
+series: "Memory Leak"
+seriesOrder: 3
+seriesTotal: 4
 published: true
 ---
 ![](https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/673a8d09-66b2-4135-a4ef-b5fc71abc813/C03EDD96-4B29-4935-A73F-FB872DD16B1D.jpeg)

@@ -5,7 +5,7 @@ description: A published novella exploring the cyberpunk underworld of Blood Neo
 thumbnail: /images/stories/the-rider.png
 image: /images/stories/the-rider.png
 date: 2024-06-15
-author: Marcus Hale
+author: R. Val
 type: published
 price: 4.99
 currency: USD

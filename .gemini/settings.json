@@ -1,13 +1,13 @@
 {
   "mcpServers": {
-    "browsermcp": {
-      "command": "npx",
-      "args": [
-        "@browsermcp/mcp@latest"
-      ]
-    },
+    // "browsermcp": {
+    //   "command": "npx",
+    //   "args": [
+    //     "@browsermcp/mcp@latest"
+    //   ]
+    // },
     "nuxt-ui-remote": {
-      "httpUrl": "https://ui4.nuxt.com/mcp"
+      "httpUrl": "https://ui.nuxt.com/mcp"
     }
   }
 }
