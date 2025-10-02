@@ -76,11 +76,7 @@
               <div class="space-y-3">
                 <h3 class="text-xl font-bold">{{ item.title }}</h3>
                 <p class="text-sm text-gray-600 dark:text-gray-400">{{ item.description }}</p>
-                <div class="flex flex-wrap gap-1">
-                  <UBadge v-for="tag in item.tags" :key="tag" size="xs" variant="soft" color="amber">
-                    {{ tag }}
-                  </UBadge>
-                </div>
+                <TagList :tags="item.tags" color="amber" />
               </div>
             </UCard>
           </UPageGrid>
@@ -156,11 +152,7 @@
                     </UBadge>
                   </div>
                   <p class="text-sm text-gray-600 dark:text-gray-400">{{ item.description }}</p>
-                  <div class="flex flex-wrap gap-1">
-                    <UBadge v-for="tag in item.tags" :key="tag" size="xs" variant="subtle">
-                      {{ tag }}
-                    </UBadge>
-                  </div>
+                  <TagList :tags="item.tags" />
                   <UButton
                     v-if="item.link"
                     :to="item.link"
@@ -209,17 +201,13 @@
                 <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 flex items-center gap-3">
                   <UButton icon="i-lucide-play" size="sm" color="green" />
                   <div class="flex-1 h-2 bg-gray-300 dark:bg-gray-700 rounded-full">
-                    <div class="h-full bg-green-500 rounded-full" style="width: 0%"></div>
+                    <div class="h-full bg-green-500 rounded-full" style="width: 0%"/>
                   </div>
                   <span class="text-xs text-gray-500">{{ item.duration }}</span>
                 </div>
 
                 <div class="flex items-center justify-between">
-                  <div class="flex flex-wrap gap-1">
-                    <UBadge v-for="tag in item.tags" :key="tag" size="xs" variant="soft" color="green">
-                      {{ tag }}
-                    </UBadge>
-                  </div>
+                  <TagList :tags="item.tags" color="green" />
                   <UButton
                     v-if="item.link"
                     :to="item.link"
@@ -279,11 +267,7 @@
                   <span class="text-xs text-gray-500">{{ item.duration }}</span>
                 </div>
                 <p class="text-sm text-gray-600 dark:text-gray-400">{{ item.description }}</p>
-                <div class="flex flex-wrap gap-1">
-                  <UBadge v-for="tag in item.tags" :key="tag" size="xs" variant="soft" color="red">
-                    {{ tag }}
-                  </UBadge>
-                </div>
+                <TagList :tags="item.tags" color="red" />
                 <UButton
                   v-if="item.link"
                   :to="item.link"
@@ -377,14 +361,15 @@
         }
       ]"
     />
+
+    <AppLightbox :images="drawingsPortfolio" :open="isLightboxOpen" :start-index="lightboxStartIndex" @update:open="isLightboxOpen = $event" />
   </div>
 </template>
 
 <script setup lang="ts">
-// Active tab
-const activeTab = ref('design')
+import AppLightbox from '~/components/AppLightbox.vue'
+import TagList from '~/components/TagList.vue'
 
-// Portfolio tabs
 const portfolioTabs = [
   { label: 'Design', value: 'design', icon: 'i-lucide-palette' },
   { label: 'Drawings', value: 'drawings', icon: 'i-lucide-image' },
@@ -393,158 +378,29 @@ const portfolioTabs = [
   { label: 'Video', value: 'video', icon: 'i-lucide-video' }
 ]
 
-// Design portfolio items
-const designPortfolio = [
-  {
-    title: 'Era of Silence Core Rulebook',
-    description: 'Complete game design and layout for a 200+ page tabletop RPG.',
-    image: null,
-    icon: 'i-lucide-book-open',
-    tags: ['Layout Design', 'Typography', 'Game Design']
-  },
-  {
-    title: 'Blood Neon Branding',
-    description: 'Logo, color palette, and visual identity for cyberpunk RPG.',
-    image: null,
-    icon: 'i-lucide-zap',
-    tags: ['Branding', 'Logo Design', 'Style Guide']
-  },
-  {
-    title: 'Character Sheet Design',
-    description: 'Functional and beautiful character sheets optimized for gameplay.',
-    image: null,
-    icon: 'i-lucide-user',
-    tags: ['UX Design', 'Print Design', 'Forms']
-  },
-  {
-    title: 'Card Game Layout',
-    description: 'Professional card design with print-ready specifications.',
-    image: null,
-    icon: 'i-lucide-credit-card',
-    tags: ['Card Design', 'Print Production', 'Iconography']
-  }
-]
 
-// Drawings portfolio items
-const drawingsPortfolio = [
-  { title: 'Wasteland Survivor', image: null },
-  { title: 'Neon Street Scene', image: null },
-  { title: 'Character Concept Art', image: null },
-  { title: 'Faction Logo Studies', image: null },
-  { title: 'Environment Sketches', image: null },
-  { title: 'Weapon Designs', image: null },
-  { title: 'Creature Illustrations', image: null },
-  { title: 'Map Illustrations', image: null }
-]
 
-// Writing portfolio items
-const writingPortfolio = [
-  {
-    title: 'Era of Silence Setting Bible',
-    type: 'World-building',
-    description: 'Complete setting guide covering history, factions, technology, and culture in a post-apocalyptic world.',
-    icon: 'i-lucide-book-open',
-    tags: ['World-building', 'Lore', 'Game Writing'],
-    status: 'published',
-    link: '/games/era-of-silence'
-  },
-  {
-    title: 'Blood Neon Campaign: Corporate Shadows',
-    type: 'Adventure Module',
-    description: 'Multi-session campaign exploring corporate intrigue in a cyberpunk dystopia.',
-    icon: 'i-lucide-map',
-    tags: ['Adventure', 'Narrative Design', 'Game Mechanics'],
-    status: 'published',
-    link: null
-  },
-  {
-    title: 'Short Fiction: Echoes in the Silence',
-    type: 'Creative Writing',
-    description: 'Series of short stories set in the Era of Silence universe, exploring themes of survival and humanity.',
-    icon: 'i-lucide-feather',
-    tags: ['Fiction', 'Storytelling', 'Character Development'],
-    status: 'published',
-    link: '/stories'
-  },
-  {
-    title: 'Game Design Blog Articles',
-    type: 'Educational Content',
-    description: 'Technical articles on game design, mechanics, and publishing.',
-    icon: 'i-lucide-file-text',
-    tags: ['Technical Writing', 'Game Design', 'Education'],
-    status: 'ongoing',
-    link: '/blog'
-  }
-]
+const activeTab = ref('design')
 
-// Audio portfolio items
-const audioPortfolio = [
-  {
-    title: 'Era of Silence Main Theme',
-    type: 'Original Music',
-    duration: '3:45',
-    description: 'Atmospheric ambient track capturing the desolation and hope of the post-apocalyptic setting.',
-    tags: ['Ambient', 'Soundtrack', 'Original Composition'],
-    link: null
-  },
-  {
-    title: 'Blood Neon Combat Ambience',
-    type: 'Sound Design',
-    duration: '15:00',
-    description: 'Looping cyberpunk soundscape with neon hum, traffic, and distant gunfire.',
-    tags: ['Soundscape', 'Ambient', 'Game Audio'],
-    link: null
-  },
-  {
-    title: 'Podcast: Behind the Dice',
-    type: 'Podcast',
-    duration: '45:30',
-    description: 'Interview series discussing game design philosophy and creative process.',
-    tags: ['Podcast', 'Interview', 'Educational'],
-    link: null
-  }
-]
+const { data: portfolioItems } = await useAsyncData('portfolio', () =>
+  queryCollection('portfolio').where('published', '=', true).order('title', 'asc').all()
+)
 
-// Video portfolio items
-const videoPortfolio = [
-  {
-    title: 'Era of Silence Launch Trailer',
-    duration: '2:15',
-    description: 'Cinematic trailer introducing the world and core themes of Era of Silence.',
-    thumbnail: null,
-    tags: ['Trailer', 'Motion Graphics', 'Editing'],
-    link: null
-  },
-  {
-    title: 'How to Play: Blood Neon',
-    duration: '12:30',
-    description: 'Tutorial video walking players through the core mechanics and setup.',
-    thumbnail: null,
-    tags: ['Tutorial', 'Educational', 'Animation'],
-    link: null
-  },
-  {
-    title: 'Game Design Devlog Series',
-    duration: 'Series',
-    description: 'Behind-the-scenes look at our development process and design decisions.',
-    thumbnail: null,
-    tags: ['Devlog', 'Educational', 'Vlog'],
-    link: null
-  },
-  {
-    title: 'Character Creation Guide',
-    duration: '8:45',
-    description: 'Step-by-step guide to creating memorable characters in our games.',
-    thumbnail: null,
-    tags: ['Tutorial', 'Screen Recording', 'Voice Over'],
-    link: null
-  }
-]
+const designPortfolio = computed(() => portfolioItems.value?.filter(item => item.type === 'design') || [])
+const drawingsPortfolio = computed(() => portfolioItems.value?.filter(item => item.type === 'drawing') || [])
+const writingPortfolio = computed(() => portfolioItems.value?.filter(item => item.type === 'writing') || [])
+const audioPortfolio = computed(() => portfolioItems.value?.filter(item => item.type === 'audio') || [])
+const videoPortfolio = computed(() => portfolioItems.value?.filter(item => item.type === 'video') || [])
 
-// Lightbox functionality (placeholder)
-const openLightbox = (index: number, category: string) => {
-  console.log(`Opening lightbox for ${category} item ${index}`)
-  // In a real implementation, this would open a modal with the full-size image
+
+
+// Lightbox state
+const isLightboxOpen = ref(false)
+const lightboxStartIndex = ref(0)
+
+const openLightbox = (index: number, _category: string) => {
+  lightboxStartIndex.value = index
+  isLightboxOpen.value = true
 }
 
 // SEO

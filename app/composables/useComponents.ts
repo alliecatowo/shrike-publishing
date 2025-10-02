@@ -1,13 +1,13 @@
 export const useComponents = async () => {
   const { data: components } = await useAsyncData('components-config', async () => {
-    if (process.server) {
+    if (import.meta.server) {
       // Return default components for SSR
       return getDefaultComponents()
     }
     try {
       const content = await queryContent('/components').findOne()
       return content || getDefaultComponents()
-    } catch (e) {
+    } catch {
       return getDefaultComponents()
     }
   })

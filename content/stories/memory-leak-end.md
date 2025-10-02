@@ -4,7 +4,7 @@ title: "4. Soldier & Epilogue"
 description: ""
 author: "R. Val"
 type: "free"
-tags: []
+tags: ["Memory Leak", "Ashen Silence", "Sci-Fi", "Cyberpunk"]
 series: "Memory Leak"
 seriesOrder: 4
 seriesTotal: 4

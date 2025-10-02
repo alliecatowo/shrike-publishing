@@ -5,7 +5,7 @@
     :to="`/games/${game.slug}`"
     orientation="horizontal"
   >
-    <img :src="game.image" :alt="game.title" class="w-full h-48 object-cover rounded-md" />
+    <img :src="game.image" :alt="game.title" class="w-full h-48 object-cover rounded-md" >
   </UPageCard>
 </template>
 

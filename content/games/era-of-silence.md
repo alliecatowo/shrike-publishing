@@ -14,7 +14,7 @@ tags:
 manualUrl: "https://www.drivethrurpg.com/en/product/411680/era-of-silence-starter-kit"
 resources:
   - title: "Quick Reference Guide"
-    url: "/manuals/era-of-silence-quick-reference"
+    url: "/resources/era-of-silence-quick-reference"
   - title: "Character Sheets"
     url: "/resources"
 published: true

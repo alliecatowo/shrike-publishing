@@ -104,7 +104,7 @@
 
             <!-- Updated Date -->
             <div class="text-xs text-gray-500 text-center">
-              Updated {{ formatDate(resource.date || resource.updatedAt) }}
+              Updated {{ resource.date || resource.updatedAt }}
             </div>
           </div>
         </UCard>
@@ -178,6 +178,30 @@
       </div>
     </UPageSection>
 
+    <!-- FAQ Section -->
+    <UPageSection title="Frequently Asked Questions">
+      <UAccordion
+        :items="[
+          {
+            label: 'Can I print these resources at home?',
+            content: 'Yes! All our resources are designed to be printable on standard home printers. We recommend using high-quality paper for the best results.'
+          },
+          {
+            label: 'Are digital versions available?',
+            content: 'Absolutely. All resources are provided as PDF files that you can view on any device or print as needed.'
+          },
+          {
+            label: 'Can I share these resources with friends?',
+            content: 'We encourage sharing our games with friends! Feel free to share the resources, but please don\'t distribute them commercially without permission.'
+          },
+          {
+            label: 'How often are resources updated?',
+            content: 'We update our resources with errata and clarifications. Check back regularly or follow our announcements for updates.'
+          }
+        ]"
+      />
+    </UPageSection>
+
     <!-- Quick Reference -->
     <UPageSection
       title="Quick Reference Guides"
@@ -222,7 +246,7 @@
       description="Check out our full game manuals, tutorials, and community forums."
       :links="[
         {
-          label: 'View Game Manuals',
+          label: 'View Game Resources',
           to: '/games',
           leadingIcon: 'i-lucide-book-open'
         },
@@ -249,6 +273,7 @@ const resourcesValue = computed(() => resources.value || [])
 const activeCategory = ref('all')
 const categoryTabs = [
   { label: 'All Resources', value: 'all' },
+  { label: 'Manuals', value: 'manual' },
   { label: 'Character Sheets', value: 'character-sheets' },
   { label: 'Reference Guides', value: 'reference' },
   { label: 'Maps & Assets', value: 'maps' },
@@ -265,6 +290,7 @@ const filteredResources = computed(() => {
 // Helper functions
 const getResourceIcon = (type: string) => {
   const icons: Record<string, string> = {
+    'manual': 'i-lucide-book',
     'character-sheet': 'i-lucide-user',
     'reference': 'i-lucide-book-open',
     'map': 'i-lucide-map',
@@ -279,6 +305,7 @@ const getResourceIcon = (type: string) => {
 
 const getCategoryColor = (category: string) => {
   const colors: Record<string, string> = {
+    'manual': 'blue',
     'character-sheets': 'blue',
     'reference': 'purple',
     'maps': 'green',
@@ -286,14 +313,6 @@ const getCategoryColor = (category: string) => {
     'tools': 'pink'
   }
   return colors[category] || 'gray'
-}
-
-const formatDate = (date: string) => {
-  return new Date(date).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric'
-  })
 }
 
 // Sample community resources

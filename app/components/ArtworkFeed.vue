@@ -20,8 +20,8 @@
     <!-- Artwork Grid -->
     <UPageGrid :cols="{ default: 1, md: 2, lg: 3, xl: 4 }" class="gap-6">
       <UModal
-        v-for="artwork in filteredArtwork"
-        :key="artwork.id"
+        v-for="artworkItem in filteredArtwork"
+        :key="artworkItem.id"
       >
         <!-- Artwork Card -->
         <UCard
@@ -31,9 +31,9 @@
           <template #header>
             <div class="relative overflow-hidden">
               <NuxtImg
-                :src="artwork.image"
-                :alt="artwork.title"
-                :style="{ aspectRatio: artwork.aspectRatio || 'auto' }"
+                :src="artworkItem.image"
+                :alt="artworkItem.title"
+                :style="{ aspectRatio: artworkItem.aspectRatio || 'auto' }"
                 class="w-full object-cover group-hover:scale-105 transition-transform duration-500"
                 loading="lazy"
               />
@@ -47,11 +47,11 @@
               <!-- Overlay Info -->
               <div class="absolute top-3 right-3">
                 <UBadge
-                  :variant="getTagVariant(artwork.category)"
-                  :color="getTagColor(artwork.category)"
+                  :variant="getTagVariant(artworkItem.category)"
+                  :color="getTagColor(artworkItem.category)"
                   size="sm"
                 >
-                  {{ artwork.category }}
+                  {{ artworkItem.category }}
                 </UBadge>
               </div>
             </div>
@@ -60,30 +60,30 @@
           <div class="space-y-3">
             <div class="space-y-1">
               <h3 class="font-semibold text-highlighted group-hover:text-primary transition-colors line-clamp-2">
-                {{ artwork.title }}
+                {{ artworkItem.title }}
               </h3>
-              <p class="text-muted text-sm line-clamp-2">{{ artwork.description }}</p>
+              <p class="text-muted text-sm line-clamp-2">{{ artworkItem.description }}</p>
             </div>
 
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-2">
                 <UAvatar
-                  :src="artwork.artistAvatar || '/default-avatar.png'"
-                  :alt="artwork.artist"
+                  :src="artworkItem.artistAvatar || '/default-avatar.png'"
+                  :alt="artworkItem.artist"
                   size="xs"
                 />
-                <span class="text-sm font-medium text-highlighted">{{ artwork.artist }}</span>
+                <span class="text-sm font-medium text-highlighted">{{ artworkItem.artist }}</span>
               </div>
 
               <div class="flex items-center gap-1 text-muted">
                 <UIcon name="i-lucide-heart" class="size-4" />
-                <span class="text-sm">{{ artwork.likes || 0 }}</span>
+                <span class="text-sm">{{ artworkItem.likes || 0 }}</span>
               </div>
             </div>
 
             <div class="flex flex-wrap gap-1">
               <UBadge
-                v-for="tag in artwork.tags?.slice(0, 3)"
+                v-for="tag in artworkItem.tags?.slice(0, 3)"
                 :key="tag"
                 variant="subtle"
                 size="sm"
@@ -102,8 +102,8 @@
               <!-- Image -->
               <div class="lg:col-span-2">
                 <NuxtImg
-                  :src="artwork.image"
-                  :alt="artwork.title"
+                  :src="artworkItem.image"
+                  :alt="artworkItem.title"
                   class="w-full h-auto max-h-[70vh] object-contain rounded-lg"
                 />
               </div>
@@ -113,18 +113,18 @@
                 <div class="space-y-3">
                   <div class="flex items-center gap-3">
                     <UAvatar
-                      :src="artwork.artistAvatar || '/default-avatar.png'"
-                      :alt="artwork.artist"
+                      :src="artworkItem.artistAvatar || '/default-avatar.png'"
+                      :alt="artworkItem.artist"
                       size="sm"
                     />
                     <div>
-                      <h3 class="font-bold text-highlighted">{{ artwork.artist }}</h3>
+                      <h3 class="font-bold text-highlighted">{{ artworkItem.artist }}</h3>
                       <p class="text-sm text-muted">Artist</p>
                     </div>
                   </div>
 
-                  <h2 class="text-2xl font-bold text-highlighted">{{ artwork.title }}</h2>
-                  <p class="text-muted leading-relaxed">{{ artwork.description }}</p>
+                  <h2 class="text-2xl font-bold text-highlighted">{{ artworkItem.title }}</h2>
+                  <p class="text-muted leading-relaxed">{{ artworkItem.description }}</p>
                 </div>
 
                 <USeparator />
@@ -135,26 +135,26 @@
                     <div class="space-y-2 text-sm">
                       <div class="flex justify-between">
                         <span class="text-muted">Category:</span>
-                        <UBadge :color="getTagColor(artwork.category)" size="sm">
-                          {{ artwork.category }}
+                        <UBadge :color="getTagColor(artworkItem.category)" size="sm">
+                          {{ artworkItem.category }}
                         </UBadge>
                       </div>
                       <div class="flex justify-between">
                         <span class="text-muted">Created:</span>
-                        <span class="text-highlighted">{{ formatDate(artwork.createdAt) }}</span>
+                        <span class="text-highlighted">{{ formatDate(artworkItem.createdAt) }}</span>
                       </div>
                       <div class="flex justify-between">
                         <span class="text-muted">Medium:</span>
-                        <span class="text-highlighted">{{ artwork.medium || 'Digital Art' }}</span>
+                        <span class="text-highlighted">{{ artworkItem.medium || 'Digital Art' }}</span>
                       </div>
                     </div>
                   </div>
 
-                  <div v-if="artwork.tags?.length">
+                  <div v-if="artworkItem.tags?.length">
                     <h4 class="font-semibold text-highlighted mb-2">Tags</h4>
                     <div class="flex flex-wrap gap-2">
                       <UBadge
-                        v-for="tag in artwork.tags"
+                        v-for="tag in artworkItem.tags"
                         :key="tag"
                         variant="subtle"
                         size="sm"
@@ -171,7 +171,7 @@
                       leading-icon="i-lucide-heart"
                       size="sm"
                     >
-                      Like ({{ artwork.likes || 0 }})
+                      Like ({{ artworkItem.likes || 0 }})
                     </UButton>
                     <UButton
                       variant="outline"
@@ -186,11 +186,11 @@
                 <USeparator />
 
                 <!-- Related Artwork -->
-                <div v-if="getRelatedArtwork(artwork).length">
-                  <h4 class="font-semibold text-highlighted mb-3">More by {{ artwork.artist }}</h4>
+                <div v-if="getRelatedArtwork(artworkItem).length">
+                  <h4 class="font-semibold text-highlighted mb-3">More by {{ artworkItem.artist }}</h4>
                   <div class="grid grid-cols-2 gap-3">
                     <div
-                      v-for="related in getRelatedArtwork(artwork).slice(0, 4)"
+                      v-for="related in getRelatedArtwork(artworkItem).slice(0, 4)"
                       :key="related.id"
                       class="group cursor-pointer"
                     >
@@ -213,11 +213,11 @@
     <!-- Load More -->
     <div v-if="hasMore" class="text-center mt-12">
       <UButton
-        @click="loadMore"
         variant="outline"
         size="lg"
         :loading="loading"
         trailing-icon="i-lucide-chevron-down"
+        @click="loadMore"
       >
         Load More Artwork
       </UButton>
@@ -250,6 +250,8 @@ interface ArtworkFeedProps {
 }
 
 const props = withDefaults(defineProps<ArtworkFeedProps>(), {
+  title: 'Artwork Gallery',
+  description: 'Browse our collection of creative works',
   hasMore: false,
   loading: false
 })
@@ -288,10 +290,10 @@ const getTagVariant = (category: string): string => {
   return category === 'cover' ? 'solid' : 'soft'
 }
 
-const getRelatedArtwork = (artwork: ArtworkItem) => {
-  return props.artwork.filter(item => 
-    item.id !== artwork.id && 
-    item.artist === artwork.artist
+const getRelatedArtwork = (currentItem: ArtworkItem) => {
+  return props.artwork.filter(item =>
+    item.id !== currentItem.id &&
+    item.artist === currentItem.artist
   )
 }
 

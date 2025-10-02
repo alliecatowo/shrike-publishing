@@ -1,41 +1,23 @@
 <template>
-  <UContainer class="py-8">
-    <div class="max-w-3xl mx-auto space-y-8">
+  <UPage>
+    <UPageBody>
       <!-- Poetry Header -->
-      <div class="text-center space-y-4">
-        <UBadge
-          v-if="poemValue.featured"
-          color="pink"
-          variant="soft"
-          size="lg"
-        >
-          Featured Poetry
-        </UBadge>
-
-        <h1 class="text-4xl font-bold">{{ poemValue.title }}</h1>
-
-        <div class="flex items-center justify-center space-x-4 text-sm text-gray-500">
-          <span>By {{ poemValue.author || 'Anonymous' }}</span>
-          <span>•</span>
-          <span>{{ formatDate(poemValue.date) }}</span>
-        </div>
-
-        <p v-if="poemValue.description" class="text-xl text-gray-600 dark:text-gray-400">
-          {{ poemValue.description }}
-        </p>
-
-        <div class="flex flex-wrap gap-2 justify-center">
-          <UBadge
-            v-for="tag in poemValue.tags"
-            :key="tag"
-            size="sm"
-            variant="soft"
-            color="pink"
-          >
-            {{ tag }}
-          </UBadge>
-        </div>
-      </div>
+      <UPageHeader
+        :title="poemValue.title"
+        :description="poemValue.description"
+        :badge="poemValue.featured ? { label: 'Featured Poetry', color: 'pink', variant: 'soft' } : undefined"
+      >
+        <template #subtext>
+          <div class="flex items-center justify-center space-x-4 text-sm text-gray-500">
+            <span>By {{ poemValue.author || 'Anonymous' }}</span>
+            <span>•</span>
+            <span>{{ poemValue.date }}</span>
+          </div>
+        </template>
+        <template #tags>
+          <TagList :tags="poemValue.tags" color="pink" clickable />
+        </template>
+      </UPageHeader>
 
       <!-- Poetry Image -->
       <div v-if="poemValue.image || poemValue.thumbnail">
@@ -57,11 +39,14 @@
       </div>
 
       <!-- Author Note -->
-      <div v-if="poemValue.authorNote" class="border-l-4 border-pink-500 pl-4 py-2">
-        <p class="text-sm text-gray-600 dark:text-gray-400 italic">
-          <span class="font-semibold">Author's Note:</span> {{ poemValue.authorNote }}
-        </p>
-      </div>
+      <UAlert
+        v-if="poemValue.authorNote"
+        title="Author's Note"
+        :description="poemValue.authorNote"
+        color="pink"
+        variant="subtle"
+        icon="i-lucide-pen-square"
+      />
 
       <!-- Share Buttons -->
       <div class="flex items-center justify-between border-t pt-8 mb-8">
@@ -87,68 +72,50 @@
       </div>
 
       <!-- Navigation -->
-      <div class="grid grid-cols-2 gap-4">
-        <UButton
-          v-if="previousPoem"
-          :to="`/poetry/${previousPoem.slug}`"
-          variant="outline"
-          icon="i-lucide-arrow-left"
-          class="justify-start"
-        >
-          <div class="text-left truncate">
-            <div class="text-xs text-gray-500">Previous</div>
-            <div class="font-semibold truncate">{{ previousPoem.title }}</div>
-          </div>
-        </UButton>
-        <div v-else></div>
+      <UCard>
+        <div class="grid grid-cols-2 gap-4">
+          <UButton
+            v-if="previousPoem"
+            :to="`/poetry/${previousPoem.slug}`"
+            variant="outline"
+            icon="i-lucide-arrow-left"
+            class="justify-start"
+          >
+            <div class="text-left truncate">
+              <div class="text-xs text-gray-500">Previous</div>
+              <div class="font-semibold truncate">{{ previousPoem.title }}</div>
+            </div>
+          </UButton>
+          <div v-else/>
 
-        <UButton
-          v-if="nextPoem"
-          :to="`/poetry/${nextPoem.slug}`"
-          variant="outline"
-          trailing-icon="i-lucide-arrow-right"
-          class="justify-end"
-        >
-          <div class="text-right truncate">
-            <div class="text-xs text-gray-500">Next</div>
-            <div class="font-semibold truncate">{{ nextPoem.title }}</div>
-          </div>
-        </UButton>
-      </div>
+          <UButton
+            v-if="nextPoem"
+            :to="`/poetry/${nextPoem.slug}`"
+            variant="outline"
+            trailing-icon="i-lucide-arrow-right"
+            class="justify-end"
+          >
+            <div class="text-right truncate">
+              <div class="text-xs text-gray-500">Next</div>
+              <div class="font-semibold truncate">{{ nextPoem.title }}</div>
+            </div>
+          </UButton>
+        </div>
+      </UCard>
 
       <!-- Related Poetry -->
       <div class="space-y-4">
         <h2 class="text-xl font-bold">More Poetry</h2>
         <UPageGrid :cols="{ default: 1, md: 2 }" class="gap-4">
-          <UCard
+          <UBlogPost
             v-for="relatedPoem in relatedPoems"
             :key="relatedPoem.slug"
             :to="`/poetry/${relatedPoem.slug}`"
-            class="hover:shadow-md transition-shadow"
-          >
-            <div class="flex space-x-3">
-              <div class="w-12 h-12 bg-gradient-to-br from-pink-100 to-purple-100 dark:from-pink-900 dark:to-purple-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                <UIcon name="i-lucide-feather" class="h-6 w-6 text-pink-600 dark:text-pink-400" />
-              </div>
-              <div class="flex-1 min-w-0">
-                <h3 class="font-semibold text-sm line-clamp-1">{{ relatedPoem.title }}</h3>
-                <p class="text-xs text-gray-600 dark:text-gray-400 line-clamp-2">
-                  {{ relatedPoem.description || relatedPoem.excerpt }}
-                </p>
-                <div class="flex items-center gap-1 mt-1">
-                  <UBadge
-                    v-for="tag in relatedPoem.tags?.slice(0, 2)"
-                    :key="tag"
-                    variant="soft"
-                    color="pink"
-                    size="xs"
-                  >
-                    {{ tag }}
-                  </UBadge>
-                </div>
-              </div>
-            </div>
-          </UCard>
+            :title="relatedPoem.title"
+            :description="relatedPoem.description || relatedPoem.excerpt"
+            :badge="{ label: 'Poetry', color: 'pink', variant: 'soft' }"
+            orientation="horizontal"
+          />
         </UPageGrid>
       </div>
 
@@ -158,11 +125,13 @@
           Back to Poetry Collection
         </UButton>
       </div>
-    </div>
-  </UContainer>
+    </UPageBody>
+  </UPage>
 </template>
 
 <script setup lang="ts">
+import TagList from '~/components/TagList.vue'
+
 const route = useRoute()
 const slug = route.params.slug as string
 
@@ -212,13 +181,7 @@ const relatedPoems = computed(() => {
   return poems?.slice(0, 2) || []
 })
 
-const formatDate = (date: string) => {
-  return new Date(date).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  })
-}
+
 
 const sharePoem = () => {
   if (navigator.share) {

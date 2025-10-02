@@ -18,7 +18,7 @@ published: true
 
 ### R. Val
 
-[Download PDF Here](/docs/Ashen-Silence_-Quiet-Road-Final.pdf)  
+[Download PDF Here](/resources/Ashen-Silence_-Quiet-Road-Final.pdf)  
   
 
 **_To my sister, Marilynn. You were always the strongest of the two of us. You have earned your victories tenfold._**

@@ -10,16 +10,17 @@
         variant: components.hero.cta.variant || 'primary',
         ...(components.hero.cta.icon && { trailingIcon: components.hero.cta.icon })
       }] : []"
-      class="bg-gradient-to-br from-primary/15 via-neutral-900/20 to-tertiary/10 dark:from-primary/25 dark:via-neutral-900/30 dark:to-tertiary/20"
+      class="bg-gradient-to-br from-primary/15 via-neutral-900/20 to-secondary/10 dark:from-primary/25 dark:via-neutral-900/30 dark:to-secondary/20"
     >
       <div class="absolute inset-0 bg-gradient-to-r from-primary/15 to-transparent pointer-events-none" />
     </UPageHero>
+
+    <ScrollDown />
 
     <!-- Featured Games -->
     <UPageSection
       :title="pageContent?.home?.featuredGames?.title || 'Featured Games'"
       :description="pageContent?.home?.featuredGames?.description || 'Discover our latest tabletop adventures'"
-      :ui="{ container: 'text-center', wrapper: 'py-10' }"
     >
       <UPageGrid :cols="{ default: 1, md: 2 }" class="gap-8">
         <UCard
@@ -38,23 +39,24 @@
             />
           </template>
 
-          <div class="space-y-4">
-            <div class="space-y-2">
-              <h3 class="text-xl font-bold text-highlighted group-hover:text-primary transition-colors">{{ game.title }}</h3>
-              <p class="text-muted leading-relaxed">{{ game.description }}</p>
-            </div>
-            <div class="flex items-center justify-between pt-2">
+          <div class="space-y-2">
+            <h3 class="text-xl font-bold text-highlighted group-hover:text-primary transition-colors">{{ game.title }}</h3>
+            <p class="text-muted leading-relaxed">{{ game.description }}</p>
+          </div>
+
+          <template #footer>
+            <div class="flex items-center justify-between">
               <div class="flex items-center gap-2">
                 <UBadge variant="soft" color="success" size="sm">
                   ${{ game.price }}
                 </UBadge>
                 <span class="text-sm text-muted">Available</span>
               </div>
-              <UButton size="sm" variant="soft" color="primary" trailing-icon="i-lucide-arrow-right">
+              <UButton size="sm" variant="soft" color="primary" trailing-icon="i-lucide-arrow-right" :to="`/games/${game.slug}`">
                 Learn More
               </UButton>
             </div>
-          </div>
+          </template>
         </UCard>
       </UPageGrid>
 
@@ -69,41 +71,27 @@
     <UPageSection
       title="Our Impact"
       description="Join thousands of players in immersive storytelling adventures"
-      :ui="{ container: 'text-center', wrapper: 'py-10' }"
     >
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <UCard variant="outline" class="text-center">
-          <div class="space-y-2">
-            <div class="text-3xl font-bold text-primary">50K+</div>
-            <div class="text-muted">Stories Created</div>
-          </div>
-        </UCard>
-        <UCard variant="outline" class="text-center">
-          <div class="space-y-2">
-            <div class="text-3xl font-bold text-primary">12K+</div>
-            <div class="text-muted">Active Players</div>
-          </div>
-        </UCard>
-        <UCard variant="outline" class="text-center">
-          <div class="space-y-2">
-            <div class="text-3xl font-bold text-primary">8</div>
-            <div class="text-muted">Published Games</div>
-          </div>
-        </UCard>
-        <UCard variant="outline" class="text-center">
-          <div class="space-y-2">
-            <div class="text-3xl font-bold text-primary">4.9★</div>
-            <div class="text-muted">Average Rating</div>
-          </div>
-        </UCard>
-      </div>
+      <UPageGrid :cols="{ default: 1, sm: 2, lg: 4 }">
+        <UTooltip text="Total number of stories published.">
+          <UPageCard title="50K+" description="Stories Created" variant="outline" class="text-center" />
+        </UTooltip>
+        <UTooltip text="Estimated number of active players across all our games.">
+          <UPageCard title="12K+" description="Active Players" variant="outline" class="text-center" />
+        </UTooltip>
+        <UTooltip text="Total number of games published.">
+          <UPageCard title="8" description="Published Games" variant="outline" class="text-center" />
+        </UTooltip>
+        <UTooltip text="Average rating from our players.">
+          <UPageCard title="4.9★" description="Average Rating" variant="outline" class="text-center" />
+        </UTooltip>
+      </UPageGrid>
     </UPageSection>
 
     <!-- Testimonials -->
     <UPageSection
       title="What Players Say"
       description="Don't just take our word for it - hear from our community"
-      :ui="{ container: 'text-center', wrapper: 'py-10' }"
     >
       <UPageGrid :cols="{ default: 1, md: 2, lg: 3 }" class="gap-6">
         <UPageCard
@@ -175,56 +163,59 @@
     <UPageSection
       title="Stay Updated"
       description="Get the latest news, exclusive content, and early access to new releases"
-      :ui="{ container: 'text-center', wrapper: 'py-10' }"
     >
-      <UCard class="max-w-2xl mx-auto">
-        <div class="space-y-6">
-          <div class="space-y-4">
-            <h3 class="text-2xl font-bold text-highlighted">Join Our Newsletter</h3>
-            <p class="text-muted">
-              Subscribe to receive updates about new games, behind-the-scenes content, and exclusive offers.
-            </p>
-          </div>
+      <UModal>
+        <UButton label="Subscribe to our newsletter" size="xl" />
 
-          <UForm :schema="newsletterSchema" :state="newsletterForm" @submit="onNewsletterSubmit" class="space-y-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <UFieldGroup label="First Name" name="firstName">
-                <UInput
-                  v-model="newsletterForm.firstName"
-                  placeholder="Enter your first name"
-                  required
-                />
-              </UFieldGroup>
-              <UFieldGroup label="Email" name="email">
-                <UInput
-                  v-model="newsletterForm.email"
-                  type="email"
-                  placeholder="your@email.com"
-                  required
-                />
-              </UFieldGroup>
+        <template #content>
+          <UCard>
+            <div class="space-y-6">
+              <div class="space-y-4">
+                <h3 class="text-2xl font-bold text-highlighted">Join Our Newsletter</h3>
+                <p class="text-muted">
+                  Subscribe to receive updates about new games, behind-the-scenes content, and exclusive offers.
+                </p>
+              </div>
+
+              <UForm :schema="newsletterSchema" :state="newsletterForm" class="space-y-4" @submit="onNewsletterSubmit">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <UFieldGroup label="First Name" name="firstName">
+                    <UInput
+                      v-model="newsletterForm.firstName"
+                      placeholder="Enter your first name"
+                      required
+                    />
+                  </UFieldGroup>
+                  <UFieldGroup label="Email" name="email">
+                    <UInput
+                      v-model="newsletterForm.email"
+                      type="email"
+                      placeholder="your@email.com"
+                      required
+                    />
+                  </UFieldGroup>
+                </div>
+                <UButton type="submit" size="lg" :loading="newsletterLoading" class="w-full">
+                  Subscribe to Newsletter
+                </UButton>
+              </UForm>
+
+              <p class="text-sm text-muted">
+                We respect your privacy. Unsubscribe at any time.
+              </p>
             </div>
-            <UButton type="submit" size="lg" :loading="newsletterLoading" class="w-full">
-              Subscribe to Newsletter
-            </UButton>
-          </UForm>
-
-          <p class="text-sm text-muted">
-            We respect your privacy. Unsubscribe at any time.
-          </p>
-        </div>
-      </UCard>
+          </UCard>
+        </template>
+      </UModal>
     </UPageSection>
 
     <!-- Recent Releases Timeline -->
     <UPageSection
       title="Recent Releases"
       description="Check out our latest games and updates"
-      :ui="{ container: 'text-center', wrapper: 'py-10' }"
     >
       <UTimeline
         :items="recentReleases"
-        class="max-w-4xl mx-auto"
         orientation="vertical"
       />
     </UPageSection>
@@ -233,165 +224,82 @@
     <UPageSection
       title="Featured Stories"
       description="Read our latest published works"
-      :ui="{ container: 'text-center', wrapper: 'py-10' }"
     >
       <UPageGrid :cols="{ default: 1, md: 2, lg: 3 }" class="gap-6">
-        <UCard
+        <UBlogPost
           v-for="story in featuredStories"
           :key="story.slug"
           :to="`/stories/${story.slug}`"
+          :title="story.title"
+          :description="story.description"
+          :date="story.date"
+          :image="story.image || story.thumbnail"
+          orientation="vertical"
           variant="outline"
-          class="group hover:shadow-xl transition-all duration-300 hover:border-primary/30 hover:-translate-y-1"
-        >
-          <template #header>
-            <div v-if="story.image || story.thumbnail" class="w-full h-48 overflow-hidden rounded-t-lg">
-              <NuxtImg
-                :src="story.image || story.thumbnail"
-                :alt="story.title"
-                class="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
-            <div v-else class="w-full h-48 bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900 dark:to-pink-900 rounded-t-lg flex items-center justify-center">
-              <UIcon name="i-lucide-book-open" class="h-16 w-16 text-purple-600 dark:text-purple-400" />
-            </div>
-          </template>
-
-          <div class="space-y-4">
-            <div class="space-y-2">
-              <h3 class="text-xl font-bold text-highlighted group-hover:text-primary transition-colors">{{ story.title }}</h3>
-              <p class="text-muted leading-relaxed line-clamp-3">{{ story.description }}</p>
-            </div>
-            <div class="flex items-center justify-between pt-2">
-              <div class="flex items-center gap-2">
-                <UBadge
-                  variant="soft"
-                  :color="story.type === 'free' ? 'success' : 'primary'"
-                  size="sm"
-                >
-                  {{ story.type === 'free' ? 'Free' : `$${story.price}` }}
-                </UBadge>
-                <span class="text-sm text-muted">{{ formatDate(story.date) }}</span>
-              </div>
-              <UButton size="sm" variant="soft" color="primary" trailing-icon="i-lucide-arrow-right">
-                Read More
-              </UButton>
-            </div>
-          </div>
-        </UCard>
+        />
       </UPageGrid>
     </UPageSection>
 
     <!-- Latest Blog Posts & Announcements -->
-    <UContainer>
-      <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <!-- Latest Blog Posts -->
-        <div class="space-y-6">
-          <div class="flex items-center justify-between">
-            <h2 class="text-2xl font-bold text-highlighted">{{ pageContent?.home?.latestBlog?.title || 'Latest from the Blog' }}</h2>
-            <UButton to="/blog" variant="outline" size="sm" trailing-icon="i-lucide-arrow-right">
-              {{ pageContent?.home?.latestBlog?.viewAllText || 'View All' }}
-            </UButton>
-          </div>
+    <UPageSection
+      title="Latest Updates"
+      description="Stay current with our blog posts and announcements"
+    >
+      <UPageGrid :cols="{ default: 1, lg: 2 }">
+        <!-- Blog Posts Card -->
+        <UCard variant="outline">
+          <template #header>
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold">{{ pageContent?.home?.latestBlog?.title || 'Latest from the Blog' }}</h3>
+              <UButton to="/blog" variant="ghost" size="sm" trailing-icon="i-lucide-arrow-right">
+                {{ pageContent?.home?.latestBlog?.viewAllText || 'View All' }}
+              </UButton>
+            </div>
+          </template>
 
-          <div class="space-y-4" :class="'group/card'">
-            <UCard
+          <div class="space-y-4">
+            <UBlogPost
               v-for="post in latestPosts"
               :key="post.slug"
               :to="`/blog/${post.slug}`"
-              variant="outline"
-              class="group hover:shadow-md transition-all duration-200 hover:border-primary/20"
-            >
-              <div class="flex gap-4">
-                <div class="flex-shrink-0">
-                  <div class="size-14 bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg flex items-center justify-center group-hover:from-primary/20 group-hover:to-secondary/20 transition-colors">
-                    <UIcon name="i-lucide-file-text" class="size-6 text-primary" />
-                  </div>
-                </div>
-                <div class="flex-1 min-w-0 space-y-3">
-                  <div class="flex items-center gap-2">
-                    <UBadge variant="soft" size="sm" color="primary">{{ post.author || 'Author' }}</UBadge>
-                    <span class="text-sm text-muted">{{ formatDate(post.date) }}</span>
-                  </div>
-                  <h3 class="font-semibold text-lg line-clamp-2 text-highlighted group-hover:text-primary transition-colors">{{ post.title }}</h3>
-                  <p class="text-muted text-sm line-clamp-2 leading-relaxed">{{ post.description }}</p>
-                  <div class="flex items-center justify-between">
-                    <div class="flex flex-wrap gap-1">
-                      <UBadge
-                        v-for="tag in post.tags?.slice(0, 2)"
-                        :key="tag"
-                        size="sm"
-                        variant="subtle"
-                        color="neutral"
-                      >
-                        {{ tag }}
-                      </UBadge>
-                    </div>
-                    <UButton size="sm" variant="ghost" color="primary" trailing-icon="i-lucide-arrow-right">
-                      Read More
-                    </UButton>
-                  </div>
-                </div>
-              </div>
-            </UCard>
+              :title="post.title"
+              :description="post.description"
+              :date="post.date"
+              :authors="post.authors"
+              orientation="horizontal"
+              variant="soft"
+            />
           </div>
-        </div>
+        </UCard>
 
-        <!-- Latest Announcements -->
-        <div class="space-y-6">
-          <div class="flex items-center justify-between">
-            <h2 class="text-2xl font-bold text-highlighted">{{ pageContent?.home?.latestAnnouncements?.title || 'Announcements' }}</h2>
-            <UButton to="/announcements" variant="outline" size="sm" trailing-icon="i-lucide-arrow-right">
-              {{ pageContent?.home?.latestAnnouncements?.viewAllText || 'View All' }}
-            </UButton>
-          </div>
+        <!-- Announcements Card -->
+        <UCard variant="outline">
+          <template #header>
+            <div class="flex items-center justify-between">
+              <h3 class="text-lg font-semibold">{{ pageContent?.home?.latestAnnouncements?.title || 'Announcements' }}</h3>
+              <UButton to="/announcements" variant="ghost" size="sm" trailing-icon="i-lucide-arrow-right">
+                {{ pageContent?.home?.latestAnnouncements?.viewAllText || 'View All' }}
+              </UButton>
+            </div>
+          </template>
 
           <div class="space-y-4">
-            <UCard
+            <UBlogPost
               v-for="announcement in latestAnnouncements"
               :key="announcement.slug"
               :to="`/announcements/${announcement.slug}`"
-              variant="outline"
-              class="group hover:shadow-md transition-all duration-200 hover:border-warning/20"
-            >
-              <div class="flex gap-4">
-                <div class="flex-shrink-0">
-                  <div class="size-14 bg-gradient-to-br from-warning/10 to-info/10 rounded-lg flex items-center justify-center group-hover:from-warning/20 group-hover:to-info/20 transition-colors">
-                    <UIcon name="i-lucide-megaphone" class="size-6 text-warning" />
-                  </div>
-                </div>
-                <div class="flex-1 min-w-0 space-y-3">
-                  <div class="flex items-center gap-2">
-                    <UBadge variant="soft" size="sm" color="warning">{{ announcement.author || 'Shrike Team' }}</UBadge>
-                    <span class="text-sm text-muted">{{ formatDate(announcement.date) }}</span>
-                  </div>
-                  <h3 class="font-semibold text-lg line-clamp-2 text-highlighted group-hover:text-primary transition-colors">{{ announcement.title }}</h3>
-                  <p class="text-muted text-sm line-clamp-2 leading-relaxed">{{ announcement.description }}</p>
-                  <div class="flex items-center justify-between">
-                    <div class="flex flex-wrap gap-1">
-                      <UBadge
-                        v-for="tag in announcement.tags?.slice(0, 2)"
-                        :key="tag"
-                        size="sm"
-                        variant="subtle"
-                        color="neutral"
-                      >
-                        {{ tag }}
-                      </UBadge>
-                    </div>
-                    <UButton size="sm" variant="ghost" color="primary" trailing-icon="i-lucide-arrow-right">
-                      Read More
-                    </UButton>
-                  </div>
-                </div>
-              </div>
-            </UCard>
+              :title="announcement.title"
+              :description="announcement.description"
+              :date="announcement.date"
+              :authors="announcement.authors"
+              :badge="{ label: 'Announcement', color: 'warning' }"
+              orientation="horizontal"
+              variant="soft"
+            />
           </div>
-        </div>
-        </div>
-      </div>
-    </UContainer>
+        </UCard>
+      </UPageGrid>
+    </UPageSection>
 
     <!-- Call to Action -->
     <UPageCTA
@@ -451,13 +359,33 @@ const { data: stories } = await useAsyncData('home-stories', () =>
 // Computed values for clean template usage
 const featuredGames = computed(() => games.value || [])
 const featuredStories = computed(() => stories.value || [])
-const latestPosts = computed(() => posts.value || [])
+const latestPosts = computed(() => (posts.value || []).map(post => ({
+  ...post,
+  authors: post.authors || []
+})));
+
+interface Author {
+  name: string
+  avatar?: {
+    src: string
+  }
+}
+
 interface AnnouncementView {
   slug: string
   title: string
   description?: string
   date: string
-  author?: string
+  authors?: Author[]
+  tags?: string[]
+}
+
+interface AnnouncementRaw {
+  slug: string
+  title: string
+  description?: string
+  date: string
+  authors?: Author[]
   tags?: string[]
 }
 
@@ -505,19 +433,22 @@ const recentReleases = [
     date: 'Dec 2024',
     title: 'The Silent Observer',
     description: 'New cyberpunk short story published on our stories page.',
-    icon: 'i-lucide-book-open'
+    icon: 'i-lucide-book-open',
+    to: '/stories/the-last-whisper'
   },
   {
     date: 'Nov 2024',
     title: 'Era of Silence - Quick Reference Guide',
     description: 'Updated quick reference guide with clarifications and new content.',
-    icon: 'i-lucide-file-text'
+    icon: 'i-lucide-file-text',
+    to: '/resources/era-of-silence-quick-reference'
   },
   {
     date: 'Oct 2024',
     title: 'Blood Neon Expansion',
     description: 'Corporate Shadows expansion released with new mechanics and story content.',
-    icon: 'i-lucide-gamepad-2'
+    icon: 'i-lucide-gamepad-2',
+    to: '/announcements/blood-neon-expansion'
   },
   {
     date: 'Sep 2024',
@@ -529,24 +460,15 @@ const recentReleases = [
 
 const latestAnnouncements = computed<AnnouncementView[]>(() => {
   const items = announcements.value || []
-  return items.map((a: any) => ({
+  return items.map((a: AnnouncementRaw) => ({
     slug: a.slug,
     title: a.title,
     description: a.description,
     date: a.date,
-    author: a.author ?? 'Shrike Team',
+    authors: a.authors || [{ name: 'Shrike Team', avatar: { src: '/ShrikeLogoNov2021.png' } }],
     tags: a.tags ?? []
   }))
 })
-
-// Utility function for consistent date formatting
-const formatDate = (date: string) => {
-  return new Date(date).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric'
-  })
-}
 
 // SEO configuration
 useSeoMeta({

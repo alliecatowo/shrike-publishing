@@ -8,6 +8,7 @@ game: era-of-silence
 type: story-pdf
 download: /docs/Ashen-Silence_-Sky-Over-Saliana-Final-8_21.pdf
 published: true
+tags: ["Ashen Silence", "Sky Over Saliana", "Story", "PDF"]
 ---
 
 [Download PDF](/docs/Ashen-Silence_-Sky-Over-Saliana-Final-8_21.pdf)

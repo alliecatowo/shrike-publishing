@@ -1,9 +1,9 @@
 <template>
   <button
     v-if="!isAtBottom"
-    class="fixed bottom-8 right-8 z-40 p-3 rounded-full bg-primary text-white shadow-lg hover:scale-110 transition-transform"
-    @click="scrollToNextSection"
+    class="fixed bottom-8 left-1/2 -translate-x-1/2 z-40 p-3 rounded-full bg-primary text-white shadow-lg hover:scale-110 transition-transform"
     aria-label="Scroll to next section"
+    @click="scrollToNextSection"
   >
     <UIcon name="i-lucide-chevron-down" class="w-6 h-6 animate-bounce" />
   </button>

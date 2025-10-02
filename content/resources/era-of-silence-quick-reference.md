@@ -2,12 +2,13 @@
 slug: era-of-silence-quick-reference
 title: Era of Silence - Quick Reference Guide
 description: Essential rules and mechanics for Era of Silence in a convenient reference format.
-image: /images/manuals/era-of-silence-reference.jpg
+
 date: 2024-09-20
 game: era-of-silence
 type: quick-reference
 download: /downloads/era-of-silence-quick-reference.pdf
 published: true
+tags: ["Era of Silence", "Rules", "Quick Reference"]
 ---
 
 # Era of Silence - Quick Reference Guide

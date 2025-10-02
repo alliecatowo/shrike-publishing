@@ -6,6 +6,7 @@ image: /images/announcements/era-of-silence-launch.jpg
 date: 2024-09-20
 type: product-launch
 published: true
+tags: ["Era of Silence", "Launch", "Card Game"]
 ---
 
 # Era of Silence - Now Available!
