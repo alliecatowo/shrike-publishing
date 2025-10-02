@@ -60,7 +60,7 @@
                   height="712"
                   title="shrikepublishing"
                   class="rounded"
-                ></iframe>
+                />
               </div>
             </div>
 
@@ -235,7 +235,7 @@
             </p>
           </div>
 
-          <UForm :schema="newsletterSchema" :state="newsletterForm" @submit="onNewsletterSubmit" class="space-y-4">
+          <UForm :schema="newsletterSchema" :state="newsletterForm" class="space-y-4" @submit="onNewsletterSubmit">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <UFieldGroup label="First Name" name="firstName">
                 <UInput

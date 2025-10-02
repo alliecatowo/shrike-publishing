@@ -1,13 +1,13 @@
 export const usePageContent = async (page: string) => {
   const { data: pageContent } = await useAsyncData(`page-content-${page}`, async () => {
-    if (process.server) {
+    if (import.meta.server) {
       // Return default content for SSR
       return getDefaultPageContent(page)
     }
     try {
       const content = await queryContent('/pages').findOne()
       return content || getDefaultPageContent(page)
-    } catch (e) {
+    } catch {
       return getDefaultPageContent(page)
     }
   })

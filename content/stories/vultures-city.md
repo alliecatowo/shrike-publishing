@@ -6,7 +6,7 @@ image: "/images/stories/city-of-rings.jpg"
 date: "2025-03-25"
 author: "R. Val"
 type: "free"
-tags: []
+tags: ["Era of Silence", "Sci-Fi", "Cyberpunk"]
 published: true
 ---
 Vulture’s City

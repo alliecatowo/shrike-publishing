@@ -45,7 +45,7 @@ Welcome to Neo-Tokyo, where corporations rule and hackers fight back. *Blood Neo
 
 Available now on our store for $24.99 USD plus shipping.
 
-[Buy Now](/contact) | [Download Character Sheet](/manuals/blood-neon-character-sheet.pdf)
+[Buy Now](/contact) | [Download Character Sheet](/resources/blood-neon-character-sheet.pdf)
 
 ## License & Community Engagement
 

@@ -2,7 +2,7 @@
   <UHeader class="border-b border-primary/15 bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60 dark:bg-primary/5">
     <template #left>
       <NuxtLink to="/" class="flex items-center gap-2">
-        <img src="/ShrikeLogoNov2021.png" alt="Shrike Publishing" class="h-8 w-auto" />
+        <img src="/ShrikeLogoNov2021.png" alt="Shrike Publishing" class="h-8 w-auto" >
         <span class="text-xl font-bold text-gray-900 dark:text-white">Shrike Publishing</span>
       </NuxtLink>
     </template>
@@ -32,16 +32,27 @@
 <script setup lang="ts">
 import type { NavigationMenuItem } from '@nuxt/ui'
 
+interface NavigationItemRaw {
+  label: string
+  to: string
+  icon?: string
+  children?: NavigationItemRaw[]
+}
+
+interface NavigationData {
+  items?: NavigationItemRaw[]
+}
+
 const { data: navData } = await useAsyncData('main-navigation', () =>
   queryCollection('navigation').first()
 )
 
-function toIcon(name?: string) {
+function toIcon(name?: string): string | undefined {
   if (!name) return undefined
   return `i-${name.replace(':', '-')}`
 }
 
-function mapItems(items: any[] | undefined): NavigationMenuItem[] {
+function mapItems(items: NavigationItemRaw[] | undefined): NavigationMenuItem[] {
   return (items || []).map((it) => ({
     label: it.label,
     to: it.to,
@@ -50,5 +61,5 @@ function mapItems(items: any[] | undefined): NavigationMenuItem[] {
   }))
 }
 
-const navigationItems = computed<NavigationMenuItem[]>(() => mapItems((navData.value as any)?.items))
+const navigationItems = computed<NavigationMenuItem[]>(() => mapItems((navData.value as NavigationData)?.items))
 </script>

@@ -42,7 +42,7 @@
           <div class="p-5 space-y-3">
             <div class="flex items-center justify-between mb-3">
               <span class="text-sm text-gray-500">
-                {{ formatDate(poem.date) }}
+                {{ poem.date }}
               </span>
               <UBadge
                 v-if="poem.featured"
@@ -61,17 +61,7 @@
             </p>
 
             <div class="flex items-center justify-between">
-              <div class="flex flex-wrap gap-1">
-                <UBadge
-                  v-for="tag in poem.tags"
-                  :key="tag"
-                  size="xs"
-                  variant="soft"
-                  color="pink"
-                >
-                  {{ tag }}
-                </UBadge>
-              </div>
+              <TagList :tags="poem.tags" color="pink" clickable />
               <UButton size="xs" variant="outline" :to="`/poetry/${poem.slug}`" trailing-icon="i-lucide-arrow-right">
                 Read
               </UButton>
@@ -104,12 +94,14 @@
 </template>
 
 <script setup lang="ts">
+import TagList from '~/components/TagList.vue'
+
 // Fetch all poetry
 const { data: poetry } = await useAsyncData('poetry', () =>
-  queryCollection('poetry').where('published', '=', true).order('date', 'DESC').all()
+  queryContent('poetry').order('date', 'DESC').find()
 )
 
-const poetryValue = computed(() => poetry.value || [])
+const poetryValue = computed(() => (poetry.value || []).filter(p => p.published))
 
 const activeTab = ref('all')
 
@@ -127,13 +119,7 @@ const filteredPoems = computed(() => {
   )
 })
 
-const formatDate = (date: string) => {
-  return new Date(date).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric'
-  })
-}
+
 
 // SEO
 useSeoMeta({

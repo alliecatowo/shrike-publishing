@@ -150,7 +150,7 @@
       <UIcon name="i-lucide-file-x" class="size-16 text-muted mx-auto mb-4" />
       <h3 class="text-lg font-semibold text-highlighted mb-2">No PDFs Found</h3>
       <p class="text-muted mb-6">Try adjusting your search or filter criteria.</p>
-      <UButton @click="clearFilters" variant="outline">
+      <UButton variant="outline" @click="clearFilters">
         Clear Filters
       </UButton>
     </div>
@@ -190,8 +190,6 @@
 </template>
 
 <script setup lang="ts">
-import type { TableColumn } from '@nuxt/ui'
-
 interface PDFItem {
   id: string
   title: string

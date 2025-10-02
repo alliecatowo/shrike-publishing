@@ -7,6 +7,8 @@
       :ui="{ container: 'text-center' }"
     />
 
+    <ScrollDown />
+
     <!-- Games Grid -->
     <UPageSection>
       <UPageGrid :cols="{ default: 1, md: 2, lg: 2 }" class="gap-8">
@@ -50,13 +52,12 @@
             </div>
           </template>
 
-          <div class="space-y-3">
-            <!-- Title and Price -->
-            <div class="flex items-start justify-between">
+          <div class="space-y-4">
+            <div class="flex items-start justify-between gap-2">
               <h3 class="text-xl font-bold text-highlighted group-hover:text-primary transition-colors line-clamp-2">
                 {{ game.title }}
               </h3>
-              <div v-if="game.price" class="text-right flex-shrink-0 ml-3">
+              <div v-if="game.price" class="text-right flex-shrink-0">
                 <div class="text-lg font-bold text-primary">
                   ${{ game.price }}
                 </div>
@@ -64,27 +65,22 @@
               </div>
             </div>
 
-            <!-- Description -->
-            <p class="text-muted leading-relaxed line-clamp-2">
+            <p class="text-muted leading-relaxed line-clamp-3">
               {{ game.description }}
             </p>
 
-            <!-- Game Meta -->
-            <div class="flex flex-wrap gap-2 text-sm">
+            <div class="flex flex-wrap gap-2 text-sm pt-2">
               <UBadge v-for="tag in (game.tags || []).slice(0,3)" :key="tag" variant="subtle" size="sm">
                 {{ tag }}
               </UBadge>
-            </div>
-
-            <!-- Tags overflow counter -->
-            <div v-if="(game.tags?.length || 0) > 3" class="flex">
-              <UBadge variant="outline" size="sm">
+              <UBadge v-if="(game.tags?.length || 0) > 3" variant="outline" size="sm">
                 +{{ (game.tags?.length || 0) - 3 }}
               </UBadge>
             </div>
+          </div>
 
-            <!-- Action Buttons -->
-            <div class="flex gap-2 pt-2">
+          <template #footer>
+            <div class="flex gap-2">
               <UButton
                 :to="`/games/${game.slug}`"
                 variant="outline"
@@ -104,7 +100,7 @@
                 View Details
               </UButton>
             </div>
-          </div>
+          </template>
         </UCard>
       </UPageGrid>
     </UPageSection>

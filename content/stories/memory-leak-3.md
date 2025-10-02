@@ -4,7 +4,7 @@ title: "3. Thief"
 description: ""
 author: "R. Val"
 type: "free"
-tags: []
+tags: ["Memory Leak", "Ashen Silence", "Sci-Fi", "Cyberpunk"]
 series: "Memory Leak"
 seriesOrder: 3
 seriesTotal: 4

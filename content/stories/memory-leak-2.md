@@ -4,7 +4,7 @@ title: "2. Waster"
 description: ""
 author: "R. Val"
 type: "free"
-tags: []
+tags: ["Memory Leak", "Ashen Silence", "Sci-Fi", "Cyberpunk"]
 series: "Memory Leak"
 seriesOrder: 2
 seriesTotal: 4

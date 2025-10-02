@@ -1,67 +1,55 @@
 <template>
-  <ReadingProgress />
+  <UPage>
+    <UPageBody>
+      <ReadingProgress />
 
-  <UContainer class="py-8">
-    <div class="max-w-3xl mx-auto space-y-8">
       <!-- Story Header -->
-      <div class="text-center space-y-4">
-        <UBadge
-          :color="storyValue.type === 'free' ? 'success' : 'primary'"
-          variant="soft"
-          size="lg"
-        >
-          {{ storyValue.type === 'free' ? 'Free Story' : 'Published Work' }}
-        </UBadge>
-
-        <h1 class="text-4xl font-bold">{{ storyValue.title }}</h1>
-
-        <div class="flex items-center justify-center space-x-4 text-sm text-gray-500">
-          <span>By {{ storyValue.author }}</span>
-          <span>•</span>
-          <span>{{ formatDate(storyValue.date) }}</span>
-        </div>
-
-        <p class="text-xl text-gray-600 dark:text-gray-400">{{ storyValue.description }}</p>
-
-        <div class="flex flex-wrap gap-2 justify-center">
-          <UBadge
-            v-for="tag in storyValue.tags"
-            :key="tag"
-            size="sm"
-            variant="soft"
-          >
-            {{ tag }}
-          </UBadge>
-        </div>
-      </div>
+      <UPageHeader
+        :title="storyValue.title"
+        :description="storyValue.description"
+        :badge="{ label: storyValue.type === 'free' ? 'Free Story' : 'Published Work', color: storyValue.type === 'free' ? 'success' : 'primary', variant: 'soft' }"
+      >
+        <template #subtext>
+          <div class="flex items-center justify-center space-x-4 text-sm text-gray-500">
+            <span>By {{ storyValue.author }}</span>
+            <span>•</span>
+            <span>{{ storyValue.date }}</span>
+          </div>
+        </template>
+        <template #tags>
+          <TagList :tags="storyValue.tags" clickable />
+        </template>
+      </UPageHeader>
 
       <!-- Series Navigation -->
-      <div v-if="storyValue.series" class="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
-        <UBadge variant="soft" color="primary">
-          Part {{ storyValue.seriesOrder }} of {{ storyValue.seriesTotal }} in {{ storyValue.series }}
-        </UBadge>
+      <UCard v-if="storyValue.series">
+        <div class="flex items-center justify-between">
+          <UBadge variant="soft" color="primary">
+            Part {{ storyValue.seriesOrder }} of {{ storyValue.seriesTotal }} in {{ storyValue.series }}
+          </UBadge>
 
-        <div class="flex gap-2">
-          <UButton
-            v-if="prevStory"
-            :to="`/stories/${prevStory.slug}`"
-            variant="outline"
-            icon="i-lucide-chevron-left"
-            size="sm"
-          >
-            Previous
-          </UButton>
-          <UButton
-            v-if="nextStory"
-            :to="`/stories/${nextStory.slug}`"
-            variant="outline"
-            trailing-icon="i-lucide-chevron-right"
-            size="sm"
-          >
-            Next
-          </UButton>
+          <div class="flex gap-2">
+            <UButton
+              v-if="prevStory"
+              :to="`/stories/${prevStory.slug}`"
+              variant="outline"
+              icon="i-lucide-chevron-left"
+              size="sm"
+            >
+              Previous
+            </UButton>
+            <UButton
+              v-if="nextStory"
+              :to="`/stories/${nextStory.slug}`"
+              variant="outline"
+              trailing-icon="i-lucide-chevron-right"
+              size="sm"
+            >
+              Next
+            </UButton>
+          </div>
         </div>
-      </div>
+      </UCard>
 
       <!-- Story Image -->
       <div>
@@ -88,49 +76,26 @@
       </div>
 
       <!-- Purchase/CTA Section -->
-      <div v-if="storyValue.type === 'published'" class="bg-gray-50 dark:bg-gray-800 rounded-lg p-8 text-center space-y-4">
-        <h2 class="text-2xl font-bold">Enjoyed this story?</h2>
-        <p class="text-gray-600 dark:text-gray-400">
-          This is an excerpt from our published work. Get the full story and support our writing.
-        </p>
-        <div class="flex items-center justify-center space-x-4">
-          <span class="text-2xl font-bold text-primary">${{ storyValue.price }}</span>
-          <UButton icon="i-lucide-shopping-cart" to="/contact">
-            Purchase Now
-          </UButton>
-        </div>
-      </div>
+      <UPageCTA
+        v-if="storyValue.type === 'published'"
+        title="Enjoyed this story?"
+        description="This is an excerpt from our published work. Get the full story and support our writing."
+        :links="[{ label: 'Purchase Now', to: '/contact', icon: 'i-lucide-shopping-cart' }]"
+      />
 
       <!-- Related Stories -->
       <div class="space-y-4">
         <h2 class="text-xl font-bold">More Stories</h2>
         <UPageGrid :cols="{ default: 1, md: 2 }" class="gap-4">
-          <UCard
+          <UBlogPost
             v-for="relatedStory in relatedStories"
             :key="relatedStory.slug"
             :to="`/stories/${relatedStory.slug}`"
-            class="hover:shadow-md transition-shadow"
-          >
-            <div class="flex space-x-3">
-              <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                <UIcon name="i-lucide-book-open" class="h-6 w-6 text-purple-600 dark:text-purple-400" />
-              </div>
-              <div class="flex-1 min-w-0">
-                <h3 class="font-semibold text-sm line-clamp-1">{{ relatedStory.title }}</h3>
-                <p class="text-xs text-gray-600 dark:text-gray-400 line-clamp-2">
-                  {{ relatedStory.description }}
-                </p>
-                <UBadge
-                  :color="relatedStory.type === 'free' ? 'success' : 'primary'"
-                  variant="soft"
-                  size="xs"
-                  class="mt-1"
-                >
-                  {{ relatedStory.type }}
-                </UBadge>
-              </div>
-            </div>
-          </UCard>
+            :title="relatedStory.title"
+            :description="relatedStory.description"
+            :badge="{ label: relatedStory.type, color: relatedStory.type === 'free' ? 'success' : 'primary', variant: 'soft' }"
+            orientation="horizontal"
+          />
         </UPageGrid>
       </div>
 
@@ -140,11 +105,19 @@
           Back to Stories
         </UButton>
       </div>
-    </div>
-  </UContainer>
+    </UPageBody>
+
+    <template #right>
+      <UPageAside>
+        <UContentToc :links="storyValue?.body?.toc?.links" title="On this page" />
+      </UPageAside>
+    </template>
+  </UPage>
 </template>
 
 <script setup lang="ts">
+import TagList from '~/components/TagList.vue'
+
 const route = useRoute()
 const slug = route.params.slug as string
 
@@ -192,13 +165,7 @@ const relatedStories = computed(() =>
   allStories.value?.filter((s) => s.slug !== slug).slice(0, 2) || []
 )
 
-const formatDate = (date: string) => {
-  return new Date(date).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  })
-}
+
 
 // SEO
 useSeoMeta({

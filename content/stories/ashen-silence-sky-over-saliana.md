@@ -7,7 +7,7 @@ image: "/images/stories/saliana-vista.png"
 date: "2023-09-03"
 author: "R. Val"
 type: "free"
-tags: []
+tags: ["Era of Silence", "Sci-Fi", "Cyberpunk", "Intrigue"]
 published: true
 ---
 # Sky Over Saliana

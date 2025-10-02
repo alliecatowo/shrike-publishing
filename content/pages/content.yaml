@@ -66,12 +66,12 @@ announcements:
     title: 'Announcements'
     description: 'News, updates, and announcements from our studio.'
 
-manuals:
+resources:
   meta:
-    title: 'Manuals - Shrike Publishing'
+    title: 'Resources - Shrike Publishing'
     description: 'Download character sheets, rule references, and other gaming resources.'
   header:
-    title: 'Manuals'
+    title: 'Resources'
     description: 'Character sheets, quick reference guides, and downloadable resources.'
 
 about:

@@ -1,9 +1,9 @@
 <template>
   <UApp>
-    <Header />
+    <AppHeader />
     <UMain>
       <slot />
     </UMain>
-    <Footer />
+    <AppFooter />
   </UApp>
 </template>

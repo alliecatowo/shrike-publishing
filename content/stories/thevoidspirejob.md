@@ -6,7 +6,7 @@ image: "/images/stories/banner.png"
 date: "2025-05-18"
 author: "R. Val"
 type: "free"
-tags: []
+tags: ["Era of Silence", "Sci-Fi", "Cyberpunk"]
 published: true
 ---
 The following is a preview chapter from the first part of the forthcoming novel, Era of Silence: The Pit of Heaven. By this point in the story our heroes have the goods they need to prepare their journey, except for one thing, a cipher journal held by their leader’s treacherous cousin. The catch? He’s fled halfway up to orbit in a corporate town up the world’s first working space elevator. Mercenaries will need to be dispatched to retrieve it, including the protagonist’s daughter, Arina.

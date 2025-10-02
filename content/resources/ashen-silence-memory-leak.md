@@ -8,6 +8,7 @@ game: era-of-silence
 type: story-pdf
 download: /docs/Ashen-Silence_-Memory-Leak-Final.pdf
 published: true
+tags: ["Ashen Silence", "Memory Leak", "Story", "PDF"]
 ---
 
 [Download PDF](/docs/Ashen-Silence_-Memory-Leak-Final.pdf)

@@ -6,6 +6,7 @@ image: /images/announcements/blood-neon-expansion.jpg
 date: 2024-10-15
 type: expansion
 published: true
+tags: ["Blood Neon", "Expansion", "Cyberpunk", "TTRPG"]
 ---
 
 # Blood Neon Expansion - Corporate Shadows

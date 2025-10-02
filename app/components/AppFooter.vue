@@ -10,22 +10,9 @@
                 Stay updated with our latest releases and news.
               </p>
               <div class="flex gap-2">
-                <UButton
-                  to="/contact"
-                  size="sm"
-                  variant="outline"
-                  leading-icon="i-lucide-mail"
-                >
-                  Contact
-                </UButton>
-                <UButton
-                  to="/blog"
-                  size="sm"
-                  variant="ghost"
-                  leading-icon="i-lucide-rss"
-                >
-                  Blog
-                </UButton>
+                <UButton icon="i-lucide-twitter" color="gray" variant="ghost" to="#" />
+                <UButton icon="i-lucide-facebook" color="gray" variant="ghost" to="#" />
+                <UButton icon="i-lucide-instagram" color="gray" variant="ghost" to="#" />
               </div>
             </div>
           </template>
@@ -42,7 +29,7 @@
           <div class="flex gap-4">
             <ULink to="/about" class="text-sm text-muted hover:text-primary">About</ULink>
             <ULink to="/contact" class="text-sm text-muted hover:text-primary">Contact</ULink>
-            <ULink to="/manuals" class="text-sm text-muted hover:text-primary">Manuals</ULink>
+            <ULink to="/resources" class="text-sm text-muted hover:text-primary">Resources</ULink>
           </div>
         </div>
       </UContainer>
@@ -64,7 +51,7 @@ const footerColumns: FooterColumn[] = [
       { label: 'Home', to: '/' },
       { label: 'Stories', to: '/stories' },
       { label: 'Announcements', to: '/announcements' },
-      { label: 'Manuals', to: '/manuals' },
+      { label: 'Resources', to: '/resources' },
     ],
   },
   {

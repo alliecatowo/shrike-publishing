@@ -61,23 +61,60 @@ export default defineContentConfig({
         type: z.string().optional(),
         price: z.number().optional(),
         tags: z.array(z.string()).default([]),
-        published: z.boolean().default(true)
+        published: z.boolean().default(true),
+        series: z.string().optional(),
+        seriesOrder: z.number().optional(),
+        seriesTotal: z.number().optional()
       })
     }),
-    manuals: defineCollection({
+    poetry: defineCollection({
       type: 'page',
-      source: 'manuals/*.md',
+      source: 'poetry/*.md',
       schema: z.object({
         slug: z.string(),
         title: z.string(),
-        description: z.string(),
-        file: z.string().optional(),
+        description: z.string().optional(),
+        excerpt: z.string().optional(),
+        thumbnail: z.string().optional(),
+        image: z.string().optional(),
         date: z.date(),
+        author: z.string().optional(),
+        tags: z.array(z.string()).default([]),
+        published: z.boolean().default(true),
+        featured: z.boolean().optional(),
+        authorNote: z.string().optional()
+      })
+    }),
+    resources: defineCollection({
+      type: 'page',
+      source: 'resources/*.md',
+      schema: z.object({
+        title: z.string(),
+        description: z.string().optional(),
+        file: z.string().optional(),
+        date: z.date().optional(),
         game: z.string().optional(),
         type: z.string().optional(),
         download: z.string().optional(),
-        published: z.boolean().default(true)
-      })
+        published: z.boolean().optional(),
+        tags: z.array(z.string()).optional(),
+      }),
+    }),
+    portfolio: defineCollection({
+      type: 'page',
+      source: 'portfolio/**/*.md',
+      schema: z.object({
+        title: z.string(),
+        description: z.string().optional(),
+        image: z.string().optional(),
+        icon: z.string().optional(),
+        tags: z.array(z.string()).optional(),
+        type: z.string().optional(),
+        duration: z.string().optional(),
+        thumbnail: z.string().optional(),
+        link: z.string().optional(),
+        status: z.string().optional(),
+      }),
     }),
 
     // New design system collections
@@ -88,7 +125,7 @@ export default defineContentConfig({
         colors: z.object({
           primary: z.string(),
           secondary: z.string(),
-          tertiary: z.string(),
+          
           accent: z.string(),
           success: z.string(),
           info: z.string(),

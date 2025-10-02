@@ -47,8 +47,8 @@
           </UPageCard>
 
           <!-- Manual Download Card -->
-          <UCard v-if="g.manualUrl" variant="outline">
-            <template #header>
+          <UPageCard v-if="g.manualUrl">
+            <template #title>
               <h3 class="text-lg font-semibold">Game Manual</h3>
             </template>
             <UButton
@@ -60,11 +60,11 @@
             >
               Download Manual
             </UButton>
-          </UCard>
+          </UPageCard>
 
           <!-- Resources Card -->
-          <UCard v-if="g.resources?.length" variant="outline">
-            <template #header>
+          <UPageCard v-if="g.resources?.length">
+            <template #title>
               <h3 class="text-lg font-semibold">Resources</h3>
             </template>
             <div class="space-y-2">
@@ -81,36 +81,14 @@
                 {{ resource.title }}
               </UButton>
             </div>
-          </UCard>
+          </UPageCard>
 
           <UPageCard
             title="Related Games"
             description="Discover more games"
             variant="outline"
           >
-            <div class="space-y-3">
-              <NuxtLink
-                v-for="relatedGame in relatedGames"
-                :key="relatedGame.slug"
-                :to="`/games/${relatedGame.slug}`"
-                class="block group"
-              >
-                <div class="flex gap-3">
-                  <NuxtImg
-                    :src="relatedGame.image"
-                    :alt="relatedGame.title"
-                    class="w-16 h-20 object-cover rounded group-hover:opacity-80 transition-opacity"
-                  />
-                  <div class="flex-1 min-w-0">
-                    <h4 class="font-medium text-highlighted group-hover:text-primary transition-colors line-clamp-2">
-                      {{ relatedGame.title }}
-                    </h4>
-                    <p class="text-sm text-muted line-clamp-2">{{ relatedGame.description }}</p>
-                    <p class="text-sm font-bold text-primary">${{ relatedGame.price }}</p>
-                  </div>
-                </div>
-              </NuxtLink>
-            </div>
+            <UNavigationMenu :items="relatedGames" orientation="vertical" />
           </UPageCard>
         </div>
       </UPageGrid>
@@ -136,10 +114,16 @@ if (!game.value) {
 const { data: related } = await useAsyncData('related-games', () =>
   queryCollection('games').all()
 )
-const relatedGames = computed(() => (related.value || []).filter((x) => x.slug !== slug))
+const relatedGames = computed(() => (related.value || []).filter((x) => x.slug !== slug).map(game => ({
+  label: game.title,
+  to: `/games/${game.slug}`,
+  avatar: {
+    src: game.image
+  }
+})))
 
 // Non-nullable computed for template usage
-const g = computed(() => game.value as unknown as {
+const g = computed(() => game.value as {
   title: string
   description: string
   image?: string

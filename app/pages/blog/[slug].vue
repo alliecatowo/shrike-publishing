@@ -3,24 +3,13 @@
     <UPageHeader
       :title="postValue.title"
       :description="postValue.description"
+      :badge="{ label: postValue.author, variant: 'outline' }"
     >
-      <template #top>
-        <div class="flex items-center gap-3 mb-4">
-          <UBadge variant="outline">{{ postValue.author }}</UBadge>
-          <span class="text-muted">•</span>
-          <span class="text-muted">{{ formatDate(postValue.date) }}</span>
-        </div>
-
-        <div class="flex flex-wrap gap-2 mb-6">
-          <UBadge
-            v-for="tag in postValue.tags"
-            :key="tag"
-            size="sm"
-            variant="soft"
-          >
-            {{ tag }}
-          </UBadge>
-        </div>
+      <template #subtext>
+        <span class="text-muted">{{ postValue.date }}</span>
+      </template>
+      <template #tags>
+        <TagList :tags="postValue.tags" clickable />
       </template>
     </UPageHeader>
 
@@ -101,6 +90,8 @@
 </template>
 
 <script setup lang="ts">
+import TagList from '~/components/TagList.vue'
+
 const route = useRoute()
 const slug = route.params.slug as string
 
@@ -125,13 +116,7 @@ const relatedPosts = computed(() =>
   allPosts.value?.filter((p) => p.slug !== slug).slice(0, 2) || []
 )
 
-const formatDate = (date: string) => {
-  return new Date(date).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  })
-}
+
 
 const sharePost = () => {
   if (navigator.share) {

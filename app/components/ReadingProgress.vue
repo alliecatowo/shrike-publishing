@@ -1,10 +1,5 @@
 <template>
-  <div class="fixed top-0 left-0 right-0 h-1 bg-gray-200 dark:bg-gray-800 z-50">
-    <div
-      class="h-full bg-primary transition-all duration-150"
-      :style="{ width: scrollProgress + '%' }"
-    />
-  </div>
+  <UProgress v-if="scrollProgress > 0" :value="scrollProgress" :max="100" class="fixed top-0 left-0 right-0 h-1 z-50" />
 </template>
 
 <script setup lang="ts">
