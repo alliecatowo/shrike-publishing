@@ -4,7 +4,7 @@ title: "Ashen Silence: 10 Minutes to North Point"
 description: "A short heist story where two unlikely partners plan to pull off the impossible, robbing a train at near super-sonic speeds before it reaches North Point Station."
 image: "/images/stories/Cover_2.png"
 date: "2022-09-16"
-author: "F. Dan O'Neill"
+author: "R. Val"
 type: "free"
 tags:
   - "Stories"

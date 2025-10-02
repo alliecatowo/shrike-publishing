@@ -25,7 +25,7 @@
 
       <!-- Back to Announcements -->
       <div class="text-center">
-        <UButton to="/announcements" variant="outline" icon="i-heroicons-arrow-left">
+        <UButton to="/announcements" variant="outline" icon="i-lucide-arrow-left">
           Back to Announcements
         </UButton>
       </div>

@@ -11,6 +11,12 @@ tags:
   - cyberpunk
   - adventure
   - cooperative
+manualUrl: "/docs/blood-neon-manual.pdf"
+resources:
+  - title: "Faction Guide"
+    url: "/resources"
+  - title: "GM Screen"
+    url: "/resources"
 published: true
 ---
 
@@ -41,6 +47,8 @@ Available now on our store for $24.99 USD plus shipping.
 
 [Buy Now](/contact) | [Download Character Sheet](/manuals/blood-neon-character-sheet.pdf)
 
-## Community
+## License & Community Engagement
+
+*Blood Neon* core rules are available under a **Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0)** license. This means you can hack it, remix it, create your own campaigns, and share them with the community - just give us credit and share your work under the same license.
 
 Join our Discord community to share your Blood Neon campaigns and get tips from other players!

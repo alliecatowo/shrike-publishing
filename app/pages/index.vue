@@ -19,7 +19,7 @@
     <UPageSection
       :title="pageContent?.home?.featuredGames?.title || 'Featured Games'"
       :description="pageContent?.home?.featuredGames?.description || 'Discover our latest tabletop adventures'"
-      :ui="{ container: 'text-center' }"
+      :ui="{ container: 'text-center', wrapper: 'py-10' }"
     >
       <UPageGrid :cols="{ default: 1, md: 2 }" class="gap-8">
         <UCard
@@ -69,7 +69,7 @@
     <UPageSection
       title="Our Impact"
       description="Join thousands of players in immersive storytelling adventures"
-      :ui="{ container: 'text-center' }"
+      :ui="{ container: 'text-center', wrapper: 'py-10' }"
     >
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <UCard variant="outline" class="text-center">
@@ -103,21 +103,24 @@
     <UPageSection
       title="What Players Say"
       description="Don't just take our word for it - hear from our community"
-      :ui="{ container: 'text-center' }"
+      :ui="{ container: 'text-center', wrapper: 'py-10' }"
     >
       <UPageGrid :cols="{ default: 1, md: 2, lg: 3 }" class="gap-6">
         <UPageCard
           title="Absolutely incredible storytelling"
           description="Era of Silence completely changed how I think about tabletop RPGs. The world-building is phenomenal and every session leaves me wanting more."
           variant="soft"
-          orientation="horizontal"
+          orientation="vertical"
+          class="text-center max-w-md mx-auto"
         >
           <template #leading>
-            <UAvatar
-              src="https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=100&h=100&fit=crop&crop=face"
-              alt="Sarah Johnson"
-              size="lg"
-            />
+            <div class="flex justify-center">
+              <UAvatar
+                src="https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=100&h=100&fit=crop&crop=face"
+                alt="Sarah Johnson"
+                size="lg"
+              />
+            </div>
           </template>
           <template #footer>
             <div class="text-sm text-muted">Sarah Johnson - Game Master</div>
@@ -128,14 +131,17 @@
           title="Best investment in gaming"
           description="Blood Neon has become our weekly ritual. The mechanics are innovative and the story keeps us engaged for hours."
           variant="soft"
-          orientation="horizontal"
+          orientation="vertical"
+          class="text-center max-w-md mx-auto"
         >
           <template #leading>
-            <UAvatar
-              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
-              alt="Mike Chen"
-              size="lg"
-            />
+            <div class="flex justify-center">
+              <UAvatar
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
+                alt="Mike Chen"
+                size="lg"
+              />
+            </div>
           </template>
           <template #footer>
             <div class="text-sm text-muted">Mike Chen - Player</div>
@@ -146,14 +152,17 @@
           title="Professional quality"
           description="The production value and attention to detail in these games rivals anything from major publishers. Truly impressive work."
           variant="soft"
-          orientation="horizontal"
+          orientation="vertical"
+          class="text-center max-w-md mx-auto"
         >
           <template #leading>
-            <UAvatar
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
-              alt="Alex Rivera"
-              size="lg"
-            />
+            <div class="flex justify-center">
+              <UAvatar
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
+                alt="Alex Rivera"
+                size="lg"
+              />
+            </div>
           </template>
           <template #footer>
             <div class="text-sm text-muted">Alex Rivera - Content Creator</div>
@@ -166,7 +175,7 @@
     <UPageSection
       title="Stay Updated"
       description="Get the latest news, exclusive content, and early access to new releases"
-      :ui="{ container: 'text-center' }"
+      :ui="{ container: 'text-center', wrapper: 'py-10' }"
     >
       <UCard class="max-w-2xl mx-auto">
         <div class="space-y-6">
@@ -211,7 +220,7 @@
     <UPageSection
       title="Recent Releases"
       description="Check out our latest games and updates"
-      :ui="{ container: 'text-center' }"
+      :ui="{ container: 'text-center', wrapper: 'py-10' }"
     >
       <UTimeline
         :items="recentReleases"
@@ -220,36 +229,57 @@
       />
     </UPageSection>
 
-    <!-- Featured Story -->
+    <!-- Featured Stories -->
     <UPageSection
-      title="Featured Story"
-      description="Read our latest published work"
-      :ui="{ container: 'text-center' }"
+      title="Featured Stories"
+      description="Read our latest published works"
+      :ui="{ container: 'text-center', wrapper: 'py-10' }"
     >
-      <UPageCard
-        title="Echoes of Neo-Tokyo"
-        description="In the neon-drenched streets of a dystopian future, a rogue hacker discovers a digital ghost haunting the city's neural network. As corporate overlords tighten their grip, she must choose between exposing the truth or joining the shadows that hide it."
-        :to="'/stories/echoes-of-neo-tokyo'"
-        orientation="horizontal"
-        variant="outline"
-        class="max-w-4xl mx-auto"
-      >
-        <template #leading>
-          <div class="w-48 h-64 bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900 dark:to-pink-900 rounded-lg flex items-center justify-center">
-            <UIcon name="i-lucide-book-open" class="h-16 w-16 text-purple-600 dark:text-purple-400" />
+      <UPageGrid :cols="{ default: 1, md: 2, lg: 3 }" class="gap-6">
+        <UCard
+          v-for="story in featuredStories"
+          :key="story.slug"
+          :to="`/stories/${story.slug}`"
+          variant="outline"
+          class="group hover:shadow-xl transition-all duration-300 hover:border-primary/30 hover:-translate-y-1"
+        >
+          <template #header>
+            <div v-if="story.image || story.thumbnail" class="w-full h-48 overflow-hidden rounded-t-lg">
+              <NuxtImg
+                :src="story.image || story.thumbnail"
+                :alt="story.title"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div v-else class="w-full h-48 bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900 dark:to-pink-900 rounded-t-lg flex items-center justify-center">
+              <UIcon name="i-lucide-book-open" class="h-16 w-16 text-purple-600 dark:text-purple-400" />
+            </div>
+          </template>
+
+          <div class="space-y-4">
+            <div class="space-y-2">
+              <h3 class="text-xl font-bold text-highlighted group-hover:text-primary transition-colors">{{ story.title }}</h3>
+              <p class="text-muted leading-relaxed line-clamp-3">{{ story.description }}</p>
+            </div>
+            <div class="flex items-center justify-between pt-2">
+              <div class="flex items-center gap-2">
+                <UBadge
+                  variant="soft"
+                  :color="story.type === 'free' ? 'success' : 'primary'"
+                  size="sm"
+                >
+                  {{ story.type === 'free' ? 'Free' : `$${story.price}` }}
+                </UBadge>
+                <span class="text-sm text-muted">{{ formatDate(story.date) }}</span>
+              </div>
+              <UButton size="sm" variant="soft" color="primary" trailing-icon="i-lucide-arrow-right">
+                Read More
+              </UButton>
+            </div>
           </div>
-        </template>
-        <template #footer>
-          <div class="flex items-center gap-2 text-sm text-muted">
-            <UIcon name="i-lucide-clock" class="h-4 w-4" />
-            <span>12 min read</span>
-            <span>•</span>
-            <span>Cyberpunk</span>
-            <span>•</span>
-            <span>Published Nov 2024</span>
-          </div>
-        </template>
-      </UPageCard>
+        </UCard>
+      </UPageGrid>
     </UPageSection>
 
     <!-- Latest Blog Posts & Announcements -->
@@ -410,8 +440,17 @@ const { data: announcements } = await useAsyncData('home-announcements', () =>
     .all()
 )
 
+const { data: stories } = await useAsyncData('home-stories', () =>
+  queryCollection('stories')
+    .where('published', '=', true)
+    .order('date', 'DESC')
+    .limit(3)
+    .all()
+)
+
 // Computed values for clean template usage
 const featuredGames = computed(() => games.value || [])
+const featuredStories = computed(() => stories.value || [])
 const latestPosts = computed(() => posts.value || [])
 interface AnnouncementView {
   slug: string

@@ -1,4 +1,6 @@
 <template>
+  <ReadingProgress />
+
   <UContainer class="py-8">
     <div class="max-w-3xl mx-auto space-y-8">
       <!-- Story Header -->
@@ -30,6 +32,34 @@
           >
             {{ tag }}
           </UBadge>
+        </div>
+      </div>
+
+      <!-- Series Navigation -->
+      <div v-if="storyValue.series" class="flex items-center justify-between p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+        <UBadge variant="soft" color="primary">
+          Part {{ storyValue.seriesOrder }} of {{ storyValue.seriesTotal }} in {{ storyValue.series }}
+        </UBadge>
+
+        <div class="flex gap-2">
+          <UButton
+            v-if="prevStory"
+            :to="`/stories/${prevStory.slug}`"
+            variant="outline"
+            icon="i-lucide-chevron-left"
+            size="sm"
+          >
+            Previous
+          </UButton>
+          <UButton
+            v-if="nextStory"
+            :to="`/stories/${nextStory.slug}`"
+            variant="outline"
+            trailing-icon="i-lucide-chevron-right"
+            size="sm"
+          >
+            Next
+          </UButton>
         </div>
       </div>
 
@@ -65,7 +95,7 @@
         </p>
         <div class="flex items-center justify-center space-x-4">
           <span class="text-2xl font-bold text-primary">${{ storyValue.price }}</span>
-          <UButton icon="i-heroicons-shopping-bag" to="/contact">
+          <UButton icon="i-lucide-shopping-cart" to="/contact">
             Purchase Now
           </UButton>
         </div>
@@ -74,7 +104,7 @@
       <!-- Related Stories -->
       <div class="space-y-4">
         <h2 class="text-xl font-bold">More Stories</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <UPageGrid :cols="{ default: 1, md: 2 }" class="gap-4">
           <UCard
             v-for="relatedStory in relatedStories"
             :key="relatedStory.slug"
@@ -101,12 +131,12 @@
               </div>
             </div>
           </UCard>
-        </div>
+        </UPageGrid>
       </div>
 
       <!-- Back to Stories -->
       <div class="text-center">
-        <UButton to="/stories" variant="outline" icon="i-heroicons-arrow-left">
+        <UButton to="/stories" variant="outline" icon="i-lucide-arrow-left">
           Back to Stories
         </UButton>
       </div>
@@ -131,6 +161,27 @@ if (!story.value) {
 }
 
 const storyValue = computed(() => story.value!)
+
+// Fetch series navigation stories
+const series = storyValue.value.series
+const seriesOrder = storyValue.value.seriesOrder
+const seriesTotal = storyValue.value.seriesTotal
+
+const { data: prevStory } = await useAsyncData('prev-story', async () => {
+  if (!series || !seriesOrder || seriesOrder <= 1) return null
+  return await queryCollection('stories')
+    .where('series', '=', series)
+    .where('seriesOrder', '=', seriesOrder - 1)
+    .first()
+})
+
+const { data: nextStory } = await useAsyncData('next-story', async () => {
+  if (!series || !seriesTotal || !seriesOrder || seriesOrder >= seriesTotal) return null
+  return await queryCollection('stories')
+    .where('series', '=', series)
+    .where('seriesOrder', '=', seriesOrder + 1)
+    .first()
+})
 
 // Fetch related stories
 const { data: allStories } = await useAsyncData('related-stories', () =>

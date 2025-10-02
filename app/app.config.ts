@@ -1,17 +1,17 @@
 export default defineAppConfig({
     ui: {
-      // Brand colors
+      // Brand colors - Emphasizing pink, lavender, and red palette
       colors: {
         // Adopt brand maroon using Nuxt UI built-in palette 'rose'
         primary: 'rose',
-        secondary: 'amber',
-        tertiary: 'purple',
-        accent: 'pink',
+        secondary: 'pink',
+        tertiary: 'violet', // Lavender/violet as tertiary
+        accent: 'purple',
         success: 'green',
         info: 'blue',
         warning: 'yellow',
         error: 'red',
-        neutral: 'stone'
+        neutral: 'slate'
       },
       // Typography
       prose: {

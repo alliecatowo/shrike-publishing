@@ -53,7 +53,7 @@
       <div class="flex items-center justify-between border-t pt-8 mb-8">
         <h3 class="text-lg font-semibold">Share this post</h3>
         <UButton
-          icon="i-heroicons-share"
+          icon="i-lucide-share"
           size="sm"
           variant="outline"
           @click="sharePost"
@@ -92,7 +92,7 @@
     <template #bottom>
       <!-- Back to Blog -->
       <div class="text-center pt-8">
-        <UButton to="/blog" variant="outline" icon="i-heroicons-arrow-left">
+        <UButton to="/blog" variant="outline" icon="i-lucide-arrow-left">
           Back to Blog
         </UButton>
       </div>

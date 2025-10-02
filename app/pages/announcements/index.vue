@@ -55,7 +55,7 @@
 
       <!-- Empty State -->
       <div v-if="announcementsValue.length === 0" class="text-center py-12">
-        <Icon name="lucide:megaphone" class="h-16 w-16 text-gray-400 mx-auto mb-4" />
+        <UIcon name="i-lucide-megaphone" class="h-16 w-16 text-gray-400 mx-auto mb-4" />
         <h3 class="text-lg font-semibold text-gray-600 dark:text-gray-400 mb-2">No announcements yet</h3>
         <p class="text-gray-500">Check back soon for updates!</p>
       </div>

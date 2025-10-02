@@ -4,14 +4,18 @@ tagline: 'Independent tabletop game publisher'
 sections:
   - title: 'Quick Links'
     links:
-      - label: 'Blog'
-        to: '/blog'
-      - label: 'Announcements'
-        to: '/announcements'
       - label: 'Games'
         to: '/games'
       - label: 'Stories'
         to: '/stories'
+      - label: 'Poetry'
+        to: '/poetry'
+      - label: 'Resources'
+        to: '/resources'
+      - label: 'Blog'
+        to: '/blog'
+      - label: 'About'
+        to: '/about'
 
 social:
   title: 'Connect'
@@ -25,3 +29,16 @@ social:
     - platform: 'Instagram'
       url: 'https://www.instagram.com/shrikepublishing'
       icon: 'lucide:instagram'
+
+shop:
+  title: 'Shop'
+  links:
+    - platform: 'itch.io'
+      url: 'https://shrikepublishing.itch.io/'
+      icon: 'lucide:gamepad-2'
+    - platform: 'DriveThruRPG'
+      url: 'https://www.drivethrurpg.com/en/product/411680/era-of-silence-starter-kit'
+      icon: 'lucide:book-open'
+    - platform: 'Ko-fi'
+      url: 'https://ko-fi.com/shrikepublishing'
+      icon: 'lucide:coffee'

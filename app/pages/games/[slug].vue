@@ -46,6 +46,43 @@
             </template>
           </UPageCard>
 
+          <!-- Manual Download Card -->
+          <UCard v-if="g.manualUrl" variant="outline">
+            <template #header>
+              <h3 class="text-lg font-semibold">Game Manual</h3>
+            </template>
+            <UButton
+              :to="g.manualUrl"
+              variant="soft"
+              icon="i-lucide-book-open"
+              class="w-full"
+              external
+            >
+              Download Manual
+            </UButton>
+          </UCard>
+
+          <!-- Resources Card -->
+          <UCard v-if="g.resources?.length" variant="outline">
+            <template #header>
+              <h3 class="text-lg font-semibold">Resources</h3>
+            </template>
+            <div class="space-y-2">
+              <UButton
+                v-for="resource in g.resources"
+                :key="resource.url"
+                :to="resource.url"
+                variant="ghost"
+                size="sm"
+                class="w-full justify-start"
+                icon="i-lucide-file-text"
+                external
+              >
+                {{ resource.title }}
+              </UButton>
+            </div>
+          </UCard>
+
           <UPageCard
             title="Related Games"
             description="Discover more games"
@@ -102,7 +139,15 @@ const { data: related } = await useAsyncData('related-games', () =>
 const relatedGames = computed(() => (related.value || []).filter((x) => x.slug !== slug))
 
 // Non-nullable computed for template usage
-const g = computed(() => game.value as unknown as { title: string; description: string; image?: string; price?: number; tags?: string[] })
+const g = computed(() => game.value as unknown as {
+  title: string
+  description: string
+  image?: string
+  price?: number
+  tags?: string[]
+  manualUrl?: string
+  resources?: Array<{ title: string; url: string }>
+})
 
 useSeoMeta({
   title: `${g.value?.title} - Shrike Publishing`,
