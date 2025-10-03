@@ -1,5 +1,6 @@
 <template>
   <UPage>
+    <UContainer>
     <UPageHeader
       :title="postValue.title"
       :description="postValue.description"
@@ -68,22 +69,23 @@
         </div>
       </div>
     </UPageBody>
-
+  </UContainer>
+    
     <template #right>
       <!-- Table of Contents -->
       <UContentToc
-        v-if="postValue?.body?.toc?.links?.length"
-        :links="postValue.body.toc.links"
+      v-if="postValue?.body?.toc?.links?.length"
+      :links="postValue.body.toc.links"
         title="On this page"
-      />
-    </template>
-
-    <template #bottom>
-      <!-- Back to Blog -->
-      <div class="text-center pt-8">
-        <UButton to="/blog" variant="outline" icon="i-lucide-arrow-left">
-          Back to Blog
-        </UButton>
+        />
+      </template>
+      
+      <template #bottom>
+        <!-- Back to Blog -->
+        <div class="text-center pt-8">
+          <UButton to="/blog" variant="outline" icon="i-lucide-arrow-left">
+            Back to Blog
+          </UButton>
       </div>
     </template>
   </UPage>

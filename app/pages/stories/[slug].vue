@@ -1,25 +1,26 @@
 <template>
-  <UPage>
+  <!-- Story Header -->
+  <UPage> 
+    <UContainer>
+    <UPageHeader
+    :title="storyValue.title"
+    :description="storyValue.description"
+    :badge="{ label: storyValue.type === 'free' ? 'Free Story' : 'Published Work', color: storyValue.type === 'free' ? 'success' : 'primary', variant: 'soft' }"
+    >
+    <template #subtext>
+        <ReadingProgress />
+        <div class="flex items-center justify-center space-x-4 text-sm text-gray-500">
+          <span>By {{ storyValue.author }}</span>
+          <span>•</span>
+          <span>{{ storyValue.date }}</span>
+        </div>
+      </template>
+      <template #tags>
+        <TagList :tags="storyValue.tags" clickable />
+      </template>
+    </UPageHeader>
     <UPageBody>
-      <ReadingProgress />
-
-      <!-- Story Header -->
-      <UPageHeader
-        :title="storyValue.title"
-        :description="storyValue.description"
-        :badge="{ label: storyValue.type === 'free' ? 'Free Story' : 'Published Work', color: storyValue.type === 'free' ? 'success' : 'primary', variant: 'soft' }"
-      >
-        <template #subtext>
-          <div class="flex items-center justify-center space-x-4 text-sm text-gray-500">
-            <span>By {{ storyValue.author }}</span>
-            <span>•</span>
-            <span>{{ storyValue.date }}</span>
-          </div>
-        </template>
-        <template #tags>
-          <TagList :tags="storyValue.tags" clickable />
-        </template>
-      </UPageHeader>
+      
 
       <!-- Series Navigation -->
       <UCard v-if="storyValue.series">
@@ -108,10 +109,9 @@
     </UPageBody>
 
     <template #right>
-      <UPageAside>
         <UContentToc :links="storyValue?.body?.toc?.links" title="On this page" />
-      </UPageAside>
     </template>
+    </UContainer>
   </UPage>
 </template>
 
