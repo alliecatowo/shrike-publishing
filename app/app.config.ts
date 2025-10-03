@@ -23,11 +23,11 @@ export default defineAppConfig({
       //   h6: { fontFamily: "'Volkhov', serif", fontWeight: '700' },
       //   p: { fontFamily: "'Merriweather Sans', sans-serif", lineHeight: '1.75' }
       // }
-      pageSection: {
-        slots: {
-          container: 'flex flex-col lg:grid py-8 sm:py-12 lg:py-16 gap-8 sm:gap-12'
-        }
-      }
+      // pageSection: {
+      //   slots: {
+      //     container: 'flex flex-col lg:grid py-8 sm:py-12 lg:py-16 gap-8 sm:gap-12'
+      //   }
+      // }
     },
     icon: {
         mode: 'css',
