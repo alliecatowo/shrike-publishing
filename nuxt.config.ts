@@ -31,19 +31,19 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   image: {
-    domains: ['localhost'],
+    domains: ['localhost', 'images.unsplash.com'],
     ipx: {
       maxAge: 0 // Disable caching for development
     }
   },
 
-        fonts: {
-          families: [
-            { name: 'Merriweather Sans', provider: 'google', weights: [400, 700, 800] },
-            { name: 'Volkhov', provider: 'google', weights: [400, 700, 800] },
-            { name: 'Lato', provider: 'google', weights: [400, 700, 800] }
-          ]
-        },
+  fonts: {
+    families: [
+      { name: 'Merriweather Sans', provider: 'google', weights: [400, 700, 800] },
+      { name: 'Volkhov', provider: 'google', weights: [400, 700] },
+      { name: 'Lato', provider: 'google', weights: [400, 700, 800] }
+    ]
+  },
   icon: {
     // Use Iconify API for client-side fetching
     provider: 'iconify',
