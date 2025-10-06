@@ -5,11 +5,12 @@
         <UFooterColumns :columns="footerColumns">
           <template #right>
             <div class="space-y-4">
-              <h3 class="text-sm font-semibold text-highlighted">Connect</h3>
+              <h3 class="text-sm font-semibold text-highlighted">Stay Updated</h3>
               <p class="text-sm text-muted leading-relaxed">
-                Stay updated with our latest releases and news.
+                Subscribe to our newsletter for the latest releases and news.
               </p>
-              <div class="flex gap-2">
+              <NewsletterSignup />
+              <div class="flex gap-2 pt-2">
                 <UButton icon="i-lucide-twitter" color="gray" variant="ghost" to="#" />
                 <UButton icon="i-lucide-facebook" color="gray" variant="ghost" to="#" />
                 <UButton icon="i-lucide-instagram" color="gray" variant="ghost" to="#" />

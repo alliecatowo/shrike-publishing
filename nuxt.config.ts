@@ -8,8 +8,19 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/image',
     '@nuxt/fonts',
-    '@nuxt/icon'
+    '@nuxt/icon',
+    'nuxt-loops'
   ],
+
+  loops: {
+    apiKey: process.env.LOOPS_API_KEY
+  },
+
+  runtimeConfig: {
+    public: {
+      loopsFormId: process.env.NUXT_PUBLIC_LOOPS_FORM_ID
+    }
+  },
 
   ui: {
     icons: {
