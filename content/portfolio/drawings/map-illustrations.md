@@ -1,5 +1,9 @@
 ---
 title: 'Map Illustrations'
 description: 'Illustrations of maps.'
-image: 'https://picsum.photos/640/640?random=8'
+published: true
+type: 'drawing'
+game: 'era-of-silence'
+image: '/images/era-of-silence/art/locations/city-of-rings.jpg'
+thumbnail: '/images/era-of-silence/art/locations/city-of-rings.jpg'
 ---

@@ -19,7 +19,7 @@ Part 1
 
 R. Val, Shrike Publishing.
 
-[PDF COPY HERE](/docs/Era-of-Silence-The-Pit-of-Heaven-Pt-1-1.pdf)
+[PDF COPY HERE](/downloads/stories/Era-of-Silence-The-Pit-of-Heaven-Pt-1-1.pdf)
 
 THANKS TO OUR PATRONS
 

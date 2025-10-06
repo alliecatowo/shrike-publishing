@@ -3,7 +3,7 @@ slug: solarpunk-worldbuilding-toolkit
 title: Solarpunk Worldbuilding Toolkit
 description: A free 20-page guide for building hopeful, ecologically-grounded science fantasy worlds without falling into naive utopianism.
 type: pdf
-url: /downloads/solarpunk-worldbuilding-toolkit.pdf
+url: /downloads/reference/solarpunk-worldbuilding-toolkit.pdf
 image: /images/resources/solarpunk-toolkit-placeholder.jpg
 date: 2024-09-20
 tags:
@@ -51,7 +51,7 @@ Generating dramatic tension from systemic problems, competing values, and the fr
 
 ## Download
 
-[Download PDF (2.3 MB)](/downloads/solarpunk-worldbuilding-toolkit.pdf)
+[Download PDF (2.3 MB)](/downloads/reference/solarpunk-worldbuilding-toolkit.pdf)
 
 **License:** Creative Commons BY-NC-SA 4.0
 Use it, remix it, share it. Just credit us and keep it non-commercial.

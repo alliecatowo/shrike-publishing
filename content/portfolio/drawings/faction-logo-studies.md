@@ -1,5 +1,9 @@
 ---
 title: 'Faction Logo Studies'
 description: 'Initial sketches for faction logos.'
-image: 'https://picsum.photos/640/640?random=4'
+published: true
+type: 'drawing'
+game: 'era-of-silence'
+image: '/images/era-of-silence/art/characters/birdie-the-augur.jpg'
+thumbnail: '/images/era-of-silence/art/characters/birdie-the-augur.jpg'
 ---

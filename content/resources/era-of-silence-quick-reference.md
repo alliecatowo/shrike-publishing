@@ -6,7 +6,7 @@ description: Essential rules and mechanics for Era of Silence in a convenient re
 date: 2024-09-20
 game: era-of-silence
 type: quick-reference
-download: /downloads/era-of-silence-quick-reference.pdf
+download: /downloads/reference/era-of-silence-quick-reference.pdf
 published: true
 tags: ["Era of Silence", "Rules", "Quick Reference"]
 ---
@@ -56,4 +56,4 @@ When the Silence Meter reaches 10:
 
 Download the full rulebook for complete mechanics and strategy guides.
 
-[Download Full Rulebook](/downloads/era-of-silence-rulebook.pdf) | [Back to Game](/games/era-of-silence)
+[Download Full Rulebook](/downloads/reference/era-of-silence-rulebook.pdf) | [Back to Game](/games/era-of-silence)

@@ -98,7 +98,7 @@ import TagList from '~/components/TagList.vue'
 
 // Fetch all poetry
 const { data: poetry } = await useAsyncData('poetry', () =>
-  queryContent('poetry').order('date', 'DESC').find()
+  queryCollection('poetry').order('date', 'DESC').find()
 )
 
 const poetryValue = computed(() => (poetry.value || []).filter(p => p.published))

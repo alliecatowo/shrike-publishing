@@ -22,7 +22,7 @@ By R. Val, Shrike Publishing
   
 
   
-[PDF Here](/docs/Era-of-Silence_-Vultures-City.pdf)
+[PDF Here](/downloads/stories/Era-of-Silence_-Vultures-City.pdf)
 
 \-----
 

@@ -15,7 +15,7 @@ Content warning for intense violence, transphobia, assisted ritual suicide, body
 
 R. Val
 
-[PDF HERE](/docs/4-Voidspire-Job.pdf)
+[PDF HERE](/downloads/stories/4-Voidspire-Job.pdf)
 
   
 

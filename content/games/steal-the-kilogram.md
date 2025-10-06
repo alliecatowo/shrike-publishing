@@ -6,6 +6,7 @@ image: /images/games/steal-kilogram-placeholder.jpg
 price: 15.00
 currency: USD
 available: true
+featured: false
 tags:
   - tabletop
   - heist
@@ -101,8 +102,8 @@ See our [full licensing information](https://creativecommons.org/licenses/by-nc-
 
 ## Additional Resources
 
-- [Character sheet templates](/resources/steal-kilogram-character-sheets.pdf)
-- [Blank heist planning worksheet](/resources/steal-kilogram-heist-planner.pdf)
+- [Character sheet templates](/downloads/character-sheets/steal-kilogram-character-sheets.pdf)
+- [Blank heist planning worksheet](/downloads/reference/steal-kilogram-heist-planner.pdf)
 - [Community heist scenarios](https://shrikepublishing.itch.io/steal-the-kilogram/devlog)
 - [Playlist on Spotify](https://open.spotify.com/playlist/placeholder) (heist music is essential)
 
