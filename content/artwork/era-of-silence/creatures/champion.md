@@ -3,8 +3,10 @@ title: Era of Silence - Champion
 description: The Champion, a formidable enemy that stands between survivors and their goals
 game: era-of-silence
 type: creature
-fullImage: /images/era-of-silence/champion.png
-thumbnail: /images/era-of-silence/champion.png
+artist: "R. Val"
+date: 2023-12-15
+fullImage: /images/era-of-silence/art/creatures/champion.png
+thumbnail: /images/era-of-silence/art/creatures/champion.png
 published: true
 featured: true
 ---

@@ -2,7 +2,7 @@
   <UModal v-model="isOpen" fullscreen>
     <UCarousel
       ref="carousel"
-      v-slot="{ item, index }"
+      v-slot="{ item }"
       :items="images"
       :start-index="startIndex"
       arrows
@@ -25,7 +25,7 @@
             {{ currentImage.description }}
           </p>
         </div>
-        <UButton icon="i-lucide-x" color="gray" variant="ghost" @click="isOpen = false" />
+        <UButton icon="i-lucide-x" color="neutral" variant="ghost" @click="isOpen = false" />
       </div>
     </div>
 
@@ -42,7 +42,7 @@
           <UButton
             v-if="currentImage?.downloadUrl"
             icon="i-lucide-download"
-            color="gray"
+            color="neutral"
             variant="soft"
             @click="downloadImage(currentImage)"
           >

@@ -2,7 +2,6 @@
 slug: maintenance-log-ark-ship-hope
 title: Maintenance Log, Ark Ship Hope
 description: Found poetry from the personal logs of the chief engineer on humanity's last generation ship.
-image: /images/poetry/ship-placeholder.jpg
 date: 2024-08-22
 author: Shrike Publishing
 tags:
@@ -11,6 +10,7 @@ tags:
   - found-poetry
   - post-earth
 published: true
+featured: false
 ---
 
 # Maintenance Log, Ark Ship Hope

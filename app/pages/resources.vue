@@ -148,7 +148,7 @@
                   :key="tag"
                   size="xs"
                   variant="subtle"
-                  color="gray"
+                  color="neutral"
                 >
                   {{ tag }}
                 </UBadge>
@@ -161,7 +161,7 @@
               <!-- Download Button -->
               <UButton
                 :to="resource.downloadUrl || resource.url || resource.file || resource.download"
-                :external="resource.external"
+                external
                 :target="resource.external ? '_blank' : undefined"
                 :download="!resource.external"
                 block
@@ -244,7 +244,7 @@
               :key="tag"
               variant="subtle"
               size="xs"
-              color="gray"
+              color="neutral"
             >
               {{ tag }}
             </UBadge>
@@ -255,7 +255,7 @@
           <div class="flex gap-2">
             <UButton
               :to="row.downloadUrl || row.url || row.file || row.download"
-              :external="row.external"
+              external
               :target="row.external ? '_blank' : undefined"
               :download="!row.external"
               variant="solid"
@@ -305,7 +305,7 @@
           <div class="space-y-4">
             <div class="flex items-start gap-3">
               <div class="w-10 h-10 bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900 dark:to-pink-900 rounded-full flex items-center justify-center flex-shrink-0">
-                <UIcon :name="community.icon" class="h-5 w-5 text-purple-600 dark:text-purple-400" />
+                <UIcon :name="community.icon" class="h-5 w-5 " color="purple" />
               </div>
               <div class="flex-1">
                 <h3 class="font-semibold">{{ community.title }}</h3>
@@ -387,7 +387,7 @@
           >
             <div class="flex items-start gap-4">
               <div class="w-16 h-16 bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-900 dark:to-indigo-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                <UIcon :name="guide.icon" class="h-8 w-8 text-blue-600 dark:text-blue-400" />
+                <UIcon :name="guide.icon" class="h-8 w-8 " color="info" />
               </div>
               <div class="flex-1 space-y-3">
                 <div>
@@ -396,7 +396,7 @@
                 </div>
                 <UButton
                   :to="guide.url"
-                  :external="guide.external"
+                  external
                   :target="guide.external ? '_blank' : undefined"
                   :download="!guide.external"
                   variant="soft"

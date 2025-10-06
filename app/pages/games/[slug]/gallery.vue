@@ -154,12 +154,16 @@ const { data: artwork } = await useAsyncData(`${slug}-artwork`, () =>
 const artworkByType = computed(() => {
   const art = artwork.value || []
   return {
-    characters: art.filter((a: any) => a.type === 'character'),
-    locations: art.filter((a: any) => a.type === 'location'),
-    scenes: art.filter((a: any) => a.type === 'scene'),
-    concept: art.filter((a: any) => a.type === 'concept'),
-    creatures: art.filter((a: any) => a.type === 'creature'),
-    cover: art.filter((a: any) => a.type === 'cover'),
+    characters: art.filter((a: unknown) => (a as any).type === 'character'),
+    creatures: art.filter((a: unknown) => (a as any).type === 'creature'),
+    enemies: art.filter((a: unknown) => (a as any).type === 'enemy'),
+    locations: art.filter((a: unknown) => (a as any).type === 'location'),
+    scenes: art.filter((a: unknown) => (a as any).type === 'scene'),
+    vehicles: art.filter((a: unknown) => (a as any).type === 'vehicle'),
+    items: art.filter((a: unknown) => (a as any).type === 'item'),
+    concept: art.filter((a: unknown) => (a as any).type === 'concept'),
+    cover: art.filter((a: unknown) => (a as any).type === 'cover'),
+    gameComponents: art.filter((a: unknown) => (a as any).type === 'game-component'),
     all: art
   }
 })
@@ -192,6 +196,14 @@ const tabs = computed(() => {
     })
   }
 
+  if (artworkByType.value.enemies.length > 0) {
+    baseTabs.push({
+      label: 'Enemies',
+      artworks: artworkByType.value.enemies,
+      slot: 'enemies'
+    })
+  }
+
   if (artworkByType.value.locations.length > 0) {
     baseTabs.push({
       label: 'Locations',
@@ -205,6 +217,22 @@ const tabs = computed(() => {
       label: 'Scenes',
       artworks: artworkByType.value.scenes,
       slot: 'scenes'
+    })
+  }
+
+  if (artworkByType.value.vehicles.length > 0) {
+    baseTabs.push({
+      label: 'Vehicles',
+      artworks: artworkByType.value.vehicles,
+      slot: 'vehicles'
+    })
+  }
+
+  if (artworkByType.value.items.length > 0) {
+    baseTabs.push({
+      label: 'Items',
+      artworks: artworkByType.value.items,
+      slot: 'items'
     })
   }
 
@@ -224,6 +252,14 @@ const tabs = computed(() => {
     })
   }
 
+  if (artworkByType.value.gameComponents.length > 0) {
+    baseTabs.push({
+      label: 'Game Components',
+      artworks: artworkByType.value.gameComponents,
+      slot: 'gameComponents'
+    })
+  }
+
   return baseTabs
 })
 
@@ -234,7 +270,7 @@ const samplePages = computed(() => {
   // Generate array of sample page images (using hyphenated versions)
   const pages = [
     '2022-09-20 COVER.png',
-    'cover-front.png',
+    'cover_front.png',
     'cover-back.png',
     'intro-text-crawl.png',
     'index-first-page.png',
@@ -253,7 +289,6 @@ const samplePages = computed(() => {
     'playing-the-game.png',
     'shooting-fighting-dice.png',
     'magic.png',
-    'part_4_magic.png',
     'aberrations.png',
     'combat-biker.png'
   ]
@@ -275,8 +310,14 @@ const selectedImage = ref<{
   artist?: string
 } | null>(null)
 
-function openLightbox(image: any) {
-  selectedImage.value = image
+function openLightbox(image: unknown) {
+  selectedImage.value = image as {
+    src: string
+    alt: string
+    title?: string
+    description?: string
+    artist?: string
+  }
   lightboxOpen.value = true
 }
 

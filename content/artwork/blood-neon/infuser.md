@@ -3,6 +3,8 @@ title: Blood Neon - The Infuser
 description: The mysterious Infuser character, a key figure in the Blood Neon universe with powerful augmentation abilities
 game: blood-neon
 type: character
+artist: "Shrike Team"
+date: 2024-03-05
 fullImage: /images/blood-neon/characters/blood-neon-infuser.jpg
 thumbnail: /images/blood-neon/characters/blood-neon-infuser.jpg
 published: true

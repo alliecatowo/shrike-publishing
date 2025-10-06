@@ -15,7 +15,7 @@
         <UCard class="hover:shadow-lg transition-shadow">
           <div class="text-center space-y-4 p-6">
             <div class="w-16 h-16 bg-red-100 dark:bg-red-900 rounded-full flex items-center justify-center mx-auto">
-              <UIcon name="i-lucide-heart" class="h-8 w-8 text-red-600 dark:text-red-400" />
+              <UIcon name="i-lucide-heart" class="h-8 w-8 " color="error" />
             </div>
             <div>
               <h3 class="text-xl font-semibold mb-2">Patreon</h3>
@@ -40,7 +40,7 @@
         <UCard class="hover:shadow-lg transition-shadow">
           <div class="text-center space-y-4 p-6">
             <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto">
-              <UIcon name="i-lucide-coffee" class="h-8 w-8 text-blue-600 dark:text-blue-400" />
+              <UIcon name="i-lucide-coffee" class="h-8 w-8 " color="info" />
             </div>
             <div>
               <h3 class="text-xl font-semibold mb-2">Ko-fi</h3>
@@ -90,7 +90,7 @@
         <UCard class="hover:shadow-lg transition-shadow">
           <div class="text-center space-y-4 p-6">
             <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto">
-              <UIcon name="i-lucide-at-sign" class="h-8 w-8 text-blue-600 dark:text-blue-400" />
+              <UIcon name="i-lucide-at-sign" class="h-8 w-8 " color="info" />
             </div>
             <div>
               <h3 class="text-xl font-semibold mb-2">Follow on Twitter</h3>
@@ -115,7 +115,7 @@
         <UCard class="hover:shadow-lg transition-shadow">
           <div class="text-center space-y-4 p-6">
             <div class="w-16 h-16 bg-pink-100 dark:bg-pink-900 rounded-full flex items-center justify-center mx-auto">
-              <UIcon name="i-lucide-camera" class="h-8 w-8 text-pink-600 dark:text-pink-400" />
+              <UIcon name="i-lucide-camera" class="h-8 w-8 " color="pink" />
             </div>
             <div>
               <h3 class="text-xl font-semibold mb-2">Instagram</h3>
@@ -140,7 +140,7 @@
         <UCard class="hover:shadow-lg transition-shadow">
           <div class="text-center space-y-4 p-6">
             <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto">
-              <UIcon name="i-lucide-globe" class="h-8 w-8 text-blue-600 dark:text-blue-400" />
+              <UIcon name="i-lucide-globe" class="h-8 w-8 " color="info" />
             </div>
             <div>
               <h3 class="text-xl font-semibold mb-2">Facebook</h3>
@@ -165,7 +165,7 @@
         <UCard class="hover:shadow-lg transition-shadow">
           <div class="text-center space-y-4 p-6">
             <div class="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto">
-              <UIcon name="i-lucide-mail" class="h-8 w-8 text-green-600 dark:text-green-400" />
+              <UIcon name="i-lucide-mail" class="h-8 w-8 " color="success" />
             </div>
             <div>
               <h3 class="text-xl font-semibold mb-2">Email Us</h3>

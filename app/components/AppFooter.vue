@@ -11,9 +11,9 @@
               </p>
               <NewsletterSignup />
               <div class="flex gap-2 pt-2">
-                <UButton icon="i-lucide-twitter" color="gray" variant="ghost" to="#" />
-                <UButton icon="i-lucide-facebook" color="gray" variant="ghost" to="#" />
-                <UButton icon="i-lucide-instagram" color="gray" variant="ghost" to="#" />
+                <UButton icon="i-lucide-twitter" color="neutral" variant="ghost" to="#" />
+                <UButton icon="i-lucide-facebook" color="neutral" variant="ghost" to="#" />
+                <UButton icon="i-lucide-instagram" color="neutral" variant="ghost" to="#" />
               </div>
             </div>
           </template>
@@ -39,7 +39,7 @@
 </template>
 
 <script setup lang="ts">
-import type { FooterColumn } from '@nuxt/ui/dist/runtime/types';
+import type { FooterColumn } from '#ui/types';
 
 const { data: footer } = await useAsyncData('footer-content', () =>
   queryCollection('footer').first()

@@ -3,8 +3,10 @@ title: Era of Silence - Bantam Spore
 description: The Bantam Spore, a fungal creature born from the contaminated lands
 game: era-of-silence
 type: creature
-fullImage: /images/era-of-silence/bantam-spore.png
-thumbnail: /images/era-of-silence/bantam-spore.png
+artist: "R. Val"
+date: 2023-12-15
+fullImage: /images/era-of-silence/art/creatures/bantam-spore.png
+thumbnail: /images/era-of-silence/art/creatures/bantam-spore.png
 published: true
 featured: false
 ---

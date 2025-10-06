@@ -127,7 +127,7 @@
               <div class="space-y-4">
                 <div class="flex items-start gap-3">
                   <div class="w-12 h-12 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                    <UIcon name="i-lucide-user" class="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                    <UIcon name="i-lucide-user" class="h-6 w-6 " color="info" />
                   </div>
                   <div class="flex-1">
                     <h3 class="font-semibold text-lg line-clamp-2">{{ download.title }}</h3>
@@ -146,7 +146,7 @@
                   :to="download.fileUrl"
                   block
                   variant="soft"
-                  color="blue"
+                  color="info"
                   trailing-icon="i-lucide-download"
                   download
                   external
@@ -174,7 +174,7 @@
               <div class="space-y-4">
                 <div class="flex items-start gap-3">
                   <div class="w-12 h-12 bg-gradient-to-br from-green-500/20 to-emerald-500/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                    <UIcon :name="download.type === 'map' ? 'i-lucide-map' : 'i-lucide-image'" class="h-6 w-6 text-green-600 dark:text-green-400" />
+                    <UIcon :name="download.type === 'map' ? 'i-lucide-map' : 'i-lucide-image'" class="h-6 w-6 " color="success" />
                   </div>
                   <div class="flex-1">
                     <h3 class="font-semibold text-lg line-clamp-2">{{ download.title }}</h3>
@@ -193,7 +193,7 @@
                   :to="download.fileUrl"
                   block
                   variant="soft"
-                  color="green"
+                  color="success"
                   trailing-icon="i-lucide-download"
                   download
                   external
@@ -221,7 +221,7 @@
               <div class="space-y-4">
                 <div class="flex items-start gap-3">
                   <div class="w-12 h-12 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                    <UIcon name="i-lucide-book-open" class="h-6 w-6 text-purple-600 dark:text-purple-400" />
+                    <UIcon name="i-lucide-book-open" class="h-6 w-6 " color="purple" />
                   </div>
                   <div class="flex-1">
                     <h3 class="font-semibold text-lg line-clamp-2">{{ download.title }}</h3>
@@ -264,11 +264,11 @@
               <div class="space-y-4">
                 <div class="flex items-start gap-3">
                   <div class="w-12 h-12 bg-gradient-to-br from-amber-500/20 to-orange-500/20 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                    <UIcon name="i-lucide-package" class="h-6 w-6 text-amber-600 dark:text-amber-400" />
+                    <UIcon name="i-lucide-package" class="h-6 w-6 " color="secondary" />
                   </div>
                   <div class="flex-1">
                     <h3 class="font-semibold text-lg line-clamp-2">{{ download.title }}</h3>
-                    <UBadge color="amber" variant="soft" size="xs" class="mt-1">
+                    <UBadge color="secondary" variant="soft" size="xs" class="mt-1">
                       {{ download.type === 'bundle' ? 'Bundle' : 'Toolkit' }}
                     </UBadge>
                   </div>
@@ -281,7 +281,7 @@
                 <UButton
                   :to="download.fileUrl"
                   block
-                  color="amber"
+                  color="secondary"
                   trailing-icon="i-lucide-download"
                   download
                   external
@@ -365,13 +365,13 @@ const { data: downloads } = await useAsyncData(`${slug}-downloads`, () =>
 const downloadsByType = computed(() => {
   const items = downloads.value || []
   return {
-    pdf: items.filter((d: any) => d.type === 'pdf'),
-    'character-sheet': items.filter((d: any) => d.type === 'character-sheet'),
-    map: items.filter((d: any) => d.type === 'map'),
-    image: items.filter((d: any) => d.type === 'image'),
-    reference: items.filter((d: any) => d.type === 'reference'),
-    toolkit: items.filter((d: any) => d.type === 'toolkit'),
-    bundle: items.filter((d: any) => d.type === 'bundle')
+    pdf: items.filter((d: unknown) => (d as any).type === 'pdf'),
+    'character-sheet': items.filter((d: unknown) => (d as any).type === 'character-sheet'),
+    map: items.filter((d: unknown) => (d as any).type === 'map'),
+    image: items.filter((d: unknown) => (d as any).type === 'image'),
+    reference: items.filter((d: unknown) => (d as any).type === 'reference'),
+    toolkit: items.filter((d: unknown) => (d as any).type === 'toolkit'),
+    bundle: items.filter((d: unknown) => (d as any).type === 'bundle')
   }
 })
 

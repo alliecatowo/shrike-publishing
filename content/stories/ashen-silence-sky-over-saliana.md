@@ -9,6 +9,7 @@ author: "R. Val"
 type: "free"
 tags: ["Era of Silence", "Sci-Fi", "Cyberpunk", "Intrigue"]
 published: true
+featured: false
 ---
 # Sky Over Saliana
 

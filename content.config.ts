@@ -24,7 +24,13 @@ export default defineContentConfig({
           title: z.string(),
           url: z.string()
         })).optional(),
-        coverImage: z.string().optional()
+        coverImage: z.string().optional(),
+        releaseDate: z.string().optional(),
+        playerCount: z.object({
+          min: z.number(),
+          max: z.number()
+        }).optional(),
+        playTime: z.string().optional()
       })
     }),
     blog: defineCollection({
@@ -71,6 +77,7 @@ export default defineContentConfig({
         author: z.string(),
         type: z.string().optional(),
         price: z.number().optional(),
+        currency: z.string().optional(),
         tags: z.array(z.string()).default([]),
         published: z.boolean().default(true),
         series: z.string().optional(),
@@ -114,6 +121,8 @@ export default defineContentConfig({
         fileSize: z.string().optional(),
         pageCount: z.number().optional(),
         downloadUrl: z.string().optional(),
+        url: z.string().optional(),
+        image: z.string().optional(),
         external: z.boolean().default(false),
         updatedAt: z.date().optional()
       }),

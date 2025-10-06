@@ -8,6 +8,7 @@ author: "R. Val"
 type: "free"
 tags: ["Era of Silence", "Sci-Fi", "Cyberpunk"]
 published: true
+featured: false
 ---
 Vulture’s City
 

@@ -10,7 +10,7 @@
         <UButton
           to="#work"
           size="lg"
-          color="amber"
+          color="secondary"
           trailing-icon="i-lucide-arrow-down"
         >
           View Our Work
@@ -118,13 +118,13 @@
                     loading="lazy"
                   />
                   <div v-else class="w-full h-full flex items-center justify-center">
-                    <UIcon :name="item.icon" class="h-16 w-16 text-amber-600 dark:text-amber-400" />
+                    <UIcon :name="item.icon" class="h-16 w-16 " color="secondary" />
                   </div>
 
                   <!-- Game Badge Overlay -->
                   <div v-if="item.game" class="absolute top-3 right-3">
                     <UBadge
-                      :color="item.game === 'blood-neon' ? 'red' : 'amber'"
+                      :color="item.game === 'blood-neon' ? 'error' : 'secondary'"
                       variant="solid"
                       size="sm"
                     >
@@ -135,7 +135,7 @@
               </template>
 
               <div class="space-y-3">
-                <TagList :tags="item.tags" color="amber" />
+                <TagList :tags="item.tags" color="secondary" />
               </div>
             </UPageCard>
           </UPageGrid>
@@ -168,9 +168,9 @@
             >
               <div class="flex gap-4">
                 <div class="flex-shrink-0">
-                  <div class="w-16 h-16 bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900 dark:to-purple-900 rounded-lg flex items-center justify-center">
-                    <UIcon :name="item.icon" class="h-8 w-8 text-indigo-600 dark:text-indigo-400" />
-                  </div>
+                  <UCard variant="soft" color="info" class="w-16 h-16 flex items-center justify-center p-0">
+                    <UIcon :name="item.icon" class="h-8 w-8" color="info" />
+                  </UCard>
                 </div>
                 <div class="flex-1 space-y-3">
                   <div class="flex items-start justify-between">
@@ -178,7 +178,7 @@
                       <h3 class="text-lg font-bold">{{ item.title }}</h3>
                       <p class="text-sm text-gray-500">{{ item.type }}</p>
                     </div>
-                    <UBadge :color="item.status === 'published' ? 'green' : 'blue'" variant="soft">
+                    <UBadge :color="item.status === 'published' ? 'success' : 'info'" variant="soft">
                       {{ item.status }}
                     </UBadge>
                   </div>
@@ -218,7 +218,7 @@
               <div class="space-y-4">
                 <div class="flex items-start gap-4">
                   <div class="w-12 h-12 bg-gradient-to-br from-green-100 to-teal-100 dark:from-green-900 dark:to-teal-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <UIcon name="i-lucide-music" class="h-6 w-6 text-green-600 dark:text-green-400" />
+                    <UIcon name="i-lucide-music" class="h-6 w-6 " color="success" />
                   </div>
                   <div class="flex-1">
                     <h3 class="text-lg font-bold">{{ item.title }}</h3>
@@ -230,7 +230,7 @@
 
                 <!-- Audio Player Placeholder -->
                 <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 flex items-center gap-3">
-                  <UButton icon="i-lucide-play" size="sm" color="green" />
+                  <UButton icon="i-lucide-play" size="sm" color="success" />
                   <div class="flex-1 h-2 bg-gray-300 dark:bg-gray-700 rounded-full">
                     <div class="h-full bg-green-500 rounded-full" style="width: 0%"/>
                   </div>
@@ -238,7 +238,7 @@
                 </div>
 
                 <div class="flex items-center justify-between">
-                  <TagList :tags="item.tags" color="green" />
+                  <TagList :tags="item.tags" color="success" />
                   <UButton
                     v-if="item.link"
                     :to="item.link"
@@ -284,7 +284,7 @@
                     loading="lazy"
                   />
                   <div v-else class="w-full h-full flex items-center justify-center">
-                    <UIcon name="i-lucide-video" class="h-16 w-16 text-red-600 dark:text-red-400" />
+                    <UIcon name="i-lucide-video" class="h-16 w-16 " color="error" />
                   </div>
                   <div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-colors">
                     <div class="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -295,7 +295,7 @@
                   <!-- Game Badge Overlay -->
                   <div v-if="item.game" class="absolute top-3 right-3">
                     <UBadge
-                      :color="item.game === 'blood-neon' ? 'red' : 'amber'"
+                      :color="item.game === 'blood-neon' ? 'error' : 'secondary'"
                       variant="solid"
                       size="sm"
                     >
@@ -306,7 +306,7 @@
                   <!-- Duration Badge -->
                   <div class="absolute top-3 left-3">
                     <UBadge
-                      color="gray"
+                      color="neutral"
                       variant="solid"
                       size="sm"
                     >
@@ -317,14 +317,14 @@
               </template>
 
               <div class="space-y-3">
-                <TagList :tags="item.tags" color="red" />
+                <TagList :tags="item.tags" color="error" />
                 <UButton
                   v-if="item.link"
                   :to="item.link"
                   external
                   target="_blank"
                   block
-                  color="red"
+                  color="error"
                   trailing-icon="i-lucide-external-link"
                 >
                   Watch on YouTube
@@ -361,7 +361,7 @@
           <div class="text-center space-y-3">
             <div class="flex justify-center">
               <div class="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center">
-                <UIcon name="i-lucide-pen-tool" class="h-6 w-6 text-purple-500" />
+                <UIcon name="i-lucide-pen-tool" class="h-6 w-6 " color="purple" />
               </div>
             </div>
             <h3 class="font-bold">Writing & Editing</h3>
@@ -375,7 +375,7 @@
           <div class="text-center space-y-3">
             <div class="flex justify-center">
               <div class="w-12 h-12 bg-pink-500/20 rounded-full flex items-center justify-center">
-                <UIcon name="i-lucide-video" class="h-6 w-6 text-pink-500" />
+                <UIcon name="i-lucide-video" class="h-6 w-6 " color="pink" />
               </div>
             </div>
             <h3 class="font-bold">Media Production</h3>
@@ -485,11 +485,6 @@ const samplePages = [
 // Lightbox state
 const isLightboxOpen = ref(false)
 const lightboxStartIndex = ref(0)
-
-const openLightbox = (index: number, _category: string) => {
-  lightboxStartIndex.value = index
-  isLightboxOpen.value = true
-}
 
 // SEO
 useSeoMeta({

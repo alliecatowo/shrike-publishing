@@ -39,7 +39,7 @@
                 </div>
                 <div>
                   <h3 class="text-2xl font-bold mb-2">Era of Silence Third-Party License</h3>
-                  <UBadge color="green" variant="soft">Open License</UBadge>
+                  <UBadge color="success" variant="soft">Open License</UBadge>
                 </div>
               </div>
             </div>
@@ -87,7 +87,7 @@
             <div class="flex items-start justify-between">
               <div class="flex items-start gap-4">
                 <div class="w-12 h-12 bg-pink-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <UIcon name="i-lucide-zap" class="h-6 w-6 text-pink-500" />
+                  <UIcon name="i-lucide-zap" class="h-6 w-6 " color="pink" />
                 </div>
                 <div>
                   <h3 class="text-2xl font-bold mb-2">Blood Neon Compatibility License</h3>
@@ -139,7 +139,7 @@
             <div class="flex items-start justify-between">
               <div class="flex items-start gap-4">
                 <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <UIcon name="i-lucide-briefcase" class="h-6 w-6 text-purple-500" />
+                  <UIcon name="i-lucide-briefcase" class="h-6 w-6 " color="purple" />
                 </div>
                 <div>
                   <h3 class="text-2xl font-bold mb-2">Commercial & Custom Licensing</h3>
@@ -183,11 +183,11 @@
             <div class="flex items-start justify-between">
               <div class="flex items-start gap-4">
                 <div class="w-12 h-12 bg-green-500/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <UIcon name="i-lucide-heart" class="h-6 w-6 text-green-500" />
+                  <UIcon name="i-lucide-heart" class="h-6 w-6 " color="success" />
                 </div>
                 <div>
                   <h3 class="text-2xl font-bold mb-2">Fan Content Policy</h3>
-                  <UBadge color="green" variant="soft">Always Allowed</UBadge>
+                  <UBadge color="success" variant="soft">Always Allowed</UBadge>
                 </div>
               </div>
             </div>

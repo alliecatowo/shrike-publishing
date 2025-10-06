@@ -33,7 +33,7 @@
               </template>
               <template v-else>
                 <div class="h-full w-full bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900 dark:to-pink-900 flex items-center justify-center">
-                  <UIcon name="i-lucide-book-open" class="h-12 w-12 text-purple-600 dark:text-purple-400" />
+                  <UIcon name="i-lucide-book-open" class="h-12 w-12 " color="purple" />
                 </div>
               </template>
             </div>
