@@ -120,6 +120,7 @@
             size="xs"
             leading-icon="i-lucide-download"
             target="_blank"
+            download
             @click="trackDownload(row.original)"
           >
             Download

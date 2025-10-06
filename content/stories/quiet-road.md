@@ -6,6 +6,7 @@ image: "/images/stories/the-rider.png"
 date: "2023-12-05"
 author: "R. Val"
 type: "free"
+featured: true
 tags:
   - "Ashen Silence"
   - "Talonborne"
@@ -18,7 +19,7 @@ published: true
 
 ### R. Val
 
-[Download PDF Here](/resources/Ashen-Silence_-Quiet-Road-Final.pdf)  
+[Download PDF Here](/downloads/stories/Ashen-Silence_-Quiet-Road-Final.pdf)  
   
 
 **_To my sister, Marilynn. You were always the strongest of the two of us. You have earned your victories tenfold._**

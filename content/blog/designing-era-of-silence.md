@@ -5,6 +5,7 @@ description: A deep dive into the design philosophy behind our latest game, Era 
 image: /images/blog/era-of-silence-design.jpg
 date: 2024-09-15
 author: Alex Rivera
+featured: true
 tags:
   - game-design
   - era-of-silence

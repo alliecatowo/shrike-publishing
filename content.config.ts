@@ -16,7 +16,15 @@ export default defineContentConfig({
         currency: z.string().default('USD'),
         available: z.boolean().default(true),
         tags: z.array(z.string()).default([]),
-        date: z.date().optional()
+        date: z.date().optional(),
+        featured: z.boolean().default(false),
+        published: z.boolean().default(true),
+        manualUrl: z.string().optional(),
+        resources: z.array(z.object({
+          title: z.string(),
+          url: z.string()
+        })).optional(),
+        coverImage: z.string().optional()
       })
     }),
     blog: defineCollection({
@@ -31,7 +39,8 @@ export default defineContentConfig({
         date: z.date(),
         author: z.string(),
         tags: z.array(z.string()).default([]),
-        published: z.boolean().default(true)
+        published: z.boolean().default(true),
+        featured: z.boolean().default(false)
       })
     }),
     announcements: defineCollection({
@@ -44,7 +53,9 @@ export default defineContentConfig({
         image: z.string().optional(),
         date: z.date(),
         type: z.string().optional(),
-        published: z.boolean().default(true)
+        published: z.boolean().default(true),
+        tags: z.array(z.string()).default([]),
+        featured: z.boolean().default(false)
       })
     }),
     stories: defineCollection({
@@ -64,7 +75,8 @@ export default defineContentConfig({
         published: z.boolean().default(true),
         series: z.string().optional(),
         seriesOrder: z.number().optional(),
-        seriesTotal: z.number().optional()
+        seriesTotal: z.number().optional(),
+        featured: z.boolean().default(false)
       })
     }),
     poetry: defineCollection({
@@ -81,7 +93,7 @@ export default defineContentConfig({
         author: z.string().optional(),
         tags: z.array(z.string()).default([]),
         published: z.boolean().default(true),
-        featured: z.boolean().optional(),
+        featured: z.boolean().default(false),
         authorNote: z.string().optional()
       })
     }),
@@ -98,6 +110,12 @@ export default defineContentConfig({
         download: z.string().optional(),
         published: z.boolean().optional(),
         tags: z.array(z.string()).optional(),
+        category: z.enum(['manual', 'character-sheets', 'reference', 'maps', 'templates', 'tools', 'stories']).optional(),
+        fileSize: z.string().optional(),
+        pageCount: z.number().optional(),
+        downloadUrl: z.string().optional(),
+        external: z.boolean().default(false),
+        updatedAt: z.date().optional()
       }),
     }),
     portfolio: defineCollection({
@@ -114,7 +132,50 @@ export default defineContentConfig({
         thumbnail: z.string().optional(),
         link: z.string().optional(),
         status: z.string().optional(),
+        published: z.boolean().default(true),
+        game: z.string().optional(),
+        artist: z.string().optional(),
+        category: z.string().optional(),
+        featured: z.boolean().default(false),
+        createdAt: z.date().optional()
       }),
+    }),
+    artwork: defineCollection({
+      type: 'page',
+      source: 'artwork/**/*.md',
+      schema: z.object({
+        title: z.string(),
+        description: z.string().optional(),
+        game: z.enum(['blood-neon', 'era-of-silence', 'steal-the-kilogram']),
+        type: z.enum(['character', 'location', 'scene', 'concept', 'item', 'vehicle', 'creature']),
+        artist: z.string().optional(),
+        fullImage: z.string(),
+        thumbnail: z.string().optional(),
+        tags: z.array(z.string()).default([]),
+        published: z.boolean().default(true),
+        featured: z.boolean().default(false),
+        date: z.date().optional()
+      })
+    }),
+    downloads: defineCollection({
+      type: 'page',
+      source: 'downloads/**/*.md',
+      schema: z.object({
+        title: z.string(),
+        description: z.string().optional(),
+        game: z.string().optional(),
+        type: z.enum(['pdf', 'image', 'map', 'character-sheet', 'reference', 'toolkit', 'bundle']),
+        fileUrl: z.string(),
+        fileSize: z.string().optional(),
+        pageCount: z.number().optional(),
+        preview: z.string().optional(),
+        license: z.string().optional(),
+        version: z.string().optional(),
+        published: z.boolean().default(true),
+        featured: z.boolean().default(false),
+        tags: z.array(z.string()).default([]),
+        date: z.date().optional()
+      })
     }),
 
     // New design system collections
