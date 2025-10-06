@@ -2,7 +2,6 @@
 slug: the-union-of-defunct-stars
 title: The Union of Defunct Stars
 description: When the celestial bodies organize for better working conditions, the universe learns about collective bargaining.
-image: /images/poetry/stars-placeholder.jpg
 date: 2024-09-28
 author: Shrike Publishing
 tags:
@@ -11,6 +10,7 @@ tags:
   - cosmic-horror
   - satire
 published: true
+featured: false
 ---
 
 # The Union of Defunct Stars

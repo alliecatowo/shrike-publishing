@@ -25,40 +25,20 @@
         :autoplay="{ delay: 5000 }"
         class="w-full"
       >
-        <UModal>
-          <div class="group cursor-pointer">
-            <NuxtImg
-              :src="item.image"
-              :alt="item.title"
-              class="w-full h-80 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300"
-              loading="lazy"
+        <div class="group cursor-pointer relative" @click="openLightbox(item)">
+          <NuxtImg
+            :src="item.image"
+            :alt="item.title"
+            class="w-full h-80 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors rounded-lg flex items-center justify-center">
+            <UIcon
+              name="i-lucide-expand"
+              class="size-8 text-white opacity-0 group-hover:opacity-100 transition-opacity"
             />
-            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors rounded-lg flex items-center justify-center">
-              <UIcon
-                name="i-lucide-expand"
-                class="size-8 text-white opacity-0 group-hover:opacity-100 transition-opacity"
-              />
-            </div>
           </div>
-
-          <template #content>
-            <div class="max-w-4xl mx-auto">
-              <NuxtImg
-                :src="item.image"
-                :alt="item.title"
-                class="w-full h-auto max-h-[80vh] object-contain rounded-lg"
-              />
-              <div class="p-6 space-y-4">
-                <h3 class="text-xl font-bold text-highlighted">{{ item.title }}</h3>
-                <p class="text-muted">{{ item.description }}</p>
-                <div class="flex items-center gap-2">
-                  <UBadge variant="soft" color="primary">{{ item.artist }}</UBadge>
-                  <UBadge variant="outline" size="sm">{{ item.category }}</UBadge>
-                </div>
-              </div>
-            </div>
-          </template>
-        </UModal>
+        </div>
       </UCarousel>
     </UPageSection>
 
@@ -192,6 +172,30 @@
         </UCard>
       </UPageGrid>
     </UPageSection>
+
+    <!-- Lightbox Modal -->
+    <UModal v-model="lightboxOpen" :ui="{ width: 'max-w-4xl' }">
+      <div v-if="selectedImage" class="p-6">
+        <div class="relative">
+          <NuxtImg
+            :src="selectedImage.image"
+            :alt="selectedImage.title"
+            class="w-full h-auto max-h-[70vh] object-contain rounded-lg"
+          />
+        </div>
+        <div class="mt-6 space-y-3">
+          <h3 class="text-2xl font-bold">{{ selectedImage.title }}</h3>
+          <p class="text-muted">{{ selectedImage.description }}</p>
+          <div class="flex items-center gap-2">
+            <UBadge variant="soft" color="primary">
+              <UIcon name="i-lucide-palette" class="size-3 mr-1" />
+              {{ selectedImage.artist }}
+            </UBadge>
+            <UBadge variant="outline" size="sm">{{ selectedImage.category }}</UBadge>
+          </div>
+        </div>
+      </div>
+    </UModal>
   </div>
 </template>
 
@@ -244,4 +248,13 @@ interface GameGalleryProps {
 }
 
 defineProps<GameGalleryProps>()
+
+// Lightbox functionality
+const lightboxOpen = ref(false)
+const selectedImage = ref<Artwork | null>(null)
+
+function openLightbox(image: Artwork) {
+  selectedImage.value = image
+  lightboxOpen.value = true
+}
 </script>

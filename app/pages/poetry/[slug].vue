@@ -207,14 +207,25 @@ useSeoMeta({
 <style scoped>
 /* Special styling for poetry content */
 .poem-content :deep(p) {
-  @apply text-center leading-relaxed;
+  text-align: center;
+  line-height: 1.625;
 }
 
 .poem-content :deep(em) {
-  @apply italic text-pink-700 dark:text-pink-400;
+  font-style: italic;
+  color: rgb(190 24 93);
+}
+
+.poem-content :deep(em):is(.dark *) {
+  color: rgb(244 114 182);
 }
 
 .poem-content :deep(strong) {
-  @apply font-bold text-pink-800 dark:text-pink-300;
+  font-weight: 700;
+  color: rgb(157 23 77);
+}
+
+.poem-content :deep(strong):is(.dark *) {
+  color: rgb(249 168 212);
 }
 </style>

@@ -101,15 +101,15 @@
 
             <div class="space-y-2">
               <div class="flex items-center justify-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-                <UIcon name="i-lucide-check-circle" class="h-4 w-4 text-green-500" />
+                <UIcon name="i-lucide-check-circle" class="h-4 w-4 " color="success" />
                 <span>Instant digital downloads</span>
               </div>
               <div class="flex items-center justify-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-                <UIcon name="i-lucide-check-circle" class="h-4 w-4 text-green-500" />
+                <UIcon name="i-lucide-check-circle" class="h-4 w-4 " color="success" />
                 <span>Pay what you want options</span>
               </div>
               <div class="flex items-center justify-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-                <UIcon name="i-lucide-check-circle" class="h-4 w-4 text-green-500" />
+                <UIcon name="i-lucide-check-circle" class="h-4 w-4 " color="success" />
                 <span>Community ratings & reviews</span>
               </div>
             </div>
@@ -149,15 +149,15 @@
 
             <div class="space-y-2">
               <div class="flex items-center justify-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-                <UIcon name="i-lucide-check-circle" class="h-4 w-4 text-green-500" />
+                <UIcon name="i-lucide-check-circle" class="h-4 w-4 " color="success" />
                 <span>PDF & print-on-demand</span>
               </div>
               <div class="flex items-center justify-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-                <UIcon name="i-lucide-check-circle" class="h-4 w-4 text-green-500" />
+                <UIcon name="i-lucide-check-circle" class="h-4 w-4 " color="success" />
                 <span>Publisher spotlight</span>
               </div>
               <div class="flex items-center justify-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-                <UIcon name="i-lucide-check-circle" class="h-4 w-4 text-green-500" />
+                <UIcon name="i-lucide-check-circle" class="h-4 w-4 " color="success" />
                 <span>Organized by product line</span>
               </div>
             </div>
@@ -193,7 +193,7 @@
         >
           <template #header>
             <div class="aspect-[4/3] bg-gradient-to-br from-pink-100 to-purple-100 dark:from-pink-900 dark:to-purple-900 rounded-t-lg flex items-center justify-center">
-              <UIcon :name="product.icon" class="h-16 w-16 text-pink-600 dark:text-pink-400" />
+              <UIcon :name="product.icon" class="h-16 w-16 " color="pink" />
             </div>
           </template>
 

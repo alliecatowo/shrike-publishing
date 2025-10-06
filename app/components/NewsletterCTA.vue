@@ -2,7 +2,7 @@
 import * as v from 'valibot'
 import type { FormSubmitEvent } from '@nuxt/ui'
 
-const props = withDefaults(defineProps<{
+withDefaults(defineProps<{
   showHeading?: boolean
   title?: string
   description?: string
@@ -31,7 +31,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
   try {
     // Call Loops public API directly (works on static sites)
     const formBody = new URLSearchParams({ email: event.data.email }).toString()
-    const response = await $fetch(`https://app.loops.so/api/newsletter-form/${config.public.loopsFormId}`, {
+    await $fetch(`https://app.loops.so/api/newsletter-form/${config.public.loopsFormId}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded'
@@ -42,17 +42,17 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     toast.add({
       title: 'Success!',
       description: 'You\'re subscribed to our newsletter',
-      color: 'green',
+      color: 'success',
       icon: 'i-lucide-check-circle'
     })
 
     state.email = ''
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Newsletter signup error:', error)
     toast.add({
       title: 'Subscription failed',
       description: 'Failed to subscribe. Please try again.',
-      color: 'red',
+      color: 'error',
       icon: 'i-lucide-x-circle'
     })
   } finally {
@@ -97,9 +97,6 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
             size="xl"
             :disabled="loading"
             icon="i-lucide-mail"
-            :ui="{
-              icon: { trailing: { pointer: '' } }
-            }"
           >
             <template #trailing>
               <UButton

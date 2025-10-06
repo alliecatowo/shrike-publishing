@@ -25,7 +25,7 @@
               </template>
               <template v-else>
                 <div class="h-full w-full bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 flex items-center justify-center">
-                  <UIcon name="i-lucide-file-text" class="h-12 w-12 text-blue-600 dark:text-blue-400" />
+                  <UIcon name="i-lucide-file-text" class="h-12 w-12 " color="info" />
                 </div>
               </template>
             </div>

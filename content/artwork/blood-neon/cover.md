@@ -3,6 +3,8 @@ title: Blood Neon - Game Cover
 description: The official cover art for Blood Neon, featuring the game's iconic logo and vibrant cyberpunk aesthetic
 game: blood-neon
 type: cover
+artist: "Shrike Team"
+date: 2024-02-15
 fullImage: /images/blood-neon/cover/blood-neon-cover.jpg
 thumbnail: /images/blood-neon/cover/blood-neon-cover.jpg
 published: true

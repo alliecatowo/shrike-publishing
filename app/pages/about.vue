@@ -31,7 +31,7 @@
         <UCard>
           <div class="text-center space-y-4">
             <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto">
-              <UIcon name="i-lucide-lightbulb" class="h-8 w-8 text-blue-600 dark:text-blue-400" />
+              <UIcon name="i-lucide-lightbulb" class="h-8 w-8 " color="info" />
             </div>
             <h3 class="text-xl font-semibold">Innovation</h3>
             <p class="text-gray-600 dark:text-gray-400">
@@ -43,7 +43,7 @@
         <UCard>
           <div class="text-center space-y-4">
             <div class="w-16 h-16 bg-red-100 dark:bg-red-900 rounded-full flex items-center justify-center mx-auto">
-              <UIcon name="i-lucide-sword" class="h-8 w-8 text-red-600 dark:text-red-400" />
+              <UIcon name="i-lucide-sword" class="h-8 w-8 " color="error" />
             </div>
             <h3 class="text-xl font-semibold">Combat & Cooperation</h3>
             <p class="text-gray-600 dark:text-gray-400">
@@ -55,7 +55,7 @@
         <UCard>
           <div class="text-center space-y-4">
             <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto">
-              <UIcon name="i-lucide-star" class="h-8 w-8 text-purple-600 dark:text-purple-400" />
+              <UIcon name="i-lucide-star" class="h-8 w-8 " color="purple" />
             </div>
             <h3 class="text-xl font-semibold">Quality</h3>
             <p class="text-gray-600 dark:text-gray-400">

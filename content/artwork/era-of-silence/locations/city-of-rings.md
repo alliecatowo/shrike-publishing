@@ -3,8 +3,10 @@ title: Era of Silence - City of Rings
 description: Stunning vista of the cyberpunk City of Rings beneath a pink and purple sky, a beacon of civilization in the post-apocalyptic world
 game: era-of-silence
 type: location
-fullImage: /images/era-of-silence/city-of-rings.jpg
-thumbnail: /images/era-of-silence/city-of-rings.jpg
+artist: "R. Val"
+date: 2023-12-15
+fullImage: /images/era-of-silence/art/locations/city-of-rings.jpg
+thumbnail: /images/era-of-silence/art/locations/city-of-rings.jpg
 published: true
 featured: true
 ---

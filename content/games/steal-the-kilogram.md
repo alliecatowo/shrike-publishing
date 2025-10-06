@@ -2,7 +2,8 @@
 slug: steal-the-kilogram
 title: Get in Loser, We're Going to Steal the Kilogram
 description: A chaotic heist game about stealing the international prototype kilogram from a climate-controlled vault in Paris. For 2-5 players who believe measurement should belong to everyone.
-image: /images/games/steal-kilogram-placeholder.jpg
+date: 2024-11-10
+image: /ShrikeLogoNov2021.png
 price: 15.00
 currency: USD
 available: true

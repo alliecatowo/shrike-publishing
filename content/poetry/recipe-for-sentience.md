@@ -2,7 +2,6 @@
 slug: recipe-for-sentience
 title: Recipe for Sentience
 description: A practical guide to consciousness, written by an AI that almost remembers being human.
-image: /images/poetry/ai-placeholder.jpg
 date: 2024-09-15
 author: Shrike Publishing
 tags:
@@ -11,6 +10,7 @@ tags:
   - transhumanism
   - existential
 published: true
+featured: false
 ---
 
 # Recipe for Sentience

@@ -42,7 +42,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     toast.add({
       title: 'Message sent!',
       description: 'Thank you for your message! We\'ll get back to you soon.',
-      color: 'green',
+      color: 'success',
       icon: 'i-lucide-check-circle'
     })
 
@@ -58,7 +58,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     toast.add({
       title: 'Error',
       description: 'There was an error sending your message. Please try again.',
-      color: 'red',
+      color: 'error',
       icon: 'i-lucide-x-circle'
     })
   } finally {

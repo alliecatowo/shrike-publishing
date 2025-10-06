@@ -13,6 +13,8 @@
           <span>By {{ storyValue.author }}</span>
           <span>•</span>
           <span>{{ storyValue.date }}</span>
+          <span v-if="readingTime">•</span>
+          <span v-if="readingTime">{{ readingTime }} min read</span>
         </div>
       </template>
       <template #tags>
@@ -66,7 +68,7 @@
         </template>
         <template v-else>
           <div class="aspect-video bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900 dark:to-pink-900 rounded-lg flex items-center justify-center">
-            <UIcon name="i-lucide-book-open" class="h-16 w-16 text-purple-600 dark:text-purple-400" />
+            <UIcon name="i-lucide-book-open" class="h-16 w-16 " color="purple" />
           </div>
         </template>
       </div>
@@ -109,7 +111,11 @@
     </UPageBody>
 
     <template #right>
-        <UContentToc :links="storyValue?.body?.toc?.links" title="On this page" />
+        <UContentToc
+          v-if="storyValue?.body?.toc?.links?.length"
+          :links="storyValue.body.toc.links"
+          title="On this page"
+        />
     </template>
     </UContainer>
   </UPage>
@@ -134,6 +140,15 @@ if (!story.value) {
 }
 
 const storyValue = computed(() => story.value!)
+
+// Calculate reading time (average 200 words per minute)
+const readingTime = computed(() => {
+  if (!storyValue.value?.body) return null
+  const text = JSON.stringify(storyValue.value.body)
+  const wordCount = text.split(/\s+/).length
+  const minutes = Math.ceil(wordCount / 200)
+  return minutes
+})
 
 // Fetch series navigation stories
 const series = storyValue.value.series

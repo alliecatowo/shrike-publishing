@@ -10,6 +10,7 @@ tags:
   - "Stories"
   - "Ashen Silence"
 published: true
+featured: false
 ---
 # Ten Minutes to North Point
 

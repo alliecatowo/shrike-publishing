@@ -171,7 +171,7 @@
           <template #leading>
             <div class="flex justify-center">
               <UAvatar
-                src="https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=100&h=100&fit=crop&crop=face"
+                text="SJ"
                 alt="Sarah Johnson"
                 size="lg"
               />
@@ -192,7 +192,7 @@
           <template #leading>
             <div class="flex justify-center">
               <UAvatar
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
+                text="MC"
                 alt="Mike Chen"
                 size="lg"
               />
@@ -213,7 +213,7 @@
           <template #leading>
             <div class="flex justify-center">
               <UAvatar
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
+                text="AR"
                 alt="Alex Rivera"
                 size="lg"
               />

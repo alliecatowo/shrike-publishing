@@ -2,7 +2,6 @@
 slug: datacenter-at-the-end-of-time
 title: Datacenter at the End of Time
 description: A meditation on memory, obsolescence, and the machines we leave behind in the heat death of everything.
-image: /images/poetry/datacenter-placeholder.jpg
 date: 2024-10-02
 author: Shrike Publishing
 tags:
@@ -11,6 +10,7 @@ tags:
   - solarpunk
   - post-apocalyptic
 published: true
+featured: false
 ---
 
 # Datacenter at the End of Time
