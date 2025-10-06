@@ -72,19 +72,86 @@
       title="Our Impact"
       description="Join thousands of players in immersive storytelling adventures"
     >
-      <UPageGrid :cols="{ default: 1, sm: 2, lg: 4 }">
-        <UTooltip text="Total number of stories published.">
-          <UPageCard title="50K+" description="Stories Created" variant="outline" class="text-center" />
-        </UTooltip>
-        <UTooltip text="Estimated number of active players across all our games.">
-          <UPageCard title="12K+" description="Active Players" variant="outline" class="text-center" />
-        </UTooltip>
-        <UTooltip text="Total number of games published.">
-          <UPageCard title="8" description="Published Games" variant="outline" class="text-center" />
-        </UTooltip>
-        <UTooltip text="Average rating from our players.">
-          <UPageCard title="4.9★" description="Average Rating" variant="outline" class="text-center" />
-        </UTooltip>
+      <UPageGrid :cols="{ default: 1, sm: 2, lg: 4 }" class="gap-6">
+        <UPageCard
+          title="50K+"
+          description="Stories Created"
+          variant="soft"
+          :spotlight="true"
+          spotlight-color="primary"
+          class="text-center group"
+        >
+          <template #header>
+            <div class="flex justify-center mb-4">
+              <div class="relative">
+                <div class="absolute inset-0 blur-lg bg-primary/20 rounded-full group-hover:bg-primary/30 transition-colors" />
+                <div class="relative w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center">
+                  <UIcon name="i-lucide-book-open" class="h-6 w-6 text-primary" />
+                </div>
+              </div>
+            </div>
+          </template>
+        </UPageCard>
+
+        <UPageCard
+          title="12K+"
+          description="Active Players"
+          variant="soft"
+          :spotlight="true"
+          spotlight-color="secondary"
+          class="text-center group"
+        >
+          <template #header>
+            <div class="flex justify-center mb-4">
+              <div class="relative">
+                <div class="absolute inset-0 blur-lg bg-secondary/20 rounded-full group-hover:bg-secondary/30 transition-colors" />
+                <div class="relative w-12 h-12 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-full flex items-center justify-center">
+                  <UIcon name="i-lucide-users" class="h-6 w-6 text-secondary" />
+                </div>
+              </div>
+            </div>
+          </template>
+        </UPageCard>
+
+        <UPageCard
+          title="8"
+          description="Published Games"
+          variant="soft"
+          :spotlight="true"
+          spotlight-color="success"
+          class="text-center group"
+        >
+          <template #header>
+            <div class="flex justify-center mb-4">
+              <div class="relative">
+                <div class="absolute inset-0 blur-lg bg-success/20 rounded-full group-hover:bg-success/30 transition-colors" />
+                <div class="relative w-12 h-12 bg-gradient-to-br from-success/20 to-success/10 rounded-full flex items-center justify-center">
+                  <UIcon name="i-lucide-gamepad-2" class="h-6 w-6 text-success" />
+                </div>
+              </div>
+            </div>
+          </template>
+        </UPageCard>
+
+        <UPageCard
+          title="4.9★"
+          description="Average Rating"
+          variant="soft"
+          :spotlight="true"
+          spotlight-color="warning"
+          class="text-center group"
+        >
+          <template #header>
+            <div class="flex justify-center mb-4">
+              <div class="relative">
+                <div class="absolute inset-0 blur-lg bg-warning/20 rounded-full group-hover:bg-warning/30 transition-colors" />
+                <div class="relative w-12 h-12 bg-gradient-to-br from-warning/20 to-warning/10 rounded-full flex items-center justify-center">
+                  <UIcon name="i-lucide-star" class="h-6 w-6 text-warning" />
+                </div>
+              </div>
+            </div>
+          </template>
+        </UPageCard>
       </UPageGrid>
     </UPageSection>
 
