@@ -434,6 +434,8 @@
 </template>
 
 <script setup lang="ts">
+import { refDebounced } from '@vueuse/core'
+
 // Fetch resources from content collection
 const { data: resources } = await useAsyncData('resources', () =>
   queryCollection('resources').where('published', '=', true).order('date', 'DESC').all()
