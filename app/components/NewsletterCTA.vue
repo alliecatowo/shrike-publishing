@@ -62,50 +62,68 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
 </script>
 
 <template>
-  <div class="max-w-2xl mx-auto text-center space-y-6">
-    <div class="flex items-center justify-center">
-      <div class="w-12 h-12 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full flex items-center justify-center">
-        <UIcon name="i-lucide-mail" class="h-6 w-6 text-primary" />
+  <UPageCard
+    variant="soft"
+    orientation="vertical"
+    class="max-w-3xl mx-auto"
+    :spotlight="true"
+    spotlight-color="primary"
+  >
+    <template #header>
+      <div class="flex items-center justify-center">
+        <div class="relative">
+          <div class="absolute inset-0 blur-xl bg-gradient-to-r from-primary/30 to-secondary/30 rounded-full" />
+          <div class="relative w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center">
+            <UIcon name="i-lucide-mail" class="h-8 w-8 text-white" />
+          </div>
+        </div>
       </div>
-    </div>
+    </template>
 
-    <div v-if="showHeading" class="space-y-3">
-      <h3 class="text-2xl font-bold">{{ title }}</h3>
-      <p class="text-muted">
-        {{ description }}
-      </p>
-    </div>
+    <template #body>
+      <div v-if="showHeading" class="text-center space-y-3 mb-6">
+        <h3 class="text-2xl font-bold">{{ title }}</h3>
+        <p class="text-muted text-lg">
+          {{ description }}
+        </p>
+      </div>
 
-    <UForm :schema="schema" :state="state" @submit="onSubmit" class="max-w-md mx-auto">
-      <UFormField name="email">
-        <UInput
-          v-model="state.email"
-          type="email"
-          placeholder="your@email.com"
-          size="xl"
-          :disabled="loading"
-          icon="i-lucide-mail"
-          :ui="{
-            icon: { trailing: { pointer: '' } }
-          }"
-        >
-          <template #trailing>
-            <UButton
-              type="submit"
-              :loading="loading"
-              size="md"
-              icon="i-lucide-arrow-right"
-              color="primary"
-              :disabled="loading"
-              aria-label="Subscribe"
-            />
-          </template>
-        </UInput>
-      </UFormField>
-    </UForm>
+      <UForm :schema="schema" :state="state" @submit="onSubmit" class="max-w-md mx-auto">
+        <UFormField name="email">
+          <UInput
+            v-model="state.email"
+            type="email"
+            placeholder="your@email.com"
+            size="xl"
+            :disabled="loading"
+            icon="i-lucide-mail"
+            :ui="{
+              icon: { trailing: { pointer: '' } }
+            }"
+          >
+            <template #trailing>
+              <UButton
+                type="submit"
+                :loading="loading"
+                size="md"
+                icon="i-lucide-arrow-right"
+                color="primary"
+                :disabled="loading"
+                aria-label="Subscribe"
+              />
+            </template>
+          </UInput>
+        </UFormField>
+      </UForm>
+    </template>
 
-    <p class="text-sm text-muted">
-      We respect your privacy. Unsubscribe at any time.
-    </p>
-  </div>
+    <template #footer>
+      <div class="text-center">
+        <p class="text-sm text-muted flex items-center justify-center gap-2">
+          <UIcon name="i-lucide-shield-check" class="h-4 w-4" />
+          We respect your privacy. Unsubscribe at any time.
+        </p>
+      </div>
+    </template>
+  </UPageCard>
 </template>
