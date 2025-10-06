@@ -6,6 +6,7 @@ image: "/images/stories/GMCUW-EXgAAmCY8.jpg"
 date: "2024-04-26"
 author: "R. Val"
 type: "free"
+featured: true
 tags:
   - "Talonborne"
   - "Ashen Silence"
@@ -29,7 +30,7 @@ published: true
 
   
   
-[Download here (PDF)](/docs/Ashen-Silence_-Bearer-of-the-True-Sight-8_21-Fixed.pdf)
+[Download here (PDF)](/downloads/stories/Ashen-Silence_-Bearer-of-the-True-Sight-8_21-Fixed.pdf)
 
   
 

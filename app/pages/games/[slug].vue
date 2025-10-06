@@ -46,6 +46,32 @@
             </template>
           </UPageCard>
 
+          <!-- Gallery Card -->
+          <UPageCard
+            title="Gallery"
+            description="View screenshots and artwork"
+            variant="outline"
+          >
+            <template #footer>
+              <UButton :to="`/games/${slug}/gallery`" variant="outline" size="sm" leading-icon="i-lucide-images" class="w-full">
+                View Gallery
+              </UButton>
+            </template>
+          </UPageCard>
+
+          <!-- Downloads Card -->
+          <UPageCard
+            title="Downloads"
+            description="Free resources and materials"
+            variant="outline"
+          >
+            <template #footer>
+              <UButton :to="`/games/${slug}/downloads`" variant="outline" size="sm" leading-icon="i-lucide-download" class="w-full">
+                View Downloads
+              </UButton>
+            </template>
+          </UPageCard>
+
           <!-- Manual Download Card -->
           <UPageCard v-if="g.manualUrl">
             <template #title>
@@ -57,28 +83,36 @@
               icon="i-lucide-book-open"
               class="w-full"
               external
+              download
+              target="_blank"
             >
               Download Manual
             </UButton>
           </UPageCard>
 
           <!-- Resources Card -->
-          <UPageCard v-if="g.resources?.length">
+          <UPageCard v-if="gameResources?.length">
             <template #title>
               <h3 class="text-lg font-semibold">Resources</h3>
             </template>
-            <div class="space-y-2">
+            <div class="space-y-3">
               <UButton
-                v-for="resource in g.resources"
-                :key="resource.url"
-                :to="resource.url"
-                variant="ghost"
-                size="sm"
-                class="w-full justify-start"
-                icon="i-lucide-file-text"
+                v-for="resource in gameResources"
+                :key="resource.slug"
+                :to="resource.download || resource.file"
+                download
+                icon="i-lucide-download"
+                size="lg"
+                variant="soft"
+                class="w-full justify-between"
                 external
               >
-                {{ resource.title }}
+                <span class="flex-1 text-left">
+                  {{ resource.title }}
+                </span>
+                <span v-if="resource.fileSize" class="text-sm opacity-75 ml-2">
+                  ({{ resource.fileSize }})
+                </span>
               </UButton>
             </div>
           </UPageCard>
@@ -110,6 +144,14 @@ if (!game.value) {
     statusMessage: 'Game not found'
   })
 }
+
+// Query resources for this game
+const { data: gameResources } = await useAsyncData(`${slug}-resources`, () =>
+  queryCollection('resources')
+    .where('game', '=', slug)
+    .where('published', '=', true)
+    .all()
+)
 
 const { data: related } = await useAsyncData('related-games', () =>
   queryCollection('games').all()

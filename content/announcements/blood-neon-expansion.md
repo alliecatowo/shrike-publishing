@@ -5,6 +5,7 @@ description: New expansion adds corporate intrigue and advanced cybernetics to y
 image: /images/announcements/blood-neon-expansion.jpg
 date: 2024-10-15
 type: expansion
+featured: true
 published: true
 tags: ["Blood Neon", "Expansion", "Cyberpunk", "TTRPG"]
 ---

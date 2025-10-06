@@ -3,9 +3,11 @@ slug: era-of-silence
 title: Era of Silence
 description: A strategic tabletop game set in a dystopian future where silence is the ultimate weapon.
 image: /images/era-of-silence-cover.jpg
+coverImage: /images/era-of-silence/cover/era-of-silence-cover.png
 price: 29.99
 currency: USD
 available: true
+featured: true
 tags:
   - tabletop
   - strategy

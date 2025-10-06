@@ -21,7 +21,7 @@ published: true
 Content Warning: Drug use (heavy), transphobia (mild), brief moment of violence, referenced harm and death (incl minors).
 
   
-[DOWNLOAD PDF HERE](/docs/Ashen-Silence_-Sky-Over-Saliana-Final-8_21.pdf)  
+[DOWNLOAD PDF HERE](/downloads/stories/Ashen-Silence_-Sky-Over-Saliana-Final-8_21.pdf)  
 
 To M,
 

@@ -37,9 +37,56 @@
       </div>
     </UPageSection>
 
+    <!-- Sample Pages Preview -->
+    <UPageSection
+      title="Sample Pages Preview"
+      description="Browse through sample pages from Era of Silence rulebook"
+      class="bg-gradient-to-br from-gray-50/50 to-gray-100/30 dark:from-gray-900/30 dark:to-gray-800/20"
+    >
+      <div class="max-w-5xl mx-auto">
+        <UCarousel
+          v-slot="{ item }"
+          :items="samplePages"
+          arrows
+          dots
+          :autoplay="5000"
+          :ui="{
+            item: 'snap-center',
+            container: 'rounded-lg overflow-hidden shadow-xl'
+          }"
+        >
+          <div class="relative aspect-[8.5/11] bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-900/20 dark:to-orange-900/20 rounded-lg overflow-hidden">
+            <NuxtImg
+              :src="item.image"
+              :alt="item.title"
+              class="w-full h-full object-contain"
+              loading="lazy"
+            />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+              <p class="text-white font-semibold text-center">{{ item.title }}</p>
+            </div>
+          </div>
+        </UCarousel>
+      </div>
+    </UPageSection>
+
     <!-- Portfolio Tabs -->
     <UPageSection id="work">
       <div class="max-w-6xl mx-auto">
+        <!-- Game Filter Buttons -->
+        <div class="flex justify-center gap-2 mb-6">
+          <UButton
+            v-for="filter in gameFilters"
+            :key="filter.value"
+            :variant="selectedGame === filter.value ? 'solid' : 'outline'"
+            :color="selectedGame === filter.value ? 'primary' : 'neutral'"
+            size="sm"
+            @click="selectedGame = filter.value"
+          >
+            {{ filter.label }}
+          </UButton>
+        </div>
+
         <UTabs v-model="activeTab" :items="portfolioTabs" class="mb-8" />
 
         <!-- Design Tab Content -->
@@ -52,11 +99,13 @@
           </div>
 
           <UPageGrid :cols="{ default: 1, md: 2 }" class="gap-6">
-            <UCard
+            <UPageCard
               v-for="item in designPortfolio"
               :key="item.title"
-              variant="outline"
-              class="group hover:shadow-xl transition-all duration-300"
+              :title="item.title"
+              :description="item.description"
+              class="group"
+              spotlight
             >
               <template #header>
                 <div class="aspect-[16/9] overflow-hidden bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-900 dark:to-orange-900 rounded-t-lg relative">
@@ -70,53 +119,34 @@
                   <div v-else class="w-full h-full flex items-center justify-center">
                     <UIcon :name="item.icon" class="h-16 w-16 text-amber-600 dark:text-amber-400" />
                   </div>
+
+                  <!-- Game Badge Overlay -->
+                  <div v-if="item.game" class="absolute top-3 right-3">
+                    <UBadge
+                      :color="item.game === 'blood-neon' ? 'red' : 'amber'"
+                      variant="solid"
+                      size="sm"
+                    >
+                      {{ item.game === 'blood-neon' ? 'Blood Neon' : 'Era of Silence' }}
+                    </UBadge>
+                  </div>
                 </div>
               </template>
 
               <div class="space-y-3">
-                <h3 class="text-xl font-bold">{{ item.title }}</h3>
-                <p class="text-sm text-gray-600 dark:text-gray-400">{{ item.description }}</p>
                 <TagList :tags="item.tags" color="amber" />
               </div>
-            </UCard>
+            </UPageCard>
           </UPageGrid>
         </div>
 
         <!-- Drawings Tab Content -->
         <div v-if="activeTab === 'drawings'" class="space-y-8">
-          <div class="text-center space-y-2 mb-6">
-            <h2 class="text-2xl font-bold">Illustrations & Artwork</h2>
-            <p class="text-gray-600 dark:text-gray-400">
-              Character art, landscapes, and visual storytelling
-            </p>
-          </div>
-
-          <UPageGrid :cols="{ default: 2, md: 3, lg: 4 }" class="gap-4">
-            <UCard
-              v-for="(item, index) in drawingsPortfolio"
-              :key="item.title"
-              variant="outline"
-              class="group hover:shadow-lg transition-all cursor-pointer"
-              @click="openLightbox(index, 'drawings')"
-            >
-              <template #header>
-                <div class="aspect-square overflow-hidden bg-gradient-to-br from-pink-100 to-purple-100 dark:from-pink-900 dark:to-purple-900 rounded-t-lg">
-                  <NuxtImg
-                    v-if="item.image"
-                    :src="item.image"
-                    :alt="item.title"
-                    class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                  <div v-else class="w-full h-full flex items-center justify-center">
-                    <UIcon name="i-lucide-image" class="h-12 w-12 text-pink-600 dark:text-pink-400" />
-                  </div>
-                </div>
-              </template>
-
-              <div class="text-sm font-semibold truncate">{{ item.title }}</div>
-            </UCard>
-          </UPageGrid>
+          <ArtworkFeed
+            title="Illustrations & Artwork"
+            description="Character art, landscapes, and visual storytelling"
+            :artwork="drawingsArtwork"
+          />
         </div>
 
         <!-- Writing Tab Content -->
@@ -235,11 +265,13 @@
           </div>
 
           <UPageGrid :cols="{ default: 1, md: 2 }" class="gap-6">
-            <UCard
+            <UPageCard
               v-for="item in videoPortfolio"
               :key="item.title"
-              variant="outline"
-              class="group hover:shadow-xl transition-all duration-300"
+              :title="item.title"
+              :description="item.description"
+              class="group"
+              spotlight
             >
               <template #header>
                 <div class="aspect-video overflow-hidden bg-gradient-to-br from-red-100 to-pink-100 dark:from-red-900 dark:to-pink-900 rounded-t-lg relative">
@@ -258,15 +290,32 @@
                       <UIcon name="i-lucide-play" class="h-8 w-8 text-gray-900 ml-1" />
                     </div>
                   </div>
+
+                  <!-- Game Badge Overlay -->
+                  <div v-if="item.game" class="absolute top-3 right-3">
+                    <UBadge
+                      :color="item.game === 'blood-neon' ? 'red' : 'amber'"
+                      variant="solid"
+                      size="sm"
+                    >
+                      {{ item.game === 'blood-neon' ? 'Blood Neon' : 'Era of Silence' }}
+                    </UBadge>
+                  </div>
+
+                  <!-- Duration Badge -->
+                  <div class="absolute top-3 left-3">
+                    <UBadge
+                      color="gray"
+                      variant="solid"
+                      size="sm"
+                    >
+                      {{ item.duration }}
+                    </UBadge>
+                  </div>
                 </div>
               </template>
 
               <div class="space-y-3">
-                <div class="flex items-start justify-between">
-                  <h3 class="text-lg font-bold">{{ item.title }}</h3>
-                  <span class="text-xs text-gray-500">{{ item.duration }}</span>
-                </div>
-                <p class="text-sm text-gray-600 dark:text-gray-400">{{ item.description }}</p>
                 <TagList :tags="item.tags" color="red" />
                 <UButton
                   v-if="item.link"
@@ -280,7 +329,7 @@
                   Watch on YouTube
                 </UButton>
               </div>
-            </UCard>
+            </UPageCard>
           </UPageGrid>
         </div>
       </div>
@@ -369,6 +418,7 @@
 <script setup lang="ts">
 import AppLightbox from '~/components/AppLightbox.vue'
 import TagList from '~/components/TagList.vue'
+import ArtworkFeed from '~/components/ArtworkFeed.vue'
 
 const portfolioTabs = [
   { label: 'Design', value: 'design', icon: 'i-lucide-palette' },
@@ -378,21 +428,58 @@ const portfolioTabs = [
   { label: 'Video', value: 'video', icon: 'i-lucide-video' }
 ]
 
-
+const gameFilters = [
+  { label: 'All', value: 'all' },
+  { label: 'Blood Neon', value: 'blood-neon' },
+  { label: 'Era of Silence', value: 'era-of-silence' }
+]
 
 const activeTab = ref('design')
+const selectedGame = ref('all')
 
 const { data: portfolioItems } = await useAsyncData('portfolio', () =>
   queryCollection('portfolio').where('published', '=', true).order('title', 'asc').all()
 )
 
-const designPortfolio = computed(() => portfolioItems.value?.filter(item => item.type === 'design') || [])
-const drawingsPortfolio = computed(() => portfolioItems.value?.filter(item => item.type === 'drawing') || [])
-const writingPortfolio = computed(() => portfolioItems.value?.filter(item => item.type === 'writing') || [])
-const audioPortfolio = computed(() => portfolioItems.value?.filter(item => item.type === 'audio') || [])
-const videoPortfolio = computed(() => portfolioItems.value?.filter(item => item.type === 'video') || [])
+// Filter by game
+const filteredPortfolioItems = computed(() => {
+  if (selectedGame.value === 'all') {
+    return portfolioItems.value || []
+  }
+  return portfolioItems.value?.filter(item => item.game === selectedGame.value) || []
+})
 
+const designPortfolio = computed(() => filteredPortfolioItems.value?.filter(item => item.type === 'design') || [])
+const drawingsPortfolio = computed(() => filteredPortfolioItems.value?.filter(item => item.type === 'drawing') || [])
+const writingPortfolio = computed(() => filteredPortfolioItems.value?.filter(item => item.type === 'writing') || [])
+const audioPortfolio = computed(() => filteredPortfolioItems.value?.filter(item => item.type === 'audio') || [])
+const videoPortfolio = computed(() => filteredPortfolioItems.value?.filter(item => item.type === 'video') || [])
 
+// Transform drawings for ArtworkFeed component
+const drawingsArtwork = computed(() => {
+  return drawingsPortfolio.value.map((item, index) => ({
+    id: `drawing-${index}`,
+    title: item.title,
+    description: item.description || '',
+    image: item.image,
+    artist: 'Shrike Publishing',
+    artistAvatar: '/images/logo.png',
+    category: item.category || 'illustration',
+    tags: item.tags || [],
+    likes: 0,
+    createdAt: new Date().toISOString(),
+    medium: 'Digital Art'
+  }))
+})
+
+// Sample pages for carousel
+const samplePages = [
+  { image: '/images/era-of-silence/sample-pages/world-of-vian.png', title: 'World of Vian' },
+  { image: '/images/era-of-silence/sample-pages/character-creation-overview.png', title: 'Character Creation Overview' },
+  { image: '/images/era-of-silence/sample-pages/combat-biker.png', title: 'Combat Biker' },
+  { image: '/images/era-of-silence/sample-pages/magic.png', title: 'Magic System' },
+  { image: '/images/era-of-silence/sample-pages/elek-human-spread.png', title: 'Elek & Human Spread' }
+]
 
 // Lightbox state
 const isLightboxOpen = ref(false)

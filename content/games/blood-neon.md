@@ -3,15 +3,17 @@ slug: blood-neon
 title: Blood Neon
 description: Cyberpunk adventure in the neon-lit streets of Neo-Tokyo.
 image: /images/blood-neon-cover.jpg
+coverImage: /images/blood-neon/cover/blood-neon-cover.jpg
 price: 24.99
 currency: USD
 available: true
+featured: true
 tags:
   - tabletop
   - cyberpunk
   - adventure
   - cooperative
-manualUrl: "/docs/blood-neon-manual.pdf"
+# manualUrl: "/downloads/reference/blood-neon-manual.pdf"
 resources:
   - title: "Faction Guide"
     url: "/resources"
@@ -45,7 +47,7 @@ Welcome to Neo-Tokyo, where corporations rule and hackers fight back. *Blood Neo
 
 Available now on our store for $24.99 USD plus shipping.
 
-[Buy Now](/contact) | [Download Character Sheet](/resources/blood-neon-character-sheet.pdf)
+[Buy Now](/contact) | [Download Character Sheet](/downloads/character-sheets/blood-neon-character-sheet.pdf)
 
 ## License & Community Engagement
 

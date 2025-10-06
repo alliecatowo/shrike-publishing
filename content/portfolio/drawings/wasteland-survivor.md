@@ -1,5 +1,9 @@
 ---
 title: 'Wasteland Survivor'
 description: 'A lone survivor in the wastelands.'
-image: 'https://picsum.photos/640/640?random=1'
+published: true
+type: 'drawing'
+game: 'era-of-silence'
+image: '/images/era-of-silence/art/characters/arina-varan.png'
+thumbnail: '/images/era-of-silence/art/characters/arina-varan.png'
 ---

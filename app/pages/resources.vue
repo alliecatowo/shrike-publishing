@@ -10,7 +10,7 @@
         <UButton
           to="#downloads"
           size="lg"
-          color="emerald"
+          color="success"
           trailing-icon="i-lucide-download"
         >
           Browse Downloads
@@ -18,105 +18,274 @@
       </template>
     </UPageHero>
 
-    <!-- Categories Section -->
+    <!-- Search and Filters Section -->
     <UPageSection
       title="Resource Categories"
       description="Everything you need to run and play our games"
       :ui="{ container: 'text-center' }"
     >
-      <UTabs v-model="activeCategory" :items="categoryTabs" />
+      <div class="space-y-6">
+        <!-- Search Bar -->
+        <div class="max-w-2xl mx-auto">
+          <UInput
+            v-model="searchQuery"
+            placeholder="Search resources by title or description..."
+            leading-icon="i-lucide-search"
+            size="lg"
+          />
+        </div>
+
+        <!-- Category Tabs with Badges -->
+        <div class="flex flex-wrap justify-center gap-2">
+          <UButton
+            v-for="tab in categoryTabsWithCounts"
+            :key="tab.value"
+            :variant="activeCategory === tab.value ? 'solid' : 'ghost'"
+            :color="activeCategory === tab.value ? 'success' : 'neutral'"
+            size="sm"
+            @click="activeCategory = tab.value"
+          >
+            {{ tab.label }}
+            <template #trailing>
+              <UBadge
+                :color="activeCategory === tab.value ? 'neutral' : 'neutral'"
+                :variant="activeCategory === tab.value ? 'solid' : 'soft'"
+                size="xs"
+                class="ml-2"
+              >
+                {{ tab.count }}
+              </UBadge>
+            </template>
+          </UButton>
+        </div>
+
+        <!-- View Toggle -->
+        <div class="flex justify-end">
+          <UFieldGroup>
+            <UButton
+              :variant="viewMode === 'cards' ? 'solid' : 'ghost'"
+              :color="viewMode === 'cards' ? 'success' : 'neutral'"
+              icon="i-lucide-layout-grid"
+              size="sm"
+              @click="viewMode = 'cards'"
+            >
+              Card View
+            </UButton>
+            <UButton
+              :variant="viewMode === 'table' ? 'solid' : 'ghost'"
+              :color="viewMode === 'table' ? 'success' : 'neutral'"
+              icon="i-lucide-table"
+              size="sm"
+              @click="viewMode = 'table'"
+            >
+              Table View
+            </UButton>
+          </UFieldGroup>
+        </div>
+      </div>
     </UPageSection>
 
-    <!-- Resources Grid -->
+    <!-- Resources Grid/Table -->
     <UPageSection id="downloads">
-      <UPageGrid :cols="{ default: 1, md: 2, lg: 3 }" class="gap-6">
-        <UCard
+      <!-- Card View -->
+      <UPageGrid v-if="viewMode === 'cards'" :cols="{ default: 1, md: 2, lg: 3 }" class="gap-6">
+        <UPageCard
           v-for="resource in filteredResources"
-          :key="resource.slug"
+          :key="resource._path"
+          :title="resource.title"
+          :description="resource.description"
+          :icon="getResourceIcon(resource.type || resource.category)"
           variant="outline"
-          class="group hover:shadow-xl transition-all duration-300 hover:border-emerald-300 dark:hover:border-emerald-700 hover:-translate-y-1"
+          spotlight
+          spotlight-color="success"
         >
-          <div class="space-y-4">
-            <!-- Resource Icon/Image -->
-            <div class="flex items-start justify-between">
-              <div class="flex items-start gap-3">
-                <div class="w-12 h-12 bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-900 dark:to-teal-900 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                  <UIcon :name="getResourceIcon(resource.type)" class="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
-                </div>
-                <div class="flex-1">
-                  <h3 class="font-semibold text-lg line-clamp-2">{{ resource.title }}</h3>
-                  <UBadge
-                    :color="getCategoryColor(resource.category)"
-                    variant="soft"
-                    size="xs"
-                    class="mt-1"
-                  >
-                    {{ resource.category }}
-                  </UBadge>
-                </div>
-              </div>
+          <template #header>
+            <!-- Cover Preview -->
+            <div v-if="resource.cover" class="w-full h-48 rounded-lg overflow-hidden bg-gradient-to-br from-emerald-100/50 to-teal-100/50 dark:from-emerald-900/20 dark:to-teal-900/20">
+              <NuxtImg
+                :src="resource.cover"
+                :alt="`${resource.title} Cover`"
+                class="w-full h-full object-cover"
+              />
             </div>
+          </template>
 
-            <!-- Description -->
-            <p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-3">
-              {{ resource.description }}
-            </p>
-
-            <!-- Meta Info -->
-            <div class="flex flex-wrap gap-2 text-xs text-gray-500">
-              <div class="flex items-center gap-1">
-                <UIcon name="i-lucide-file" class="h-3 w-3" />
-                <span>{{ resource.format || 'PDF' }}</span>
-              </div>
-              <div v-if="resource.fileSize" class="flex items-center gap-1">
-                <UIcon name="i-lucide-hard-drive" class="h-3 w-3" />
-                <span>{{ resource.fileSize }}</span>
-              </div>
-              <div v-if="resource.pages" class="flex items-center gap-1">
-                <UIcon name="i-lucide-book-open" class="h-3 w-3" />
-                <span>{{ resource.pages }} pages</span>
-              </div>
-            </div>
-
-            <!-- Tags -->
-            <div class="flex flex-wrap gap-1">
+          <template #title>
+            <div class="flex items-start justify-between gap-2">
+              <h3 class="font-semibold text-lg line-clamp-2 flex-1">{{ resource.title }}</h3>
               <UBadge
-                v-for="tag in resource.tags"
-                :key="tag"
+                :color="getCategoryColor(resource.category || '')"
+                variant="soft"
                 size="xs"
-                variant="subtle"
               >
-                {{ tag }}
+                {{ formatCategoryLabel(resource.category || '') }}
               </UBadge>
             </div>
+          </template>
 
-            <!-- Download Button -->
-            <UButton
-              :to="resource.downloadUrl || resource.url"
-              :external="resource.external"
-              :target="resource.external ? '_blank' : undefined"
-              block
-              color="emerald"
-              :trailing-icon="resource.external ? 'i-lucide-external-link' : 'i-lucide-download'"
-            >
-              {{ resource.external ? 'View Resource' : 'Download' }}
-            </UButton>
+          <template #body>
+            <div class="space-y-4">
+              <!-- Meta Info -->
+              <div class="grid grid-cols-3 gap-2 text-xs">
+                <div class="flex flex-col items-center p-2 bg-gray-50 dark:bg-gray-800/50 rounded-lg">
+                  <UIcon name="i-lucide-file" class="h-4 w-4 text-emerald-600 dark:text-emerald-400 mb-1" />
+                  <span class="text-gray-600 dark:text-gray-400">{{ resource.format || 'PDF' }}</span>
+                </div>
+                <div v-if="resource.fileSize" class="flex flex-col items-center p-2 bg-gray-50 dark:bg-gray-800/50 rounded-lg">
+                  <UIcon name="i-lucide-hard-drive" class="h-4 w-4 text-emerald-600 dark:text-emerald-400 mb-1" />
+                  <span class="text-gray-600 dark:text-gray-400">{{ resource.fileSize }}</span>
+                </div>
+                <div v-if="resource.pages" class="flex flex-col items-center p-2 bg-gray-50 dark:bg-gray-800/50 rounded-lg">
+                  <UIcon name="i-lucide-book-open" class="h-4 w-4 text-emerald-600 dark:text-emerald-400 mb-1" />
+                  <span class="text-gray-600 dark:text-gray-400">{{ resource.pages }}p</span>
+                </div>
+              </div>
 
-            <!-- Updated Date -->
-            <div class="text-xs text-gray-500 text-center">
-              Updated {{ resource.date || resource.updatedAt }}
+              <!-- Tags -->
+              <div v-if="resource.tags && resource.tags.length" class="flex flex-wrap gap-1">
+                <UBadge
+                  v-for="tag in resource.tags"
+                  :key="tag"
+                  size="xs"
+                  variant="subtle"
+                  color="gray"
+                >
+                  {{ tag }}
+                </UBadge>
+              </div>
             </div>
-          </div>
-        </UCard>
+          </template>
+
+          <template #footer>
+            <div class="space-y-3">
+              <!-- Download Button -->
+              <UButton
+                :to="resource.downloadUrl || resource.url || resource.file || resource.download"
+                :external="resource.external"
+                :target="resource.external ? '_blank' : undefined"
+                :download="!resource.external"
+                block
+                color="success"
+                :leading-icon="resource.external ? 'i-lucide-external-link' : 'i-lucide-download'"
+              >
+                {{ resource.external ? 'View Resource' : 'Download PDF' }}
+              </UButton>
+
+              <!-- Updated Date -->
+              <div class="text-xs text-gray-500 text-center">
+                <UIcon name="i-lucide-calendar" class="inline h-3 w-3 mr-1" />
+                Updated {{ formatDate(resource.date || resource.updatedAt) }}
+              </div>
+            </div>
+          </template>
+        </UPageCard>
       </UPageGrid>
 
+      <!-- Table View -->
+      <UTable
+        v-else
+        :data="filteredResources"
+        :columns="tableColumns"
+      >
+        <template #title-cell="{ row }">
+          <div class="flex items-start gap-3 py-2">
+            <div class="relative flex-shrink-0">
+              <!-- Cover Preview or Icon -->
+              <div class="w-16 h-20 bg-gradient-to-br from-emerald-100/50 to-teal-100/50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-lg flex items-center justify-center overflow-hidden">
+                <NuxtImg
+                  v-if="row.cover"
+                  :src="row.cover"
+                  :alt="`${row.title} Cover`"
+                  class="w-full h-full object-cover"
+                />
+                <div v-else class="text-center">
+                  <UIcon :name="getResourceIcon(row.type || row.category)" class="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
+                </div>
+              </div>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-semibold text-base line-clamp-2">{{ row.title }}</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 mt-1">{{ row.description }}</p>
+            </div>
+          </div>
+        </template>
+
+        <template #category-cell="{ row }">
+          <UBadge
+            :color="getCategoryColor(row.category || '')"
+            variant="soft"
+            size="sm"
+          >
+            {{ formatCategoryLabel(row.category || '') }}
+          </UBadge>
+        </template>
+
+        <template #metadata-cell="{ row }">
+          <div class="space-y-1 text-sm">
+            <div class="flex items-center gap-2">
+              <UIcon name="i-lucide-file" class="h-3 w-3 text-gray-500" />
+              <span class="text-gray-600 dark:text-gray-400">{{ row.format || 'PDF' }}</span>
+            </div>
+            <div v-if="row.fileSize" class="flex items-center gap-2">
+              <UIcon name="i-lucide-hard-drive" class="h-3 w-3 text-gray-500" />
+              <span class="text-gray-600 dark:text-gray-400">{{ row.fileSize }}</span>
+            </div>
+            <div v-if="row.pages" class="flex items-center gap-2">
+              <UIcon name="i-lucide-book-open" class="h-3 w-3 text-gray-500" />
+              <span class="text-gray-600 dark:text-gray-400">{{ row.pages }} pages</span>
+            </div>
+          </div>
+        </template>
+
+        <template #tags-cell="{ row }">
+          <div class="flex flex-wrap gap-1">
+            <UBadge
+              v-for="tag in (row.tags || [])"
+              :key="tag"
+              variant="subtle"
+              size="xs"
+              color="gray"
+            >
+              {{ tag }}
+            </UBadge>
+          </div>
+        </template>
+
+        <template #actions-cell="{ row }">
+          <div class="flex gap-2">
+            <UButton
+              :to="row.downloadUrl || row.url || row.file || row.download"
+              :external="row.external"
+              :target="row.external ? '_blank' : undefined"
+              :download="!row.external"
+              variant="solid"
+              color="success"
+              size="sm"
+              :leading-icon="row.external ? 'i-lucide-external-link' : 'i-lucide-download'"
+            >
+              {{ row.external ? 'View' : 'Download' }}
+            </UButton>
+          </div>
+        </template>
+      </UTable>
+
       <!-- Empty State -->
-      <div v-if="filteredResources.length === 0" class="text-center py-12">
-        <UIcon name="i-lucide-inbox" class="h-16 w-16 text-gray-400 mx-auto mb-4" />
-        <h3 class="text-lg font-semibold text-gray-600 dark:text-gray-400 mb-2">
-          No {{ activeCategory === 'all' ? 'resources' : activeCategory }} found
+      <div v-if="filteredResources.length === 0" class="text-center py-16">
+        <UIcon name="i-lucide-search-x" class="h-20 w-20 text-gray-400 mx-auto mb-4" />
+        <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-2">
+          No resources found
         </h3>
-        <p class="text-gray-500">Check back soon for new downloads!</p>
+        <p class="text-gray-500 mb-6">
+          {{ searchQuery ? 'Try adjusting your search terms or filters' : `No ${activeCategory === 'all' ? 'resources' : formatCategoryLabel(activeCategory || '')} available yet` }}
+        </p>
+        <UButton
+          v-if="searchQuery || activeCategory !== 'all'"
+          variant="outline"
+          color="neutral"
+          @click="() => { searchQuery = ''; activeCategory = 'all' }"
+        >
+          Clear Filters
+        </UButton>
       </div>
     </UPageSection>
 
@@ -170,7 +339,7 @@
             <p class="text-sm text-gray-600 dark:text-gray-400">
               Created something awesome? We'd love to feature your work here!
             </p>
-            <UButton to="/contact" color="purple" icon="i-lucide-mail">
+            <UButton to="/contact" color="secondary" icon="i-lucide-mail">
               Submit Your Resource
             </UButton>
           </div>
@@ -227,6 +396,9 @@
                 </div>
                 <UButton
                   :to="guide.url"
+                  :external="guide.external"
+                  :target="guide.external ? '_blank' : undefined"
+                  :download="!guide.external"
                   variant="soft"
                   size="sm"
                   trailing-icon="i-lucide-download"
@@ -269,6 +441,13 @@ const { data: resources } = await useAsyncData('resources', () =>
 
 const resourcesValue = computed(() => resources.value || [])
 
+// View mode state
+const viewMode = ref<'cards' | 'table'>('cards')
+
+// Search query with debouncing
+const searchQuery = ref('')
+const debouncedSearchQuery = refDebounced(searchQuery, 300)
+
 // Category tabs
 const activeCategory = ref('all')
 const categoryTabs = [
@@ -281,11 +460,66 @@ const categoryTabs = [
   { label: 'Tools', value: 'tools' }
 ]
 
-// Filter resources by category
-const filteredResources = computed(() => {
-  if (activeCategory.value === 'all') return resourcesValue.value
-  return resourcesValue.value.filter((r) => r.category === activeCategory.value)
+// Category tabs with counts
+const categoryTabsWithCounts = computed(() => {
+  return categoryTabs.map(tab => {
+    const count = tab.value === 'all'
+      ? resourcesValue.value.length
+      : resourcesValue.value.filter(r => r.category === tab.value).length
+    return { ...tab, count }
+  })
 })
+
+// Filter resources by category and search
+const filteredResources = computed(() => {
+  let filtered = resourcesValue.value
+
+  // Filter by category
+  if (activeCategory.value !== 'all') {
+    filtered = filtered.filter((r) => r.category === activeCategory.value)
+  }
+
+  // Filter by search query
+  if (debouncedSearchQuery.value) {
+    const query = debouncedSearchQuery.value.toLowerCase()
+    filtered = filtered.filter((r) =>
+      r.title?.toLowerCase().includes(query) ||
+      r.description?.toLowerCase().includes(query) ||
+      r.tags?.some(tag => tag.toLowerCase().includes(query))
+    )
+  }
+
+  return filtered
+})
+
+// Table columns configuration
+const tableColumns = computed(() => [
+  {
+    accessorKey: 'title',
+    header: 'Resource',
+    cell: ({ row }) => row.getValue('title')
+  },
+  {
+    accessorKey: 'category',
+    header: 'Category',
+    cell: ({ row }) => row.getValue('category')
+  },
+  {
+    accessorKey: 'metadata',
+    header: 'Details',
+    cell: ({ row }) => row.getValue('metadata')
+  },
+  {
+    accessorKey: 'tags',
+    header: 'Tags',
+    cell: ({ row }) => row.getValue('tags')
+  },
+  {
+    id: 'actions',
+    header: 'Actions',
+    cell: ({ row }) => row.getValue('actions')
+  }
+])
 
 // Helper functions
 const getResourceIcon = (type: string) => {
@@ -303,16 +537,40 @@ const getResourceIcon = (type: string) => {
   return icons[type] || 'i-lucide-file'
 }
 
-const getCategoryColor = (category: string) => {
-  const colors: Record<string, string> = {
-    'manual': 'blue',
-    'character-sheets': 'blue',
-    'reference': 'purple',
-    'maps': 'green',
-    'templates': 'orange',
-    'tools': 'pink'
+const getCategoryColor = (category: string): 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'error' | 'neutral' => {
+  const colors: Record<string, 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'error' | 'neutral'> = {
+    'manual': 'info',
+    'character-sheets': 'primary',
+    'reference': 'secondary',
+    'maps': 'success',
+    'templates': 'warning',
+    'tools': 'error'
   }
-  return colors[category] || 'gray'
+  return colors[category] || 'neutral'
+}
+
+// Format category label for display
+const formatCategoryLabel = (category: string) => {
+  const labels: Record<string, string> = {
+    'manual': 'Manual',
+    'character-sheets': 'Character Sheet',
+    'reference': 'Reference',
+    'maps': 'Maps & Assets',
+    'templates': 'Template',
+    'tools': 'Tool'
+  }
+  return labels[category] || category
+}
+
+// Format date for display
+const formatDate = (dateStr: string) => {
+  if (!dateStr) return 'Unknown'
+  try {
+    const date = new Date(dateStr)
+    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })
+  } catch {
+    return dateStr
+  }
 }
 
 // Sample community resources

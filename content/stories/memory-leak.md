@@ -6,6 +6,7 @@ image: "/images/stories/C03EDD96-4B29-4935-A73F-FB872DD16B1D.jpeg"
 date: "2023-09-24"
 author: "R. Val"
 type: "free"
+featured: true
 tags:
   - "Ashen Silence"
   - "Stories"
@@ -21,7 +22,7 @@ published: true
 
 R. Val
 
-[DOWNLOAD PDF HERE](/docs/Ashen-Silence_-Memory-Leak-Final.pdf)
+[DOWNLOAD PDF HERE](/downloads/stories/Ashen-Silence_-Memory-Leak-Final.pdf)
 
 Dedicated to June, beloved friend and fierce ally.
 

@@ -32,7 +32,7 @@
         >
           <template #header>
             <NuxtImg
-              :src="game.image"
+              :src="game.coverImage || game.image"
               :alt="game.title"
               class="w-full h-48 object-cover rounded-t-lg"
               loading="lazy"
@@ -358,11 +358,17 @@ const components = await useComponents()
 
 // Fetch content collections with optimized queries
 const { data: games } = await useAsyncData('home-games', () =>
-  queryCollection('games').order('date', 'DESC').limit(2).all()
+  queryCollection('games')
+    .where('featured', '=', true)
+    .where('published', '=', true)
+    .order('date', 'DESC')
+    .limit(3)
+    .all()
 )
 
 const { data: posts } = await useAsyncData('home-blog', () =>
   queryCollection('blog')
+    .where('featured', '=', true)
     .where('published', '=', true)
     .order('date', 'DESC')
     .limit(3)
@@ -371,6 +377,7 @@ const { data: posts } = await useAsyncData('home-blog', () =>
 
 const { data: announcements } = await useAsyncData('home-announcements', () =>
   queryCollection('announcements')
+    .where('featured', '=', true)
     .where('published', '=', true)
     .order('date', 'DESC')
     .limit(3)
@@ -379,6 +386,7 @@ const { data: announcements } = await useAsyncData('home-announcements', () =>
 
 const { data: stories } = await useAsyncData('home-stories', () =>
   queryCollection('stories')
+    .where('featured', '=', true)
     .where('published', '=', true)
     .order('date', 'DESC')
     .limit(3)
