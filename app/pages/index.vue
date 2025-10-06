@@ -164,49 +164,7 @@
       title="Stay Updated"
       description="Get the latest news, exclusive content, and early access to new releases"
     >
-      <UModal>
-        <UButton label="Subscribe to our newsletter" size="xl" />
-
-        <template #content>
-          <UCard>
-            <div class="space-y-6">
-              <div class="space-y-4">
-                <h3 class="text-2xl font-bold text-highlighted">Join Our Newsletter</h3>
-                <p class="text-muted">
-                  Subscribe to receive updates about new games, behind-the-scenes content, and exclusive offers.
-                </p>
-              </div>
-
-              <UForm :schema="newsletterSchema" :state="newsletterForm" class="space-y-4" @submit="onNewsletterSubmit">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <UFieldGroup label="First Name" name="firstName">
-                    <UInput
-                      v-model="newsletterForm.firstName"
-                      placeholder="Enter your first name"
-                      required
-                    />
-                  </UFieldGroup>
-                  <UFieldGroup label="Email" name="email">
-                    <UInput
-                      v-model="newsletterForm.email"
-                      type="email"
-                      placeholder="your@email.com"
-                      required
-                    />
-                  </UFieldGroup>
-                </div>
-                <UButton type="submit" size="lg" :loading="newsletterLoading" class="w-full">
-                  Subscribe to Newsletter
-                </UButton>
-              </UForm>
-
-              <p class="text-sm text-muted">
-                We respect your privacy. Unsubscribe at any time.
-              </p>
-            </div>
-          </UCard>
-        </template>
-      </UModal>
+      <NewsletterCTA />
     </UPageSection>
 
     <!-- Recent Releases Timeline -->
@@ -387,44 +345,6 @@ interface AnnouncementRaw {
   date: string
   authors?: Author[]
   tags?: string[]
-}
-
-// Newsletter form
-const newsletterForm = reactive({
-  firstName: '',
-  email: ''
-})
-
-const newsletterLoading = ref(false)
-
-const newsletterSchema = {
-  firstName: { type: 'string', required: true, minLength: 2 },
-  email: { type: 'string', required: true, format: 'email' }
-}
-
-const onNewsletterSubmit = async () => {
-  newsletterLoading.value = true
-  try {
-    // In a real app, you'd send this to your backend
-    console.log('Newsletter signup:', newsletterForm)
-
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000))
-
-    // Reset form
-    Object.assign(newsletterForm, {
-      firstName: '',
-      email: ''
-    })
-
-    // Show success message
-    alert('Thank you for subscribing! Check your email for confirmation.')
-  } catch (error) {
-    console.error('Error subscribing to newsletter:', error)
-    alert('There was an error subscribing. Please try again.')
-  } finally {
-    newsletterLoading.value = false
-  }
 }
 
 // Recent releases data

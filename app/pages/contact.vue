@@ -191,51 +191,7 @@
           <h2 class="text-2xl font-bold">Send us a message</h2>
         </template>
 
-        <UForm
-          class="space-y-6"
-          :schema="schema"
-          :state="form"
-          @submit="onSubmit"
-        >
-          <UFieldGroup label="Name" name="name">
-            <UInput
-              v-model="form.name"
-              placeholder="Your name"
-              required
-            />
-          </UFieldGroup>
-
-          <UFieldGroup label="Email" name="email">
-            <UInput
-              v-model="form.email"
-              type="email"
-              placeholder="your@email.com"
-              required
-            />
-          </UFieldGroup>
-
-          <UFieldGroup label="Subject" name="subject">
-            <USelect
-              v-model="form.subject"
-              :options="subjectOptions"
-              placeholder="Select a subject"
-              required
-            />
-          </UFieldGroup>
-
-          <UFieldGroup label="Message" name="message">
-            <UTextarea
-              v-model="form.message"
-              placeholder="Your message..."
-              :rows="5"
-              required
-            />
-          </UFieldGroup>
-
-          <UButton type="submit" size="lg" :loading="loading">
-            Send Message
-          </UButton>
-        </UForm>
+        <ContactForm />
       </UCard>
 
       <!-- Business Information -->
@@ -265,58 +221,6 @@
 </template>
 
 <script setup lang="ts">
-const form = reactive({
-  name: '',
-  email: '',
-  subject: '',
-  message: ''
-})
-
-const loading = ref(false)
-
-const subjectOptions = [
-  'General Inquiry',
-  'Game Support',
-  'Business Partnership',
-  'Press/Media',
-  'Bug Report',
-  'Other'
-]
-
-const schema = {
-  name: { type: 'string', required: true, minLength: 2 },
-  email: { type: 'string', required: true, format: 'email' },
-  subject: { type: 'string', required: true },
-  message: { type: 'string', required: true, minLength: 10 }
-}
-
-const onSubmit = async () => {
-  loading.value = true
-  try {
-    // In a real app, you'd send this to your backend
-    console.log('Form submitted:', form)
-
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000))
-
-    // Reset form
-    Object.assign(form, {
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    })
-
-    // Show success message
-    alert('Thank you for your message! We\'ll get back to you soon.')
-  } catch (error) {
-    console.error('Error submitting form:', error)
-    alert('There was an error sending your message. Please try again.')
-  } finally {
-    loading.value = false
-  }
-}
-
 // SEO
 useSeoMeta({
   title: 'Contact - Shrike Publishing',
