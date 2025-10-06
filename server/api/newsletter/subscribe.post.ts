@@ -32,11 +32,12 @@ export default defineEventHandler(async (event) => {
       message: 'Successfully subscribed to newsletter!',
       data: response
     }
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Loops API error:', error)
 
     // Handle duplicate email gracefully
-    if (error.message?.includes('already exists') || error.status === 409) {
+    const errorObj = error as { message?: string; status?: number }
+    if (errorObj.message?.includes('already exists') || errorObj.status === 409) {
       return {
         success: true,
         message: 'You are already subscribed!'
@@ -44,8 +45,8 @@ export default defineEventHandler(async (event) => {
     }
 
     throw createError({
-      statusCode: error.status || 500,
-      message: error.message || 'Failed to subscribe. Please try again later.'
+      statusCode: errorObj.status || 500,
+      message: errorObj.message || 'Failed to subscribe. Please try again later.'
     })
   }
 })

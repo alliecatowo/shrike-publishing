@@ -1,12 +1,22 @@
 <template>
-  <button
+  <UButton
     v-if="!isAtBottom"
-    class="fixed bottom-8 left-1/2 -translate-x-1/2 z-40 p-3 rounded-full bg-primary text-white shadow-lg hover:scale-110 transition-transform"
+    icon="i-lucide-chevron-down"
+    color="primary"
+    variant="solid"
+    size="xl"
+    :ui="{
+      base: 'fixed bottom-8 left-1/2 -translate-x-1/2 z-40 shadow-lg hover:scale-110 transition-transform',
+      rounded: 'rounded-full',
+      padding: { xl: 'p-3' }
+    }"
     aria-label="Scroll to next section"
     @click="scrollToNextSection"
   >
-    <UIcon name="i-lucide-chevron-down" class="w-6 h-6 animate-bounce" />
-  </button>
+    <template #leading>
+      <UIcon name="i-lucide-chevron-down" class="w-6 h-6 animate-bounce" />
+    </template>
+  </UButton>
 </template>
 
 <script setup lang="ts">

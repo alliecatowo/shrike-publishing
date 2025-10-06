@@ -12,6 +12,7 @@ tags:
   - short-story
   - fiction
 published: true
+featured: false
 ---
 
 # The Last Whisper

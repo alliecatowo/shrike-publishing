@@ -3,8 +3,10 @@ title: Era of Silence - Alice Talin
 description: Alice Talin, a key character in the post-apocalyptic world of Era of Silence
 game: era-of-silence
 type: character
-fullImage: /images/era-of-silence/alice-talin.png
-thumbnail: /images/era-of-silence/alice-talin.png
+artist: "R. Val"
+date: 2023-12-15
+fullImage: /images/era-of-silence/art/characters/alice-talin.png
+thumbnail: /images/era-of-silence/art/characters/alice-talin.png
 published: true
 featured: false
 ---

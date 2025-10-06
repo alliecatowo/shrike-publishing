@@ -14,6 +14,7 @@ tags:
   - novella
   - cyberpunk
 published: true
+featured: false
 ---
 
 # Echoes of Neo-Tokyo

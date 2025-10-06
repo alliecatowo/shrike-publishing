@@ -3,8 +3,10 @@ title: Era of Silence - Ashcrawler
 description: The Ashcrawler, a dangerous creature that stalks the ashen wastes of the post-apocalyptic world
 game: era-of-silence
 type: creature
-fullImage: /images/era-of-silence/ashcrawler.png
-thumbnail: /images/era-of-silence/ashcrawler.png
+artist: "R. Val"
+date: 2023-12-15
+fullImage: /images/era-of-silence/art/creatures/ashcrawler.png
+thumbnail: /images/era-of-silence/art/creatures/ashcrawler.png
 published: true
 featured: false
 ---

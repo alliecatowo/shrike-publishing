@@ -10,6 +10,7 @@ tags:
   - trends
   - tabletop
 published: true
+featured: false
 ---
 
 # Tabletop Gaming Trends for 2024

@@ -8,6 +8,7 @@ game: era-of-silence
 type: story-pdf
 download: /downloads/stories/4-Voidspire-Job.pdf
 published: true
+tags: ["Era of Silence", "The Voidspire Job", "Story", "PDF"]
 ---
 
 [Download PDF](/downloads/stories/4-Voidspire-Job.pdf)

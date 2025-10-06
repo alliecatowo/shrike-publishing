@@ -33,7 +33,7 @@
               </template>
               <template v-else>
                 <div class="h-full w-full bg-gradient-to-br from-pink-100 to-purple-100 dark:from-pink-900 dark:to-purple-900 flex items-center justify-center">
-                  <UIcon name="i-lucide-feather" class="h-12 w-12 text-pink-600 dark:text-pink-400" />
+                  <UIcon name="i-lucide-feather" class="h-12 w-12 " color="pink" />
                 </div>
               </template>
             </div>
@@ -98,7 +98,7 @@ import TagList from '~/components/TagList.vue'
 
 // Fetch all poetry
 const { data: poetry } = await useAsyncData('poetry', () =>
-  queryCollection('poetry').order('date', 'DESC').find()
+  queryCollection('poetry').order('date', 'DESC').all()
 )
 
 const poetryValue = computed(() => (poetry.value || []).filter(p => p.published))

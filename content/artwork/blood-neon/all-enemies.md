@@ -3,6 +3,8 @@ title: Blood Neon - Enemy Lineup
 description: Complete roster of enemy characters players will face in Blood Neon, each with distinct abilities and tactical challenges
 game: blood-neon
 type: enemy
+artist: "Shrike Team"
+date: 2024-03-08
 fullImage: /images/blood-neon/enemies/blood-neon-all-enemies.jpg
 thumbnail: /images/blood-neon/enemies/blood-neon-all-enemies.jpg
 published: true

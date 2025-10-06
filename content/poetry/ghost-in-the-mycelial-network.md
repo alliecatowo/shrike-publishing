@@ -2,7 +2,6 @@
 slug: ghost-in-the-mycelial-network
 title: Ghost in the Mycelial Network
 description: When the internet grew roots and learned to fruit, we uploaded ourselves to the forest floor.
-image: /images/poetry/mycelium-placeholder.jpg
 date: 2024-07-30
 author: Shrike Publishing
 tags:
@@ -11,6 +10,7 @@ tags:
   - eco-futurism
   - digital-mysticism
 published: true
+featured: false
 ---
 
 # Ghost in the Mycelial Network

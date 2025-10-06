@@ -3,8 +3,10 @@ title: Era of Silence - Arina Varan
 description: Arina Varan, a survivor in the watercolor-styled world of Era of Silence
 game: era-of-silence
 type: character
-fullImage: /images/era-of-silence/arina-varan.png
-thumbnail: /images/era-of-silence/arina-varan.png
+artist: "R. Val"
+date: 2023-12-15
+fullImage: /images/era-of-silence/art/characters/arina-varan.png
+thumbnail: /images/era-of-silence/art/characters/arina-varan.png
 published: true
 featured: false
 ---
