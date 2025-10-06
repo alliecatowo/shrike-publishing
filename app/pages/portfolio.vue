@@ -49,7 +49,8 @@
           :items="samplePages"
           arrows
           dots
-          :autoplay="5000"
+          loop
+          :autoplay="{ delay: 5000 }"
           :ui="{
             item: 'snap-center',
             container: 'rounded-lg overflow-hidden shadow-xl'
