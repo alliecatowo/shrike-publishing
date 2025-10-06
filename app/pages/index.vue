@@ -270,9 +270,9 @@
       title="Latest Updates"
       description="Stay current with our blog posts and announcements"
     >
-      <UPageColumns>
+      <UPageGrid :cols="{ default: 1, lg: 2 }" class="gap-6">
         <!-- Blog Posts Card -->
-        <UPageCard variant="soft" class="h-fit">
+        <UPageCard variant="soft">
           <template #header>
             <div class="flex items-center justify-between">
               <h3 class="text-lg font-semibold">Latest from the Blog</h3>
@@ -300,7 +300,7 @@
         </UPageCard>
 
         <!-- Announcements Card -->
-        <UPageCard variant="soft" class="h-fit">
+        <UPageCard variant="soft">
           <template #header>
             <div class="flex items-center justify-between">
               <h3 class="text-lg font-semibold">Announcements</h3>
@@ -327,7 +327,7 @@
             </div>
           </template>
         </UPageCard>
-      </UPageColumns>
+      </UPageGrid>
     </UPageSection>
 
     <!-- Call to Action -->
