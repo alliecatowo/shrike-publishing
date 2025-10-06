@@ -270,9 +270,9 @@
       title="Latest Updates"
       description="Stay current with our blog posts and announcements"
     >
-      <UPageGrid :cols="{ default: 1, lg: 2 }" class="gap-6">
+      <UPageColumns>
         <!-- Blog Posts Card -->
-        <UCard variant="outline">
+        <UPageCard variant="soft" class="h-fit">
           <template #header>
             <div class="flex items-center justify-between">
               <h3 class="text-lg font-semibold">Latest from the Blog</h3>
@@ -282,23 +282,25 @@
             </div>
           </template>
 
-          <div class="space-y-3">
-            <UBlogPost
-              v-for="post in latestPosts"
-              :key="post.slug"
-              :to="`/blog/${post.slug}`"
-              :title="post.title"
-              :description="post.description"
-              :date="post.date"
-              :authors="post.authors"
-              orientation="vertical"
-              variant="subtle"
-            />
-          </div>
-        </UCard>
+          <template #body>
+            <div class="space-y-3">
+              <UBlogPost
+                v-for="post in latestPosts"
+                :key="post.slug"
+                :to="`/blog/${post.slug}`"
+                :title="post.title"
+                :description="post.description"
+                :date="post.date"
+                :authors="post.authors"
+                orientation="vertical"
+                variant="subtle"
+              />
+            </div>
+          </template>
+        </UPageCard>
 
         <!-- Announcements Card -->
-        <UCard variant="outline">
+        <UPageCard variant="soft" class="h-fit">
           <template #header>
             <div class="flex items-center justify-between">
               <h3 class="text-lg font-semibold">Announcements</h3>
@@ -308,22 +310,24 @@
             </div>
           </template>
 
-          <div class="space-y-3">
-            <UBlogPost
-              v-for="announcement in latestAnnouncements"
-              :key="announcement.slug"
-              :to="`/announcements/${announcement.slug}`"
-              :title="announcement.title"
-              :description="announcement.description"
-              :date="announcement.date"
-              :authors="announcement.authors"
-              :badge="{ label: 'Announcement', color: 'warning', variant: 'subtle' }"
-              orientation="vertical"
-              variant="subtle"
-            />
-          </div>
-        </UCard>
-      </UPageGrid>
+          <template #body>
+            <div class="space-y-3">
+              <UBlogPost
+                v-for="announcement in latestAnnouncements"
+                :key="announcement.slug"
+                :to="`/announcements/${announcement.slug}`"
+                :title="announcement.title"
+                :description="announcement.description"
+                :date="announcement.date"
+                :authors="announcement.authors"
+                :badge="{ label: 'Announcement', color: 'warning', variant: 'subtle' }"
+                orientation="vertical"
+                variant="subtle"
+              />
+            </div>
+          </template>
+        </UPageCard>
+      </UPageColumns>
     </UPageSection>
 
     <!-- Call to Action -->
