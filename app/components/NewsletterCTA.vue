@@ -2,6 +2,16 @@
 import * as v from 'valibot'
 import type { FormSubmitEvent } from '@nuxt/ui'
 
+const props = withDefaults(defineProps<{
+  showHeading?: boolean
+  title?: string
+  description?: string
+}>(), {
+  showHeading: false,
+  title: 'Stay Updated',
+  description: 'Subscribe to receive updates about new releases, exclusive discounts, and behind-the-scenes content.'
+})
+
 const schema = v.object({
   email: v.pipe(v.string(), v.email('Invalid email address'))
 })
@@ -59,10 +69,10 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
       </div>
     </div>
 
-    <div class="space-y-3">
-      <h3 class="text-2xl font-bold">Stay Updated</h3>
+    <div v-if="showHeading" class="space-y-3">
+      <h3 class="text-2xl font-bold">{{ title }}</h3>
       <p class="text-muted">
-        Subscribe to receive updates about new releases, exclusive discounts, and behind-the-scenes content.
+        {{ description }}
       </p>
     </div>
 
