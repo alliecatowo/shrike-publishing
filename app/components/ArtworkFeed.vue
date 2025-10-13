@@ -19,15 +19,13 @@
 
     <!-- Artwork Grid -->
     <UPageGrid :cols="{ default: 1, md: 2, lg: 3, xl: 4 }" class="gap-6">
-      <UModal
+      <UCard
         v-for="artworkItem in filteredArtwork"
         :key="artworkItem.id"
+        variant="outline"
+        class="group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+        @click="openModal(artworkItem)"
       >
-        <!-- Artwork Card -->
-        <UCard
-          variant="outline"
-          class="group cursor-pointer hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-        >
           <template #header>
             <div class="relative overflow-hidden">
               <NuxtImg
@@ -94,121 +92,129 @@
             </div>
           </div>
         </UCard>
+    </UPageGrid>
 
-        <!-- Modal Content -->
-        <template #content>
-          <div class="max-w-5xl mx-auto">
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              <!-- Image -->
-              <div class="lg:col-span-2">
-                <NuxtImg
-                  :src="artworkItem.image"
-                  :alt="artworkItem.title"
-                  class="w-full h-auto max-h-[70vh] object-contain rounded-lg"
-                />
+    <!-- Single Modal for all artwork -->
+    <UModal
+      v-if="selectedArtwork"
+      v-model:open="isModalOpen"
+      :title="selectedArtwork.title"
+      :ui="{
+        content: 'w-full max-w-6xl',
+        body: 'p-6'
+      }"
+    >
+      <template #body>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Image -->
+            <div class="lg:col-span-2">
+              <NuxtImg
+                :src="selectedArtwork.image"
+                :alt="selectedArtwork.title"
+                class="w-full h-auto max-h-[70vh] object-contain rounded-lg"
+              />
+            </div>
+
+            <!-- Details -->
+            <div class="space-y-6">
+              <div class="space-y-3">
+                <div class="flex items-center gap-3">
+                  <UAvatar
+                    :src="selectedArtwork.artistAvatar || '/default-avatar.png'"
+                    :alt="selectedArtwork.artist"
+                    size="sm"
+                  />
+                  <div>
+                    <h3 class="font-bold text-highlighted">{{ selectedArtwork.artist }}</h3>
+                    <p class="text-sm text-muted">Artist</p>
+                  </div>
+                </div>
+
+                <h2 class="text-2xl font-bold text-highlighted">{{ selectedArtwork.title }}</h2>
+                <p class="text-muted leading-relaxed">{{ selectedArtwork.description }}</p>
               </div>
 
-              <!-- Details -->
-              <div class="space-y-6">
-                <div class="space-y-3">
-                  <div class="flex items-center gap-3">
-                    <UAvatar
-                      :src="artworkItem.artistAvatar || '/default-avatar.png'"
-                      :alt="artworkItem.artist"
-                      size="sm"
-                    />
-                    <div>
-                      <h3 class="font-bold text-highlighted">{{ artworkItem.artist }}</h3>
-                      <p class="text-sm text-muted">Artist</p>
-                    </div>
-                  </div>
+              <USeparator />
 
-                  <h2 class="text-2xl font-bold text-highlighted">{{ artworkItem.title }}</h2>
-                  <p class="text-muted leading-relaxed">{{ artworkItem.description }}</p>
-                </div>
-
-                <USeparator />
-
-                <div class="space-y-4">
-                  <div>
-                    <h4 class="font-semibold text-highlighted mb-2">Details</h4>
-                    <div class="space-y-2 text-sm">
-                      <div class="flex justify-between">
-                        <span class="text-muted">Category:</span>
-                        <UBadge :color="getTagColor(artworkItem.category)" size="sm">
-                          {{ artworkItem.category }}
-                        </UBadge>
-                      </div>
-                      <div class="flex justify-between">
-                        <span class="text-muted">Created:</span>
-                        <span class="text-highlighted">{{ formatDate(artworkItem.createdAt) }}</span>
-                      </div>
-                      <div class="flex justify-between">
-                        <span class="text-muted">Medium:</span>
-                        <span class="text-highlighted">{{ artworkItem.medium || 'Digital Art' }}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div v-if="artworkItem.tags?.length">
-                    <h4 class="font-semibold text-highlighted mb-2">Tags</h4>
-                    <div class="flex flex-wrap gap-2">
-                      <UBadge
-                        v-for="tag in artworkItem.tags"
-                        :key="tag"
-                        variant="subtle"
-                        size="sm"
-                      >
-                        {{ tag }}
+              <div class="space-y-4">
+                <div>
+                  <h4 class="font-semibold text-highlighted mb-2">Details</h4>
+                  <div class="space-y-2 text-sm">
+                    <div class="flex justify-between">
+                      <span class="text-muted">Category:</span>
+                      <UBadge :color="getTagColor(selectedArtwork.category)" size="sm">
+                        {{ selectedArtwork.category }}
                       </UBadge>
                     </div>
-                  </div>
-
-                  <div class="flex gap-2">
-                    <UButton
-                      variant="soft"
-                      color="primary"
-                      leading-icon="i-lucide-heart"
-                      size="sm"
-                    >
-                      Like ({{ artworkItem.likes || 0 }})
-                    </UButton>
-                    <UButton
-                      variant="outline"
-                      leading-icon="i-lucide-share-2"
-                      size="sm"
-                    >
-                      Share
-                    </UButton>
+                    <div class="flex justify-between">
+                      <span class="text-muted">Created:</span>
+                      <span class="text-highlighted">{{ formatDate(selectedArtwork.createdAt) }}</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-muted">Medium:</span>
+                      <span class="text-highlighted">{{ selectedArtwork.medium || 'Digital Art' }}</span>
+                    </div>
                   </div>
                 </div>
 
-                <USeparator />
-
-                <!-- Related Artwork -->
-                <div v-if="getRelatedArtwork(artworkItem).length">
-                  <h4 class="font-semibold text-highlighted mb-3">More by {{ artworkItem.artist }}</h4>
-                  <div class="grid grid-cols-2 gap-3">
-                    <div
-                      v-for="related in getRelatedArtwork(artworkItem).slice(0, 4)"
-                      :key="related.id"
-                      class="group cursor-pointer"
+                <div v-if="selectedArtwork.tags?.length">
+                  <h4 class="font-semibold text-highlighted mb-2">Tags</h4>
+                  <div class="flex flex-wrap gap-2">
+                    <UBadge
+                      v-for="tag in selectedArtwork.tags"
+                      :key="tag"
+                      variant="subtle"
+                      size="sm"
                     >
-                      <NuxtImg
-                        :src="related.image"
-                        :alt="related.title"
-                        class="w-full h-20 object-cover rounded-md group-hover:opacity-80 transition-opacity"
-                      />
-                      <p class="text-xs text-muted mt-1 line-clamp-1">{{ related.title }}</p>
-                    </div>
+                      {{ tag }}
+                    </UBadge>
+                  </div>
+                </div>
+
+                <div class="flex gap-2">
+                  <UButton
+                    variant="soft"
+                    color="primary"
+                    leading-icon="i-lucide-heart"
+                    size="sm"
+                  >
+                    Like ({{ selectedArtwork.likes || 0 }})
+                  </UButton>
+                  <UButton
+                    variant="outline"
+                    leading-icon="i-lucide-share-2"
+                    size="sm"
+                  >
+                    Share
+                  </UButton>
+                </div>
+              </div>
+
+              <USeparator />
+
+              <!-- Related Artwork -->
+              <div v-if="getRelatedArtwork(selectedArtwork).length">
+                <h4 class="font-semibold text-highlighted mb-3">More by {{ selectedArtwork.artist }}</h4>
+                <div class="grid grid-cols-2 gap-3">
+                  <div
+                    v-for="related in getRelatedArtwork(selectedArtwork).slice(0, 4)"
+                    :key="related.id"
+                    class="group cursor-pointer"
+                    @click="openModal(related)"
+                  >
+                    <NuxtImg
+                      :src="related.image"
+                      :alt="related.title"
+                      class="w-full h-20 object-cover rounded-md group-hover:opacity-80 transition-opacity"
+                    />
+                    <p class="text-xs text-muted mt-1 line-clamp-1">{{ related.title }}</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </template>
-      </UModal>
-    </UPageGrid>
+      </template>
+    </UModal>
 
     <!-- Load More -->
     <div v-if="hasMore" class="text-center mt-12">
@@ -261,6 +267,13 @@ const emit = defineEmits<{
 }>()
 
 const selectedTag = ref<string>('all')
+const selectedArtwork = ref<ArtworkItem | null>(null)
+const isModalOpen = ref(false)
+
+function openModal(artwork: ArtworkItem) {
+  selectedArtwork.value = artwork
+  isModalOpen.value = true
+}
 
 const filterTags = computed(() => {
   const tags = ['all', ...new Set(props.artwork.map(item => item.category))]

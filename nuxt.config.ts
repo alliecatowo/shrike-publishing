@@ -69,7 +69,16 @@ export default defineNuxtConfig({
 
   content: {
     preview: {
-      api: 'https://api.nuxt.studio'
+      api: 'https://api.nuxt.studio',
+      gitInfo: {
+        name: 'shrike-publishing',
+        owner: 'alliecatowo',
+        url: 'https://github.com/alliecatowo/shrike-publishing'
+      }
+    },
+    // Enable experimental features for better Studio integration
+    experimental: {
+      search: true
     }
   }
 })

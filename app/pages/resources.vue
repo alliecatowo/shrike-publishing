@@ -4,13 +4,13 @@
     <UPageHero
       title="Free Resources"
       description="Download free assets, reference materials, and tools to enhance your gaming experience."
-      class="bg-gradient-to-br from-emerald-100/50 via-teal-100/30 to-cyan-100/50 dark:from-emerald-900/20 dark:via-teal-900/15 dark:to-cyan-900/20"
+      class="bg-gradient-to-br from-primary-100/50 via-secondary-100/30 to-pink-100/50 dark:from-primary-900/20 dark:via-secondary-900/15 dark:to-pink-900/20"
     >
       <template #links>
         <UButton
           to="#downloads"
           size="lg"
-          color="success"
+          color="primary"
           trailing-icon="i-lucide-download"
         >
           Browse Downloads
@@ -41,7 +41,7 @@
             v-for="tab in categoryTabsWithCounts"
             :key="tab.value"
             :variant="activeCategory === tab.value ? 'solid' : 'ghost'"
-            :color="activeCategory === tab.value ? 'success' : 'neutral'"
+            :color="activeCategory === tab.value ? 'primary' : 'neutral'"
             size="sm"
             @click="activeCategory = tab.value"
           >
@@ -64,7 +64,7 @@
           <UFieldGroup>
             <UButton
               :variant="viewMode === 'cards' ? 'solid' : 'ghost'"
-              :color="viewMode === 'cards' ? 'success' : 'neutral'"
+              :color="viewMode === 'cards' ? 'primary' : 'neutral'"
               icon="i-lucide-layout-grid"
               size="sm"
               @click="viewMode = 'cards'"
@@ -73,7 +73,7 @@
             </UButton>
             <UButton
               :variant="viewMode === 'table' ? 'solid' : 'ghost'"
-              :color="viewMode === 'table' ? 'success' : 'neutral'"
+              :color="viewMode === 'table' ? 'primary' : 'neutral'"
               icon="i-lucide-table"
               size="sm"
               @click="viewMode = 'table'"
@@ -97,11 +97,11 @@
           :icon="getResourceIcon(resource.type || resource.category)"
           variant="outline"
           spotlight
-          spotlight-color="success"
+          spotlight-color="primary"
         >
           <template #header>
             <!-- Cover Preview -->
-            <div v-if="resource.cover" class="w-full h-48 rounded-lg overflow-hidden bg-gradient-to-br from-emerald-100/50 to-teal-100/50 dark:from-emerald-900/20 dark:to-teal-900/20">
+            <div v-if="resource.cover" class="w-full h-48 rounded-lg overflow-hidden bg-gradient-to-br from-primary-100/50 to-secondary-100/50 dark:from-primary-900/20 dark:to-secondary-900/20">
               <NuxtImg
                 :src="resource.cover"
                 :alt="`${resource.title} Cover`"
@@ -128,15 +128,15 @@
               <!-- Meta Info -->
               <div class="grid grid-cols-3 gap-2 text-xs">
                 <div class="flex flex-col items-center p-2 bg-gray-50 dark:bg-gray-800/50 rounded-lg">
-                  <UIcon name="i-lucide-file" class="h-4 w-4 text-emerald-600 dark:text-emerald-400 mb-1" />
+                  <UIcon name="i-lucide-file" class="h-4 w-4 text-primary-600 dark:text-primary-400 mb-1" />
                   <span class="text-gray-600 dark:text-gray-400">{{ resource.format || 'PDF' }}</span>
                 </div>
                 <div v-if="resource.fileSize" class="flex flex-col items-center p-2 bg-gray-50 dark:bg-gray-800/50 rounded-lg">
-                  <UIcon name="i-lucide-hard-drive" class="h-4 w-4 text-emerald-600 dark:text-emerald-400 mb-1" />
+                  <UIcon name="i-lucide-hard-drive" class="h-4 w-4 text-primary-600 dark:text-primary-400 mb-1" />
                   <span class="text-gray-600 dark:text-gray-400">{{ resource.fileSize }}</span>
                 </div>
                 <div v-if="resource.pages" class="flex flex-col items-center p-2 bg-gray-50 dark:bg-gray-800/50 rounded-lg">
-                  <UIcon name="i-lucide-book-open" class="h-4 w-4 text-emerald-600 dark:text-emerald-400 mb-1" />
+                  <UIcon name="i-lucide-book-open" class="h-4 w-4 text-primary-600 dark:text-primary-400 mb-1" />
                   <span class="text-gray-600 dark:text-gray-400">{{ resource.pages }}p</span>
                 </div>
               </div>
@@ -165,7 +165,7 @@
                 :target="resource.external ? '_blank' : undefined"
                 :download="!resource.external"
                 block
-                color="success"
+                color="primary"
                 :leading-icon="resource.external ? 'i-lucide-external-link' : 'i-lucide-download'"
               >
                 {{ resource.external ? 'View Resource' : 'Download PDF' }}
@@ -191,7 +191,7 @@
           <div class="flex items-start gap-3 py-2">
             <div class="relative flex-shrink-0">
               <!-- Cover Preview or Icon -->
-              <div class="w-16 h-20 bg-gradient-to-br from-emerald-100/50 to-teal-100/50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-lg flex items-center justify-center overflow-hidden">
+              <div class="w-16 h-20 bg-gradient-to-br from-primary-100/50 to-secondary-100/50 dark:from-primary-900/20 dark:to-secondary-900/20 rounded-lg flex items-center justify-center overflow-hidden">
                 <NuxtImg
                   v-if="row.cover"
                   :src="row.cover"
@@ -199,7 +199,7 @@
                   class="w-full h-full object-cover"
                 />
                 <div v-else class="text-center">
-                  <UIcon :name="getResourceIcon(row.type || row.category)" class="h-6 w-6 text-emerald-600 dark:text-emerald-400" />
+                  <UIcon :name="getResourceIcon(row.type || row.category)" class="h-6 w-6 text-primary-600 dark:text-primary-400" />
                 </div>
               </div>
             </div>
@@ -259,7 +259,7 @@
               :target="row.external ? '_blank' : undefined"
               :download="!row.external"
               variant="solid"
-              color="success"
+              color="primary"
               size="sm"
               :leading-icon="row.external ? 'i-lucide-external-link' : 'i-lucide-download'"
             >
@@ -544,7 +544,7 @@ const getCategoryColor = (category: string): 'primary' | 'secondary' | 'success'
     'manual': 'info',
     'character-sheets': 'primary',
     'reference': 'secondary',
-    'maps': 'success',
+    'maps': 'info',
     'templates': 'warning',
     'tools': 'error'
   }

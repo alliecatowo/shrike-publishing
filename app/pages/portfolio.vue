@@ -411,13 +411,10 @@
         }
       ]"
     />
-
-    <AppLightbox :images="drawingsPortfolio" :open="isLightboxOpen" :start-index="lightboxStartIndex" @update:open="isLightboxOpen = $event" />
   </div>
 </template>
 
 <script setup lang="ts">
-import AppLightbox from '~/components/AppLightbox.vue'
 import TagList from '~/components/TagList.vue'
 import ArtworkFeed from '~/components/ArtworkFeed.vue'
 
@@ -439,7 +436,7 @@ const activeTab = ref('design')
 const selectedGame = ref('all')
 
 const { data: portfolioItems } = await useAsyncData('portfolio', () =>
-  queryCollection('portfolio').where('published', '=', true).order('title', 'asc').all()
+  queryCollection('portfolio').all()
 )
 
 // Filter by game
@@ -481,10 +478,6 @@ const samplePages = [
   { image: '/images/era-of-silence/sample-pages/magic.png', title: 'Magic System' },
   { image: '/images/era-of-silence/sample-pages/elek-human-spread.png', title: 'Elek & Human Spread' }
 ]
-
-// Lightbox state
-const isLightboxOpen = ref(false)
-const lightboxStartIndex = ref(0)
 
 // SEO
 useSeoMeta({
