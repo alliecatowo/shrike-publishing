@@ -49,7 +49,11 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    preset: 'github_pages'
+    preset: 'github_pages',
+    prerender: {
+      routes: [],
+      ignore: ['/api/']
+    }
   },
 
   app: {
