@@ -60,6 +60,9 @@ jobs:
 
       - name: Build
         run: ${{ steps.pkgman.outputs.package_manager }} run build
+        env:
+          LOOPS_API_KEY: ${{ secrets.LOOPS_API_KEY }}
+          NUXT_PUBLIC_LOOPS_FORM_ID: ${{ secrets.NUXT_PUBLIC_LOOPS_FORM_ID }}
           
 
       # Deployment job
