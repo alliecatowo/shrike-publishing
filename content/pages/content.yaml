@@ -72,18 +72,7 @@ about:
   meta:
     title: About - Shrike Publishing
     description: Learn about Shrike Publishing, our mission, and our team.
-  content: |
-    ## About Shrike Publishing
-
-    Shrike Publishing is an independent tabletop game publisher based in Baltimore, Maryland. We specialize in creating immersive tabletop roleplaying games (RPGs) that focus on storytelling, character development, and cooperative gameplay.
-
-    ### Our Mission
-
-    We believe that tabletop gaming is a powerful medium for storytelling and social connection. Our games are designed to create memorable experiences that bring players together around the table.
-
-    ### Our Approach
-
-    Each of our games is crafted with care, combining traditional game design principles with innovative mechanics that encourage creativity and collaboration. We work closely with our community to create games that players love.
+  content: '## About Shrike PublishingShrike Publishing is an independent storytelling studio based in Baltimore, Maryland. We specialize in creating stories and adventures for the page and the tabletop that focus on action, character development, and cooperative gameplay.### Our MissionWe aim to find human stories in strange worlds. ###''
 contact:
   meta:
     title: Contact - Shrike Publishing
