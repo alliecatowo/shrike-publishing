@@ -1,83 +1,77 @@
 home:
   meta:
-    title: 'Shrike Publishing'
-    description: 'Shrike Tabletop makes Tabletop roleplaying games (RPGs) about combat and cooperation. Our games Era of Silence and Blood Neon are love letters to traditional game design!'
-    keywords: 'tabletop games, board games, card games, literature, publishing, Era of Silence, Blood Neon, TTRPG'
+    title: Shrike Publishing
+    description: Shrike Publlishing produces fierce adventures and characterful stories, on the page and tabletop.
+    keywords: tabletop games, board games, card games, literature, publishing, Era of Silence, Blood Neon, TTRPG, Pit of Heaven
   hero:
-    title: 'Shrike Publishing'
-    subtitle: 'Baltimore-based storytelling studio creating tabletop games and literature. Our output focuses on telling stories of action and characters across tabletop games, written fiction, and other media!'
+    title: Shrike Publishing
+    subtitle: Baltimore-based storytelling studio creating tabletop games and literature. Our output focuses on telling strange, action packed stories across tabletop games, written fiction, and other media!
     cta:
-      text: 'Explore Our Games'
-      to: '/games'
+      text: Explore Our Games
+      to: /games
   featuredGames:
-    title: 'Featured Games'
-    description: 'Discover our latest tabletop adventures'
-    viewAllText: 'View All Games'
+    title: Featured Games
+    description: Discover our latest tabletop adventures.
+    viewAllText: View All Games
   latestBlog:
-    title: 'Latest from the Blog'
-    viewAllText: 'View All'
+    title: Latest from the Blog
+    viewAllText: View All
   latestAnnouncements:
-    title: 'Announcements'
-    viewAllText: 'View All'
+    title: Announcements
+    viewAllText: View All
   community:
-    title: 'Join Our Community'
-    description: 'Stay updated with our latest releases, behind-the-scenes content, and exclusive offers.'
+    title: Join Our Community
+    description: Stay updated with our latest releases, behind-the-scenes content, and exclusive offers.
     primaryCta:
-      text: 'Follow Us'
-      to: '/contact'
+      text: Follow Us
+      to: /contact
     secondaryCta:
-      text: 'Read Stories'
-      to: '/stories'
-
+      text: Read Stories
+      to: /stories
 games:
   meta:
-    title: 'Games - Shrike Publishing'
-    description: 'Explore our collection of tabletop games including Era of Silence and Blood Neon.'
+    title: Games - Shrike Publishing
+    description: Explore our collection of tabletop games including Era of Silence and Blood Neon.
   header:
-    title: 'Our Games'
-    description: 'Discover our collection of innovative tabletop games, from strategic card games to immersive RPGs.'
+    title: Our Games
+    description: Discover our collection of innovative tabletop RPGs, with something for everyone.
   cta:
-    title: 'Want to Stay Updated?'
-    description: 'Get notified about new releases and special offers.'
-    buttonText: 'Contact Us'
-    buttonLink: '/contact'
-
+    title: Want to Stay Updated?
+    description: Get notified about new releases and special offers.
+    buttonText: Contact Us
+    buttonLink: /contact
 blog:
   meta:
-    title: 'Blog - Shrike Publishing'
-    description: 'Read our latest articles about tabletop gaming, game design, and storytelling.'
+    title: Shrike's Musings
+    description: Read our latest articles about the creative process!
   header:
-    title: 'Blog'
-    description: 'Insights, tutorials, and stories from the world of tabletop gaming.'
-
+    title: Robin's Blog
+    description: Musings on creation.
 stories:
   meta:
-    title: 'Stories - Shrike Publishing'
-    description: 'Explore our collection of written fiction and tabletop RPG stories.'
+    title: Stories - Shrike Publishing
+    description: Explore the fiction of the Era of Silence.
   header:
-    title: 'Stories'
-    description: 'Immersive tales and narratives from our tabletop gaming universe.'
-
+    title: Era of Silence Fiction
+    description: 'Immersive tales and narratives in a world abandoned by its gods and saved by the science of alchemy. '
 announcements:
   meta:
-    title: 'Announcements - Shrike Publishing'
-    description: 'Stay updated with the latest news and announcements from Shrike Publishing.'
+    title: Announcements - Shrike Publishing
+    description: Stay updated with the latest news and announcements from Shrike Publishing.
   header:
-    title: 'Announcements'
-    description: 'News, updates, and announcements from our studio.'
-
+    title: Announcements
+    description: News, updates, and announcements from our studio.
 resources:
   meta:
-    title: 'Resources - Shrike Publishing'
-    description: 'Download character sheets, rule references, and other gaming resources.'
+    title: Resources - Shrike Publishing
+    description: Download character sheets, free material, and other gaming resources.
   header:
-    title: 'Resources'
-    description: 'Character sheets, quick reference guides, and downloadable resources.'
-
+    title: Resources
+    description: Character sheets, quick reference guides, and downloadable resources.
 about:
   meta:
-    title: 'About - Shrike Publishing'
-    description: 'Learn about Shrike Publishing, our mission, and our team.'
+    title: About - Shrike Publishing
+    description: Learn about Shrike Publishing, our mission, and our team.
   content: |
     ## About Shrike Publishing
 
@@ -90,16 +84,14 @@ about:
     ### Our Approach
 
     Each of our games is crafted with care, combining traditional game design principles with innovative mechanics that encourage creativity and collaboration. We work closely with our community to create games that players love.
-
 contact:
   meta:
-    title: 'Contact - Shrike Publishing'
-    description: 'Get in touch with Shrike Publishing for inquiries, partnerships, and support.'
+    title: Contact - Shrike Publishing
+    description: Get in touch with Shrike Publishing for inquiries, partnerships, and support.
   header:
-    title: 'Contact Us'
-    description: 'Have a question or want to get in touch? We''d love to hear from you.'
+    title: Contact Us
+    description: Have a question or want to get in touch? We'd love to hear from you.
   form:
-    title: 'Send us a message'
-    description: 'Fill out the form below and we''ll get back to you as soon as possible.'
-    submitText: 'Send Message'
-
+    title: Send us a message
+    description: Fill out the form below and we'll get back to you as soon as possible.
+    submitText: Send Message
