@@ -1,7 +1,7 @@
 ---
 slug: era-of-silence-launch
-title: Era of Silence - Now Available!
-description: Our latest strategic card game is now shipping worldwide.
+title: Era of Silence RPG
+description: Alchemical adventures in a god-forsaken world.
 image: /images/announcements/era-of-silence-launch.jpg
 date: 2024-09-20
 type: product-launch
