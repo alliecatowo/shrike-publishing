@@ -2,7 +2,7 @@
 slug: shrike-musings-2
 title: "Musings of the Shrike #2 10/5/2025"
 description: The latest devlog from Shrike's R. Val
-image: ""
+image: /images/era-of-silence/art/creatures/bantam-spore.png
 date: 2024-01-10
 author: Robin Val
 tags:
