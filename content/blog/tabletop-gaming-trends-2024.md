@@ -1,7 +1,8 @@
 ---
 slug: tabletop-gaming-trends-2024
 title: Tabletop Gaming Trends for 2024
-description: Our predictions and observations on where the tabletop gaming industry is heading this year.
+description: Our predictions and observations on where the tabletop gaming
+  industry is heading this year.
 image: /images/blog/tabletop-trends.jpg
 date: 2024-01-10
 author: Jamie Chen
@@ -13,28 +14,36 @@ published: true
 featured: false
 ---
 
-# Tabletop Gaming Trends for 2024
+# **Musings of the Shrike #2 10/5/2025**
 
-As we kick off 2024, the tabletop gaming industry continues to evolve at a rapid pace. Here are the trends we're watching closely:
+![Creator profile picture](https://c10.patreonusercontent.com/4/patreon-media/p/campaign/3234039/2788e93ef83541efb2876ab1768b2d4a/eyJoIjozNjAsInciOjM2MH0%3D/4.png?token-hash=Gf1BXo0_x9ZKMUvAJkap4AkjIHXw1br4gy7VFPJJPok%3D\&token-time=1761955200)
 
-## Hybrid Digital-Physical Games
+### **Shrike Publishing, R. Val**
 
-More publishers are embracing hybrid models that combine physical components with digital enhancements. QR codes linking to companion apps, digital rule clarifications, and online community features are becoming standard.
+:br
 
-## Sustainable Production
+October 5
 
-Eco-conscious gamers are driving demand for sustainably produced games. We're seeing more recycled materials, minimal plastic use, and carbon-neutral shipping options.
+:br
 
-## Inclusive Design
+**Edit**
 
-Accessibility features like large-print cards, audio descriptions, and simplified rule sets are no longer nice-to-have features - they're essential for reaching broader audiences.
+I feel a certain tension with the term "game designer." Of course, I am one. I have been since 2019- and even earlier as a homebrewer, but I've also been a lot of other things too. Hell, since 2023 I've put out 2 tabletop game projects and 6 different fiction projects. That's not even counting the 25ish poems released this year.
 
-## Community-Led Content
+So, I guess on some level it's just an honor to be known, but whenever someone talks about *Era of Silence* as a game with fiction about it, I always am a little struck. To me, having lived with this project for two decades, I see EoS as a multimedia franchise with many different ways to experience it. Playing the game and reading the stories are both valid, but neither is centered around the other. The stories you tell are yours, but I have my own canon in mind.
 
-The rise of platforms like Kickstarter and Patreon has enabled creators to develop games based on direct community feedback, leading to more innovative and player-driven designs.
+:br
 
-## At Shrike Publishing
+\------
 
-We're embracing these trends in our upcoming releases. *Era of Silence* includes digital companion content, and all our games now feature accessibility options. We're also working on community-suggested expansions for *Blood Neon*.
+So what am I up to this month? One big thing is reworking the website with the help of Allison, who is a good friend. Also developing Shrike as a business, we're actually doing a big fund drive so expect some activity on this page as I try to get new blood (tell your friends!). Of course, working on an October story. Not quite a horror piece but a lot of religious disturbia, it's called *Contempt, My Shield.* Also hoping to start streaming again but I've been a little scrambled.
 
-What trends are you excited about this year? Let us know in the comments!
+Not every dev diary post is gonna be super long, sometimes i just want to give you a window into my process. Next up, some game dev work and aiming to get some mail out by the end of the week.
+
+:br
+
+Until next time.
+
+:br
+
+-R.
