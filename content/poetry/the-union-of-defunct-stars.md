@@ -1,20 +1,21 @@
 ---
-slug: the-union-of-defunct-stars
-title: The Union of Defunct Stars
-description: When the celestial bodies organize for better working conditions,
-  the universe learns about collective bargaining.
+slug: glass-walls-briarhearts
+title: Glass Walls, Briarhearts
+description: A poetry collection.
 date: 2024-09-28
 author: Shrike Publishing
 tags:
-  - science-fantasy
-  - labor-rights
-  - cosmic-horror
-  - satire
+  - borderline personality
+  - poetry
+  - bird
+  - ""
 published: true
 featured: false
 ---
 
-# A poetry collection.
+# Glass Walls, Briarhearts
+
+## A poetry collection.
 
 R. Val
 
