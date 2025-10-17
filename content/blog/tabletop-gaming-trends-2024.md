@@ -4,13 +4,13 @@ title: "Musings of the Shrike #2 10/5/2025"
 description: The latest devlog from Shrike's R. Val
 image: /images/blog/shrike-musings-2
 date: 2024-01-10
-author: Jamie Chen
+author: Robin Val
 tags:
   - industry
   - trends
   - tabletop
 published: true
-featured: false
+featured: true
 ---
 
 # **Musings of the Shrike #2 10/5/2025**
