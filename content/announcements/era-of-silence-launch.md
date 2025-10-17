@@ -23,6 +23,8 @@ tags:
 
 **This is the** ***Era of Silence***
 
+:br
+
 In the Long Silence, new monsters have shown their faces, from wasteland mutants to zealous fascists—no corner of the world is truly safe. Grab your team and get ready to fight your way across the shattered surface of Vian!
 
 :br
@@ -31,7 +33,7 @@ In the Long Silence, new monsters have shown their faces, from wasteland mutants
 
 :br
 
-A streamlined character creation process offers **over 15,000+ possible character combinations** that **** can be chosen from in a single sitting. Play a thief with a penchant for machines, a mage with a military background, a combat alchemist, and more! Then grab gear that utilizes a **Template + Mod system**. With just a few choices, a standard weapon turns into a trademark with its own twists and effects. 
+A streamlined character creation process offers **over 15,000+ possible character combinations** that \*\*\*\* can be chosen from in a single sitting. Play a thief with a penchant for machines, a mage with a military background, a combat alchemist, and more! Then grab gear that utilizes a **Template + Mod system**. With just a few choices, a standard weapon turns into a trademark with its own twists and effects. 
 
 :br
 
