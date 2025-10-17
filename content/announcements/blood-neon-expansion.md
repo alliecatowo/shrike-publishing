@@ -1,8 +1,7 @@
 ---
 slug: blood-neon-expansion
-title: Blood Neon Expansion - Corporate Shadows
-description: New expansion adds corporate intrigue and advanced cybernetics to
-  your campaigns.
+title: Blood Neon Expansion - Atomic Shock
+description: Power up and try not to lose yourself in this unleashed ttrpg expansion!
 image: /images/announcements/blood-neon-expansion.jpg
 date: 2024-10-15
 type: expansion
