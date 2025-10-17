@@ -1,9 +1,8 @@
 ---
-slug: tabletop-gaming-trends-2024
-title: Tabletop Gaming Trends for 2024
-description: Our predictions and observations on where the tabletop gaming
-  industry is heading this year.
-image: /images/blog/tabletop-trends.jpg
+slug: shrike-musings-2
+title: "Musings of the Shrike #2 10/5/2025"
+description: The latest devlog from Shrike's R. Val
+image: /images/blog/shrike-musings-2
 date: 2024-01-10
 author: Jamie Chen
 tags:
