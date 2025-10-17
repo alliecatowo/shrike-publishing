@@ -6,9 +6,9 @@ image: /images/era-of-silence/art/creatures/bantam-spore.png
 date: 2024-01-10
 author: Robin Val
 tags:
-  - industry
-  - trends
   - tabletop
+  - fiction
+  - industry
 published: true
 featured: true
 ---
