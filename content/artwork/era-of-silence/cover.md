@@ -5,7 +5,7 @@ game: era-of-silence
 type: cover
 fullImage: /images/era-of-silence/sample-pages/cover_front.png
 thumbnail: /images/era-of-silence/sample-pages/cover_front.png
-artist: R. Val
+artist: Moss Sugarmountains
 published: true
 featured: true
 date: 2024-01-20
