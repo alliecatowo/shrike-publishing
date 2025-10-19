@@ -10,8 +10,8 @@ hero:
     type: gradient
     value: from-primary/10 to-secondary/10
 games:
-  title: Our Games
-  description: Discover our collection of innovative tabletop games, from strategic card games to immersive RPGs.
+  title: Our Tabletop Games
+  description: Discover our collection of innovative ttrpgs.
   emptyState:
     title: No games found
     description: Check back later for new releases!
