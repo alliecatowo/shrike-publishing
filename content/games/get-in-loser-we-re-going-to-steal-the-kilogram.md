@@ -99,4 +99,6 @@ Your purchase includes the A5 sized singles and spreads for the document at prin
 
 A collaboration between Shrike Publishing and Rathayibacter. 
 
+<https://shrikepublishing.itch.io/get-in-loser-were-stealing-the-kilogram>
+
 ---
