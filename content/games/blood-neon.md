@@ -13,44 +13,42 @@ tags:
   - cyberpunk
   - adventure
   - cooperative
-# manualUrl: "/downloads/reference/blood-neon-manual.pdf"
 resources:
-  - title: "Faction Guide"
-    url: "/resources"
-  - title: "GM Screen"
-    url: "/resources"
+  - title: Faction Guide
+    url: /resources
+  - title: GM Screen
+    url: /resources
 published: true
 ---
 
 # Blood Neon
 
-## Overview
+## A hyperviolent vaporwave nightmare ttrpg for 3-6 fighters!
 
-Welcome to Neo-Tokyo, where corporations rule and hackers fight back. *Blood Neon* is a cooperative tabletop RPG where players take on the roles of elite hackers navigating the dangerous underworld of a cyberpunk metropolis.
+Show no mercy because you will be shown none. Bash and shred your way to glory, and become the one thing the fearless fear. The 11th Realm’s elected monarch has reached into another dimension for profit, creating a golden age of consumerism in the material world. That greed has cost the 11th Realm dearly. Now monsters from a plane only known as the Neon tear through into our reality and wreak havoc on the citizens of the land. The only thing standing between us and annihilation are heroes like you, Neon Hunters who become living weapons. Devastate the enemy, die, and die again, and ascend to new heights of power.
 
-## Game Features
+:br
 
-- **Cooperative Play**: Work together to complete missions and uncover conspiracies
-- **Character Customization**: Create unique hacker characters with cybernetic enhancements
-- **Dynamic Storytelling**: Branching narratives based on player choices
-- **Miniature Components**: Detailed miniatures and terrain pieces
+Featuring **badass artwork** by Luis Mel&#x6F;**, Blood Neon** is hyperviolent vaporwave fantasy on the tabletop. The **NEON system** let's you get right into the thick of it with **fast-paced combat** that let's the GM throw hordes of monsters at you without the brain burn. Build your own Star from a variety of classes, skills, and equipment and **team up with your friends to fight back the neon horde!**
 
-## What's Included
+:br![BloodNeon\_Infuser\_V04\_Delivery\_Prev.jpg](https://tools.drivethrurpg.com/images/16893/_product_images/538529/BloodNeon_Infuser_V04_Delivery_Prev.jpg)
 
-- Core rulebook with complete campaign
-- Character sheets and customization options
-- 28mm scale miniatures (4 player characters, various NPCs)
-- Modular city terrain tiles
-- Dice set and tokens
+The **NEON System**  - adds strategic depth while reducing brain burn by providing the GM with pre-programmed enemy behavior.
 
-## Purchase Options
+**Momentum & Ascension** - Demands aggressive and engaging combat. Players absorb energy from defeated enemies to replenish their health or spend it to increase the size of their damage die.
 
-Available now on our store for $24.99 USD plus shipping.
+:br
 
-[Buy Now](/contact)
+**Fight, Die, and Die Again -** When a character falls in combat, they are returned to life by the Neon Infusers and jump back into the fray! But beware, too many infusions and characters start to lose their skills, or their very identity, until their is nothing left but a unthinking killing machine.
 
-## License & Community Engagement
+**Connections** - A flexible skill system gives players the flexibility to flesh out their character's backgrounds and relationships. Want to be a hunter? A blacksmith? Magician? Jester? Want to be married to the Duke? Have a sister who's a renowned thief? The choice is yours. 
 
-*Blood Neon* core rules are available under a **Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0)** license. This means you can hack it, remix it, create your own campaigns, and share them with the community - just give us credit and share your work under the same license.
+Two to five players can run one-shots or campaigns with everything in the rulebook. Each copy of Blood Neon also comes with 3 sheets of printable stars and monsters, character sheets for each class, an adventure for new characters, and tips to make your own encounters.
 
-Join our Discord community to share your Blood Neon campaigns and get tips from other players!
+Blood Neon was written and designed by Adam Blumenau and R. Val, art by Luis Melo
+
+:br
+
+<https://www.drivethrurpg.com/en/product/538529/blood-neon>
+
+![hiphopbard\_charsheet.jpg](https://tools.drivethrurpg.com/images/16893/_product_images/538529/hiphopbard_charsheet.jpg)

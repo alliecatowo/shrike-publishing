@@ -43,9 +43,9 @@ In the Long Silence, new monsters have shown their faces, from wasteland mutants
 
 *Era of Silence* is built on a roll-low dice pool system called **Thorne**, designed to allow different characters to excel at the same task as the situation changes. Mixed with an interlocking Trait system, the game heavily emphasizes teamwork in a traditional RPG format! 
 
-:br![undefined](https://img.itch.zone/aW1nLzk2ODgyNDguanBn/original/bfLoDC.jpg)
+:br ![undefined](https://img.itch.zone/aW1nLzk2ODgyNDguanBn/original/bfLoDC.jpg)
 
-A streamlined character creation process offers **over 15,000+ possible character combinations** that **** can be chosen from in a single sitting. Play a thief with a penchant for machines, a mage with a military background, a combat alchemist, and more! Then grab gear that utilizes a **Template + Mod system**. With just a few choices, a standard weapon turns into a trademark with its own twists and effects. 
+A streamlined character creation process offers **over 15,000+ possible character combinations** that \*\*\*\* can be chosen from in a single sitting. Play a thief with a penchant for machines, a mage with a military background, a combat alchemist, and more! Then grab gear that utilizes a **Template + Mod system**. With just a few choices, a standard weapon turns into a trademark with its own twists and effects. 
 
 :br
 
