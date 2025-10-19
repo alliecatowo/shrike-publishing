@@ -31,7 +31,7 @@ Show no mercy because you will be shown none. Bash and shred your way to glory, 
 
 Featuring **badass artwork** by Luis Mel&#x6F;**, Blood Neon** is hyperviolent vaporwave fantasy on the tabletop. The **NEON system** let's you get right into the thick of it with **fast-paced combat** that let's the GM throw hordes of monsters at you without the brain burn. Build your own Star from a variety of classes, skills, and equipment and **team up with your friends to fight back the neon horde!**
 
-:br![BloodNeon\_Infuser\_V04\_Delivery\_Prev.jpg](https://tools.drivethrurpg.com/images/16893/_product_images/538529/BloodNeon_Infuser_V04_Delivery_Prev.jpg)
+:br ![BloodNeon\_Infuser\_V04\_Delivery\_Prev.jpg](https://tools.drivethrurpg.com/images/16893/_product_images/538529/BloodNeon_Infuser_V04_Delivery_Prev.jpg)
 
 The **NEON System**  - adds strategic depth while reducing brain burn by providing the GM with pre-programmed enemy behavior.
 
