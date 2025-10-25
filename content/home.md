@@ -74,25 +74,13 @@ navigation: false
 
 ::u-page-section{title="What Players Say" description="Testimonials from our community" class="py-8"}
   :::u-page-grid{class="grid-cols-1 md:grid-cols-3 gap-6"}
-    ::::u-page-card{title="Absolutely incredible storytelling" description=""Era of Silence completely changed how I think about narrative-driven games." — Sarah Johnson" variant="subtle" class="hover:shadow-xl hover:-translate-y-1 transition-all duration-300"}
-      :::::template{#leading}
-        ::::::u-avatar{text="SJ" size="lg"}
-        ::::::
-      :::::
+    ::::testimonial{title="Absolutely incredible storytelling" quote="Era of Silence completely changed how I think about narrative-driven games." author="Sarah Johnson, Game Master" avatar="SJ"}
     ::::
 
-    ::::u-page-card{title="Best investment in gaming" description=""Blood Neon has become our weekly ritual. The mechanics are innovative." — Mike Chen" variant="subtle" class="hover:shadow-xl hover:-translate-y-1 transition-all duration-300"}
-      :::::template{#leading}
-        ::::::u-avatar{text="MC" size="lg"}
-        ::::::
-      :::::
+    ::::testimonial{title="Best investment in gaming" quote="Blood Neon has become our weekly ritual. The mechanics are innovative and the story keeps us engaged." author="Mike Chen, Player" avatar="MC"}
     ::::
 
-    ::::u-page-card{title="Professional quality" description=""The production value rivals anything from major publishers." — Alex Rivera" variant="subtle" class="hover:shadow-xl hover:-translate-y-1 transition-all duration-300"}
-      :::::template{#leading}
-        ::::::u-avatar{text="AR" size="lg"}
-        ::::::
-      :::::
+    ::::testimonial{title="Professional quality" quote="The production value rivals anything from major publishers. Truly impressive work." author="Alex Rivera, Content Creator" avatar="AR"}
     ::::
   :::
 ::
@@ -113,13 +101,10 @@ navigation: false
   :::
 ::
 
-::u-page-c-t-a{title="Join Our Community" description="Subscribe to our newsletter and stay updated with our latest releases, behind-the-scenes content, and exclusive offers." class="py-8"}
-  :::u-container{class="max-w-2xl mb-8"}
+::u-page-c-t-a{title="Join Our Community" description="Subscribe to our newsletter and stay updated with our latest releases, behind-the-scenes content, and exclusive offers." :links='[{"label":"Follow Us","to":"/contact","leadingIcon":"i-lucide-users","size":"lg"},{"label":"Read Stories","to":"/stories","variant":"outline","leadingIcon":"i-lucide-book-open","size":"lg"}]' class="py-8"}
+  :::u-container{class="max-w-2xl"}
     ::::newsletter-c-t-a
     ::::
   :::
-
-  #links
-  :u-button{to="/contact" leading-icon="i-lucide-users" size="lg"}[Follow Us]
-  :u-button{to="/stories" variant="outline" leading-icon="i-lucide-book-open" size="lg"}[Read Stories]
 ::
+
