@@ -1,5 +1,5 @@
 <template>
-  <div class="relative pl-8 pb-8 border-l-2 border-gray-200 dark:border-gray-800 last:pb-0 group hover:border-primary/50 transition-colors duration-300">
+  <div class="relative pl-8 pb-8 border-l-2 border-[var(--ui-border)] last:pb-0 group transition-colors duration-300">
     <!-- Timeline dot/icon -->
     <div class="absolute -left-[17px] top-0 w-8 h-8 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
       <UIcon v-if="icon" :name="icon" class="h-4 w-4 text-white" />
@@ -14,7 +14,7 @@
     >
       <UCard
         variant="outline"
-        class="hover:border-primary/30 hover:shadow-lg transition-all duration-300 hover:bg-primary/5"
+        class="hover:shadow-lg transition-all duration-300"
       >
         <div class="space-y-2">
           <div class="flex items-center justify-between gap-4">

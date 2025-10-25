@@ -14,7 +14,7 @@ navigation: false
 
 ::u-page-section{title="Our Impact" description="Creating stories that resonate with players worldwide" class="py-4"}
   :::u-page-grid{class="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"}
-    ::::u-page-card{variant="subtle" spotlight spotlight-color="primary" class="hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"}
+    ::::u-page-card{variant="subtle" spotlight spotlight-color="primary"}
       :::::template{#header}
         ::::::div{class="flex items-center gap-3"}
           :::::::div{class="i-lucide-book-open text-2xl text-primary"}
@@ -28,7 +28,7 @@ navigation: false
       Unique narratives crafted by our community
     ::::
 
-    ::::u-page-card{variant="subtle" spotlight spotlight-color="secondary" class="hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"}
+    ::::u-page-card{variant="subtle" spotlight spotlight-color="secondary"}
       :::::template{#header}
         ::::::div{class="flex items-center gap-3"}
           :::::::div{class="i-lucide-users text-2xl text-secondary"}
@@ -42,7 +42,7 @@ navigation: false
       Engaged community members worldwide
     ::::
 
-    ::::u-page-card{variant="subtle" spotlight spotlight-color="success" class="hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"}
+    ::::u-page-card{variant="subtle" spotlight spotlight-color="success"}
       :::::template{#header}
         ::::::div{class="flex items-center gap-3"}
           :::::::div{class="i-lucide-gamepad-2 text-2xl text-success"}
@@ -56,7 +56,7 @@ navigation: false
       Professional tabletop experiences
     ::::
 
-    ::::u-page-card{variant="subtle" spotlight spotlight-color="warning" class="hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"}
+    ::::u-page-card{variant="subtle" spotlight spotlight-color="warning"}
       :::::template{#header}
         ::::::div{class="flex items-center gap-3"}
           :::::::div{class="i-lucide-star text-2xl text-warning"}
@@ -101,10 +101,8 @@ navigation: false
   :::
 ::
 
-::u-page-c-t-a{title="Join Our Community" description="Subscribe to our newsletter and stay updated with our latest releases, behind-the-scenes content, and exclusive offers." :links='[{"label":"Follow Us","to":"/contact","leadingIcon":"i-lucide-users","size":"lg"},{"label":"Read Stories","to":"/stories","variant":"outline","leadingIcon":"i-lucide-book-open","size":"lg"}]' class="py-4"}
-  :::u-container{class="max-w-2xl mx-auto text-center"}
-    ::::newsletter-c-t-a
-    ::::
+::u-page-c-t-a{title="Join Our Community" description="Subscribe to our newsletter and stay updated with our latest releases, behind-the-scenes content, and exclusive offers." :links='[{"label":"Follow Us","to":"/contact","leadingIcon":"i-lucide-users","size":"lg"},{"label":"Read Stories","to":"/stories","variant":"outline","leadingIcon":"i-lucide-book-open","size":"lg"}]'}
+  :::newsletter-c-t-a
   :::
 ::
 

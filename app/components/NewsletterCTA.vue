@@ -65,30 +65,27 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
   <UPageCard
     variant="soft"
     orientation="vertical"
-    class="max-w-3xl mx-auto"
     :spotlight="true"
     spotlight-color="primary"
   >
     <template #header>
-      <div class="flex items-center justify-center">
-        <div class="relative">
-          <div class="absolute inset-0 blur-xl bg-gradient-to-r from-primary/30 to-secondary/30 rounded-full" />
-          <div class="relative w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center">
-            <UIcon name="i-lucide-mail" class="h-8 w-8 text-white" />
-          </div>
+      <div class="relative mx-auto">
+        <div class="absolute inset-0 blur-xl bg-gradient-to-r from-primary/30 to-secondary/30 rounded-full" />
+        <div class="relative w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center">
+          <UIcon name="i-lucide-mail" class="h-8 w-8 text-white" />
         </div>
       </div>
     </template>
 
     <template #body>
-      <div v-if="showHeading" class="text-center space-y-3 mb-6">
+      <div v-if="showHeading" class="space-y-3 mb-6">
         <h3 class="text-2xl font-bold">{{ title }}</h3>
         <p class="text-muted text-lg">
           {{ description }}
         </p>
       </div>
 
-      <UForm :schema="schema" :state="state" @submit="onSubmit" class="max-w-md mx-auto">
+      <UForm :schema="schema" :state="state" @submit="onSubmit" class="mx-auto" style="max-width: 28rem;">
         <UFormField name="email">
           <UInput
             v-model="state.email"
@@ -115,12 +112,10 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     </template>
 
     <template #footer>
-      <div class="text-center">
-        <p class="text-sm text-muted flex items-center justify-center gap-2">
-          <UIcon name="i-lucide-shield-check" class="h-4 w-4" />
-          We respect your privacy. Unsubscribe at any time.
-        </p>
-      </div>
+      <p class="text-sm text-muted flex items-center justify-center gap-2">
+        <UIcon name="i-lucide-shield-check" class="h-4 w-4" />
+        We respect your privacy. Unsubscribe at any time.
+      </p>
     </template>
   </UPageCard>
 </template>

@@ -16,7 +16,9 @@
           :key="game.slug"
           :to="`/games/${game.slug}`"
           variant="subtle"
-          class="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+          :spotlight="true"
+          spotlight-color="primary"
+          class="group"
         >
           <template #header>
             <NuxtImg
@@ -29,7 +31,7 @@
           </template>
 
           <div class="space-y-2">
-            <h3 class="text-xl font-bold text-highlighted group-hover:text-primary transition-colors">
+            <h3 class="text-xl font-bold">
               {{ game.title }}
             </h3>
             <p class="text-muted leading-relaxed">
@@ -65,7 +67,6 @@
           variant="outline"
           size="lg"
           trailing-icon="i-lucide-arrow-right"
-          class="hover:scale-105 transition-transform duration-300"
         >
           View All Games
         </UButton>
@@ -84,7 +85,8 @@
         <UPageCard
           v-if="latestPosts.length"
           variant="subtle"
-          class="hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+          :spotlight="true"
+          spotlight-color="primary"
         >
           <template #header>
             <div class="flex items-center justify-between">
@@ -96,7 +98,6 @@
                 variant="ghost"
                 size="sm"
                 trailing-icon="i-lucide-arrow-right"
-                class="hover:scale-105 transition-transform duration-300"
               >
                 View All
               </UButton>
@@ -114,7 +115,6 @@
                 :date="post.date"
                 orientation="vertical"
                 variant="subtle"
-                class="hover:bg-primary/5 transition-colors duration-300 rounded-lg p-2 -m-2"
               />
             </div>
           </template>
@@ -124,7 +124,8 @@
         <UPageCard
           v-if="latestAnnouncements.length"
           variant="subtle"
-          class="hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+          :spotlight="true"
+          spotlight-color="secondary"
         >
           <template #header>
             <div class="flex items-center justify-between">
@@ -136,7 +137,6 @@
                 variant="ghost"
                 size="sm"
                 trailing-icon="i-lucide-arrow-right"
-                class="hover:scale-105 transition-transform duration-300"
               >
                 View All
               </UButton>
@@ -155,7 +155,6 @@
                 :badge="{ label: 'Announcement', color: 'warning', variant: 'subtle' }"
                 orientation="vertical"
                 variant="subtle"
-                class="hover:bg-secondary/5 transition-colors duration-300 rounded-lg p-2 -m-2"
               />
             </div>
           </template>
@@ -171,22 +170,18 @@
       class="py-4"
     >
       <UPageGrid :cols="{ default: 1, md: 2, lg: 3 }" class="gap-6">
-        <div
+        <UBlogPost
           v-for="story in featuredStories"
           :key="story.slug"
-          class="group hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-        >
-          <UBlogPost
-            :to="`/stories/${story.slug}`"
-            :title="story.title"
-            :description="story.description"
-            :date="story.date"
-            :image="story.image || story.thumbnail"
-            orientation="vertical"
-            variant="subtle"
-            class="h-full hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-          />
-        </div>
+          :to="`/stories/${story.slug}`"
+          :title="story.title"
+          :description="story.description"
+          :date="story.date"
+          :image="story.image || story.thumbnail"
+          orientation="vertical"
+          variant="subtle"
+          class="h-full"
+        />
       </UPageGrid>
     </UPageSection>
   </div>
