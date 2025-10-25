@@ -57,16 +57,16 @@
   --color-amber-800: #92400e;
   --color-amber-900: #78350f;
 
-  /* Slate = Neutral (Cool slate with subtle burgundy tints) */
-  --color-slate-50: #faf9fa;   /* Barely pinkish white */
-  --color-slate-100: #f4f3f5;  /* Very subtle pink-gray */
-  --color-slate-200: #e9e7eb;
-  --color-slate-300: #d4d1d9;
-  --color-slate-400: #a8a3b0;
-  --color-slate-500: #78717f;
-  --color-slate-600: #5a5361;
-  --color-slate-700: #46404c;
-  --color-slate-800: #342f3a;
+  /* Slate = Neutral (Warm slate with noticeable rose/burgundy tints) */
+  --color-slate-50: #fdf9fa;   /* Warm rose-white */
+  --color-slate-100: #f7f0f3;  /* Light rose-gray */
+  --color-slate-200: #ede4e9;  /* Soft rose-gray */
+  --color-slate-300: #d9cdd5;  /* Rose-tinted gray */
+  --color-slate-400: #b4a3ad;
+  --color-slate-500: #857582;
+  --color-slate-600: #675564;
+  --color-slate-700: #51424e;
+  --color-slate-800: #3e313a;
   --color-slate-900: #2d1821;  /* Deep burgundy-brown */
   --color-slate-950: #1a0f14;  /* Burgundy-black */
 

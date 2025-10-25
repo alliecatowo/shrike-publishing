@@ -14,60 +14,16 @@ navigation: false
 
 ::u-page-section{title="Our Impact" description="Creating stories that resonate with players worldwide" class="py-4"}
   :::u-page-grid{class="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"}
-    ::::u-page-card{variant="subtle" spotlight spotlight-color="primary"}
-      :::::template{#header}
-        ::::::div{class="flex items-center gap-3"}
-          :::::::div{class="i-lucide-book-open text-2xl text-primary"}
-          :::::::
-        ::::::
-      :::::
-
-      50K+ Stories Created
-
-      #description
-      Unique narratives crafted by our community
+    ::::u-page-feature{icon="i-lucide-book-open" title="50K+ Stories Created" description="Unique narratives crafted by our community" orientation="vertical"}
     ::::
 
-    ::::u-page-card{variant="subtle" spotlight spotlight-color="secondary"}
-      :::::template{#header}
-        ::::::div{class="flex items-center gap-3"}
-          :::::::div{class="i-lucide-users text-2xl text-secondary"}
-          :::::::
-        ::::::
-      :::::
-
-      12K+ Active Players
-
-      #description
-      Engaged community members worldwide
+    ::::u-page-feature{icon="i-lucide-users" title="12K+ Active Players" description="Engaged community members worldwide" orientation="vertical"}
     ::::
 
-    ::::u-page-card{variant="subtle" spotlight spotlight-color="success"}
-      :::::template{#header}
-        ::::::div{class="flex items-center gap-3"}
-          :::::::div{class="i-lucide-gamepad-2 text-2xl text-success"}
-          :::::::
-        ::::::
-      :::::
-
-      8 Published Games
-
-      #description
-      Professional tabletop experiences
+    ::::u-page-feature{icon="i-lucide-gamepad-2" title="8 Published Games" description="Professional tabletop experiences" orientation="vertical"}
     ::::
 
-    ::::u-page-card{variant="subtle" spotlight spotlight-color="warning"}
-      :::::template{#header}
-        ::::::div{class="flex items-center gap-3"}
-          :::::::div{class="i-lucide-star text-2xl text-warning"}
-          :::::::
-        ::::::
-      :::::
-
-      4.9★ Average Rating
-
-      #description
-      Consistently high-quality content
+    ::::u-page-feature{icon="i-lucide-star" title="4.9★ Average Rating" description="Consistently high-quality content" orientation="vertical"}
     ::::
   :::
 ::
@@ -86,14 +42,14 @@ navigation: false
 ::
 
 ::u-page-section{title="Recent Releases" description="Our latest games and content" class="py-4"}
-  :::timeline-section
-    ::::timeline-item{date="December 2024" title="The Silent Observer" description="Our latest psychological horror game exploring themes of surveillance and paranoia" icon="i-lucide-eye" to="/stories/the-last-whisper"}
+  :::timeline-section{color="primary" :default-value="3"}
+    ::::timeline-item{date="December 2024" title="The Silent Observer" description="Our latest psychological horror game exploring themes of surveillance and paranoia" icon="i-lucide-eye"}
     ::::
 
-    ::::timeline-item{date="November 2024" title="Era of Silence: Complete Guide" description="Comprehensive guidebook with expanded lore and gameplay options" icon="i-lucide-book" to="/resources/era-of-silence-quick-reference"}
+    ::::timeline-item{date="November 2024" title="Era of Silence: Complete Guide" description="Comprehensive guidebook with expanded lore and gameplay options" icon="i-lucide-book"}
     ::::
 
-    ::::timeline-item{date="October 2024" title="Blood Neon: Urban Expansion" description="New city scenarios and character options for cyberpunk adventures" icon="i-lucide-zap" to="/announcements/blood-neon-expansion"}
+    ::::timeline-item{date="October 2024" title="Blood Neon: Urban Expansion" description="New city scenarios and character options for cyberpunk adventures" icon="i-lucide-zap"}
     ::::
 
     ::::timeline-item{date="September 2024" title="Newsletter Launch" description="Started our monthly newsletter with exclusive behind-the-scenes content" icon="i-lucide-mail"}
@@ -101,7 +57,7 @@ navigation: false
   :::
 ::
 
-::u-page-c-t-a{title="Join Our Community" description="Subscribe to our newsletter and stay updated with our latest releases, behind-the-scenes content, and exclusive offers." :links='[{"label":"Follow Us","to":"/contact","leadingIcon":"i-lucide-users","size":"lg"},{"label":"Read Stories","to":"/stories","variant":"outline","leadingIcon":"i-lucide-book-open","size":"lg"}]'}
+::u-page-c-t-a{title="Join Our Community" description="Subscribe to our newsletter and stay updated with our latest releases, behind-the-scenes content, and exclusive offers." orientation="vertical" :links='[{"label":"Follow Us","to":"/contact","leadingIcon":"i-lucide-users","size":"lg"},{"label":"Read Stories","to":"/stories","variant":"outline","leadingIcon":"i-lucide-book-open","size":"lg"}]'}
   :::newsletter-c-t-a
   :::
 ::

@@ -13,6 +13,17 @@ export default defineAppConfig({
         error: 'red',
         neutral: 'slate'
       },
+      // Component theme overrides to use brand colors
+      pageFeature: {
+        slots: {
+          leadingIcon: 'size-6 shrink-0 text-primary' // Use primary instead of default grey
+        }
+      },
+      card: {
+        slots: {
+          root: 'bg-[var(--ui-bg)] border-[var(--ui-border)]' // Use theme variables
+        }
+      },
       // Typography
       // prose: {
       //   h1: { fontFamily: "'Volkhov', serif", fontWeight: '700' },
