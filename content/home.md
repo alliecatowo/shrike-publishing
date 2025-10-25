@@ -74,61 +74,25 @@ navigation: false
 
 ::u-page-section{title="What Players Say" description="Testimonials from our community" class="py-8"}
   :::u-page-grid{class="grid-cols-1 md:grid-cols-3 gap-6"}
-    ::::u-page-card{variant="subtle" class="hover:shadow-xl hover:-translate-y-1 transition-all duration-300"}
-      :::::template{#header}
-        ::::::div{class="flex items-center gap-3"}
-          :::::::u-avatar{text="SJ" size="md"}
-          :::::::
-          :::::::div
-            ::::::::div{class="font-semibold"}
-              Sarah Johnson
-            ::::::::
-          :::::::
+    ::::u-page-card{title="Absolutely incredible storytelling" description=""Era of Silence completely changed how I think about narrative-driven games." — Sarah Johnson" variant="subtle" class="hover:shadow-xl hover:-translate-y-1 transition-all duration-300"}
+      :::::template{#leading}
+        ::::::u-avatar{text="SJ" size="lg"}
         ::::::
       :::::
-
-      "Absolutely incredible storytelling. Era of Silence completely changed how I think about narrative-driven games."
-
-      #description
-      Era of Silence Player
     ::::
 
-    ::::u-page-card{variant="subtle" class="hover:shadow-xl hover:-translate-y-1 transition-all duration-300"}
-      :::::template{#header}
-        ::::::div{class="flex items-center gap-3"}
-          :::::::u-avatar{text="MC" size="md"}
-          :::::::
-          :::::::div
-            ::::::::div{class="font-semibold"}
-              Mike Chen
-            ::::::::
-          :::::::
+    ::::u-page-card{title="Best investment in gaming" description=""Blood Neon has become our weekly ritual. The mechanics are innovative." — Mike Chen" variant="subtle" class="hover:shadow-xl hover:-translate-y-1 transition-all duration-300"}
+      :::::template{#leading}
+        ::::::u-avatar{text="MC" size="lg"}
         ::::::
       :::::
-
-      "Best investment in gaming I've made this year. The Blood Neon expansion pack is worth every penny."
-
-      #description
-      Blood Neon Fan
     ::::
 
-    ::::u-page-card{variant="subtle" class="hover:shadow-xl hover:-translate-y-1 transition-all duration-300"}
-      :::::template{#header}
-        ::::::div{class="flex items-center gap-3"}
-          :::::::u-avatar{text="AR" size="md"}
-          :::::::
-          :::::::div
-            ::::::::div{class="font-semibold"}
-              Alex Rivera
-            ::::::::
-          :::::::
+    ::::u-page-card{title="Professional quality" description=""The production value rivals anything from major publishers." — Alex Rivera" variant="subtle" class="hover:shadow-xl hover:-translate-y-1 transition-all duration-300"}
+      :::::template{#leading}
+        ::::::u-avatar{text="AR" size="lg"}
         ::::::
       :::::
-
-      "Professional quality that rivals major publishers. The production value is stunning."
-
-      #description
-      Long-time Supporter
     ::::
   :::
 ::
@@ -149,14 +113,13 @@ navigation: false
   :::
 ::
 
-::u-page-section{title="Join Our Community" description="Subscribe to our newsletter and stay updated with our latest releases, behind-the-scenes content, and exclusive offers." class="py-8"}
-  :::u-container{class="max-w-2xl"}
+::u-page-c-t-a{title="Join Our Community" description="Subscribe to our newsletter and stay updated with our latest releases, behind-the-scenes content, and exclusive offers." class="py-8"}
+  :::u-container{class="max-w-2xl mb-8"}
     ::::newsletter-c-t-a
     ::::
-
-    ::::div{class="flex flex-col sm:flex-row gap-4 justify-center mt-8"}
-      :::::u-button{to="/contact" leading-icon="i-lucide-users" size="lg" class="hover:scale-105 transition-transform duration-300"}[Follow Us]
-      :::::u-button{to="/stories" variant="outline" leading-icon="i-lucide-book-open" size="lg" class="hover:scale-105 transition-transform duration-300"}[Read Stories]
-    ::::
   :::
+
+  #links
+  :u-button{to="/contact" leading-icon="i-lucide-users" size="lg"}[Follow Us]
+  :u-button{to="/stories" variant="outline" leading-icon="i-lucide-book-open" size="lg"}[Read Stories]
 ::
