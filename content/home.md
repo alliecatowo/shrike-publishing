@@ -12,7 +12,7 @@ navigation: false
 ::scroll-down
 ::
 
-::u-page-section{title="Our Impact" description="Creating stories that resonate with players worldwide" class="py-8"}
+::u-page-section{title="Our Impact" description="Creating stories that resonate with players worldwide" class="py-4"}
   :::u-page-grid{class="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"}
     ::::u-page-card{variant="subtle" spotlight spotlight-color="primary" class="hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"}
       :::::template{#header}
@@ -72,7 +72,7 @@ navigation: false
   :::
 ::
 
-::u-page-section{title="What Players Say" description="Testimonials from our community" class="py-8"}
+::u-page-section{title="What Players Say" description="Testimonials from our community" class="py-4"}
   :::u-page-grid{class="grid-cols-1 md:grid-cols-3 gap-6"}
     ::::testimonial{title="Absolutely incredible storytelling" quote="Era of Silence completely changed how I think about narrative-driven games." author="Sarah Johnson, Game Master" avatar="SJ"}
     ::::
@@ -85,7 +85,7 @@ navigation: false
   :::
 ::
 
-::u-page-section{title="Recent Releases" description="Our latest games and content" class="py-8"}
+::u-page-section{title="Recent Releases" description="Our latest games and content" class="py-4"}
   :::timeline-section
     ::::timeline-item{date="December 2024" title="The Silent Observer" description="Our latest psychological horror game exploring themes of surveillance and paranoia" icon="i-lucide-eye" to="/stories/the-last-whisper"}
     ::::
@@ -101,8 +101,8 @@ navigation: false
   :::
 ::
 
-::u-page-c-t-a{title="Join Our Community" description="Subscribe to our newsletter and stay updated with our latest releases, behind-the-scenes content, and exclusive offers." :links='[{"label":"Follow Us","to":"/contact","leadingIcon":"i-lucide-users","size":"lg"},{"label":"Read Stories","to":"/stories","variant":"outline","leadingIcon":"i-lucide-book-open","size":"lg"}]' class="py-8"}
-  :::u-container{class="max-w-2xl"}
+::u-page-c-t-a{title="Join Our Community" description="Subscribe to our newsletter and stay updated with our latest releases, behind-the-scenes content, and exclusive offers." :links='[{"label":"Follow Us","to":"/contact","leadingIcon":"i-lucide-users","size":"lg"},{"label":"Read Stories","to":"/stories","variant":"outline","leadingIcon":"i-lucide-book-open","size":"lg"}]' class="py-4"}
+  :::u-container{class="max-w-2xl mx-auto text-center"}
     ::::newsletter-c-t-a
     ::::
   :::

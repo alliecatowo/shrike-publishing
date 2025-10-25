@@ -1,13 +1,15 @@
 <template>
   <UPageCard
     :title="title"
-    :description="quote"
     variant="subtle"
     class="hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
   >
     <template #leading>
       <UAvatar :text="avatar" size="lg" />
     </template>
+
+    <p class="text-muted">{{ quote }}</p>
+
     <template #footer>
       <div class="text-sm text-muted">
         {{ author }}

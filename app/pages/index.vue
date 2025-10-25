@@ -8,7 +8,7 @@
       v-if="featuredGames.length"
       title="Featured Games"
       description="Discover our latest tabletop adventures"
-      class="py-8"
+      class="py-4"
     >
       <UPageGrid :cols="{ default: 1, md: 2, lg: 3 }" class="gap-6">
         <UCard
@@ -77,7 +77,7 @@
       v-if="latestPosts.length || latestAnnouncements.length"
       title="Latest Updates"
       description="Stay current with our blog posts and announcements"
-      class="py-8"
+      class="py-4"
     >
       <UPageGrid :cols="{ default: 1, lg: 2 }" class="gap-6">
         <!-- Latest Blog Posts -->
@@ -168,7 +168,7 @@
       v-if="featuredStories.length"
       title="Featured Stories"
       description="Read our latest published works"
-      class="py-8"
+      class="py-4"
     >
       <UPageGrid :cols="{ default: 1, md: 2, lg: 3 }" class="gap-6">
         <div
