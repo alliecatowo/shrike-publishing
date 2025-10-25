@@ -4,7 +4,7 @@ description: 'Baltimore-based storytelling studio creating tabletop games and li
 navigation: false
 ---
 
-::u-page-hero{title="Shrike Publishing" description="Baltimore-based storytelling studio creating tabletop games and literature. Our output focuses on telling stories of action and characters across tabletop games, written fiction, and other media!" class="bg-gradient-to-br from-primary/15 via-neutral-900/20 to-secondary/10 dark:from-primary/25 dark:via-neutral-900/30 dark:to-secondary/20"}
+::u-page-hero{title="Shrike Publishing" description="Baltimore-based storytelling studio creating tabletop games and literature. Our output focuses on telling stories of action and characters across tabletop games, written fiction, and other media!" class="bg-gradient-to-br from-primary/15 via-rose-900/20 to-secondary/10 dark:from-primary/25 dark:via-rose-900/30 dark:to-secondary/20"}
 #links
 :u-button{to="/games" size="lg" trailing-icon="i-lucide-play"}[Explore Our Games]
 ::
