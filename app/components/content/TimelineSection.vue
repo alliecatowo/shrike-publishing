@@ -43,13 +43,28 @@ const slots = useSlots()
 // Extract timeline items from slot components
 const timelineItems = computed<TimelineItem[]>(() => {
   const defaultSlot = slots.default?.()
-  if (!defaultSlot) return []
+  if (!defaultSlot) {
+    console.log('TimelineSection: No default slot')
+    return []
+  }
 
-  return defaultSlot
+  console.log('TimelineSection slot vnodes:', defaultSlot.map(v => ({
+    type: v.type,
+    typeName: typeof v.type === 'object' ? (v.type as any).name || (v.type as any).__name : v.type,
+    props: v.props
+  })))
+
+  const items = defaultSlot
     .filter(vnode => {
-      // Filter for timeline-item components
-      return vnode.type && typeof vnode.type === 'object' &&
-             (vnode.type as any).__name === 'TimelineItem'
+      // Filter for timeline-item components - check tag property for async components
+      const tag = vnode.type && typeof vnode.type === 'object'
+        ? (vnode.type as any).tag
+        : null
+      const componentName = vnode.type && typeof vnode.type === 'object'
+        ? (vnode.type as any).name || (vnode.type as any).__name
+        : null
+      console.log('Checking vnode:', componentName, 'tag:', tag)
+      return componentName === 'TimelineItem' || tag === 'timeline-item'
     })
     .map(vnode => {
       // Extract props from each timeline-item
@@ -63,5 +78,8 @@ const timelineItems = computed<TimelineItem[]>(() => {
         to: itemProps.to
       }
     })
+
+  console.log('TimelineSection extracted items:', items)
+  return items
 })
 </script>

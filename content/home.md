@@ -4,7 +4,7 @@ description: 'Baltimore-based storytelling studio creating tabletop games and li
 navigation: false
 ---
 
-::u-page-hero{title="Shrike Publishing" description="Baltimore-based storytelling studio creating tabletop games and literature. Our output focuses on telling stories of action and characters across tabletop games, written fiction, and other media!" class="bg-gradient-to-br from-primary/15 via-rose-900/20 to-secondary/10 dark:from-primary/25 dark:via-rose-900/30 dark:to-secondary/20"}
+::u-page-hero{title="Shrike Publishing" description="Baltimore-based storytelling studio creating tabletop games and literature. Our output focuses on telling stories of action and characters across tabletop games, written fiction, and other media!" class="bg-gradient-to-br from-primary/15 via-primary/5 to-secondary/10 dark:from-primary/25 dark:via-primary/10 dark:to-secondary/20"}
 #links
 :u-button{to="/games" size="lg" trailing-icon="i-lucide-play"}[Explore Our Games]
 ::
@@ -30,15 +30,68 @@ navigation: false
 
 ::u-page-section{title="What Players Say" description="Testimonials from our community" class="py-4"}
   :::u-page-grid{class="grid-cols-1 md:grid-cols-3 gap-6"}
-    ::::testimonial{title="Absolutely incredible storytelling" quote="Era of Silence completely changed how I think about narrative-driven games." author="Sarah Johnson, Game Master" avatar="SJ"}
+    ::::testimonial{avatar="SJ"}
+    #title
+    Absolutely incredible storytelling
+
+    #quote
+    Era of Silence completely changed how I think about narrative-driven games.
+
+    #author
+    Sarah Johnson, Game Master
     ::::
 
-    ::::testimonial{title="Best investment in gaming" quote="Blood Neon has become our weekly ritual. The mechanics are innovative and the story keeps us engaged." author="Mike Chen, Player" avatar="MC"}
+    ::::testimonial{avatar="MC"}
+    #title
+    Best investment in gaming
+
+    #quote
+    Blood Neon has become our weekly ritual. The mechanics are innovative and the story keeps us engaged.
+
+    #author
+    Mike Chen, Player
     ::::
 
-    ::::testimonial{title="Professional quality" quote="The production value rivals anything from major publishers. Truly impressive work." author="Alex Rivera, Content Creator" avatar="AR"}
+    ::::testimonial{avatar="AR"}
+    #title
+    Professional quality
+
+    #quote
+    The production value rivals anything from major publishers. Truly impressive work.
+
+    #author
+    Alex Rivera, Content Creator
     ::::
   :::
+::
+
+::featured-games{title="Featured Games" description="Discover our latest tabletop adventures"}
+::
+
+::u-page-section{title="Join Our Community" description="Subscribe to our newsletter and stay updated with our latest releases, behind-the-scenes content, and exclusive offers." icon="i-lucide-mail" orientation="vertical" class="bg-elevated/50 rounded-xl py-16" :ui='{"body":"flex justify-center","footer":"flex justify-center items-center gap-2 text-sm text-muted"}'}
+#body
+:::newsletter-c-t-a
+:::
+
+#footer
+We respect your privacy. Unsubscribe at any time.
+::
+
+::latest-updates{title="Latest Updates" description="Stay current with our blog posts and announcements"}
+#blog-heading
+Latest from the Blog
+
+#blog-link-text
+View All
+
+#announcements-heading
+Announcements
+
+#announcements-link-text
+View All
+::
+
+::featured-stories{title="Featured Stories" description="Read our latest published works"}
 ::
 
 ::u-page-section{title="Recent Releases" description="Our latest games and content" class="py-4"}
@@ -54,11 +107,6 @@ navigation: false
 
     ::::timeline-item{date="September 2024" title="Newsletter Launch" description="Started our monthly newsletter with exclusive behind-the-scenes content" icon="i-lucide-mail"}
     ::::
-  :::
-::
-
-::u-page-c-t-a{title="Join Our Community" description="Subscribe to our newsletter and stay updated with our latest releases, behind-the-scenes content, and exclusive offers." orientation="vertical" :links='[{"label":"Follow Us","to":"/contact","leadingIcon":"i-lucide-users","size":"lg"},{"label":"Read Stories","to":"/stories","variant":"outline","leadingIcon":"i-lucide-book-open","size":"lg"}]'}
-  :::newsletter-c-t-a
   :::
 ::
 
