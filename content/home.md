@@ -28,6 +28,20 @@ navigation: false
   :::
 ::
 
+::featured-games{title="Featured Games" description="Discover our latest tabletop adventures"}
+::
+
+::content-newsletter-cta{variant="soft"}
+#title
+Join Our Community
+
+#description
+Subscribe to our newsletter and stay updated with our latest releases, behind-the-scenes content, and exclusive offers.
+
+#footer
+We respect your privacy. Unsubscribe at any time.
+::
+
 ::u-page-section{title="What Players Say" description="Testimonials from our community" class="py-4"}
   :::u-page-grid{class="grid-cols-1 md:grid-cols-3 gap-6"}
     ::::testimonial{avatar="SJ"}
@@ -65,16 +79,20 @@ navigation: false
   :::
 ::
 
-::featured-games{title="Featured Games" description="Discover our latest tabletop adventures"}
-::
+::u-page-section{title="Recent Releases" description="Our latest games and content" class="py-4"}
+  :::timeline-section{color="primary" :default-value="3"}
+    ::::timeline-item{date="December 2024" title="The Silent Observer" description="Our latest psychological horror game exploring themes of surveillance and paranoia" icon="i-lucide-eye"}
+    ::::
 
-::u-page-section{title="Join Our Community" description="Subscribe to our newsletter and stay updated with our latest releases, behind-the-scenes content, and exclusive offers." icon="i-lucide-mail" orientation="vertical" class="bg-elevated/50 rounded-xl py-16" :ui='{"body":"flex justify-center","footer":"flex justify-center items-center gap-2 text-sm text-muted"}'}
-#body
-:::newsletter-c-t-a
-:::
+    ::::timeline-item{date="November 2024" title="Era of Silence: Complete Guide" description="Comprehensive guidebook with expanded lore and gameplay options" icon="i-lucide-book"}
+    ::::
 
-#footer
-We respect your privacy. Unsubscribe at any time.
+    ::::timeline-item{date="October 2024" title="Blood Neon: Urban Expansion" description="New city scenarios and character options for cyberpunk adventures" icon="i-lucide-zap"}
+    ::::
+
+    ::::timeline-item{date="September 2024" title="Newsletter Launch" description="Started our monthly newsletter with exclusive behind-the-scenes content" icon="i-lucide-mail"}
+    ::::
+  :::
 ::
 
 ::latest-updates{title="Latest Updates" description="Stay current with our blog posts and announcements"}
@@ -92,21 +110,5 @@ View All
 ::
 
 ::featured-stories{title="Featured Stories" description="Read our latest published works"}
-::
-
-::u-page-section{title="Recent Releases" description="Our latest games and content" class="py-4"}
-  :::timeline-section{color="primary" :default-value="3"}
-    ::::timeline-item{date="December 2024" title="The Silent Observer" description="Our latest psychological horror game exploring themes of surveillance and paranoia" icon="i-lucide-eye"}
-    ::::
-
-    ::::timeline-item{date="November 2024" title="Era of Silence: Complete Guide" description="Comprehensive guidebook with expanded lore and gameplay options" icon="i-lucide-book"}
-    ::::
-
-    ::::timeline-item{date="October 2024" title="Blood Neon: Urban Expansion" description="New city scenarios and character options for cyberpunk adventures" icon="i-lucide-zap"}
-    ::::
-
-    ::::timeline-item{date="September 2024" title="Newsletter Launch" description="Started our monthly newsletter with exclusive behind-the-scenes content" icon="i-lucide-mail"}
-    ::::
-  :::
 ::
 
