@@ -1,28 +1,30 @@
 ---
-slug: "ashen-silence-sky-over-saliana"
+slug: ashen-silence-sky-over-saliana
 title: "Era of Silence: Sky Over Saliana"
-description: "Intrigue, deception, and more in a simple conversation above the cloudline."
-thumbnail: "/images/stories/saliana-vista.png"
-image: "/images/stories/saliana-vista.png"
-date: "2023-09-03"
-author: "R. Val"
-type: "free"
-tags: ["Era of Silence", "Sci-Fi", "Cyberpunk", "Intrigue"]
+description: Intrigue, deception, and more in a simple conversation above the cloudline.
+thumbnail: /images/stories/saliana-vista.png
+image: /images/stories/saliana-vista.png
+date: 2023-09-03
+author: R. Val
+type: free
+tags:
+  - Era of Silence
+  - Sci-Fi
+  - Cyberpunk
+  - Intrigue
 published: true
 featured: false
 ---
+
 # Sky Over Saliana
 
 ## A story in the Era of Silence
 
 ### R. Val
 
-  
-
 Content Warning: Drug use (heavy), transphobia (mild), brief moment of violence, referenced harm and death (incl minors).
 
-  
-[DOWNLOAD PDF HERE](/downloads/stories/Ashen-Silence_-Sky-Over-Saliana-Final-8_21.pdf)  
+[DOWNLOAD PDF HERE](/downloads/stories/Ashen-Silence_-Sky-Over-Saliana-Final-8_21.pdf)
 
 To M,
 
@@ -32,7 +34,7 @@ Thank you for letting me borrow Dorian.
 
 ― **PC Hodgell, Seeker’s Mask**
 
-# _85 Summer 1011, St. Kathen’s Day Eve_
+# *85 Summer 1011, St. Kathen’s Day Eve*
 
 The Cloudbreaker Ascension departed from a port in south-westside Saliana every day at 5pm. Heavy repulsor plates lifted it into the air, where several engines and rotating upper discs would keep it aloft. It would remain airborne until 3am the next morning. It had followed this pattern for all of its 10 years of operation, without variance. Today, it departed at 5:17pm. A slight difference noticed by almost no one but the most time conscious of passengers. Those few were shut up with complimentary drinks. The one who was still irate, Elise Peryz, was assured that the delay was merely to accommodate a VIP. 
 

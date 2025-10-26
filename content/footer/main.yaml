@@ -1,44 +1,41 @@
-copyright: '© 2025 Shrike Publishing. All rights reserved.'
-tagline: 'Independent tabletop game publisher'
-
+copyright: © 2025 Shrike Publishing. All rights reserved.
+tagline: Independent tabletop game publisher bringing fierce adventures and characterful stories to the page and tabletop.
 sections:
-  - title: 'Quick Links'
+  - title: Quick Links
     links:
-      - label: 'Games'
-        to: '/games'
-      - label: 'Stories'
-        to: '/stories'
-      - label: 'Poetry'
-        to: '/poetry'
-      - label: 'Resources'
-        to: '/resources'
-      - label: 'Blog'
-        to: '/blog'
-      - label: 'About'
-        to: '/about'
-
+      - label: Games
+        to: /games
+      - label: Stories
+        to: /stories
+      - label: Poetry
+        to: /poetry
+      - label: Resources
+        to: /resources
+      - label: Blog
+        to: /blog
+      - label: About
+        to: /about
 social:
-  title: 'Connect'
+  title: Connect
   links:
-    - platform: 'Facebook'
-      url: 'https://www.facebook.com/shrikepublishing'
-      icon: 'lucide:facebook'
-    - platform: 'Twitter'
-      url: 'https://twitter.com/ShrikePublisher'
-      icon: 'lucide:twitter'
-    - platform: 'Instagram'
-      url: 'https://www.instagram.com/shrikepublishing'
-      icon: 'lucide:instagram'
-
+    - platform: Facebook
+      url: https://www.facebook.com/shrikepublishing
+      icon: lucide:facebook
+    - platform: Twitter
+      url: https://twitter.com/ShrikePublisher
+      icon: lucide:twitter
+    - platform: Instagram
+      url: https://www.instagram.com/shrikepublishing
+      icon: lucide:instagram
 shop:
-  title: 'Shop'
+  title: Shop
   links:
-    - platform: 'itch.io'
-      url: 'https://shrikepublishing.itch.io/'
-      icon: 'lucide:gamepad-2'
-    - platform: 'DriveThruRPG'
-      url: 'https://www.drivethrurpg.com/en/product/411680/era-of-silence-starter-kit'
-      icon: 'lucide:book-open'
-    - platform: 'Ko-fi'
-      url: 'https://ko-fi.com/shrikepublishing'
-      icon: 'lucide:coffee'
+    - platform: itch.io
+      url: https://shrikepublishing.itch.io/
+      icon: lucide:gamepad-2
+    - platform: DriveThruRPG
+      url: https://www.drivethrurpg.com/en/product/411680/era-of-silence-starter-kit
+      icon: lucide:book-open
+    - platform: Ko-fi
+      url: https://ko-fi.com/shrikepublishing
+      icon: lucide:coffee

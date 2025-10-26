@@ -1,32 +1,33 @@
 ---
 slug: blood-neon-expansion
-title: Blood Neon Expansion - Corporate Shadows
-description: New expansion adds corporate intrigue and advanced cybernetics to your campaigns.
+title: Blood Neon Expansion - Atomic Shock
+description: Power up and try not to lose yourself in this unleashed ttrpg expansion!
 image: /images/announcements/blood-neon-expansion.jpg
 date: 2024-10-15
 type: expansion
 featured: true
 published: true
-tags: ["Blood Neon", "Expansion", "Cyberpunk", "TTRPG"]
+tags:
+  - Blood Neon
+  - Expansion
+  - Cyberpunk
+  - TTRPG
 ---
 
-# Blood Neon Expansion - Corporate Shadows
+# Blood Neon Expansion - Atomic Shock
 
-Dive deeper into the neon-drenched underworld with *Corporate Shadows*, the first expansion for *Blood Neon*!
+**Get Ready for an Atomic Shock!**
 
-## New Features
+Take the fight to another level! ATOMIC SHOCK is the first expansion for BLOOD NEON. It requires the core rulebook to play it. So go pick that up if you haven’t already, or don’t. We’re not cops.
 
-- **Corporate Factions**: Four new playable corporations with unique abilities
-- **Advanced Cybernetics**: New implants and enhancements for character customization
-- **Mega-Corp Plot**: An epic campaign spanning the entire Neo-Tokyo sprawl
-- **Additional Miniatures**: 8 new 28mm scale miniatures
+:br
 
-## Contents
+The Neon warps all those who fight against it. What becomes of those who lose themselves? The ones who go Neon? What is it like to be ripped apart and put back together on the atomic level? To turn on the Neon Hunters they once called kin? Those who have turned are now as monstrous as the hordes they once battled. You’ll need to take them down just the same.
 
-- 80 new cards
-- 4 corporate faction decks
-- Campaign book with 5 linked scenarios
-- 8 detailed miniatures
-- New terrain tiles
+:br
 
-Pre-orders are now open and will begin shipping in December. Backers get exclusive access to playtest materials!
+What about you? What powers are you willing to lose yourself for, as the corruption takes hold? Maybe you won’t, and you’ll hold fast to the things you knew? Kinda boring, to be honest.
+
+:br
+
+ATOMIC SHOCK is designed for players of all experience levels with BLOOD NEON. It introduces fiendishly corrupted versions of your Stars to serve as enemies. As well, awesome mechanics focusing on corruption, and rewards for finishing combats as fast as possible. New gear gives mid-to-late game players more toys to shred through the Neon, as well as an epic host of consumables and cosmetics to benefit all players! All geared up and itching for a fight? Take on the SLAUGHTERPATH: The Fortress of Records! The time has come, Hunter. The hordes may have grown stronger, but so have you. The only thing that stands between the 11th Realm and annihilation. Fight, die, respawn, and fight some more!

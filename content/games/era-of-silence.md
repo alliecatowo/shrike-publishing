@@ -1,7 +1,8 @@
 ---
 slug: era-of-silence
 title: Era of Silence
-description: A strategic tabletop game set in a dystopian future where silence is the ultimate weapon.
+description: A strategic tabletop game set in a dystopian future where silence
+  is the ultimate weapon.
 date: 2024-01-20
 image: /images/era-of-silence/cover/era-of-silence-cover.png
 price: 29.99
@@ -13,49 +14,53 @@ tags:
   - strategy
   - dystopian
   - card-game
-manualUrl: "https://www.drivethrurpg.com/en/product/411680/era-of-silence-starter-kit"
+manualUrl: https://www.drivethrurpg.com/en/product/411680/era-of-silence-starter-kit
 resources:
-  - title: "Quick Reference Guide"
-    url: "/resources/era-of-silence-quick-reference"
-  - title: "Character Sheets"
-    url: "/resources"
+  - title: Quick Reference Guide
+    url: /resources/era-of-silence-quick-reference
+  - title: Character Sheets
+    url: /resources
 published: true
 ---
 
-# Era of Silence
+# Era of Silence RPG
 
-## Overview
+## Tactical chemipunk action for teams of 3-6 players.
 
-In a world where words can kill, silence is your greatest ally. *Era of Silence* is a strategic card game for 2-4 players where you must navigate a dystopian society where verbal communication has become deadly.
+**1000 years ago, the gods left us.**
 
-## Game Features
+**400 years ago, our world was buried in ash.**
 
-- **Strategic Depth**: Complex mechanics combining resource management, timing, and bluffing
-- **Unique Theme**: Explore a world where the power of speech has been weaponized
-- **Quick Play**: 30-45 minute games perfect for casual and competitive play
-- **Beautiful Art**: Stunning illustrations by renowned fantasy artists
+**Now, we rely on alchemy and each other to survive.** 
 
-## What's Included
+**This is the** ***Era of Silence***
 
-- 120 High-quality cards
-- Rulebook with detailed mechanics
-- Custom dice set
-- Storage box with magnetic closure
+![undefined](https://img.itch.zone/aW1nLzk2ODgzMDEuanBn/original/0BAo%2Fa.jpg)
 
-## Purchase Options
+In the Long Silence, new monsters have shown their faces, from wasteland mutants to zealous fascists—no corner of the world is truly safe. Grab your team and get ready to fight your way across the shattered surface of Vian!
 
-Available now on our store for $29.99 USD plus shipping.
+:br
 
-[Buy Now](/contact)
+*Era of Silence* is built on a roll-low dice pool system called **Thorne**, designed to allow different characters to excel at the same task as the situation changes. Mixed with an interlocking Trait system, the game heavily emphasizes teamwork in a traditional RPG format! 
 
-## License & Open Gaming
+:br ![undefined](https://img.itch.zone/aW1nLzk2ODgyNDguanBn/original/bfLoDC.jpg)
 
-*Era of Silence* is published under the **Open Gaming License (OGL)**. The core mechanics are freely available for others to use, modify, and build upon in their own games. Visit [DriveThruRPG](https://www.drivethrurpg.com/en/product/411680/era-of-silence-starter-kit) for the complete OGL terms and starter kit materials.
+A streamlined character creation process offers **over 15,000+ possible character combinations** that \*\*\*\* can be chosen from in a single sitting. Play a thief with a penchant for machines, a mage with a military background, a combat alchemist, and more! Then grab gear that utilizes a **Template + Mod system**. With just a few choices, a standard weapon turns into a trademark with its own twists and effects. 
 
-## Reviews
+:br
 
-*"Era of Silence captures the tension of a society on the brink perfectly. The mechanics are elegant yet challenging."*
-- Tabletop Gaming Magazine
+The core gameplay of *Era of Silence* is focused on intense, fast combats. A **Stamina-focused action mechanic** and a **State system** allow for tactical freedom in a way that's intuitive for both the Narrator and Protagonist Characters. This coupled with an **HP-less damage mechanic** creates an intense atmosphere where every attack feels lethal and helps combat resolve quickly!
 
-*"A must-play for fans of strategic card games with a unique twist."*
-- Board Game Enthusiast
+:br
+
+The setting, Vian, was once a place of magic, wonder, and purpose, ruled by the Divine Council. 1,000 years since and the world has been shattered and buried in ash by climate disaster. Yet the mortals the gods once ruled over still persist, surviving and even thriving thanks to alchemical technologies. They created shielded city-states with breathable air, potions that can cure wounds almost instantly, and surgeries that can completely reshape the mortal form! Some cling to hope that the gods may yet return, others have turned toward the idea of nations or empire, and some simply try to keep going and protect the ones they love. As for you, you will find your reason to keep going in the *Era of Silence*. 
+
+\---
+
+:br
+
+The *Era of Silence* Starter Kit comes with a digital Core Rulebook, which is a 197-page PDF with hyperlinks between important entries and alternative text for all images. As well as a form-fillable character sheet, optional rules,  quick reference material, and an introductory module.
+
+<https://shrikepublishing.itch.io/era-of-silence>
+
+![undefined](https://img.itch.zone/aW1nLzk2ODgzNTguanBn/original/Gqt2zp.jpg)

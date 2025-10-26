@@ -1,24 +1,25 @@
 ---
-slug: "10minstonorthpoint"
+slug: 10minstonorthpoint
 title: "Ashen Silence: 10 Minutes to North Point"
-description: "A short heist story where two unlikely partners plan to pull off the impossible, robbing a train at near super-sonic speeds before it reaches North Point Station."
-image: "/images/stories/Cover_2.png"
-date: "2022-09-16"
-author: "R. Val"
-type: "free"
+description: A short heist story where two unlikely partners plan to pull off
+  the impossible, robbing a train at near super-sonic speeds before it reaches
+  North Point Station.
+image: /images/stories/Cover_2.png
+date: 2022-09-16
+author: R. Val
+type: free
 tags:
-  - "Stories"
-  - "Ashen Silence"
+  - Stories
+  - Ashen Silence
 published: true
 featured: false
 ---
+
 # Ten Minutes to North Point
 
 ## A story in the Era of Silence
 
 ## by F. Dan O’Neill
-
-  
 
 Three hundred tons of magic-hardened steel screamed down the tracks into the station’s waiting arms. A ripple of energy slid through the air, caught the train like a glove, and scarred its chrome flanks with laser-straight scorch marks. Momentum fought against the resonant brakes--a heartbeat, two. Then, with a last half-screech half-sigh, the train shuddered to a halt.
 
@@ -138,7 +139,7 @@ Royce stared out the window at the empty platform. He could almost see as well a
 
 Nata grinned.
 
-Royce raised a finger. “An _expensive_ car.”
+Royce raised a finger. “An *expensive* car.”
 
 \*\*\*\*\*
 
@@ -256,7 +257,7 @@ Windowless, dimly lit, the cabin’s design assumed its occupants would be spend
 
 She was in the rearmost passenger car, adjacent through a closed door to the baggage compartment. The forward door, meanwhile, was open, allowing a view down the entire length of the flashtrack, although it faded into obscurity long before the other end. Elek eyes did not see any better in the dark.
 
-Most of Nata’s fellow riders were not mortal at all, not in the typical sense. Tall, broad, fungus-limbed, with fruiting bodies that blossomed into the suggestion of a head. The fact that they wore clothes marked them as Sporeborn, the most sapient of their kind. Were they unconscious, or was there just nothing here worth reacting to? Nata shifted in her seat. If one of _them_ jumped out of the train, they’d probably be fine.
+Most of Nata’s fellow riders were not mortal at all, not in the typical sense. Tall, broad, fungus-limbed, with fruiting bodies that blossomed into the suggestion of a head. The fact that they wore clothes marked them as Sporeborn, the most sapient of their kind. Were they unconscious, or was there just nothing here worth reacting to? Nata shifted in her seat. If one of *them* jumped out of the train, they’d probably be fine.
 
 The insignia on their jerseys declared them sporeball players. A dozen. The Primas-ika next to her wore an identical jersey. The coach? Manager? The Primas-ika’s clawed hands cradled a fleshy white orb, which writhed gently like a sleeping thing. Nata’Gan was no sports fan--was this a sporeball?
 
@@ -270,7 +271,7 @@ Royce pressed himself against the curved wall of the baggage compartment. The gu
 
 Nonlethal. Supposedly.
 
-The guard leaned up against the compartment door. Human. Bored, checking something on a handheld screen. Holstered pistol, but the real danger was the alarm lever on the wall beside her. The Gods only knew what kind of response _that_ would bring.
+The guard leaned up against the compartment door. Human. Bored, checking something on a handheld screen. Holstered pistol, but the real danger was the alarm lever on the wall beside her. The Gods only knew what kind of response *that* would bring.
 
 From his hiding spot, Royce could actually see the crate he was here to steal. It was one among dozens, stacked ceiling-high in a way that turned the cargo space into a maze. Just like Nata had said: standard Wakenfern design, unmarked except for the shipping label. Where did she get the intel?
 

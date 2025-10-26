@@ -8,8 +8,11 @@ game: era-of-silence
 type: story-pdf
 download: /downloads/stories/Ashen-Silence_-Bearer-of-the-True-Sight-8_21-Fixed.pdf
 published: true
-tags: ["Ashen Silence", "Bearer of the True Sight", "Story", "PDF"]
+tags:
+  - Ashen Silence
+  - Bearer of the True Sight
+  - Story
+  - PDF
 ---
 
 [Download PDF](/downloads/stories/Ashen-Silence_-Bearer-of-the-True-Sight-8_21-Fixed.pdf)
-
