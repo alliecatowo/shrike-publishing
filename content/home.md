@@ -12,18 +12,18 @@ navigation: false
 ::scroll-down
 ::
 
-::u-page-section{title="Our Impact" description="Creating stories that resonate with players worldwide" class="py-4"}
-  :::u-page-grid{class="grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"}
-    ::::u-page-feature{icon="i-lucide-book-open" title="50K+ Stories Created" description="Unique narratives crafted by our community" orientation="vertical"}
+::u-page-section{title="Our Impact" description="Creating stories that resonate with players worldwide"}
+  :::u-page-grid{:cols='{"default":1,"sm":2,"lg":4}' class="gap-6"}
+    ::::content-stat-card{title="50K+" description="Stories Created" icon="i-lucide-book-open" color="primary"}
     ::::
 
-    ::::u-page-feature{icon="i-lucide-users" title="12K+ Active Players" description="Engaged community members worldwide" orientation="vertical"}
+    ::::content-stat-card{title="12K+" description="Active Players" icon="i-lucide-users" color="secondary"}
     ::::
 
-    ::::u-page-feature{icon="i-lucide-gamepad-2" title="8 Published Games" description="Professional tabletop experiences" orientation="vertical"}
+    ::::content-stat-card{title="8" description="Published Games" icon="i-lucide-gamepad-2" color="success"}
     ::::
 
-    ::::u-page-feature{icon="i-lucide-star" title="4.9★ Average Rating" description="Consistently high-quality content" orientation="vertical"}
+    ::::content-stat-card{title="4.9★" description="Average Rating" icon="i-lucide-star" color="warning"}
     ::::
   :::
 ::
