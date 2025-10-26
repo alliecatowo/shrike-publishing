@@ -26,3 +26,4 @@ logs
 # Large files and archives
 *.zip
 public/images/archive/
+scraped-site/
