@@ -19,7 +19,7 @@ title: Shrike Publishing
   Play the Games!
   :::
 
-  :::u-button{size="lg" to="/stories" trailing-icon="i-lucide-play"}
+  :::u-button{size="lg" to="/stories" trailing-icon="i-lucide-book"}
   Read the Stories!
   :::
 ::
