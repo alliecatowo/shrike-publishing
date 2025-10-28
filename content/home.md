@@ -9,8 +9,9 @@ navigation: false
 class: bg-gradient-to-br from-primary/15 via-primary/5 to-secondary/10
   dark:from-primary/25 dark:via-primary/10 dark:to-secondary/20
 description: Baltimore-based storytelling studio creating tabletop games and
-  literature. Our output focuses on telling stories of action and characters
-  across tabletop games, written fiction, and other media!
+  literature. Our output focuses on telling stories of fierce action and
+  contemplative characters across tabletop games, written fiction, and other
+  media!
 title: Shrike Publishing
 ---
 #links
@@ -18,7 +19,7 @@ title: Shrike Publishing
   Play the Games!
   :::
 
-  :::u-button{size="lg" to="/games" trailing-icon="i-lucide-play"}
+  :::u-button{size="lg" to="/stories" trailing-icon="i-lucide-play"}
   Read the Stories!
   :::
 ::
@@ -42,7 +43,7 @@ title: Featured Stories
 
 ::u-page-section
 ---
-description: Creating stories that resonate with players worldwide
+description: Creating stories that resonate with audiences worldwide.
 title: Our Impact
 ---
   :::u-page-grid{.gap-6 :cols='{"default":1,"sm":2,"lg":4}'}
@@ -102,7 +103,7 @@ We respect your privacy. Unsubscribe at any time.
 ---
 class: py-4
 description: Testimonials from our community
-title: What Players Say
+title: What Our Audience Says
 ---
   :::u-page-grid{.grid-cols-1.md:grid-cols-3.gap-6}
     ::::testimonial
@@ -110,7 +111,7 @@ title: What Players Say
     avatar: SJ
     ---
     #title
-    Tactical design that feels good.
+    Tactical Design That Feels Good
     
     #quote
     Era of Silence RPG completely changed how I think about tactical combat-driven games.
