@@ -15,8 +15,26 @@ title: Shrike Publishing
 ---
 #links
   :::u-button{size="lg" to="/games" trailing-icon="i-lucide-play"}
-  Explore Our Games
+  Play the Games!
   :::
+
+  :::u-button{size="lg" to="/games" trailing-icon="i-lucide-play"}
+  Read the Stories!
+  :::
+::
+
+::featured-games
+---
+description: Discover our latest tabletop adventures
+title: Featured Games
+---
+::
+
+::featured-games
+---
+description: Explore the world of the Long Silence.
+title: Featured Stories
+---
 ::
 
 ::scroll-down
@@ -31,25 +49,25 @@ title: Our Impact
     ::::content-stat-card
     ---
     color: primary
-    description: Stories Created
+    description: Words Written
     icon: i-lucide-book-open
-    title: 50K+
+    title: 100k+
     ---
     ::::
   
     ::::content-stat-card
     ---
     color: secondary
-    description: Active Players
+    description: Audience
     icon: i-lucide-users
-    title: 12K+
+    title: 100+
     ---
     ::::
   
     ::::content-stat-card
     ---
     color: success
-    description: Published Games
+    description: Published Game Products
     icon: i-lucide-gamepad-2
     title: "8"
     ---
@@ -64,13 +82,6 @@ title: Our Impact
     ---
     ::::
   :::
-::
-
-::featured-games
----
-description: Discover our latest tabletop adventures
-title: Featured Games
----
 ::
 
 ::content-newsletter-cta
@@ -99,13 +110,13 @@ title: What Players Say
     avatar: SJ
     ---
     #title
-    Absolutely incredible storytelling
+    Tactical design that feels good.
     
     #quote
-    Era of Silence completely changed how I think about narrative-driven games.
+    Era of Silence RPG completely changed how I think about tactical combat-driven games.
     
     #author
-    Sarah Johnson, Game Master
+    Emily "Cavegirl" Allen, Game Designer
     ::::
   
     ::::testimonial
@@ -113,13 +124,13 @@ title: What Players Say
     avatar: MC
     ---
     #title
-    Best investment in gaming
+    Did Mr. Torgue Make This Game?
     
     #quote
-    Blood Neon has become our weekly ritual. The mechanics are innovative and the story keeps us engaged.
+    Furious and intense, Blood Neon delivers on everything you could want out of a carnage-soaked DOOMlike TTRPG.
     
     #author
-    Mike Chen, Player
+    Michael Burnam-Fink, Critic
     ::::
   
     ::::testimonial
@@ -127,13 +138,13 @@ title: What Players Say
     avatar: AR
     ---
     #title
-    Professional quality
+    Quality Products
     
     #quote
-    The production value rivals anything from major publishers. Truly impressive work.
+    You only get the best when you go with Shrike!
     
     #author
-    Alex Rivera, Content Creator
+    Charlotte, Consumer
     ::::
   :::
 ::
@@ -147,35 +158,35 @@ title: Recent Releases
   :::timeline-section{:default-value='3' color="primary"}
     ::::timeline-item
     ---
-    date: December 2024
-    description: Our latest psychological horror game exploring themes of
-      surveillance and paranoia
+    date: August 2025
+    description: Our latest ttrpg. Team up with friends and steal the famous model Kilogram!
     icon: i-lucide-eye
-    title: The Silent Observer
+    title: Get In Loser, We're Going to Steal the Kilogram
     ---
     ::::
   
     ::::timeline-item
     ---
-    date: November 2024
-    description: Comprehensive guidebook with expanded lore and gameplay options
+    date: May 2025
+    description: Preview of the Era of Silence novel showcasing action in the Long Silence.
     icon: i-lucide-book
-    title: "Era of Silence: Complete Guide"
+    title: "Era of Silence: Pit of Heaven- The Voidspire Job"
     ---
     ::::
   
     ::::timeline-item
     ---
-    date: October 2024
-    description: New city scenarios and character options for cyberpunk adventures
+    date: April 2025
+    description: New standalone short story  that follows Alice on a day in the life
+      in New Bekton
     icon: i-lucide-zap
-    title: "Blood Neon: Urban Expansion"
+    title: "Era of Silence: Vulture's City"
     ---
     ::::
   
     ::::timeline-item
     ---
-    date: September 2024
+    date: February 2025
     description: Started our monthly newsletter with exclusive behind-the-scenes content
     icon: i-lucide-mail
     title: Newsletter Launch
