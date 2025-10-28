@@ -1,23 +1,28 @@
 ---
-slug: "memory-leak-2"
-title: "2. Waster"
+slug: memory-leak-2
+title: 2. Waster
 description: ""
-author: "R. Val"
-type: "free"
-tags: ["Memory Leak", "Ashen Silence", "Sci-Fi", "Cyberpunk"]
-series: "Memory Leak"
+author: R. Val
+type: free
+tags:
+  - Memory Leak
+  - Ashen Silence
+  - Sci-Fi
+  - Cyberpunk
+series: Memory Leak
 seriesOrder: 2
 seriesTotal: 4
 published: true
 featured: false
 ---
+
 ![](https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/28079be4-08fb-4ce8-9c52-7fa854e8d1f8/C03EDD96-4B29-4935-A73F-FB872DD16B1D.jpeg)
 
 ## Ashen Silence: Memory Leak 
 
-Previous: [1\. Mercenary](talonborne/memory-leak.html)
+Previous: [1. Mercenary](talonborne/memory-leak.html)
 
-## 2\. Waster 
+## 2. Waster 
 
 Clearing customs was never easy, especially when carrying gear. Imperial authorities ran you through every obstacle they could. Bureaucracy like a multilayered puzzle box with a solution that was lost ages ago. Maybe when the gods fell silent. Even its owners didn’t know the answer, leaving only approximate answers to survive into today. Most of them involved putting crystal coins in the hands of the right official. 
 
@@ -165,6 +170,6 @@ He didn’t say anything, just stormed inside. 
 
 I called to everyone, “We’re not staying here! Get your things.” 
 
-## [3\. Thief](memory-leak-3.html)  
+## [3. Thief](memory-leak-3.html)
 
 ## [RETURN TO MAIN PAGE](talonborne/memory-leak.html)
