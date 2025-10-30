@@ -1,12 +1,11 @@
 ---
 slug: steal-the-kilogram
 title: Get in Loser, We're Going to Steal the Kilogram
-description: A chaotic heist game about stealing the international prototype
-  kilogram from a climate-controlled vault in Paris. For 2-5 players who believe
-  measurement should belong to everyone.
-date: 2024-11-10
-image: /ShrikeLogoNov2021.png
-price: 15
+description: "A chaotic heist game about one of two teams stealing the most
+  famous of weights. "
+date: 2025-09-09T00:00:00.000Z
+image: ""
+price: 7.5
 currency: USD
 available: true
 featured: false
@@ -16,7 +15,7 @@ tags:
   - comedy
   - one-shot
   - print-and-play
-manualUrl: https://shrikepublishing.itch.io/
+manualUrl: https://shrikepublishing.itch.io/get-in-loser-were-stealing-the-kilogram
 resources:
   - title: Print & Play Version
     url: https://shrikepublishing.itch.io/
