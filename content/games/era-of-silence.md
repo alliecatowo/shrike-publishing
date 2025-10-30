@@ -1,11 +1,10 @@
 ---
 slug: era-of-silence
 title: Era of Silence
-description: A strategic tabletop game set in a dystopian future where silence
-  is the ultimate weapon.
-date: 2024-01-20
+description: Team-focused tactical action in the gods' Long Silence.
+date: 2022-09-29T00:00:00.000Z
 image: /images/era-of-silence/cover/era-of-silence-cover.png
-price: 29.99
+price: 15
 currency: USD
 available: true
 featured: true
