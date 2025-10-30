@@ -19,6 +19,7 @@ resources:
   - title: GM Screen
     url: /resources
 published: true
+manualUrl: https://radmad.itch.io/blood-neon
 ---
 
 # Blood Neon
