@@ -1,10 +1,10 @@
 ---
 slug: blood-neon
 title: Blood Neon
-description: Cyberpunk adventure in the neon-lit streets of Neo-Tokyo.
-date: 2024-03-15
+description: A brutal vaporwave nightmare ttrpg.
+date: 2022-07-31T00:00:00.000Z
 image: /images/blood-neon/cover/blood-neon-cover.jpg
-price: 24.99
+price: 10
 currency: USD
 available: true
 featured: true
