@@ -31,9 +31,9 @@ title: Featured Games
 ---
 ::
 
-::featured-games
+::featured-stories
 ---
-description: Explore the world of the Long Silence.
+description: Read our latest published works
 title: Featured Stories
 ---
 ::
@@ -212,11 +212,4 @@ Announcements
 
 #announcements-link-text
 View All
-::
-
-::featured-stories
----
-description: Read our latest published works
-title: Featured Stories
----
 ::
