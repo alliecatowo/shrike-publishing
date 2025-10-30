@@ -8,8 +8,11 @@ game: era-of-silence
 type: story-pdf
 download: /downloads/stories/Era-of-Silence_-Vultures-City.pdf
 published: true
-tags: ["Era of Silence", "Vulture's City", "Story", "PDF"]
+tags:
+  - Era of Silence
+  - Vulture's City
+  - Story
+  - PDF
 ---
 
 [Download PDF](/downloads/stories/Era-of-Silence_-Vultures-City.pdf)
-
