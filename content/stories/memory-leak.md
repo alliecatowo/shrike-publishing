@@ -25,7 +25,7 @@ published: true
 
 R. Val
 
-[DOWNLOAD PDF HERE](file:///C:/Users/robin/Downloads/Story%2010%20Minutes%20to%20North%20Point%20Fixed.docx.pdf)
+[DOWNLOAD PDF HERE](file:///C:/Users/robin/Downloads/true%20\(1\).pdf)
 
 Dedicated to June, beloved friend and fierce ally.
 
