@@ -1,6 +1,6 @@
 ---
 slug: 10minstonorthpoint
-title: "Ashen Silence: 10 Minutes to North Point"
+title: "Era of Silence: 10 Minutes to North Point"
 description: A short heist story where two unlikely partners plan to pull off
   the impossible, robbing a train at near super-sonic speeds before it reaches
   North Point Station.
@@ -10,14 +10,14 @@ author: R. Val
 type: free
 tags:
   - Stories
-  - Ashen Silence
+  - Era of Silence
 published: true
 featured: false
 ---
 
 # Ten Minutes to North Point
 
-## A story in the Era of Silence
+## A heist at epic speeds in the Era of Silence.
 
 ## by F. Dan O’Neill
 
