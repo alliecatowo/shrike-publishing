@@ -1,23 +1,28 @@
 ---
-slug: "memory-leak-end"
-title: "4. Soldier & Epilogue"
+slug: memory-leak-end
+title: 4. Soldier & Epilogue
 description: ""
-author: "R. Val"
-type: "free"
-tags: ["Memory Leak", "Ashen Silence", "Sci-Fi", "Cyberpunk"]
-series: "Memory Leak"
+author: R. Val
+type: free
+tags:
+  - Memory Leak
+  - Ashen Silence
+  - Sci-Fi
+  - Cyberpunk
+series: Memory Leak
 seriesOrder: 4
 seriesTotal: 4
 published: true
 featured: false
 ---
+
 ![](https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/247a1527-e67d-459c-bea7-1e7fed0449ab/C03EDD96-4B29-4935-A73F-FB872DD16B1D.jpeg)
 
 #  Ashen Silence: Memory Leak
 
-### Previous: [3\. Thief](memory-leak-3.html)
+### Previous: [3. Thief](https://shrikepublishing.com/stories/memory-leak-3)
 
-## 4\. Soldier
+# 4. Soldier
 
 Wasteland gear was cumbersome and unpleasant to be in, but a sealed riot system was something else. Even with the armor’s motorized movement assistance, every action took a bit more effort than you would expect.
 
@@ -119,7 +124,7 @@ While we waited, I pondered exit routes. No real opposition left. Any support th
 
 My mind went to the fantastic loot that was all over this house. A grin stretched across my face. We were going to get fucking paid. 
 
-## 5\. Epilogue- Scavver
+## 5. Epilogue- Scavver
 
 My radio clock woke me up to the familiar chaos of Dr. Swell’s morning show. I wasn’t sure when, and if, he ever slept, honestly. I moaned, rubbed my eyes, and sat up. The side where I’d been shot ached a bit, and was plenty red still. Probably would be for a long time.
 
@@ -137,4 +142,4 @@ I stepped out into the rest of my apartment. Like the rest of The Stacks, it was
 
 I picked it up and set it gently in my bag. The front hatch to my place hissed as it unsealed. I took a deep breath, and I got back to work. 
 
-## [RETURN TO MAIN PAGE](talonborne/memory-leak.html)
+## [RETURN TO MAIN PAGE](https://shrikepublishing.com/stories/memory-leak)

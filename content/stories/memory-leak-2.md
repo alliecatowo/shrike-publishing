@@ -20,7 +20,7 @@ featured: false
 
 ## Ashen Silence: Memory Leak 
 
-Previous: [1. Mercenary](talonborne/memory-leak.html)
+Previous: [1. Mercenary]()
 
 ## 2. Waster 
 
@@ -170,6 +170,6 @@ He didn’t say anything, just stormed inside. 
 
 I called to everyone, “We’re not staying here! Get your things.” 
 
-## [3. Thief](memory-leak-3.html)
+## [3. Thief](https://shrikepublishing.com/stories/memory-leak-3)
 
-## [RETURN TO MAIN PAGE](talonborne/memory-leak.html)
+## [RETURN TO MAIN PAGE](https://shrikepublishing.com/stories/memory-leak)

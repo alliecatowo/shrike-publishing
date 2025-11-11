@@ -1,23 +1,28 @@
 ---
-slug: "memory-leak-3"
-title: "3. Thief"
+slug: memory-leak-3
+title: 3. Thief
 description: ""
-author: "R. Val"
-type: "free"
-tags: ["Memory Leak", "Ashen Silence", "Sci-Fi", "Cyberpunk"]
-series: "Memory Leak"
+author: R. Val
+type: free
+tags:
+  - Memory Leak
+  - Ashen Silence
+  - Sci-Fi
+  - Cyberpunk
+series: Memory Leak
 seriesOrder: 3
 seriesTotal: 4
 published: true
 featured: false
 ---
+
 ![](https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/673a8d09-66b2-4135-a4ef-b5fc71abc813/C03EDD96-4B29-4935-A73F-FB872DD16B1D.jpeg)
 
 # Ashen Silence: Memory Leak
 
-### [Previous: 2. Waster](memory-leak-2.html)
+### [Previous: 2. Waster](https://shrikepublishing.com/stories/memory-leak-2/)
 
-## 3\. Thief
+## 3. Thief
 
 We made camp in a concealed crevasse we found. Celadon green rays of moonlight reached down and graced us. I was pleased with such a good omen. We packed up as soon as it was light enough to see without extra lights. 
 
@@ -349,6 +354,6 @@ Temperance looked at the lockers, opened by the other two. Arina fished out a he
 
 I flashed my teeth. “We go loud.”
 
-## [4\. Soldier & Epilogue](memory-leak-end.html)
+## [4. Soldier & Epilogue](/announcements)
 
-## [RETURN TO MAIN PAGE](talonborne/memory-leak.html)
+## [RETURN TO MAIN PAGE](https://shrikepublishing.com/stories/memory-leak)

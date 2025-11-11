@@ -1,28 +1,31 @@
 ---
-slug: "memory-leak"
+slug: memory-leak
 title: "Era of Silence: Memory Leak"
-description: "Join Alice, a woman born unable to receive alchemical assistance, as she and her team venture to the heart of the wastelands. The mission? Steal damning evidence out of their target's head.    Novella    Genre- Thriller"
-image: "/images/stories/C03EDD96-4B29-4935-A73F-FB872DD16B1D.jpeg"
-date: "2023-09-24"
-author: "R. Val"
-type: "free"
+description: Join Alice, a woman born unable to receive alchemical assistance,
+  as she and her team venture to the heart of the wastelands. The mission? Steal
+  damning evidence out of their target's head.    Novella    Genre- Thriller
+image: /images/stories/C03EDD96-4B29-4935-A73F-FB872DD16B1D.jpeg
+date: 2023-09-24
+author: R. Val
+type: free
 featured: true
 tags:
-  - "Ashen Silence"
-  - "Stories"
-  - "Talonborne"
-series: "Memory Leak"
+  - Ashen Silence
+  - Stories
+  - Talonborne
+series: Memory Leak
 seriesOrder: 1
 seriesTotal: 4
 published: true
 ---
+
 # Memory Leak
 
 **A wasteland thriller in the Era of Silence**
 
 R. Val
 
-[DOWNLOAD PDF HERE](/downloads/stories/Ashen-Silence_-Memory-Leak-Final.pdf)
+[DOWNLOAD PDF HERE](file:///C:/Users/robin/Downloads/Story%2010%20Minutes%20to%20North%20Point%20Fixed.docx.pdf)
 
 Dedicated to June, beloved friend and fierce ally.
 
@@ -38,12 +41,11 @@ Thank you for helping with editing and feedback, and every other magnificent thi
 
 ## TABLE OF CONTENTS
 
-1.  [Mercenary](memory-leak.html)
-2.  [Waster](../memory-leak-2.html)
-3.  [Thief](../memory-leak-3.html)
-4.  [Soldier](../memory-leak-end.html)
-5.  [Epilogue](../memory-leak-end.html)
-    
+1. [Mercenary](https://shrikepublishing.com/stories/memory-leak)
+2. [Waster](https://shrikepublishing.com/stories/memory-leak-2)
+3. [Thief](https://shrikepublishing.com/stories/memory-leak-3)
+4. [Soldier](https://shrikepublishing.com/stories/memory-leak-end)
+5. [Epilogue](https://shrikepublishing.com/stories/memory-leak-end)
 
 **1. Mercenary**
 
@@ -85,8 +87,8 @@ She started pointing to her right and went around the table counterclockwise. 
 
 “Reverend Temperance, it’s an honor!” The yasre grinned and made a sitting-bowing gesture.
 
-Then me, “Alice! Oren spoke so highly of you.”  
-  
+Then me, “Alice! Oren spoke so highly of you.”
+
 “Vulture works fine.” I corrected. The table looked at me. I shrugged. “It’s what they call me.”
 
 “OK, Vulture.” Z continued, “Well you all, down to business. I need something stolen, though the problem is, the owner sees this coming.” 
@@ -299,4 +301,4 @@ I looked at the door again, then looked at her. “We’re meeting at the Hungry
 
 She smiled like she’d just won the best prize at a festival booth.
 
-## [2\.](https://shriketabletop.com/memory-leak-2) [2\. Waster](../memory-leak-2.html)
+## [2. Waster](https://shrikepublishing.com/stories/memory-leak-2)
