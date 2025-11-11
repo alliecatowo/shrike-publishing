@@ -1,36 +1,35 @@
 ---
-slug: "quiet-road"
+slug: quiet-road
 title: "Ashen Silence: Quiet Road"
-description: "A wasteland journey plagued by a pursuing revenant. Will you survive?"
-image: "/images/stories/the-rider.png"
-date: "2023-12-05"
-author: "R. Val"
-type: "free"
+description: A wasteland journey plagued by a pursuing revenant. Will you survive?
+image: /images/stories/the-rider.png
+date: 2023-12-05
+author: R. Val
+type: free
 featured: true
 tags:
-  - "Ashen Silence"
-  - "Talonborne"
-  - "Stories"
+  - Ashen Silence
+  - Talonborne
+  - Stories
 published: true
 ---
+
 # **Quiet Road**
 
-## **_Surreal horror in the Era of Silence_**
+## ***Surreal horror in the Era of Silence***
 
 ### R. Val
 
-[Download PDF Here](/downloads/stories/Ashen-Silence_-Quiet-Road-Final.pdf)  
-  
+[Download PDF Here](file:///C:/Users/robin/Downloads/true%20\(4\).pdf)
 
-**_To my sister, Marilynn. You were always the strongest of the two of us. You have earned your victories tenfold._**
+***To my sister, Marilynn. You were always the strongest of the two of us. You have earned your victories tenfold.***
 
 \*\*\*\*\*
 
-**_“Because the pale horse has been saddled, and the rider has put a foot in the stirrup.”_**
+***“Because the pale horse has been saddled, and the rider has put a foot in the stirrup.”***
 
-**_― Arkady & Boris Strugatsky, Roadside Picnic_**
+***― Arkady & Boris Strugatsky, Roadside Picnic***
 
-  
 \*\*\*\*\*
 
 You were dead the second you took the job, though you didn’t know it yet. 

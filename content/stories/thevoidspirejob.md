@@ -1,28 +1,31 @@
 ---
-slug: "thevoidspirejob"
+slug: thevoidspirejob
 title: "Era of Silence: The Voidspire Job"
-description: "A high-action preview of the forthcoming novel Era of Silence: The Pit of Heaven."
-image: "/images/stories/banner.png"
-date: "2025-05-18"
-author: "R. Val"
-type: "free"
-tags: ["Era of Silence", "Sci-Fi", "Cyberpunk"]
+description: "A high-action preview of the forthcoming novel Era of Silence: The
+  Pit of Heaven."
+image: /images/stories/banner.png
+date: 2025-05-18
+author: R. Val
+type: free
+tags:
+  - Era of Silence
+  - Sci-Fi
+  - Cyberpunk
 published: true
 featured: false
 ---
+
 The following is a preview chapter from the first part of the forthcoming novel, Era of Silence: The Pit of Heaven. By this point in the story our heroes have the goods they need to prepare their journey, except for one thing, a cipher journal held by their leader’s treacherous cousin. The catch? He’s fled halfway up to orbit in a corporate town up the world’s first working space elevator. Mercenaries will need to be dispatched to retrieve it, including the protagonist’s daughter, Arina.
 
 Content warning for intense violence, transphobia, assisted ritual suicide, body modification, fungus, and more.
 
 R. Val
 
-[PDF HERE](/downloads/stories/4-Voidspire-Job.pdf)
-
-  
+[PDF HERE](file:///C:/Users/robin/Downloads/true%20\(4\).pdf)
 
 Art by Moss Sugarmountains
 
-# **4\. The Voidspire Job**
+# **4. The Voidspire Job**
 
 The poster looked exactly as she had imagined it would. Bright pastel pinks gently faded into dark borders, dotted with sparkles and cartoon depictions of music notes. In the center of the frame stood a short, metal woman with artificial pink hair, wearing a white tracksuit. On either side she was flanked by tall, striking dancers posing under the stage lights that somehow glowed and changed color on the paper. The text’s mix of fonts gave the eye something to digest anywhere it looked. “STARCAST and LazBotanic Present: Chytri Ganoda! Live in concert, one night only. PAS Stadium, Summer 52nd. Tickets on sale now!”
 
