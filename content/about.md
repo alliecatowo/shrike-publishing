@@ -18,26 +18,35 @@ ui:
   Explore Our Games
   :::
 
-  :::u-button{size="lg" to="/contact" trailing-icon="i-lucide-mail" variant="outline"}
-  Work With Us
+  :::u-button{size="lg" to="https://www.patreon.com/ShrikePublishing" target="_blank" trailing-icon="i-lucide-heart" variant="outline"}
+  Support Us
   :::
 ::
 
 ::u-page-section
 ---
 title: Our Story
-class: pt-0
+class: pt-0 max-w-6xl mx-auto px-4 py-6
 ---
 ::u-card
-Founded in 2019 as Shrike Tabletop (DBA Shrike Publishing), this Baltimore-based storytelling studio is the work of Robin Val, creating left-wing science fantasy for ages 16-60. What started as a passion project has grown into a catalog of innovative tabletop games, fiction, and poetry that challenges players and readers to think differently.
+### A Baltimore-Based Storytelling Studio
 
-The name comes from the shrike bird, known for its cunning hunting techniques—a perfect metaphor for the strategic, intelligent game design you'll find here. Whether it's Era of Silence, Blood Neon, or the chaotic heist of Steal the Kilogram, every game is crafted to tell meaningful stories and create memorable experiences.
+Founded in 2019 as **Shrike Tabletop** (DBA Shrike Publishing), this Baltimore-based storytelling studio is the work of Robin Val, creating left-wing science fantasy for ages 16-60. What started as a passion project has grown into a **catalog of innovative tabletop games, fiction, and poetry** that challenges players and readers to think differently.
+
+### The Name
+
+The name comes from the **shrike bird**, known for its cunning hunting techniques—a perfect metaphor for the strategic, intelligent game design you'll find here. Whether it's **Era of Silence**, **Blood Neon**, or the chaotic heist of **Steal the Kilogram**, every game is crafted to tell meaningful stories and create memorable experiences.
+
+### Our Approach
+
+We believe in games that make you think, stories that challenge perspectives, and experiences that stay with you long after the session ends. Our work combines tactical depth with narrative richness, creating spaces for both fierce action and contemplative character moments.
 ::
 ::
 
 ::u-page-section
 ---
 title: Our Values
+class: max-w-6xl mx-auto px-4 py-6
 ---
 ::u-page-grid{:cols="{ default: 1, md: 3 }" class="gap-6"}
 :::value-card{title="Innovation" icon="i-lucide-lightbulb" color="blue"}
@@ -57,12 +66,18 @@ Every product undergoes rigorous testing and iteration to ensure the highest qua
 ::u-page-section
 ---
 title: About Robin
+class: max-w-6xl mx-auto px-4 py-6
 ---
-::about-user{avatar-src="/path-to-avatar.jpg" name="Robin Val"}
-Robin Val (she/her) is a Baltimore-based game designer, writer, and creator. With a focus on narrative-driven tabletop experiences, Robin brings years of experience in game mechanics, storytelling, and world-building to every project.
+::about-user{avatar-src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop" name="Robin Val"}
+### Robin Val (she/her)
 
-When not designing games or writing stories, Robin can be found exploring Baltimore's creative community, reading science fiction, or advocating for more inclusive and progressive narratives in gaming.
-::
+**Game Designer, Writer, and Creator**
+
+Robin Val is a Baltimore-based game designer, writer, and creator specializing in narrative-driven tabletop experiences. With years of experience in **game mechanics, storytelling, and world-building**, Robin crafts games that challenge conventional thinking and push creative boundaries.
+
+Her work explores themes of **action and contemplation**, combining tactical combat systems with rich character development. From the dystopian streets of **Blood Neon** to the post-apocalyptic landscapes of **Era of Silence**, each project reflects a commitment to meaningful storytelling and innovative design.
+
+When not designing games or writing stories, Robin can be found exploring Baltimore's creative community, reading science fiction, or advocating for more **inclusive and progressive narratives** in gaming.
 ::
 
 ::u-page-cta{title="Want to work with us?" description="We're always interested in collaborating with talented creators, retailers, and fellow publishers." :links='[{"label":"Get in Touch","to":"/contact","icon":"i-lucide-mail","size":"lg"}]'}

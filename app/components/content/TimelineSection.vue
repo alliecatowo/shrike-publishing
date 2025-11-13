@@ -1,11 +1,15 @@
 <template>
-  <UTimeline
-    :items="timelineItems"
-    :color="color"
-    :size="size"
-    :default-value="defaultValue"
-    :orientation="orientation"
-  />
+  <div class="max-w-4xl mx-auto py-8">
+    <UCard>
+      <UTimeline
+        :items="timelineItems"
+        :color="color"
+        :size="size"
+        :default-value="defaultValue"
+        :orientation="orientation"
+      />
+    </UCard>
+  </div>
 </template>
 
 <script setup lang="ts">

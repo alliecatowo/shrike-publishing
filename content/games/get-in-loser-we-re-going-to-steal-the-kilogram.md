@@ -4,11 +4,13 @@ title: Get in Loser, We're Going to Steal the Kilogram
 description: "A chaotic heist game about one of two teams stealing the most
   famous of weights. "
 date: 2025-09-09T00:00:00.000Z
-image: ""
+image: /bafkreiahgxziaisasw5ec2xoi27d2mk5k5s2ye3fk7rjr4vkwpwngumtsi.jpg
+thumbnail: /bafkreiahgxziaisasw5ec2xoi27d2mk5k5s2ye3fk7rjr4vkwpwngumtsi.jpg
+coverImage: /bafkreiahgxziaisasw5ec2xoi27d2mk5k5s2ye3fk7rjr4vkwpwngumtsi.jpg
 price: 7.5
 currency: USD
 available: true
-featured: false
+featured: true
 tags:
   - tabletop
   - heist

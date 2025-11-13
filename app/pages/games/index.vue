@@ -134,7 +134,7 @@ const { data: games } = await useAsyncData('games-page', () =>
 
 // SEO
 useSeoMeta({
-  title: pageContent.value?.games?.meta?.title || 'Games - Shrike Publishing',
-  description: pageContent.value?.games?.meta?.description || 'Explore our collection of tabletop games.'
+  title: pageContent.value?.games?.meta?.title,
+  description: pageContent.value?.games?.meta?.description
 })
 </script>

@@ -2,10 +2,11 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
+  // eslint-disable-next-line perfectionist/sort-objects
   modules: [
+    '@nuxt/ui',      // Must be before @nuxt/content for prose components
     '@nuxt/content',
     '@nuxt/eslint',
-    '@nuxt/ui',
     '@nuxt/image',
     '@nuxt/fonts',
     '@nuxt/icon',

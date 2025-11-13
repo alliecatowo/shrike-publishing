@@ -110,7 +110,54 @@ export default defineContentConfig({
       schema: z.object({
         title: z.string().optional(),
         description: z.string().optional(),
-        navigation: z.boolean().default(false)
+        navigation: z.boolean().default(false),
+        collections: z.any().optional(),
+        testimonials: z.array(z.object({
+          name: z.string(),
+          title: z.string(),
+          company: z.string().optional(),
+          avatar: z.string(),
+          heading: z.string(),
+          quote: z.string()
+        })).optional()
+      })
+    }),
+    about: defineCollection({
+      type: 'page',
+      source: 'about.md',
+      schema: z.object({
+        title: z.string(),
+        description: z.string()
+      })
+    }),
+    contact: defineCollection({
+      type: 'page',
+      source: 'contact.md',
+      schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        business: z.object({
+          address: z.object({
+            name: z.string(),
+            line1: z.string(),
+            line2: z.string(),
+            line3: z.string()
+          }),
+          hours: z.array(z.string())
+        }).optional()
+      })
+    }),
+    licenses: defineCollection({
+      type: 'page',
+      source: 'licenses.md',
+      schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        faq: z.array(z.object({
+          label: z.string(),
+          content: z.string(),
+          defaultOpen: z.boolean().optional()
+        })).optional()
       })
     }),
     resources: defineCollection({

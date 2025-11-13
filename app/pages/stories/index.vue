@@ -2,12 +2,11 @@
   <UContainer class="py-8">
     <div class="max-w-6xl mx-auto space-y-8">
       <!-- Page Header -->
-      <div class="text-center space-y-4">
-        <h1 class="text-4xl font-bold">Stories & Literature</h1>
-        <p class="text-xl text-gray-600 dark:text-gray-400">
-          Explore our published works and free stories set in our game worlds.
-        </p>
-      </div>
+      <UPageSection
+        :title="pageContent?.stories?.header?.title || 'Stories & Literature'"
+        :description="pageContent?.stories?.header?.description || 'Explore our published works and free stories set in our game worlds.'"
+        :ui="{ container: 'text-center' }"
+      />
 
       <!-- Filter Tabs -->
       <UTabs v-model="activeTab" :items="tabs" />
@@ -86,21 +85,16 @@
         <p class="text-gray-500">Check back soon for new content!</p>
       </div>
 
-      <!-- Call to Action -->
-      <div class="text-center space-y-4 bg-gray-50 dark:bg-gray-800 rounded-lg p-8">
-        <h2 class="text-2xl font-bold">Want to contribute?</h2>
-        <p class="text-gray-600 dark:text-gray-400">
-          We're always looking for talented writers to expand our worlds.
-        </p>
-        <UButton to="/contact" icon="i-lucide-mail">
-          Get in Touch
-        </UButton>
-      </div>
     </div>
   </UContainer>
 </template>
 
 <script setup lang="ts">
+import { usePageContent } from '~/composables/usePageContent'
+
+// Fetch page content
+const pageContent = await usePageContent('stories')
+
 // Fetch all stories
 const { data: stories } = await useAsyncData('stories', () =>
   queryCollection('stories').where('published', '=', true).order('date', 'DESC').all()
@@ -131,7 +125,7 @@ const formatDate = (date: string) => {
 
 // SEO
 useSeoMeta({
-  title: 'Stories & Literature - Shrike Publishing',
-  description: 'Read free stories and published literature set in our game worlds, including tales from Era of Silence and Blood Neon.'
+  title: pageContent.value?.stories?.meta?.title,
+  description: pageContent.value?.stories?.meta?.description
 })
 </script>

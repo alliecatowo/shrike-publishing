@@ -1,9 +1,5 @@
 <template>
-  <UContainer class="py-8">
-    <div class="max-w-6xl mx-auto space-y-8">
-      <ContentRenderer v-if="page" :value="page" />
-    </div>
-  </UContainer>
+  <ContentRenderer v-if="page" :value="page" />
 </template>
 
 <script setup lang="ts">

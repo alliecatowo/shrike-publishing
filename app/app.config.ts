@@ -13,16 +13,39 @@ export default defineAppConfig({
         error: 'red',
         neutral: 'slate'
       },
-      // Typography
-      // prose: {
-      //   h1: { fontFamily: "'Volkhov', serif", fontWeight: '700' },
-      //   h2: { fontFamily: "'Volkhov', serif", fontWeight: '700' },
-      //   h3: { fontFamily: "'Volkhov', serif", fontWeight: '700' },
-      //   h4: { fontFamily: "'Volkhov', serif", fontWeight: '700' },
-      //   h5: { fontFamily: "'Volkhov', serif", fontWeight: '700' },
-      //   h6: { fontFamily: "'Volkhov', serif", fontWeight: '700' },
-      //   p: { fontFamily: "'Merriweather Sans', sans-serif", lineHeight: '1.75' }
-      // }
+      // Typography - Prose component styling
+      prose: {
+        h1: {
+          slots: {
+            base: 'text-4xl sm:text-5xl font-bold text-primary mb-6 mt-8',
+          }
+        },
+        h2: {
+          slots: {
+            base: 'text-3xl sm:text-4xl font-bold text-primary mb-4 mt-8',
+          }
+        },
+        h3: {
+          slots: {
+            base: 'text-2xl sm:text-3xl font-semibold text-primary mb-3 mt-6',
+          }
+        },
+        h4: {
+          slots: {
+            base: 'text-xl font-semibold text-primary mb-2 mt-4',
+          }
+        },
+        p: {
+          slots: {
+            base: 'leading-7 my-4',
+          }
+        },
+        strong: {
+          slots: {
+            base: 'font-semibold text-primary',
+          }
+        }
+      }
       // pageSection: {
       //   slots: {
       //     container: 'flex flex-col lg:grid py-8 sm:py-12 lg:py-16 gap-8 sm:gap-12'

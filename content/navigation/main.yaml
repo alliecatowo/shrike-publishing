@@ -58,12 +58,9 @@ items:
   - label: 'About'
     icon: 'lucide:info'
     children:
-      - label: 'About Robin'
+      - label: 'About Me'
         to: '/about'
         icon: 'lucide:user'
-      - label: 'Portfolio'
-        to: '/portfolio'
-        icon: 'lucide:briefcase'
       - label: 'Contact'
         to: '/contact'
         icon: 'lucide:mail'

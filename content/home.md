@@ -2,6 +2,65 @@
 title: Shrike Publishing
 description: Baltimore-based storytelling studio creating tabletop games and literature
 navigation: false
+
+# Collection display configuration
+# Control which content appears on the homepage by adjusting these settings
+collections:
+  games:
+    featured: true          # Show only featured games
+    published: true         # Show only published games
+    limit: 3               # Maximum number to display
+    order: date            # Sort by date (or title, etc.)
+    direction: DESC        # DESC (newest first) or ASC (oldest first)
+    # tags: []             # Optional: filter by specific tags
+
+  stories:
+    featured: true
+    published: true
+    limit: 3
+    order: date
+    direction: DESC
+    # tags: []
+
+  blog:
+    featured: true
+    published: true
+    limit: 3
+    order: date
+    direction: DESC
+    # tags: []
+
+  announcements:
+    featured: true
+    published: true
+    limit: 3
+    order: date
+    direction: DESC
+    # tags: []
+
+# Testimonials
+# Edit these to add, remove, or change testimonials on the homepage
+testimonials:
+  - name: Emily "Cavegirl" Allen
+    title: Game Designer
+    company: ""
+    avatar: EA
+    heading: Tactical Design That Feels Good
+    quote: Era of Silence RPG completely changed how I think about tactical combat-driven games.
+
+  - name: Michael Burnam-Fink
+    title: Critic
+    company: ""
+    avatar: MB
+    heading: Did Mr. Torgue Make This Game?
+    quote: Furious and intense, Blood Neon delivers on everything you could want out of a carnage-soaked DOOMlike TTRPG.
+
+  - name: Charlotte
+    title: Consumer
+    company: ""
+    avatar: C
+    heading: Quality Products
+    quote: You only get the best when you go with Shrike!
 ---
 
 ::u-page-hero
@@ -99,73 +158,30 @@ Subscribe to our newsletter and stay updated with our latest releases, behind-th
 We respect your privacy. Unsubscribe at any time.
 ::
 
-::u-page-section
+::testimonials-grid
 ---
-class: py-4
-description: Testimonials from our community
 title: What Our Audience Says
+description: Testimonials from our community
 ---
-  :::u-page-grid{.grid-cols-1.md:grid-cols-3.gap-6}
-    ::::testimonial
-    ---
-    avatar: SJ
-    ---
-    #title
-    Tactical Design That Feels Good
-    
-    #quote
-    Era of Silence RPG completely changed how I think about tactical combat-driven games.
-    
-    #author
-    Emily "Cavegirl" Allen, Game Designer
-    ::::
-  
-    ::::testimonial
-    ---
-    avatar: MC
-    ---
-    #title
-    Did Mr. Torgue Make This Game?
-    
-    #quote
-    Furious and intense, Blood Neon delivers on everything you could want out of a carnage-soaked DOOMlike TTRPG.
-    
-    #author
-    Michael Burnam-Fink, Critic
-    ::::
-  
-    ::::testimonial
-    ---
-    avatar: AR
-    ---
-    #title
-    Quality Products
-    
-    #quote
-    You only get the best when you go with Shrike!
-    
-    #author
-    Charlotte, Consumer
-    ::::
-  :::
 ::
 
 ::u-page-section
 ---
-class: py-4
-description: Our latest games and content
+description: Track our journey from the latest releases to major milestones
 title: Recent Releases
+ui:
+  container: text-center
 ---
-  :::timeline-section{:default-value='3' color="primary"}
+  :::timeline-section{:default-value='3' color="primary" size="lg"}
     ::::timeline-item
     ---
     date: August 2025
     description: Our latest ttrpg. Team up with friends and steal the famous model Kilogram!
-    icon: i-lucide-eye
+    icon: i-lucide-scale
     title: Get In Loser, We're Going to Steal the Kilogram
     ---
     ::::
-  
+
     ::::timeline-item
     ---
     date: May 2025
@@ -174,17 +190,16 @@ title: Recent Releases
     title: "Era of Silence: Pit of Heaven- The Voidspire Job"
     ---
     ::::
-  
+
     ::::timeline-item
     ---
     date: April 2025
-    description: New standalone short story  that follows Alice on a day in the life
-      in New Bekton
+    description: New standalone short story that follows Alice on a day in the life in New Bekton
     icon: i-lucide-zap
     title: "Era of Silence: Vulture's City"
     ---
     ::::
-  
+
     ::::timeline-item
     ---
     date: February 2025

@@ -2,12 +2,11 @@
   <UContainer class="py-8">
     <div class="max-w-6xl mx-auto space-y-8">
       <!-- Page Header -->
-      <div class="text-center space-y-4">
-        <h1 class="text-4xl font-bold">Blog</h1>
-        <p class="text-xl text-gray-600 dark:text-gray-400">
-          Insights into game design, tabletop gaming trends, and behind-the-scenes content.
-        </p>
-      </div>
+      <UPageSection
+        :title="pageContent?.blog?.header?.title || 'Blog'"
+        :description="pageContent?.blog?.header?.description || 'Insights into game design, tabletop gaming trends, and behind-the-scenes content.'"
+        :ui="{ container: 'text-center' }"
+      />
 
       <!-- Blog Posts -->
       <!-- Blog Grid -->
@@ -59,6 +58,11 @@
 </template>
 
 <script setup lang="ts">
+import { usePageContent } from '~/composables/usePageContent'
+
+// Fetch page content
+const pageContent = await usePageContent('blog')
+
 // Fetch all blog posts
 const { data: posts } = await useAsyncData('blog', () =>
   queryCollection('blog').where('published', '=', true).order('date', 'DESC').all()
@@ -76,7 +80,7 @@ const formatDate = (date: string) => {
 
 // SEO
 useSeoMeta({
-  title: 'Blog - Shrike Publishing',
-  description: 'Read our latest thoughts on game design, tabletop gaming trends, and publishing insights.'
+  title: pageContent.value?.blog?.meta?.title,
+  description: pageContent.value?.blog?.meta?.description
 })
 </script>

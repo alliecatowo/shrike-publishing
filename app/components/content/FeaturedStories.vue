@@ -19,6 +19,12 @@
         class="h-full"
       />
     </UPageGrid>
+
+    <div class="text-center mt-8">
+      <UButton to="/stories" size="lg" trailing-icon="i-lucide-arrow-right">
+        View All Stories
+      </UButton>
+    </div>
   </UPageSection>
 </template>
 

@@ -2,12 +2,11 @@
   <UContainer class="py-8">
     <div class="max-w-6xl mx-auto space-y-8">
       <!-- Page Header -->
-      <div class="text-center space-y-4">
-        <h1 class="text-4xl font-bold">Poetry Collection</h1>
-        <p class="text-xl text-gray-600 dark:text-gray-400">
-          Verses exploring themes from our game worlds and beyond.
-        </p>
-      </div>
+      <UPageSection
+        :title="'Poetry Collection'"
+        :description="'Verses exploring themes from our game worlds and beyond.'"
+        :ui="{ container: 'text-center' }"
+      />
 
       <!-- Filter Tabs -->
       <UTabs v-model="activeTab" :items="tabs" />
@@ -79,16 +78,6 @@
         <p class="text-gray-500">Check back soon for new verses!</p>
       </div>
 
-      <!-- Call to Action -->
-      <div class="text-center space-y-4 bg-gradient-to-br from-pink-50 to-purple-50 dark:from-pink-900/20 dark:to-purple-900/20 rounded-lg p-8">
-        <h2 class="text-2xl font-bold">Submit Your Poetry</h2>
-        <p class="text-gray-600 dark:text-gray-400">
-          We welcome submissions from writers inspired by our game worlds.
-        </p>
-        <UButton to="/contact" icon="i-lucide-mail" color="pink">
-          Get in Touch
-        </UButton>
-      </div>
     </div>
   </UContainer>
 </template>
