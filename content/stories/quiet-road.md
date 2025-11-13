@@ -20,8 +20,6 @@ published: true
 
 ### R. Val
 
-[Download PDF Here](file:///C:/Users/robin/Downloads/true%20\(4\).pdf)
-
 ***To my sister, Marilynn. You were always the strongest of the two of us. You have earned your victories tenfold.***
 
 \*\*\*\*\*

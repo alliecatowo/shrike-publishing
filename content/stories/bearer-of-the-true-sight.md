@@ -20,7 +20,6 @@ published: true
 
 ### R. Val 
 
-[Download here (PDF)](file:///C:/Users/robin/Downloads/true%20\(2\).pdf)
 
 To my dearest friend, Dan. I have always been playing catch up to you, but there is no one’s shadow I’d rather be in.
 

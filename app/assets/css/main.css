@@ -1,26 +1,11 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
-:root {
-  --font-headings: 'Volkhov', serif;
-  --font-body: 'Merriweather Sans', sans-serif;
-  --line-height-body: 1.75;
-}
-
-@layer base {
-  /* Apply Volkhov font to all headings globally */
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-headings);
-  }
-
-  /* Apply Merriweather Sans to body elements */
-  body, p, div, span, a, button, input, textarea, select {
-    font-family: var(--font-body);
-    line-height: var(--line-height-body);
-  }
-}
-
 @theme {
+  /* Nuxt UI v4 native font configuration - single sans-serif for everything */
+  --font-sans: 'Merriweather Sans', system-ui, sans-serif;
+
+  /* Shrike Publishing Brand Colors */
   /* Shrike Publishing Brand Color Overrides */
   /* Map Nuxt UI 'rose' palette to our maroon brand */
   --color-rose-50: #fff1f5;

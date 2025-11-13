@@ -37,9 +37,7 @@ export default defineNuxtConfig({
 
   fonts: {
     families: [
-      { name: 'Merriweather Sans', provider: 'google', weights: [400, 700, 800] },
-      { name: 'Volkhov', provider: 'google', weights: [400, 700] },
-      { name: 'Lato', provider: 'google', weights: [400, 700, 800] }
+      { name: 'Merriweather Sans', provider: 'google', weights: [300, 400, 500, 600, 700, 800] }
     ]
   },
   icon: {

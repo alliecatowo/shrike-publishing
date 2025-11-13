@@ -21,8 +21,6 @@ featured: false
 
 ### By R. Val, Shrike Publishing
 
-[PDF Here](file:///C:/Users/robin/Downloads/Story%2010%20Minutes%20to%20North%20Point%20Fixed.docx.pdf)
-
 \-----
 
 To my friend Coralie. A true child of the wastelands. Your enduring spirit is what the world will need most in the coming years. 

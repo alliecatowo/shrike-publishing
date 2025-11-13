@@ -24,8 +24,6 @@ featured: false
 
 Content Warning: Drug use (heavy), transphobia (mild), brief moment of violence, referenced harm and death (incl minors).
 
-[DOWNLOAD PDF HERE](file:///C:/Users/robin/Downloads/true%20\(3\).pdf)
-
 To M,
 
 Thank you for letting me borrow Dorian.

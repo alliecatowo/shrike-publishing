@@ -85,17 +85,24 @@
       />
 
       <!-- Related Stories -->
-      <div class="space-y-4">
-        <h2 class="text-xl font-bold">More Stories</h2>
-        <UPageGrid :cols="{ default: 1, md: 2 }" class="gap-4">
+      <div class="space-y-6">
+        <h2 class="text-2xl font-bold">More Stories</h2>
+        <UPageGrid :cols="{ default: 1, md: 2, lg: 3 }" class="gap-6">
           <UBlogPost
             v-for="relatedStory in relatedStories"
             :key="relatedStory.slug"
             :to="`/stories/${relatedStory.slug}`"
             :title="relatedStory.title"
             :description="relatedStory.description"
-            :badge="{ label: relatedStory.type, color: relatedStory.type === 'free' ? 'success' : 'primary', variant: 'soft' }"
-            orientation="horizontal"
+            :image="relatedStory.thumbnail || relatedStory.image"
+            :date="relatedStory.date"
+            :authors="[{ name: relatedStory.author }]"
+            :badge="{
+              label: relatedStory.type === 'free' ? 'Free' : 'Published',
+              color: relatedStory.type === 'free' ? 'success' : 'primary',
+              variant: 'soft'
+            }"
+            variant="outline"
           />
         </UPageGrid>
       </div>
@@ -169,14 +176,57 @@ const { data: nextStory } = await useAsyncData('next-story', async () => {
     .first()
 })
 
-// Fetch related stories
+// Fetch related stories with smart algorithm
 const { data: allStories } = await useAsyncData('related-stories', () =>
-  queryCollection('stories').where('published', '=', true).order('date', 'DESC').all()
+  queryCollection('stories').where('published', '=', true).all()
 )
 
-const relatedStories = computed(() =>
-  allStories.value?.filter((s) => s.slug !== slug).slice(0, 2) || []
-)
+const relatedStories = computed(() => {
+  if (!allStories.value) return []
+
+  const current = storyValue.value
+
+  // Score each story for relevance
+  let scored = allStories.value
+    .filter((s) => s.slug !== slug) // Exclude current story
+    .map((story) => {
+      let score = 0
+
+      // Same series = highest priority
+      if (current.series && story.series === current.series) {
+        score += 100
+      }
+
+      // Matching tags
+      const commonTags = story.tags?.filter(tag =>
+        current.tags?.includes(tag)
+      ).length || 0
+      score += commonTags * 10
+
+      // Same type (free vs published)
+      if (story.type === current.type) {
+        score += 5
+      }
+
+      // Featured content bonus
+      if (story.featured) {
+        score += 3
+      }
+
+      // Recency bonus (newer stories slightly preferred)
+      const daysSincePublish = story.date ?
+        (Date.now() - new Date(story.date).getTime()) / (1000 * 60 * 60 * 24) :
+        Infinity
+      if (daysSincePublish < 30) score += 2
+      else if (daysSincePublish < 90) score += 1
+
+      return { ...story, score }
+    })
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 4) // Get top 4 instead of 2
+
+  return scored
+})
 
 
 

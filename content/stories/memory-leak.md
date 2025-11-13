@@ -25,8 +25,6 @@ published: true
 
 R. Val
 
-[DOWNLOAD PDF HERE](file:///C:/Users/robin/Downloads/true%20\(1\).pdf)
-
 Dedicated to June, beloved friend and fierce ally.
 
 And to Willabee, the backbone of Shrike Tabletop, and constant companion.

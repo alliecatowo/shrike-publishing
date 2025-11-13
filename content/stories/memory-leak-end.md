@@ -1,7 +1,8 @@
 ---
 slug: memory-leak-end
 title: 4. Soldier & Epilogue
-description: ""
+description: "The explosive finale as the crew makes their desperate final assault, followed by Alice's journey back to her true calling as a scavenger in the wastelands."
+date: 2024-01-29
 author: R. Val
 type: free
 tags:
@@ -15,8 +16,6 @@ seriesTotal: 4
 published: true
 featured: false
 ---
-
-![](https://images.squarespace-cdn.com/content/v1/5da7b6542a4fea6a5c523390/247a1527-e67d-459c-bea7-1e7fed0449ab/C03EDD96-4B29-4935-A73F-FB872DD16B1D.jpeg)
 
 #  Ashen Silence: Memory Leak
 

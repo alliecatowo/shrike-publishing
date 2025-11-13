@@ -21,8 +21,6 @@ Content warning for intense violence, transphobia, assisted ritual suicide, body
 
 R. Val
 
-[PDF HERE](file:///C:/Users/robin/Downloads/true%20\(4\).pdf)
-
 Art by Moss Sugarmountains
 
 # **4. The Voidspire Job**
