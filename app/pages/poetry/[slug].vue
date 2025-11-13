@@ -32,10 +32,8 @@
       </div>
 
       <!-- Poetry Content -->
-      <div class="prose prose-lg dark:prose-invert max-w-none">
-        <div class="bg-gradient-to-br from-pink-50 to-purple-50 dark:from-pink-900/10 dark:to-purple-900/10 rounded-lg p-8 md:p-12">
-          <ContentRenderer :value="poemValue" class="poem-content" />
-        </div>
+      <div class="bg-gradient-to-br from-pink-50 to-purple-50 dark:from-pink-900/10 dark:to-purple-900/10 rounded-lg p-8 md:p-12">
+        <ContentRenderer :value="poemValue" class="poem-content" />
       </div>
 
       <!-- Author Note -->

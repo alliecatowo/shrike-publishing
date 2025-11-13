@@ -35,9 +35,7 @@
       </div>
 
       <!-- Article Content -->
-      <div class="prose prose-lg dark:prose-invert max-w-none mb-8">
-        <ContentRenderer :value="postValue" />
-      </div>
+      <ContentRenderer :value="postValue" />
 
       <!-- Share Buttons -->
       <div class="flex items-center justify-between border-t pt-8 mb-8">

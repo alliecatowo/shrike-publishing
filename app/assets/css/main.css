@@ -8,26 +8,15 @@
 }
 
 @layer base {
+  /* Apply Volkhov font to all headings globally */
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-headings);
-    font-weight: var(--font-weight-headings);
   }
 
+  /* Apply Merriweather Sans to body elements */
   body, p, div, span, a, button, input, textarea, select {
     font-family: var(--font-body);
-    font-size: var(--font-size-body);
     line-height: var(--line-height-body);
-  }
-
-  /* Ensure prose content uses brand typography */
-  .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
-    font-family: var(--font-headings) !important;
-    font-weight: var(--font-weight-headings) !important;
-  }
-
-  .prose p, .prose div, .prose span, .prose a {
-    font-family: var(--font-body) !important;
-    line-height: var(--line-height-body) !important;
   }
 }
 

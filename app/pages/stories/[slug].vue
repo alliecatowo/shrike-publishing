@@ -74,9 +74,7 @@
       </div>
 
       <!-- Story Content -->
-      <div class="prose prose-lg dark:prose-invert">
-        <ContentRenderer :value="storyValue" />
-      </div>
+      <ContentRenderer :value="storyValue" />
 
       <!-- Purchase/CTA Section -->
       <UPageCTA
