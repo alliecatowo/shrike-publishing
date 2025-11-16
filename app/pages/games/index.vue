@@ -105,17 +105,14 @@
       </UPageGrid>
     </UPageSection>
 
-    <!-- Call to Action -->
-    <UPageCTA
-      :title="components?.cta?.title || 'Want to Stay Updated?'"
-      :description="components?.cta?.description || 'Get notified about new releases and special offers.'"
-      :links="components?.cta?.cta ? [{
-        label: components.cta.cta.text,
-        to: components.cta.cta.to,
-        ...(components.cta.cta.icon && { leadingIcon: components.cta.cta.icon })
-      }] : []"
-      :class="components?.cta?.background ? '' : 'bg-gray-50 dark:bg-gray-800'"
-    />
+    <!-- Newsletter Signup -->
+    <UPageSection
+      title="Want to Stay Updated?"
+      description="Get notified about new game releases and special offers"
+      :ui="{ container: 'text-center' }"
+    >
+      <NewsletterCTA />
+    </UPageSection>
   </div>
 </template>
 
