@@ -1,1 +1,0 @@
-import{C as t,d as n,e as o,X as s}from"#entry";const i={style:{display:"none"}},a=t({name:"TimelineItem",__name:"TimelineItem",props:{date:{},title:{},description:{},icon:{},value:{},to:{}},setup(m){return(e,l)=>(o(),n("div",i,[s(e.$slots,"default")]))}}),c=Object.assign(a,{__name:"TimelineItem"});export{c as default};
