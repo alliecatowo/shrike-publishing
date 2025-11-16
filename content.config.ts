@@ -282,7 +282,11 @@ export default defineContentConfig({
         artist: z.string().optional(),
         category: z.string().optional(),
         featured: z.boolean().default(false),
-        createdAt: z.date().optional()
+        createdAt: z.date().optional(),
+        samplePages: z.array(z.object({
+          image: z.string(),
+          title: z.string()
+        })).optional()
       }),
     }),
     artwork: defineCollection({
