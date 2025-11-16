@@ -14,7 +14,7 @@
         <template #header>
           <div class="flex items-center justify-between">
             <h3 class="text-lg font-semibold">
-              <slot name="blog-heading">Latest from the Blog</slot>
+              <slot name="blog-heading" />
             </h3>
             <UButton
               to="/blog"
@@ -22,7 +22,7 @@
               size="sm"
               trailing-icon="i-lucide-arrow-right"
             >
-              <slot name="blog-link-text">View All</slot>
+              <slot name="blog-link-text" />
             </UButton>
           </div>
         </template>
@@ -51,7 +51,7 @@
         <template #header>
           <div class="flex items-center justify-between">
             <h3 class="text-lg font-semibold">
-              <slot name="announcements-heading">Announcements</slot>
+              <slot name="announcements-heading" />
             </h3>
             <UButton
               to="/announcements"
@@ -59,7 +59,7 @@
               size="sm"
               trailing-icon="i-lucide-arrow-right"
             >
-              <slot name="announcements-link-text">View All</slot>
+              <slot name="announcements-link-text" />
             </UButton>
           </div>
         </template>

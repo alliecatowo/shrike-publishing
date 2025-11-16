@@ -91,12 +91,10 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
 
         <div class="text-center space-y-3">
           <h3 class="text-2xl font-bold">
-            <slot name="title">Join Our Community</slot>
+            <slot name="title" />
           </h3>
           <p class="text-base">
-            <slot name="description">
-              Subscribe to our newsletter and stay updated with our latest releases, behind-the-scenes content, and exclusive offers.
-            </slot>
+            <slot name="description" />
           </p>
         </div>
       </div>
@@ -133,7 +131,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
 
       <p class="text-sm text-muted flex items-center justify-center gap-2">
         <UIcon name="i-lucide-shield-check" class="h-4 w-4" />
-        <slot name="footer">We respect your privacy. Unsubscribe at any time.</slot>
+        <slot name="footer" />
       </p>
     </template>
   </UPageCTA>
