@@ -416,6 +416,7 @@
 
 <script setup lang="ts">
 import { refDebounced } from '@vueuse/core'
+import { RESOURCE_CATEGORIES } from '~/constants/categories'
 
 // Fetch resources from content collection
 const { data: resources } = await useAsyncData('resources', () =>
@@ -438,15 +439,7 @@ const debouncedSearchQuery = refDebounced(searchQuery, 300)
 
 // Category tabs
 const activeCategory = ref('all')
-const categoryTabs = [
-  { label: 'All Resources', value: 'all' },
-  { label: 'Manuals', value: 'manual' },
-  { label: 'Character Sheets', value: 'character-sheets' },
-  { label: 'Reference Guides', value: 'reference' },
-  { label: 'Maps & Assets', value: 'maps' },
-  { label: 'Templates', value: 'templates' },
-  { label: 'Tools', value: 'tools' }
-]
+const categoryTabs = RESOURCE_CATEGORIES
 
 // Category tabs with counts
 const categoryTabsWithCounts = computed(() => {

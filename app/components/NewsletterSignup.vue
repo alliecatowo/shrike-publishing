@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import * as v from 'valibot'
 import type { FormSubmitEvent } from '@nuxt/ui'
+import { TOAST_MESSAGES } from '~/constants/messages'
 
 const schema = v.object({
   email: v.pipe(v.string(), v.email('Invalid email address'))
@@ -30,20 +31,16 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     })
 
     toast.add({
-      title: 'Success!',
-      description: 'You\'re subscribed to our newsletter',
-      color: 'success',
-      icon: 'i-lucide-check-circle'
+      ...TOAST_MESSAGES.newsletter.success,
+      color: 'success'
     })
 
     state.email = ''
   } catch (error: unknown) {
     console.error('Newsletter signup error:', error)
     toast.add({
-      title: 'Subscription failed',
-      description: 'Failed to subscribe. Please try again.',
-      color: 'error',
-      icon: 'i-lucide-x-circle'
+      ...TOAST_MESSAGES.newsletter.error,
+      color: 'error'
     })
   } finally {
     loading.value = false

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import * as v from 'valibot'
 import type { FormSubmitEvent } from '@nuxt/ui'
+import { CONTACT_FORM_SUBJECTS, TOAST_MESSAGES } from '~/constants/messages'
 
 const schema = v.object({
   name: v.pipe(v.string(), v.minLength(2, 'Name must be at least 2 characters')),
@@ -21,14 +22,7 @@ const state = reactive({
 const toast = useToast()
 const loading = ref(false)
 
-const subjectOptions = [
-  { label: 'General Inquiry', value: 'General Inquiry' },
-  { label: 'Game Support', value: 'Game Support' },
-  { label: 'Business Partnership', value: 'Business Partnership' },
-  { label: 'Press/Media', value: 'Press/Media' },
-  { label: 'Bug Report', value: 'Bug Report' },
-  { label: 'Other', value: 'Other' }
-]
+const subjectOptions = CONTACT_FORM_SUBJECTS
 
 async function onSubmit(event: FormSubmitEvent<Schema>) {
   loading.value = true
@@ -40,10 +34,8 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     await new Promise(resolve => setTimeout(resolve, 1000))
 
     toast.add({
-      title: 'Message sent!',
-      description: 'Thank you for your message! We\'ll get back to you soon.',
-      color: 'success',
-      icon: 'i-lucide-check-circle'
+      ...TOAST_MESSAGES.contact.success,
+      color: 'success'
     })
 
     // Reset form
@@ -56,10 +48,8 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
   } catch (error) {
     console.error('Error submitting form:', error)
     toast.add({
-      title: 'Error',
-      description: 'There was an error sending your message. Please try again.',
-      color: 'error',
-      icon: 'i-lucide-x-circle'
+      ...TOAST_MESSAGES.contact.error,
+      color: 'error'
     })
   } finally {
     loading.value = false
