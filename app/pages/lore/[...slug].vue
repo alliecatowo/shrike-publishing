@@ -70,6 +70,11 @@ const { data: eraEntries } = await useAsyncData(`lore-era-${slug}`, async () => 
     .slice(0, 3)
 })
 
+// Fetch prev/next entries using surroundings
+const { data: surroundings } = await useAsyncData(`lore-surroundings-${slug}`, async () => {
+  return await queryCollectionItemSurroundings('lore', entry.value?._path)
+})
+
 // Computed for page header
 const entryValue = computed(() => entry.value!)
 
@@ -326,7 +331,60 @@ useSeoMeta({
     <!-- Bottom Navigation -->
     <template #bottom>
       <UContainer>
-        <div class="py-12 border-t border-gray-200 dark:border-gray-800">
+        <!-- Prev/Next Navigation -->
+        <div v-if="surroundings && (surroundings[0] || surroundings[1])" class="py-8 border-t border-gray-200 dark:border-gray-800">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Previous Entry -->
+            <NuxtLink
+              v-if="surroundings[0]"
+              :to="surroundings[0]._path"
+              class="group p-5 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-primary/50 dark:hover:border-primary/50 hover:shadow-md transition-all"
+            >
+              <div class="flex items-start gap-3">
+                <div class="p-2 rounded-lg bg-gradient-to-br from-primary/10 to-purple-500/10 flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <UIcon name="lucide:arrow-left" class="text-primary size-5" />
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="text-xs text-muted mb-1">Previous</p>
+                  <h3 class="font-semibold group-hover:text-primary transition-colors line-clamp-2">
+                    {{ surroundings[0].title }}
+                  </h3>
+                  <p v-if="surroundings[0].description" class="text-sm text-muted mt-1 line-clamp-1">
+                    {{ surroundings[0].description }}
+                  </p>
+                </div>
+              </div>
+            </NuxtLink>
+
+            <!-- Spacer for alignment when only next exists -->
+            <div v-else class="hidden md:block" />
+
+            <!-- Next Entry -->
+            <NuxtLink
+              v-if="surroundings[1]"
+              :to="surroundings[1]._path"
+              class="group p-5 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-primary/50 dark:hover:border-primary/50 hover:shadow-md transition-all"
+            >
+              <div class="flex items-start gap-3">
+                <div class="flex-1 min-w-0 text-right md:order-1">
+                  <p class="text-xs text-muted mb-1">Next</p>
+                  <h3 class="font-semibold group-hover:text-primary transition-colors line-clamp-2">
+                    {{ surroundings[1].title }}
+                  </h3>
+                  <p v-if="surroundings[1].description" class="text-sm text-muted mt-1 line-clamp-1">
+                    {{ surroundings[1].description }}
+                  </p>
+                </div>
+                <div class="p-2 rounded-lg bg-gradient-to-br from-primary/10 to-purple-500/10 flex-shrink-0 group-hover:scale-110 transition-transform md:order-2">
+                  <UIcon name="lucide:arrow-right" class="text-primary size-5" />
+                </div>
+              </div>
+            </NuxtLink>
+          </div>
+        </div>
+
+        <!-- Back to Wiki -->
+        <div class="py-8 border-t border-gray-200 dark:border-gray-800">
           <div class="flex items-center justify-between">
             <UButton
               to="/lore"

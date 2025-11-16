@@ -4,6 +4,11 @@ const { data: loreEntries } = await useAsyncData('lore-entries', () =>
   queryCollection('lore').where('published', true).order('date', 'DESC').all()
 )
 
+// Fetch search sections for enhanced search
+const { data: searchSections } = await useAsyncData('lore-search-sections', () =>
+  queryCollectionSearchSections('lore')
+)
+
 // Group entries by category
 const groupedEntries = computed(() => {
   const groups: Record<string, any[]> = {}
@@ -85,7 +90,7 @@ useSeoMeta({
     <UPageSection>
       <div class="max-w-2xl mx-auto">
         <ContentSearch
-          :files="loreEntries || []"
+          :files="searchSections || []"
           file-icon="lucide:book-open"
           placeholder="Search the lore wiki..."
           :ui="{
