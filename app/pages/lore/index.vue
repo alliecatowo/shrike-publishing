@@ -1,13 +1,20 @@
 <script setup lang="ts">
+definePageMeta({
+  layout: 'lore'
+})
+
 // Fetch all lore entries
-const { data: loreEntries } = await useAsyncData('lore-entries', () =>
-  queryCollection('lore').where('published', true).order('date', 'DESC').all()
+const { data: allLoreEntries } = await useAsyncData('lore-entries', () =>
+  queryCollection('lore').all()
 )
 
-// Fetch search sections for enhanced search
-const { data: searchSections } = await useAsyncData('lore-search-sections', () =>
-  queryCollectionSearchSections('lore')
-)
+// Filter out README and template files
+const loreEntries = computed(() => {
+  return allLoreEntries.value?.filter(entry => {
+    const path = entry._path?.toLowerCase() || ''
+    return !path.includes('readme') && !path.includes('_template')
+  }) || []
+})
 
 // Group entries by category
 const groupedEntries = computed(() => {
@@ -27,11 +34,19 @@ const groupedEntries = computed(() => {
 // Get all categories for tabs
 const categories = computed(() => {
   const cats = Object.keys(groupedEntries.value || {})
-  return cats.map(cat => ({
+  const allCategory = {
+    label: 'All',
+    value: 'all',
+    count: loreEntries.value?.length || 0
+  }
+
+  const categoryItems = cats.map(cat => ({
     label: cat,
     value: cat,
     count: groupedEntries.value[cat]?.length || 0
   }))
+
+  return [allCategory, ...categoryItems]
 })
 
 // Featured entries
@@ -84,20 +99,6 @@ useSeoMeta({
           </UBadge>
         </div>
       </template>
-    </UPageSection>
-
-    <!-- Content Search -->
-    <UPageSection>
-      <div class="max-w-2xl mx-auto">
-        <ContentSearch
-          :files="searchSections || []"
-          file-icon="lucide:book-open"
-          placeholder="Search the lore wiki..."
-          :ui="{
-            wrapper: 'shadow-lg',
-          }"
-        />
-      </div>
     </UPageSection>
 
     <!-- Featured Entries -->
@@ -249,25 +250,39 @@ useSeoMeta({
         <p class="text-muted">Explore lore organized by type and topic</p>
       </div>
 
-      <UTabs :items="categories.map(cat => ({
-        label: `${cat.label} (${cat.count})`,
-        value: cat.value,
-        icon: cat.value === 'Characters' ? 'lucide:user' :
-              cat.value === 'Locations' ? 'lucide:map-pin' :
-              cat.value === 'Historical Events' ? 'lucide:scroll' :
-              cat.value === 'Phenomena' ? 'lucide:sparkles' :
-              cat.value === 'Organizations' ? 'lucide:users' :
-              cat.value === 'Guides' ? 'lucide:compass' :
-              'lucide:folder'
-      }))">
-        <template #default="{ item }">
-          <div class="py-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <NuxtLink
-                v-for="entry in groupedEntries[item.value]"
+      <UTabs
+        :items="categories.map(cat => ({
+          label: `${cat.label} (${cat.count})`,
+          value: cat.value,
+          slot: cat.value,
+          icon: cat.value === 'all' ? 'lucide:grid-3x3' :
+                cat.value === 'Characters' ? 'lucide:user' :
+                cat.value === 'Locations' ? 'lucide:map-pin' :
+                cat.value === 'Historical Events' ? 'lucide:scroll' :
+                cat.value === 'Phenomena' ? 'lucide:sparkles' :
+                cat.value === 'Organizations' ? 'lucide:users' :
+                cat.value === 'Guides' ? 'lucide:compass' :
+                'lucide:folder'
+        }))"
+        :ui="{
+          wrapper: 'space-y-6',
+          list: {
+            wrapper: 'mb-6',
+            background: 'bg-gray-100 dark:bg-gray-800/50',
+            rounded: 'rounded-lg',
+            padding: 'p-1'
+          }
+        }"
+      >
+        <template #all>
+          <div class="py-6">
+            <UPageGrid :cols="{ default: 1, md: 2, lg: 3 }">
+              <UCard
+                v-for="entry in loreEntries"
                 :key="entry._path"
                 :to="entry._path"
-                class="group p-5 border border-gray-200 dark:border-gray-800 rounded-lg hover:border-primary/50 dark:hover:border-primary/50 hover:shadow-md transition-all duration-200"
+                variant="outline"
+                class="group hover:shadow-lg hover:border-primary/50 transition-all duration-200"
               >
                 <div class="flex items-start gap-4">
                   <div class="p-2.5 rounded-lg bg-gradient-to-br from-primary/10 to-purple-500/10 flex-shrink-0 group-hover:scale-110 transition-transform">
@@ -277,7 +292,7 @@ useSeoMeta({
                     />
                   </div>
                   <div class="flex-1 min-w-0">
-                    <h3 class="font-semibold group-hover:text-primary transition-colors mb-1.5 line-clamp-1">
+                    <h3 class="font-semibold text-lg group-hover:text-primary transition-colors mb-2 line-clamp-1">
                       {{ entry.title }}
                     </h3>
                     <p v-if="entry.description" class="text-sm text-muted line-clamp-2 mb-3">
@@ -285,11 +300,16 @@ useSeoMeta({
                     </p>
 
                     <div class="flex flex-wrap gap-1.5">
+                      <UBadge v-if="entry.category" variant="subtle" size="xs" color="primary">
+                        <UIcon name="lucide:folder" class="mr-1" />
+                        {{ entry.category }}
+                      </UBadge>
                       <UBadge v-if="entry.era" variant="subtle" size="xs" color="purple">
                         <UIcon name="lucide:clock" class="mr-1" />
                         {{ entry.era }}
                       </UBadge>
                       <UBadge v-if="entry.game" variant="subtle" size="xs" color="pink">
+                        <UIcon name="lucide:gamepad-2" class="mr-1" />
                         {{ entry.game }}
                       </UBadge>
                       <UBadge
@@ -306,8 +326,61 @@ useSeoMeta({
                     </div>
                   </div>
                 </div>
-              </NuxtLink>
-            </div>
+              </UCard>
+            </UPageGrid>
+          </div>
+        </template>
+
+        <template v-for="cat in categories.filter(c => c.value !== 'all')" :key="cat.value" #[cat.value]>
+          <div class="py-6">
+            <UPageGrid :cols="{ default: 1, md: 2, lg: 3 }">
+              <UCard
+                v-for="entry in groupedEntries[cat.value]"
+                :key="entry._path"
+                :to="entry._path"
+                variant="outline"
+                class="group hover:shadow-lg hover:border-primary/50 transition-all duration-200"
+              >
+                <div class="flex items-start gap-4">
+                  <div class="p-2.5 rounded-lg bg-gradient-to-br from-primary/10 to-purple-500/10 flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <UIcon
+                      name="lucide:book-open"
+                      class="text-primary size-5"
+                    />
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <h3 class="font-semibold text-lg group-hover:text-primary transition-colors mb-2 line-clamp-1">
+                      {{ entry.title }}
+                    </h3>
+                    <p v-if="entry.description" class="text-sm text-muted line-clamp-2 mb-3">
+                      {{ entry.description }}
+                    </p>
+
+                    <div class="flex flex-wrap gap-1.5">
+                      <UBadge v-if="entry.era" variant="subtle" size="xs" color="purple">
+                        <UIcon name="lucide:clock" class="mr-1" />
+                        {{ entry.era }}
+                      </UBadge>
+                      <UBadge v-if="entry.game" variant="subtle" size="xs" color="pink">
+                        <UIcon name="lucide:gamepad-2" class="mr-1" />
+                        {{ entry.game }}
+                      </UBadge>
+                      <UBadge
+                        v-for="tag in entry.tags?.slice(0, 2)"
+                        :key="tag"
+                        variant="outline"
+                        size="xs"
+                      >
+                        {{ tag }}
+                      </UBadge>
+                      <UBadge v-if="(entry.tags?.length || 0) > 2" variant="outline" size="xs">
+                        +{{ (entry.tags?.length || 0) - 2 }}
+                      </UBadge>
+                    </div>
+                  </div>
+                </div>
+              </UCard>
+            </UPageGrid>
           </div>
         </template>
       </UTabs>
@@ -336,23 +409,6 @@ useSeoMeta({
           </UButton>
         </div>
       </div>
-    </UPageSection>
-
-    <!-- CTA Section -->
-    <UPageSection v-if="loreEntries && loreEntries.length > 0">
-      <UPageCTA
-        title="Contribute to the Lore"
-        description="Have stories, characters, or world-building to add? The wiki is always growing."
-        :links="[
-          {
-            label: 'Contact Us',
-            to: '/contact',
-            color: 'primary',
-            size: 'lg'
-          }
-        ]"
-        class="bg-gradient-to-br from-primary/5 via-purple-500/5 to-pink-500/5 dark:from-primary/10 dark:via-purple-500/10 dark:to-pink-500/10 rounded-xl"
-      />
     </UPageSection>
   </div>
 </template>

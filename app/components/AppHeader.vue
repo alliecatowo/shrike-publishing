@@ -14,12 +14,12 @@
         <UButton
           size="sm"
           variant="ghost"
-          aria-label="Search lore wiki"
-          title="Search lore wiki (⌘L)"
+          aria-label="Search content"
+          title="Search content (⌘L)"
           leading-icon="i-lucide-search"
           @click="triggerLoreSearch"
         >
-          <span class="hidden lg:inline">Search Lore</span>
+          <span class="hidden lg:inline">Search</span>
           <UKbd class="hidden lg:inline-flex ml-2">⌘L</UKbd>
         </UButton>
         <UColorModeButton />
@@ -62,7 +62,7 @@ function mapItems(items: any[] | undefined): NavigationMenuItem[] {
 
 const navigationItems = computed<NavigationMenuItem[]>(() => mapItems(appConfig.navigation.items))
 
-// Trigger the lore search command palette
+// Trigger the global search command palette
 function triggerLoreSearch() {
   // Simulate the Cmd+L / Ctrl+L keyboard shortcut
   const event = new KeyboardEvent('keydown', {
