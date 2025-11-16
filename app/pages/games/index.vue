@@ -111,7 +111,7 @@
       description="Get notified about new game releases and special offers"
       :ui="{ container: 'text-center' }"
     >
-      <NewsletterCTA />
+      <NewsletterSignup />
     </UPageSection>
   </div>
 </template>

@@ -221,7 +221,7 @@
       description="Get notified about new games, sales, and exclusive content"
       :ui="{ container: 'text-center' }"
     >
-      <NewsletterCTA />
+      <NewsletterSignup />
     </UPageSection>
 
     <!-- Call to Action -->
