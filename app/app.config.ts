@@ -1,4 +1,9 @@
 export default defineAppConfig({
+    branding: {
+      logo: '/ShrikeLogoNov2021.png',
+      name: 'Shrike Publishing',
+      logoAlt: 'Shrike Publishing'
+    },
     ui: {
       // Brand colors - Emphasizing pink, lavender, and red palette
       colors: {
