@@ -1,4 +1,11 @@
 ---
+title: Free Resources
+description: Download free assets, reference materials, and tools to enhance your gaming experience.
+seo:
+  title: Free Resources - Shrike Publishing
+  description: Free downloads including character sheets, reference guides, and gaming resources for Era of Silence and Blood Neon.
+  keywords: free RPG resources, character sheets, tabletop gaming tools, downloadable assets
+
 categories:
   - label: All Resources
     value: all

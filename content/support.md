@@ -1,6 +1,10 @@
 ---
 title: Support Us
 description: If you enjoy our work, please consider supporting us on Patreon or Ko-fi. Your support helps us create more content.
+seo:
+  title: Support Us - Shrike Publishing
+  description: Support independent tabletop game development through Patreon or Ko-fi. Your support helps us create more content.
+  keywords: support indie games, patreon, ko-fi, indie TTRPG, support creators
 
 supportOptions:
   - icon: i-lucide-users
