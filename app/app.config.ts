@@ -11,6 +11,42 @@ export default defineAppConfig({
       size: 'sm',
       variant: 'outline'
     },
+    footer: {
+      newsletter: {
+        title: 'Stay Updated',
+        description: 'Subscribe to our newsletter for the latest releases and news.'
+      },
+      social: [
+        { icon: 'i-lucide-twitter', to: '#' },
+        { icon: 'i-lucide-facebook', to: '#' },
+        { icon: 'i-lucide-instagram', to: '#' }
+      ],
+      columns: [
+        {
+          label: 'Quick Links',
+          children: [
+            { label: 'Home', to: '/' },
+            { label: 'Stories', to: '/stories' },
+            { label: 'Announcements', to: '/announcements' },
+            { label: 'Resources', to: '/resources' }
+          ]
+        },
+        {
+          label: 'Games',
+          children: [
+            { label: 'All Games', to: '/games' },
+            { label: 'Blood Neon', to: '/games/blood-neon' },
+            { label: 'Era of Silence', to: '/games/era-of-silence' }
+          ]
+        }
+      ],
+      bottom: [
+        { label: 'About', to: '/about' },
+        { label: 'Contact', to: '/contact' },
+        { label: 'Resources', to: '/resources' }
+      ],
+      copyright: '© {year} Shrike Publishing. All rights reserved.'
+    },
     ui: {
       // Brand colors - Emphasizing pink, lavender, and red palette
       colors: {

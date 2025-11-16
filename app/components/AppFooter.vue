@@ -2,18 +2,23 @@
   <UFooter>
     <template #top>
       <UContainer>
-        <UFooterColumns :columns="footerColumns">
+        <UFooterColumns :columns="appConfig.footer.columns">
           <template #right>
             <div class="space-y-4">
-              <h3 class="text-sm font-semibold text-highlighted">Stay Updated</h3>
+              <h3 class="text-sm font-semibold text-highlighted">{{ appConfig.footer.newsletter.title }}</h3>
               <p class="text-sm text-muted leading-relaxed">
-                Subscribe to our newsletter for the latest releases and news.
+                {{ appConfig.footer.newsletter.description }}
               </p>
               <NewsletterSignup />
               <div class="flex gap-2 pt-2">
-                <UButton icon="i-lucide-twitter" color="neutral" variant="ghost" to="#" />
-                <UButton icon="i-lucide-facebook" color="neutral" variant="ghost" to="#" />
-                <UButton icon="i-lucide-instagram" color="neutral" variant="ghost" to="#" />
+                <UButton
+                  v-for="social in appConfig.footer.social"
+                  :key="social.icon"
+                  :icon="social.icon"
+                  color="neutral"
+                  variant="ghost"
+                  :to="social.to"
+                />
               </div>
             </div>
           </template>
@@ -25,12 +30,17 @@
       <UContainer>
         <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
           <p class="text-sm text-muted">
-            {{ footer?.copyright || `© ${new Date().getFullYear()} Shrike Publishing. All rights reserved.` }}
+            {{ appConfig.footer.copyright.replace('{year}', new Date().getFullYear().toString()) }}
           </p>
           <div class="flex gap-4">
-            <ULink to="/about" class="text-sm text-muted hover:text-primary">About</ULink>
-            <ULink to="/contact" class="text-sm text-muted hover:text-primary">Contact</ULink>
-            <ULink to="/resources" class="text-sm text-muted hover:text-primary">Resources</ULink>
+            <ULink
+              v-for="link in appConfig.footer.bottom"
+              :key="link.to"
+              :to="link.to"
+              class="text-sm text-muted hover:text-primary"
+            >
+              {{ link.label }}
+            </ULink>
           </div>
         </div>
       </UContainer>
@@ -39,29 +49,5 @@
 </template>
 
 <script setup lang="ts">
-import type { FooterColumn } from '#ui/types';
-
-const { data: footer } = await useAsyncData('footer-content', () =>
-  queryCollection('footer').first()
-)
-
-const footerColumns: FooterColumn[] = [
-  {
-    label: 'Quick Links',
-    children: [
-      { label: 'Home', to: '/' },
-      { label: 'Stories', to: '/stories' },
-      { label: 'Announcements', to: '/announcements' },
-      { label: 'Resources', to: '/resources' },
-    ],
-  },
-  {
-    label: 'Games',
-    children: [
-      { label: 'All Games', to: '/games' },
-      { label: 'Blood Neon', to: '/games/blood-neon' },
-      { label: 'Era of Silence', to: '/games/era-of-silence' },
-    ],
-  },
-]
+const appConfig = useAppConfig()
 </script>
