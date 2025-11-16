@@ -48,15 +48,8 @@ const slots = useSlots()
 const timelineItems = computed<TimelineItem[]>(() => {
   const defaultSlot = slots.default?.()
   if (!defaultSlot) {
-    console.log('TimelineSection: No default slot')
     return []
   }
-
-  console.log('TimelineSection slot vnodes:', defaultSlot.map(v => ({
-    type: v.type,
-    typeName: typeof v.type === 'object' ? (v.type as any).name || (v.type as any).__name : v.type,
-    props: v.props
-  })))
 
   const items = defaultSlot
     .filter(vnode => {
@@ -67,7 +60,6 @@ const timelineItems = computed<TimelineItem[]>(() => {
       const componentName = vnode.type && typeof vnode.type === 'object'
         ? (vnode.type as any).name || (vnode.type as any).__name
         : null
-      console.log('Checking vnode:', componentName, 'tag:', tag)
       return componentName === 'TimelineItem' || tag === 'timeline-item'
     })
     .map(vnode => {
@@ -83,7 +75,6 @@ const timelineItems = computed<TimelineItem[]>(() => {
       }
     })
 
-  console.log('TimelineSection extracted items:', items)
   return items
 })
 </script>
