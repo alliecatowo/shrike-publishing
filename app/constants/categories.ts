@@ -13,27 +13,6 @@ export const RESOURCE_CATEGORIES = [
 ] as const
 
 /**
- * Story category filters
- * Used in stories index page
- */
-export const STORY_CATEGORIES = [
-  { label: 'All Stories', value: 'all' },
-  { label: 'Free Stories', value: 'free' },
-  { label: 'Published Works', value: 'published' }
-] as const
-
-/**
- * Poetry category filters
- * Used in poetry index page
- */
-export const POETRY_CATEGORIES = [
-  { label: 'All Poems', value: 'all' },
-  { label: 'Nature & Seasons', value: 'nature' },
-  { label: 'Urban Life', value: 'urban' },
-  { label: 'Personal Reflections', value: 'personal' }
-] as const
-
-/**
  * Portfolio category filters
  * Used in portfolio page
  */

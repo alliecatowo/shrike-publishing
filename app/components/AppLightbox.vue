@@ -10,7 +10,7 @@
       @update:model-value="currentIndex = $event"
     >
       <div class="flex items-center justify-center h-full p-8">
-        <img :src="item.image" :alt="item.title" class="max-w-full max-h-full object-contain">
+        <NuxtImg :src="item.image" :alt="item.title" class="max-w-full max-h-full object-contain" />
       </div>
     </UCarousel>
 
