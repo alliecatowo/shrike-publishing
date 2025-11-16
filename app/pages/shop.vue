@@ -246,35 +246,17 @@
 </template>
 
 <script setup lang="ts">
-// Featured products data
-const featuredProducts = [
-  {
-    title: 'Era of Silence Starter Kit',
-    description: 'Everything you need to begin your journey in the post-apocalyptic world of Era of Silence.',
-    price: '15.00',
-    icon: 'i-lucide-book-open',
-    badge: { text: 'Bestseller', color: 'green' }
-  },
-  {
-    title: 'Blood Neon Core Rules',
-    description: 'Fast-paced cyberpunk action in a neon-drenched dystopian future.',
-    price: '20.00',
-    icon: 'i-lucide-zap',
-    badge: { text: 'New', color: 'pink' }
-  },
-  {
-    title: 'Complete Asset Pack',
-    description: 'Digital assets, maps, and character sheets for all our games.',
-    price: '10.00',
-    icon: 'i-lucide-package',
-    badge: { text: 'Digital', color: 'blue' }
-  }
-]
+// Load shop content from markdown
+const { data: shopContent } = await useAsyncData('shop-content', () =>
+  queryCollection('shop').first()
+)
+
+const featuredProducts = computed(() => shopContent.value?.featuredProducts || [])
 
 // SEO
 useSeoMeta({
-  title: 'Shop - Shrike Publishing',
-  description: 'Purchase tabletop games from Shrike Publishing. Shop on Itch.io, DriveThruRPG, or support us on Ko-fi.',
-  keywords: 'buy tabletop games, indie RPG shop, itch.io, drivethrurpg, ko-fi, game store'
+  title: shopContent.value?.seo?.title || 'Shop - Shrike Publishing',
+  description: shopContent.value?.seo?.description || 'Purchase tabletop games from Shrike Publishing.',
+  keywords: shopContent.value?.seo?.keywords
 })
 </script>
