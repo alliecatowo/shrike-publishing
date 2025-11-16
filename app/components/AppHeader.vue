@@ -35,27 +35,12 @@ import type { NavigationMenuItem } from '@nuxt/ui'
 
 const appConfig = useAppConfig()
 
-interface NavigationItemRaw {
-  label: string
-  to: string
-  icon?: string
-  children?: NavigationItemRaw[]
-}
-
-interface NavigationData {
-  items?: NavigationItemRaw[]
-}
-
-const { data: navData } = await useAsyncData('main-navigation', () =>
-  queryCollection('navigation').first()
-)
-
 function toIcon(name?: string): string | undefined {
   if (!name) return undefined
   return `i-${name.replace(':', '-')}`
 }
 
-function mapItems(items: NavigationItemRaw[] | undefined): NavigationMenuItem[] {
+function mapItems(items: any[] | undefined): NavigationMenuItem[] {
   return (items || []).map((it) => ({
     label: it.label,
     to: it.to,
@@ -64,5 +49,5 @@ function mapItems(items: NavigationItemRaw[] | undefined): NavigationMenuItem[] 
   }))
 }
 
-const navigationItems = computed<NavigationMenuItem[]>(() => mapItems((navData.value as NavigationData)?.items))
+const navigationItems = computed<NavigationMenuItem[]>(() => mapItems(appConfig.navigation.items))
 </script>
