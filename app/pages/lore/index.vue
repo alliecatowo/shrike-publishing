@@ -250,7 +250,8 @@ useSeoMeta({
         <p class="text-muted">Explore lore organized by type and topic</p>
       </div>
 
-      <UTabs
+      <div class="w-full max-w-full overflow-x-auto">
+        <UTabs
         :items="categories.map(cat => ({
           label: `${cat.label} (${cat.count})`,
           value: cat.value,
@@ -384,6 +385,7 @@ useSeoMeta({
           </div>
         </template>
       </UTabs>
+      </div>
     </UPageSection>
 
     <!-- Empty State -->
