@@ -416,14 +416,13 @@
 
 <script setup lang="ts">
 import { refDebounced } from '@vueuse/core'
-import { RESOURCE_CATEGORIES } from '~/constants/categories'
 
 // Fetch resources from content collection
 const { data: resources } = await useAsyncData('resources', () =>
   queryCollection('resources').where('published', '=', true).order('date', 'DESC').all()
 )
 
-// Fetch resources page content (FAQ, etc.)
+// Fetch resources page content (FAQ, categories, etc.)
 const { data: resourcesContent } = await useAsyncData('resources-content', () =>
   queryCollection('resources').where('path', '=', '/resources').first()
 )
@@ -439,11 +438,11 @@ const debouncedSearchQuery = refDebounced(searchQuery, 300)
 
 // Category tabs
 const activeCategory = ref('all')
-const categoryTabs = RESOURCE_CATEGORIES
+const categoryTabs = computed(() => resourcesContent.value?.categories || [])
 
 // Category tabs with counts
 const categoryTabsWithCounts = computed(() => {
-  return categoryTabs.map(tab => {
+  return categoryTabs.value.map(tab => {
     const count = tab.value === 'all'
       ? resourcesValue.value.length
       : resourcesValue.value.filter(r => r.category === tab.value).length

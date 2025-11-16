@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import * as v from 'valibot'
 import type { FormSubmitEvent } from '@nuxt/ui'
-import { CONTACT_FORM_SUBJECTS, TOAST_MESSAGES } from '~/constants/messages'
+
+// Load form configuration from content
+const { data: formsConfig } = await useAsyncData('forms-config', () =>
+  queryCollection('forms').first()
+)
 
 const schema = v.object({
   name: v.pipe(v.string(), v.minLength(2, 'Name must be at least 2 characters')),
@@ -22,7 +26,7 @@ const state = reactive({
 const toast = useToast()
 const loading = ref(false)
 
-const subjectOptions = CONTACT_FORM_SUBJECTS
+const subjectOptions = computed(() => formsConfig.value?.contactForm?.subjects || [])
 
 async function onSubmit(event: FormSubmitEvent<Schema>) {
   loading.value = true
@@ -33,10 +37,15 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000))
 
-    toast.add({
-      ...TOAST_MESSAGES.contact.success,
-      color: 'success'
-    })
+    const successMsg = formsConfig.value?.contactMessages?.success
+    if (successMsg) {
+      toast.add({
+        title: successMsg.title,
+        description: successMsg.description,
+        icon: successMsg.icon,
+        color: 'success'
+      })
+    }
 
     // Reset form
     Object.assign(state, {
@@ -47,10 +56,15 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     })
   } catch (error) {
     console.error('Error submitting form:', error)
-    toast.add({
-      ...TOAST_MESSAGES.contact.error,
-      color: 'error'
-    })
+    const errorMsg = formsConfig.value?.contactMessages?.error
+    if (errorMsg) {
+      toast.add({
+        title: errorMsg.title,
+        description: errorMsg.description,
+        icon: errorMsg.icon,
+        color: 'error'
+      })
+    }
   } finally {
     loading.value = false
   }

@@ -1,4 +1,20 @@
 ---
+categories:
+  - label: All Resources
+    value: all
+  - label: Manuals
+    value: manual
+  - label: Character Sheets
+    value: character-sheets
+  - label: Reference Guides
+    value: reference
+  - label: Maps & Assets
+    value: maps
+  - label: Templates
+    value: templates
+  - label: Tools
+    value: tools
+
 faq:
   - label: Can I print these resources at home?
     content: Yes! All our resources are designed to be printable on standard home printers. We recommend using high-quality paper for the best results.
