@@ -147,6 +147,86 @@ export default defineContentConfig({
         }).optional()
       })
     }),
+    forms: defineCollection({
+      type: 'page',
+      source: 'forms.md',
+      schema: z.object({
+        contactForm: z.object({
+          subjects: z.array(z.object({
+            label: z.string(),
+            value: z.string()
+          }))
+        }).optional(),
+        newsletterMessages: z.object({
+          success: z.object({
+            title: z.string(),
+            description: z.string(),
+            icon: z.string()
+          }),
+          error: z.object({
+            title: z.string(),
+            description: z.string(),
+            icon: z.string()
+          })
+        }).optional(),
+        contactMessages: z.object({
+          success: z.object({
+            title: z.string(),
+            description: z.string(),
+            icon: z.string()
+          }),
+          error: z.object({
+            title: z.string(),
+            description: z.string(),
+            icon: z.string()
+          })
+        }).optional()
+      })
+    }),
+    shop: defineCollection({
+      type: 'page',
+      source: 'shop.md',
+      schema: z.object({
+        title: z.string().optional(),
+        description: z.string().optional(),
+        seo: z.object({
+          title: z.string(),
+          description: z.string(),
+          keywords: z.string().optional()
+        }).optional(),
+        featuredProducts: z.array(z.object({
+          title: z.string(),
+          description: z.string(),
+          price: z.string(),
+          icon: z.string(),
+          badge: z.object({
+            text: z.string(),
+            color: z.string()
+          })
+        })).optional()
+      })
+    }),
+    support: defineCollection({
+      type: 'page',
+      source: 'support.md',
+      schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        seo: z.object({
+          title: z.string(),
+          description: z.string(),
+          keywords: z.string().optional()
+        }).optional(),
+        supportOptions: z.array(z.object({
+          icon: z.string(),
+          title: z.string(),
+          description: z.string(),
+          url: z.string(),
+          buttonLabel: z.string(),
+          color: z.string()
+        })).optional()
+      })
+    }),
     licenses: defineCollection({
       type: 'page',
       source: 'licenses.md',
