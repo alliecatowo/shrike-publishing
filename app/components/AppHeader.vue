@@ -13,12 +13,13 @@
       <div class="flex items-center gap-2">
         <UColorModeButton />
         <UButton
-          size="sm"
-          variant="outline"
-          to="/support"
+          :size="appConfig.headerCta.size"
+          :variant="appConfig.headerCta.variant"
+          :to="appConfig.headerCta.to"
+          :color="appConfig.headerCta.color"
           leading-icon="i-lucide-heart"
         >
-          Support Us
+          {{ appConfig.headerCta.label }}
         </UButton>
       </div>
     </template>

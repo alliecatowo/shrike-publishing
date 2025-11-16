@@ -4,6 +4,13 @@ export default defineAppConfig({
       name: 'Shrike Publishing',
       logoAlt: 'Shrike Publishing'
     },
+    headerCta: {
+      label: 'Support Us',
+      to: '/support',
+      color: 'primary',
+      size: 'sm',
+      variant: 'outline'
+    },
     ui: {
       // Brand colors - Emphasizing pink, lavender, and red palette
       colors: {
