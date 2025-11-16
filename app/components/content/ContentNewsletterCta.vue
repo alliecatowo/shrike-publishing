@@ -81,24 +81,25 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
     <div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(var(--color-primary-500)/0.1),transparent_50%)] pointer-events-none" />
 
     <template #header>
-      <div class="flex justify-center mb-6">
+      <div class="flex flex-col items-center space-y-6">
         <div class="relative">
           <div class="absolute inset-0 blur-2xl bg-gradient-to-r from-primary/30 to-secondary/30 rounded-full animate-pulse" />
           <div class="relative w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center shadow-lg">
             <UIcon name="i-lucide-mail" class="h-8 w-8 text-white" />
           </div>
         </div>
+
+        <div class="text-center space-y-3">
+          <h3 class="text-2xl font-bold">
+            <slot name="title">Join Our Community</slot>
+          </h3>
+          <p class="text-base">
+            <slot name="description">
+              Subscribe to our newsletter and stay updated with our latest releases, behind-the-scenes content, and exclusive offers.
+            </slot>
+          </p>
+        </div>
       </div>
-    </template>
-
-    <template #title>
-      <slot name="title">Join Our Community</slot>
-    </template>
-
-    <template #description>
-      <slot name="description">
-        Subscribe to our newsletter and stay updated with our latest releases, behind-the-scenes content, and exclusive offers.
-      </slot>
     </template>
 
     <template #footer>
@@ -111,7 +112,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
             size="xl"
             :disabled="loading"
             icon="i-lucide-mail"
-            class="w-full"
+            class="w-full py-1"
           >
             <template #trailing>
               <UButton
