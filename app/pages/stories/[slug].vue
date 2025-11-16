@@ -1,7 +1,6 @@
 <template>
   <!-- Story Header -->
-  <UPage> 
-    <UContainer>
+  <UPage>
     <UPageHeader
     :title="storyValue.title"
     :description="storyValue.description"
@@ -22,8 +21,6 @@
       </template>
     </UPageHeader>
     <UPageBody>
-      
-
       <!-- Series Navigation -->
       <UCard v-if="storyValue.series">
         <div class="flex items-center justify-between">
@@ -116,13 +113,14 @@
     </UPageBody>
 
     <template #right>
-        <UContentToc
-          v-if="storyValue?.body?.toc?.links?.length"
-          :links="storyValue.body.toc.links"
-          title="On this page"
-        />
+      <UContentToc
+        v-if="storyValue?.body?.toc?.links?.length"
+        :links="storyValue.body.toc.links"
+        title="In This Story"
+        highlight
+        color="primary"
+      />
     </template>
-    </UContainer>
   </UPage>
 </template>
 

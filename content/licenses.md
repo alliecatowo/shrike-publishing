@@ -39,6 +39,17 @@ At Shrike Publishing, we encourage creativity and collaboration. We offer severa
 ::
 ::
 
+::u-page-section
+---
+title: Licensing FAQ
+description: Common questions about using our content
+ui:
+  container: text-center
+class: max-w-3xl mx-auto
+---
+:u-accordion{:items="faq" :multiple="true"}
+::
+
 ::u-page-section{class="max-w-5xl mx-auto"}
 :::license-card{title="Era of Silence Third-Party License" icon="i-lucide-file-text" badgeText="Open License" badgeColor="success" borderColor="primary" iconColor="primary" buttonText="Learn About Era of Silence" buttonUrl="/games/era-of-silence" buttonIcon="i-lucide-book-open"}
 Create and publish your own content for Era of Silence under our third-party license.
@@ -114,17 +125,6 @@ We love seeing what the community creates! Here's what you can do without asking
 - Don't use our content in ways that could harm others
 - Tag us so we can see and share your awesome work!
 :::
-::
-
-::u-page-section
----
-title: Licensing FAQ
-description: Common questions about using our content
-ui:
-  container: text-center
-class: max-w-3xl mx-auto
----
-:u-accordion{:items="faq" :multiple="true"}
 ::
 
 ::u-page-cta{title="Ready to Create?" description="Start building your own content for our games or reach out with licensing questions." :links='[{"label":"Browse Our Games","to":"/games","leadingIcon":"i-lucide-gamepad-2"},{"label":"Contact Us","to":"/contact","variant":"outline","leadingIcon":"i-lucide-mail"}]'}

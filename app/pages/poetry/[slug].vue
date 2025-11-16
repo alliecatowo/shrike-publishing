@@ -124,6 +124,16 @@
         </UButton>
       </div>
     </UPageBody>
+
+    <template #right>
+      <UContentToc
+        v-if="poemValue?.body?.toc?.links?.length"
+        :links="poemValue.body.toc.links"
+        title="In This Poem"
+        highlight
+        color="pink"
+      />
+    </template>
   </UPage>
 </template>
 

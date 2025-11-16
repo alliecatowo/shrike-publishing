@@ -1,6 +1,5 @@
 <template>
   <UPage>
-    <UContainer>
     <UPageHeader
       :title="postValue.title"
       :description="postValue.description"
@@ -16,22 +15,18 @@
 
     <UPageBody>
       <!-- Article Image -->
-      <div>
-        <template v-if="postValue.image">
-          <NuxtImg
-            :src="postValue.image"
-            :alt="postValue.title"
-            class="w-full aspect-video object-cover rounded-lg"
-            format="webp"
-            sizes="(max-width: 768px) 100vw, 1024px"
-            :placeholder="true"
-          />
-        </template>
-        <template v-else>
-          <div class="aspect-video bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg flex items-center justify-center">
-            <UIcon name="i-lucide-file-text" class="h-16 w-16 text-primary" />
-          </div>
-        </template>
+      <div v-if="postValue.image">
+        <NuxtImg
+          :src="postValue.image"
+          :alt="postValue.title"
+          class="w-full aspect-video object-cover rounded-lg"
+          format="webp"
+          sizes="(max-width: 768px) 100vw, 1024px"
+          :placeholder="true"
+        />
+      </div>
+      <div v-else class="aspect-video bg-gradient-to-br from-primary/10 to-secondary/10 rounded-lg flex items-center justify-center">
+        <UIcon name="i-lucide-file-text" class="h-16 w-16 text-primary" />
       </div>
 
       <!-- Article Content -->
@@ -67,16 +62,16 @@
         </div>
       </div>
     </UPageBody>
-  </UContainer>
-    
+
     <template #right>
-      <!-- Table of Contents -->
       <UContentToc
-      v-if="postValue?.body?.toc?.links?.length"
-      :links="postValue.body.toc.links"
-        title="On this page"
-        />
-      </template>
+        v-if="postValue?.body?.toc?.links?.length"
+        :links="postValue.body.toc.links"
+        title="In This Article"
+        highlight
+        color="primary"
+      />
+    </template>
       
       <template #bottom>
         <!-- Back to Blog -->

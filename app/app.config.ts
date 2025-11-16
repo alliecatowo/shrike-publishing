@@ -138,6 +138,13 @@ export default defineAppConfig({
       //     container: 'flex flex-col lg:grid py-8 sm:py-12 lg:py-16 gap-8 sm:gap-12'
       //   }
       // }
+
+      // Page layout - Add centering to content area
+      page: {
+        slots: {
+          center: 'lg:col-span-8 max-w-4xl mx-auto px-4'
+        }
+      }
     },
     icon: {
         mode: 'css',
