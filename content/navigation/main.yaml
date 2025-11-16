@@ -32,6 +32,10 @@ items:
         to: '/blog'
         icon: 'lucide:rss'
 
+  - label: 'Lore Wiki'
+    to: '/lore'
+    icon: 'lucide:book-open'
+
   - label: 'Shop'
     icon: 'lucide:shopping-bag'
     children:
