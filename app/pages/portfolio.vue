@@ -470,14 +470,12 @@ const drawingsArtwork = computed(() => {
   }))
 })
 
-// Sample pages for carousel
-const samplePages = [
-  { image: '/images/era-of-silence/sample-pages/world-of-vian.png', title: 'World of Vian' },
-  { image: '/images/era-of-silence/sample-pages/character-creation-overview.png', title: 'Character Creation Overview' },
-  { image: '/images/era-of-silence/sample-pages/combat-biker.png', title: 'Combat Biker' },
-  { image: '/images/era-of-silence/sample-pages/magic.png', title: 'Magic System' },
-  { image: '/images/era-of-silence/sample-pages/elek-human-spread.png', title: 'Elek & Human Spread' }
-]
+// Load sample pages from portfolio content
+const { data: rulebookData } = await useAsyncData('era-of-silence-rulebook', () =>
+  queryCollection('portfolio').where('title', '=', 'Era of Silence Core Rulebook').first()
+)
+
+const samplePages = computed(() => rulebookData.value?.samplePages || [])
 
 // SEO
 useSeoMeta({
