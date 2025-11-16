@@ -1,6 +1,6 @@
 <template>
   <UContainer class="py-8">
-    <div class="max-w-4xl mx-auto space-y-12">
+    <div class="max-w-6xl mx-auto">
       <ContentRenderer v-if="page" :value="page" />
     </div>
   </UContainer>

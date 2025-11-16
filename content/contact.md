@@ -23,7 +23,7 @@ ui:
 ---
 ::
 
-::u-page-grid{:cols="{ default: 1, md: 2, lg: 3 }" class="gap-6 mb-12"}
+::u-page-grid{:cols="{ default: 1, md: 2, lg: 3 }" class="gap-6 my-16"}
 :::social-link-card{title="Patreon" icon="i-lucide-heart" url="https://patreon.com/shrikepublishing" buttonText="Become a Patron" color="error" :external="true"}
 Become a patron and get exclusive content, early access, and behind-the-scenes updates.
 :::
@@ -53,28 +53,15 @@ Have questions about our games or want to get in touch? Send us an email.
 :::
 ::
 
-::u-card{class="mb-12"}
-#header
-## Send us a message
+::contact-section
+#address
+Shrike Publishing
+[Your Address]
+[City, State ZIP]
+[Country]
 
-#default
-:contact-form
+#hours
+Monday - Friday: 9:00 AM - 6:00 PM EST
+Email responses within 24-48 hours
 ::
 
-::u-card
-## Business Information
-
-::u-page-grid{:cols="{ default: 1, md: 2 }" class="gap-6"}
-#### Mailing Address
-
-{{ business.address.name }}
-{{ business.address.line1 }}
-{{ business.address.line2 }}
-{{ business.address.line3 }}
-
-#### Business Hours
-
-{{ business.hours[0] }}
-{{ business.hours[1] }}
-::
-::
