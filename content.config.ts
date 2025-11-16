@@ -327,6 +327,32 @@ export default defineContentConfig({
       })
     }),
 
+    // Lore wiki collection - supports nested structure
+    lore: defineCollection({
+      type: 'page',
+      source: 'lore/**/*.md',
+      schema: z.object({
+        title: z.string(),
+        description: z.string().optional(),
+        category: z.string().optional(), // e.g., 'Characters', 'Locations', 'Events', 'Eras'
+        subcategory: z.string().optional(),
+        game: z.string().optional(), // Associated game if applicable
+        era: z.string().optional(), // For timeline organization
+        image: z.string().optional(),
+        thumbnail: z.string().optional(),
+        tags: z.array(z.string()).default([]),
+        published: z.boolean().default(true),
+        featured: z.boolean().default(false),
+        date: z.date().optional(),
+        relatedEntries: z.array(z.string()).optional(), // Slugs of related lore entries
+        timeline: z.object({
+          year: z.number().optional(),
+          era: z.string().optional(),
+          season: z.string().optional()
+        }).optional()
+      })
+    }),
+
     // New design system collections
     design: defineCollection({
       type: 'data',
