@@ -1,7 +1,7 @@
 ---
 title: Licensing - Shrike Publishing
 description: Learn about licensing options for creating third-party content for
-  Era of Silence, Blood Neon, and other Shrike Publishing games.
+  Era of Silence and other Shrike Publishing games.
 faq:
   - label: Do I need to pay royalties to use your third-party licenses?
     content: No! Our third-party licenses are free to use. You can publish and sell
