@@ -2,59 +2,46 @@
 title: Shrike Publishing
 description: Baltimore-based storytelling studio creating tabletop games and literature
 navigation: false
-
-# Collection display configuration
-# Control which content appears on the homepage by adjusting these settings
 collections:
   games:
-    featured: true          # Show only featured games
-    published: true         # Show only published games
-    limit: 3               # Maximum number to display
-    order: date            # Sort by date (or title, etc.)
-    direction: DESC        # DESC (newest first) or ASC (oldest first)
-    # tags: []             # Optional: filter by specific tags
-
+    featured: true
+    published: true
+    limit: 3
+    order: date
+    direction: DESC
   stories:
     featured: true
     published: true
     limit: 3
     order: date
     direction: DESC
-    # tags: []
-
   blog:
     featured: true
     published: true
     limit: 3
     order: date
     direction: DESC
-    # tags: []
-
   announcements:
     featured: true
     published: true
     limit: 3
     order: date
     direction: DESC
-    # tags: []
-
-# Testimonials
-# Edit these to add, remove, or change testimonials on the homepage
 testimonials:
   - name: Emily "Cavegirl" Allen
     title: Game Designer
     company: ""
     avatar: EA
     heading: Tactical Design That Feels Good
-    quote: Era of Silence RPG completely changed how I think about tactical combat-driven games.
-
+    quote: Era of Silence RPG completely changed how I think about tactical
+      combat-driven games.
   - name: Michael Burnam-Fink
     title: Critic
     company: ""
     avatar: MB
     heading: Did Mr. Torgue Make This Game?
-    quote: Furious and intense, Blood Neon delivers on everything you could want out of a carnage-soaked DOOMlike TTRPG.
-
+    quote: Furious and intense, Blood Neon delivers on everything you could want out
+      of a carnage-soaked DOOMlike TTRPG.
   - name: Charlotte
     title: Consumer
     company: ""
@@ -160,17 +147,17 @@ We respect your privacy. Unsubscribe at any time.
 
 ::testimonials-grid
 ---
-title: What Our Audience Says
 description: Testimonials from our community
+title: What Our Audience Says
 ---
 ::
 
 ::u-page-section
 ---
-description: Track our journey from the latest releases to major milestones
-title: Recent Releases
 ui:
   container: text-center
+description: Track our journey from the latest releases to major milestones
+title: Recent Releases
 ---
   :::timeline-section{:default-value='3' color="primary" size="lg"}
     ::::timeline-item
@@ -181,7 +168,7 @@ ui:
     title: Get In Loser, We're Going to Steal the Kilogram
     ---
     ::::
-
+  
     ::::timeline-item
     ---
     date: May 2025
@@ -190,16 +177,17 @@ ui:
     title: "Era of Silence: Pit of Heaven- The Voidspire Job"
     ---
     ::::
-
+  
     ::::timeline-item
     ---
     date: April 2025
-    description: New standalone short story that follows Alice on a day in the life in New Bekton
+    description: New standalone short story that follows Alice on a day in the life
+      in New Bekton
     icon: i-lucide-zap
     title: "Era of Silence: Vulture's City"
     ---
     ::::
-
+  
     ::::timeline-item
     ---
     date: February 2025

@@ -104,7 +104,7 @@ export default defineAppConfig({
       // Brand colors - Emphasizing pink, lavender, and red palette
       colors: {
         // Adopt brand maroon using Nuxt UI built-in palette 'rose'
-        primary: 'rose',
+        primary: 'red',
         secondary: 'pink',
 
         accent: 'purple',
@@ -126,4 +126,3 @@ export default defineAppConfig({
         size: '24px' // Set default icon size
       }
   })
-  

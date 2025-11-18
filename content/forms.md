@@ -13,7 +13,6 @@ contactForm:
       value: Bug Report
     - label: Other
       value: Other
-
 newsletterMessages:
   success:
     title: Success!
@@ -23,7 +22,6 @@ newsletterMessages:
     title: Subscription failed
     description: Failed to subscribe. Please try again.
     icon: i-lucide-x-circle
-
 contactMessages:
   success:
     title: Message sent!
