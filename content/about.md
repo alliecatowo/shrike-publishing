@@ -51,13 +51,10 @@ title: About Shrike Publishing
   :::
 ::
 
-::u-page-section{.max-w-6xl.mx-auto.px-4.py-6 title="Our Values"}
-::
-
 ::u-page-section{.max-w-6xl.mx-auto.px-4.py-6 title="About Robin"}
   :::about-user
   ---
-  avatar-src: https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop
+  avatar-src: 
   name: Robin Val
   ---
   ### R. Val (she/her)
