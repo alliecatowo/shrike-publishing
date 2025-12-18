@@ -1,0 +1,1 @@
+import{u as a}from"./BAqpnTy5.js";import{q as e}from"./frihk3LQ.js";const c=async t=>{const{data:n}=await a(`page-content-${t}`,async()=>{try{return(await e("pages").first())?.[t]||{}}catch{return{}}});return n};export{c as u};
