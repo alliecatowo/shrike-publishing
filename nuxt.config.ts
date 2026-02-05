@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/ui',      // Must be before @nuxt/content for prose components
     '@nuxt/content',
+    'nuxt-studio',
     '@nuxt/eslint',
     '@nuxt/image',
     '@nuxt/fonts',
@@ -48,10 +49,9 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    preset: 'github_pages',
     prerender: {
       routes: [],
-      ignore: ['/api/']
+      ignore: ['/api/', '/_studio']
     }
   },
 
@@ -71,17 +71,17 @@ export default defineNuxtConfig({
   },
 
   content: {
-    preview: {
-      api: 'https://api.nuxt.studio',
-      gitInfo: {
-        name: 'shrike-publishing',
-        owner: 'alliecatowo',
-        url: 'https://github.com/alliecatowo/shrike-publishing'
-      }
-    },
-    // Enable experimental features for better Studio integration
     experimental: {
       search: true
+    }
+  },
+
+  studio: {
+    repository: {
+      provider: 'github',
+      owner: 'alliecatowo',
+      repo: 'shrike-publishing',
+      branch: 'main'
     }
   }
 })
