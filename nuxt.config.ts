@@ -60,16 +60,6 @@ export default defineNuxtConfig({
     '/shop': { prerender: true },
     '/games/**': { prerender: true },
 
-    // Content collections — ISR with 60s revalidation
-    '/blog': { isr: 60 },
-    '/blog/**': { isr: 60 },
-    '/stories': { isr: 60 },
-    '/stories/**': { isr: 60 },
-    '/poetry': { isr: 60 },
-    '/poetry/**': { isr: 60 },
-    '/announcements': { isr: 60 },
-    '/announcements/**': { isr: 60 },
-
     // Studio & API — always SSR, never cached
     '/_studio': { ssr: true },
     '/__nuxt_studio/**': { ssr: true },
