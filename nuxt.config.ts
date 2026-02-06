@@ -71,6 +71,11 @@ export default defineNuxtConfig({
   },
 
   content: {
+    preview: {
+      // Required: enables the #content/preview alias that nuxt-studio depends on.
+      // nuxt-studio itself handles preview functionality — this value just needs to be truthy.
+      api: 'https://api.nuxt.studio'
+    },
     experimental: {
       search: true
     }
