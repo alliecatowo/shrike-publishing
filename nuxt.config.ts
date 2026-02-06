@@ -77,7 +77,8 @@ export default defineNuxtConfig({
       api: 'https://api.nuxt.studio'
     },
     experimental: {
-      search: true
+      search: true,
+      nativeSqlite: true
     }
   },
 
