@@ -1,15 +1,15 @@
 ---
 title: The Thief - Character Illustration
-description: Character art for The Thief role - the expert who treats locks, alarms, and other people's property as mere suggestions
-game: steal-the-kilogram
-type: character
-artist: "Shrike Team"
-date: 2024-11-01
-fullImage: /ShrikeLogoNov2021.png
-thumbnail: /ShrikeLogoNov2021.png
-published: false
-featured: false
+artist: Shrike Team
 artworkNeeded: true
+date: 2024-11-01T00:00:00.000Z
+description: Character art for The Thief role - the expert who treats locks, alarms, and other people's property as mere suggestions
+featured: false
+fullImage: /ShrikeLogoNov2021.png
+game: steal-the-kilogram
+published: false
+thumbnail: /ShrikeLogoNov2021.png
+type: character
 ---
 
 ## Character Role: The Thief

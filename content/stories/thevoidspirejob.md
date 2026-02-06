@@ -1,18 +1,17 @@
 ---
-slug: thevoidspirejob
 title: "Era of Silence: The Voidspire Job"
-description: "A high-action preview of the forthcoming novel Era of Silence: The
-  Pit of Heaven."
-image: /images/stories/banner.png
-date: 2025-05-18
 author: R. Val
-type: free
+date: 2025-05-18T00:00:00.000Z
+description: "A high-action preview of the forthcoming novel Era of Silence: The Pit of Heaven."
+featured: false
+image: /images/stories/banner.png
+published: true
+slug: thevoidspirejob
 tags:
   - Era of Silence
   - Sci-Fi
   - Cyberpunk
-published: true
-featured: false
+type: free
 ---
 
 The following is a preview chapter from the first part of the forthcoming novel, Era of Silence: The Pit of Heaven. By this point in the story our heroes have the goods they need to prepare their journey, except for one thing, a cipher journal held by their leader’s treacherous cousin. The catch? He’s fled halfway up to orbit in a corporate town up the world’s first working space elevator. Mercenaries will need to be dispatched to retrieve it, including the protagonist’s daughter, Arina.

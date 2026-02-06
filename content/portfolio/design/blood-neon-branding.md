@@ -1,12 +1,15 @@
 ---
-title: 'Blood Neon Branding'
-description: 'Logo, color palette, and visual identity for cyberpunk RPG.'
+title: Blood Neon Branding
+date: 2024-02-20T00:00:00.000Z
+description: Logo, color palette, and visual identity for cyberpunk RPG.
+game: blood-neon
+icon: i-lucide-zap
+image: /images/blood-neon/cover/blood-neon-cover.jpg
 published: true
-type: 'design'
-game: 'blood-neon'
-date: 2024-02-20
-image: '/images/blood-neon/cover/blood-neon-cover.jpg'
-thumbnail: '/images/blood-neon/cover/blood-neon-cover.jpg'
-icon: 'i-lucide-zap'
-tags: ['Branding', 'Logo Design', 'Style Guide']
+tags:
+  - Branding
+  - Logo Design
+  - Style Guide
+thumbnail: /images/blood-neon/cover/blood-neon-cover.jpg
+type: design
 ---

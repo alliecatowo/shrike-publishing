@@ -1,27 +1,26 @@
 ---
-slug: steal-the-kilogram
 title: Get in Loser, We're Going to Steal the Kilogram
-description: "A chaotic heist game about one of two teams stealing the most
-  famous of weights. "
-date: 2025-09-09T00:00:00.000Z
-image: /bafkreiahgxziaisasw5ec2xoi27d2mk5k5s2ye3fk7rjr4vkwpwngumtsi.jpg
-thumbnail: /bafkreiahgxziaisasw5ec2xoi27d2mk5k5s2ye3fk7rjr4vkwpwngumtsi.jpg
-coverImage: /bafkreiahgxziaisasw5ec2xoi27d2mk5k5s2ye3fk7rjr4vkwpwngumtsi.jpg
-price: 7.5
-currency: USD
 available: true
+coverImage: /bafkreiahgxziaisasw5ec2xoi27d2mk5k5s2ye3fk7rjr4vkwpwngumtsi.jpg
+currency: USD
+date: 2025-09-09T00:00:00.000Z
+description: "A chaotic heist game about one of two teams stealing the most famous of weights. "
 featured: true
+image: /bafkreiahgxziaisasw5ec2xoi27d2mk5k5s2ye3fk7rjr4vkwpwngumtsi.jpg
+manualUrl: https://shrikepublishing.itch.io/get-in-loser-were-stealing-the-kilogram
+price: 7.5
+published: true
+resources:
+  - title: Print & Play Version
+    url: https://shrikepublishing.itch.io/
+slug: steal-the-kilogram
 tags:
   - tabletop
   - heist
   - comedy
   - one-shot
   - print-and-play
-manualUrl: https://shrikepublishing.itch.io/get-in-loser-were-stealing-the-kilogram
-resources:
-  - title: Print & Play Version
-    url: https://shrikepublishing.itch.io/
-published: true
+thumbnail: /bafkreiahgxziaisasw5ec2xoi27d2mk5k5s2ye3fk7rjr4vkwpwngumtsi.jpg
 ---
 
 # Get in Loser, We're Going to Steal the Kilogram

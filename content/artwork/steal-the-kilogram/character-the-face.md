@@ -1,15 +1,15 @@
 ---
 title: The Face - Character Illustration
-description: Character art for The Face role - the smooth-talking social engineer who can talk their way into (and out of) anything
-game: steal-the-kilogram
-type: character
-artist: "Shrike Team"
-date: 2024-11-01
-fullImage: /ShrikeLogoNov2021.png
-thumbnail: /ShrikeLogoNov2021.png
-published: false
-featured: false
+artist: Shrike Team
 artworkNeeded: true
+date: 2024-11-01T00:00:00.000Z
+description: Character art for The Face role - the smooth-talking social engineer who can talk their way into (and out of) anything
+featured: false
+fullImage: /ShrikeLogoNov2021.png
+game: steal-the-kilogram
+published: false
+thumbnail: /ShrikeLogoNov2021.png
+type: character
 ---
 
 ## Character Role: The Face

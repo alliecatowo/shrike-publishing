@@ -1,15 +1,15 @@
 ---
 title: The Weird One - Character Illustration
-description: Character art for The Weird One role - the specialist with skills that shouldn't be useful but somehow always are
-game: steal-the-kilogram
-type: character
-artist: "Shrike Team"
-date: 2024-11-01
-fullImage: /ShrikeLogoNov2021.png
-thumbnail: /ShrikeLogoNov2021.png
-published: false
-featured: false
+artist: Shrike Team
 artworkNeeded: true
+date: 2024-11-01T00:00:00.000Z
+description: Character art for The Weird One role - the specialist with skills that shouldn't be useful but somehow always are
+featured: false
+fullImage: /ShrikeLogoNov2021.png
+game: steal-the-kilogram
+published: false
+thumbnail: /ShrikeLogoNov2021.png
+type: character
 ---
 
 ## Character Role: The Weird One

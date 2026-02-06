@@ -1,16 +1,16 @@
 ---
-slug: era-of-silence-launch
 title: Era of Silence RPG
+date: 2024-09-20T00:00:00.000Z
 description: Alchemical adventures in a god-forsaken world.
-image: /images/announcements/era-of-silence-launch.jpg
-date: 2024-09-20
-type: product-launch
-published: true
 featured: false
+image: /images/announcements/era-of-silence-launch.jpg
+published: true
+slug: era-of-silence-launch
 tags:
   - Era of Silence
   - Launch
   - Card Game
+type: product-launch
 ---
 
 # Era of Silence RPG- Starter Kit

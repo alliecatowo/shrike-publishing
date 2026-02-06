@@ -1,7 +1,5 @@
 ---
 title: Shrike Publishing
-description: Baltimore-based storytelling studio creating tabletop games and literature
-navigation: false
 collections:
   games:
     featured: true
@@ -27,21 +25,21 @@ collections:
     limit: 3
     order: date
     direction: DESC
+description: Baltimore-based storytelling studio creating tabletop games and literature
+navigation: false
 testimonials:
   - name: Emily "Cavegirl" Allen
     title: Game Designer
     company: ""
     avatar: EA
     heading: Tactical Design That Feels Good
-    quote: Era of Silence RPG completely changed how I think about tactical
-      combat-driven games.
+    quote: Era of Silence RPG completely changed how I think about tactical combat-driven games.
   - name: Michael Burnam-Fink
     title: Critic
     company: ""
     avatar: MB
     heading: Did Mr. Torgue Make This Game?
-    quote: Furious and intense, Blood Neon delivers on everything you could want out
-      of a carnage-soaked DOOMlike TTRPG.
+    quote: Furious and intense, Blood Neon delivers on everything you could want out of a carnage-soaked DOOMlike TTRPG.
   - name: Charlotte
     title: Consumer
     company: ""

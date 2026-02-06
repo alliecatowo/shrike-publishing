@@ -1,22 +1,20 @@
 ---
-slug: memory-leak
 title: "Era of Silence: Memory Leak"
-description: Join Alice, a woman born unable to receive alchemical assistance,
-  as she and her team venture to the heart of the wastelands. The mission? Steal
-  damning evidence out of their target's head.    Novella    Genre- Thriller
-image: /images/stories/C03EDD96-4B29-4935-A73F-FB872DD16B1D.jpeg
-date: 2023-09-24
 author: R. Val
-type: free
+date: 2023-09-24T00:00:00.000Z
+description: Join Alice, a woman born unable to receive alchemical assistance, as she and her team venture to the heart of the wastelands. The mission? Steal damning evidence out of their target's head.    Novella    Genre- Thriller
 featured: true
+image: /images/stories/C03EDD96-4B29-4935-A73F-FB872DD16B1D.jpeg
+published: true
+series: Memory Leak
+seriesOrder: 1
+seriesTotal: 4
+slug: memory-leak
 tags:
   - Ashen Silence
   - Stories
   - Talonborne
-series: Memory Leak
-seriesOrder: 1
-seriesTotal: 4
-published: true
+type: free
 ---
 
 # Memory Leak

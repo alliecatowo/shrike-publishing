@@ -1,17 +1,17 @@
 ---
-slug: quiet-road
 title: "Ashen Silence: Quiet Road"
-description: A wasteland journey plagued by a pursuing revenant. Will you survive?
-image: /images/stories/the-rider.png
-date: 2023-12-05
 author: R. Val
-type: free
+date: 2023-12-05T00:00:00.000Z
+description: A wasteland journey plagued by a pursuing revenant. Will you survive?
 featured: true
+image: /images/stories/the-rider.png
+published: true
+slug: quiet-road
 tags:
   - Ashen Silence
   - Talonborne
   - Stories
-published: true
+type: free
 ---
 
 # **Quiet Road**

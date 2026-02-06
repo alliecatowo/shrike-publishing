@@ -1,15 +1,15 @@
 ---
 title: Heist Deck - Sample Cards
-description: Example cards from the 52-card Heist Deck representing complications and challenges during the heist
-game: steal-the-kilogram
-type: game-component
-artist: "Shrike Team"
-date: 2024-11-01
-fullImage: /ShrikeLogoNov2021.png
-thumbnail: /ShrikeLogoNov2021.png
-published: false
-featured: false
+artist: Shrike Team
 artworkNeeded: true
+date: 2024-11-01T00:00:00.000Z
+description: Example cards from the 52-card Heist Deck representing complications and challenges during the heist
+featured: false
+fullImage: /ShrikeLogoNov2021.png
+game: steal-the-kilogram
+published: false
+thumbnail: /ShrikeLogoNov2021.png
+type: game-component
 ---
 
 ## The Heist Deck: Sample Cards

@@ -1,15 +1,15 @@
 ---
 title: Game Components - Dice, Tokens, and Materials
-description: Custom dice, flashback tokens, and other physical game components for the heist experience
-game: steal-the-kilogram
-type: game-component
-artist: "Shrike Team"
-date: 2024-11-01
-fullImage: /ShrikeLogoNov2021.png
-thumbnail: /ShrikeLogoNov2021.png
-published: false
-featured: false
+artist: Shrike Team
 artworkNeeded: true
+date: 2024-11-01T00:00:00.000Z
+description: Custom dice, flashback tokens, and other physical game components for the heist experience
+featured: false
+fullImage: /ShrikeLogoNov2021.png
+game: steal-the-kilogram
+published: false
+thumbnail: /ShrikeLogoNov2021.png
+type: game-component
 ---
 
 ## Game Components and Materials

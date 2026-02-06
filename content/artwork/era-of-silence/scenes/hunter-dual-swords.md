@@ -1,20 +1,20 @@
 ---
 title: Hunter with Dual Swords
-description: A skilled warrior wielding twin blades in deadly combat
-game: era-of-silence
-type: scene
-fullImage: /images/era-of-silence/art/scenes/hunter-dual-swords.png
-thumbnail: /images/era-of-silence/art/scenes/hunter-dual-swords.png
 artist: R. Val
-published: true
+date: 2024-01-20T00:00:00.000Z
+description: A skilled warrior wielding twin blades in deadly combat
 featured: false
-date: 2024-01-20
+fullImage: /images/era-of-silence/art/scenes/hunter-dual-swords.png
+game: era-of-silence
+published: true
 tags:
   - hunter
   - combat
   - warrior
   - scene
   - melee
+thumbnail: /images/era-of-silence/art/scenes/hunter-dual-swords.png
+type: scene
 ---
 
 A hunter demonstrates exceptional skill with dual swords, weapons that require years of training to master. In close combat, these warriors are devastating, their blades flashing as they face down threats in the dangerous world of Era of Silence.

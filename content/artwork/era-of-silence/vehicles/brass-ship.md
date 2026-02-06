@@ -1,19 +1,19 @@
 ---
 title: The Brass Ship
-description: A magnificent brass vessel that sails the desert wastes of Era of Silence
-game: era-of-silence
-type: vehicle
-fullImage: /images/era-of-silence/art/vehicles/brass-ship.png
-thumbnail: /images/era-of-silence/art/vehicles/brass-ship.png
 artist: R. Val
-published: true
+date: 2024-01-20T00:00:00.000Z
+description: A magnificent brass vessel that sails the desert wastes of Era of Silence
 featured: false
-date: 2024-01-20
+fullImage: /images/era-of-silence/art/vehicles/brass-ship.png
+game: era-of-silence
+published: true
 tags:
   - vehicle
   - transportation
   - desert
   - brass
+thumbnail: /images/era-of-silence/art/vehicles/brass-ship.png
+type: vehicle
 ---
 
 The Brass Ship is a remarkable vessel crafted from salvaged materials and ancient technology, designed to traverse the harsh desert landscapes of the post-apocalyptic world. Its gleaming brass hull reflects the unforgiving sun as it cuts through sand dunes and ash wastes.

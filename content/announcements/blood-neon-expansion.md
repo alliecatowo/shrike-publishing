@@ -1,17 +1,17 @@
 ---
-slug: blood-neon-expansion
 title: Blood Neon Expansion - Atomic Shock
+date: 2024-10-15T00:00:00.000Z
 description: Power up and try not to lose yourself in this unleashed ttrpg expansion!
-image: /images/announcements/blood-neon-expansion.jpg
-date: 2024-10-15
-type: expansion
 featured: true
+image: /images/announcements/blood-neon-expansion.jpg
 published: true
+slug: blood-neon-expansion
 tags:
   - Blood Neon
   - Expansion
   - Cyberpunk
   - TTRPG
+type: expansion
 ---
 
 # Blood Neon Expansion - Atomic Shock

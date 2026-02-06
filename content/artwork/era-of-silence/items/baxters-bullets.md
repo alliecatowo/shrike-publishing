@@ -1,19 +1,19 @@
 ---
 title: Baxter's Bullets
-description: Specially crafted ammunition designed for maximum effectiveness
-game: era-of-silence
-type: item
-fullImage: /images/era-of-silence/art/items/baxters-bullets.png
-thumbnail: /images/era-of-silence/art/items/baxters-bullets.png
 artist: R. Val
-published: true
+date: 2024-01-20T00:00:00.000Z
+description: Specially crafted ammunition designed for maximum effectiveness
 featured: false
-date: 2024-01-20
+fullImage: /images/era-of-silence/art/items/baxters-bullets.png
+game: era-of-silence
+published: true
 tags:
   - ammunition
   - weapon
   - equipment
   - special
+thumbnail: /images/era-of-silence/art/items/baxters-bullets.png
+type: item
 ---
 
 Baxter's Bullets are renowned throughout the wasteland for their reliability and stopping power. Each round is carefully crafted by skilled artisans who have perfected the art of ammunition creation in a world where every shot counts.
