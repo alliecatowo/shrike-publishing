@@ -48,10 +48,37 @@ export default defineNuxtConfig({
     collections: ['lucide']
   },
 
+  routeRules: {
+    // Static pages — prerendered at build time
+    '/': { prerender: true },
+    '/about': { prerender: true },
+    '/contact': { prerender: true },
+    '/licenses': { prerender: true },
+    '/support': { prerender: true },
+    '/portfolio': { prerender: true },
+    '/resources': { prerender: true },
+    '/shop': { prerender: true },
+    '/games/**': { prerender: true },
+
+    // Content collections — ISR with 60s revalidation
+    '/blog': { isr: 60 },
+    '/blog/**': { isr: 60 },
+    '/stories': { isr: 60 },
+    '/stories/**': { isr: 60 },
+    '/poetry': { isr: 60 },
+    '/poetry/**': { isr: 60 },
+    '/announcements': { isr: 60 },
+    '/announcements/**': { isr: 60 },
+
+    // Studio & API — always SSR, never cached
+    '/_studio': { ssr: true },
+    '/__nuxt_studio/**': { ssr: true },
+    '/api/**': { ssr: true }
+  },
+
   nitro: {
     prerender: {
-      routes: [],
-      ignore: ['/api/', '/_studio']
+      ignore: ['/api/', '/_studio', '/__nuxt_studio']
     }
   },
 
