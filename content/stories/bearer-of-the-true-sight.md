@@ -1,17 +1,16 @@
 ---
-slug: bearer-of-the-true-sight
 title: "Era of Silence: Bearer of the True Sight"
-description: An Ashen Silence short story. Mira the acolyte returns home from a
-  long pilgrimage with a sacred artifact, but who is pursuing her?
-image: /images/stories/GMCUW-EXgAAmCY8.jpg
-date: 2024-04-26
 author: R. Val
-type: free
+date: 2024-04-26T00:00:00.000Z
+description: An Ashen Silence short story. Mira the acolyte returns home from a long pilgrimage with a sacred artifact, but who is pursuing her?
 featured: true
+image: /images/stories/GMCUW-EXgAAmCY8.jpg
+published: true
+slug: bearer-of-the-true-sight
 tags:
   - Talonborne
   - Ashen Silence
-published: true
+type: free
 ---
 
 # BEARER OF THE TRUE SIGHT

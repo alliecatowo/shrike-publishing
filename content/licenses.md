@@ -1,32 +1,20 @@
 ---
 title: Licensing - Shrike Publishing
-description: Learn about licensing options for creating third-party content for
-  Era of Silence and other Shrike Publishing games.
+description: Learn about licensing options for creating third-party content for Era of Silence and other Shrike Publishing games.
 faq:
   - label: Do I need to pay royalties to use your third-party licenses?
-    content: No! Our third-party licenses are free to use. You can publish and sell
-      your content without paying us royalties. We only ask that you follow the
-      license requirements and give proper credit.
+    content: No! Our third-party licenses are free to use. You can publish and sell your content without paying us royalties. We only ask that you follow the license requirements and give proper credit.
     defaultOpen: true
   - label: Can I use artwork from your official books?
-    content: Official artwork, logos, and trademarked elements are not covered under
-      the third-party licenses. If you need to use these, please contact us for
-      custom licensing arrangements.
+    content: Official artwork, logos, and trademarked elements are not covered under the third-party licenses. If you need to use these, please contact us for custom licensing arrangements.
   - label: What platforms can I sell my third-party content on?
-    content: You can sell your licensed content on any platform you choose,
-      including Itch.io, DriveThruRPG, your own website, or through crowdfunding
-      platforms like Kickstarter.
+    content: You can sell your licensed content on any platform you choose, including Itch.io, DriveThruRPG, your own website, or through crowdfunding platforms like Kickstarter.
   - label: Can I create content in other languages?
-    content: Yes! Translations and content in any language are welcome under our
-      third-party licenses. We love seeing our games reach global audiences.
+    content: Yes! Translations and content in any language are welcome under our third-party licenses. We love seeing our games reach global audiences.
   - label: How do I get my content featured on your website?
-    content: We love featuring community content! Reach out to us through our
-      contact page with information about your project. We regularly spotlight
-      third-party content on our blog and social media.
+    content: We love featuring community content! Reach out to us through our contact page with information about your project. We regularly spotlight third-party content on our blog and social media.
   - label: What if I want to use your system for a different setting?
-    content: You can use mechanics and system elements under our licenses, but if
-      you want to create a substantially different game or setting, please
-      contact us to discuss custom licensing options.
+    content: You can use mechanics and system elements under our licenses, but if you want to create a substantially different game or setting, please contact us to discuss custom licensing options.
 ---
 
 ::u-page-hero

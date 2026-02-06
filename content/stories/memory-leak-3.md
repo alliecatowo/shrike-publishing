@@ -1,20 +1,20 @@
 ---
-slug: memory-leak-3
 title: 3. Thief
-description: "The team infiltrates the heavily guarded estate, facing unexpected resistance and betrayal as they fight their way to their target in a deadly game of survival."
-date: 2024-01-22
 author: R. Val
-type: free
+date: 2024-01-22T00:00:00.000Z
+description: The team infiltrates the heavily guarded estate, facing unexpected resistance and betrayal as they fight their way to their target in a deadly game of survival.
+featured: false
+published: true
+series: Memory Leak
+seriesOrder: 3
+seriesTotal: 4
+slug: memory-leak-3
 tags:
   - Memory Leak
   - Ashen Silence
   - Sci-Fi
   - Cyberpunk
-series: Memory Leak
-seriesOrder: 3
-seriesTotal: 4
-published: true
-featured: false
+type: free
 ---
 
 # Ashen Silence: Memory Leak

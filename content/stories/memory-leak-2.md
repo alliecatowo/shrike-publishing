@@ -1,20 +1,20 @@
 ---
-slug: memory-leak-2
 title: 2. Waster
-description: "Alice and her crew venture into the wastelands beyond the city shield, navigating dangerous terrain and hostile corporate territory as they begin their high-stakes mission."
-date: 2024-01-15
 author: R. Val
-type: free
+date: 2024-01-15T00:00:00.000Z
+description: Alice and her crew venture into the wastelands beyond the city shield, navigating dangerous terrain and hostile corporate territory as they begin their high-stakes mission.
+featured: false
+published: true
+series: Memory Leak
+seriesOrder: 2
+seriesTotal: 4
+slug: memory-leak-2
 tags:
   - Memory Leak
   - Ashen Silence
   - Sci-Fi
   - Cyberpunk
-series: Memory Leak
-seriesOrder: 2
-seriesTotal: 4
-published: true
-featured: false
+type: free
 ---
 
 ## Ashen Silence: Memory Leak 

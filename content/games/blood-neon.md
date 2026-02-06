@@ -1,25 +1,25 @@
 ---
-slug: blood-neon
 title: Blood Neon
-description: A brutal vaporwave nightmare ttrpg.
-date: 2022-07-31T00:00:00.000Z
-image: /images/blood-neon/cover/blood-neon-cover.jpg
-price: 10
-currency: USD
 available: true
+currency: USD
+date: 2022-07-31T00:00:00.000Z
+description: A brutal vaporwave nightmare ttrpg.
 featured: true
-tags:
-  - tabletop
-  - cyberpunk
-  - adventure
-  - cooperative
+image: /images/blood-neon/cover/blood-neon-cover.jpg
+manualUrl: https://radmad.itch.io/blood-neon
+price: 10
+published: true
 resources:
   - title: Faction Guide
     url: /resources
   - title: GM Screen
     url: /resources
-published: true
-manualUrl: https://radmad.itch.io/blood-neon
+slug: blood-neon
+tags:
+  - tabletop
+  - cyberpunk
+  - adventure
+  - cooperative
 ---
 
 # Blood Neon

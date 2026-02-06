@@ -1,25 +1,25 @@
 ---
-slug: era-of-silence
 title: Era of Silence
-description: Team-focused tactical action in the gods' Long Silence.
-date: 2022-09-29T00:00:00.000Z
-image: /images/era-of-silence/cover/era-of-silence-cover.png
-price: 15
-currency: USD
 available: true
+currency: USD
+date: 2022-09-29T00:00:00.000Z
+description: Team-focused tactical action in the gods' Long Silence.
 featured: true
-tags:
-  - tabletop
-  - strategy
-  - dystopian
-  - card-game
+image: /images/era-of-silence/cover/era-of-silence-cover.png
 manualUrl: https://www.drivethrurpg.com/en/product/411680/era-of-silence-starter-kit
+price: 15
+published: true
 resources:
   - title: Quick Reference Guide
     url: /resources/era-of-silence-quick-reference
   - title: Character Sheets
     url: /resources
-published: true
+slug: era-of-silence
+tags:
+  - tabletop
+  - strategy
+  - dystopian
+  - card-game
 ---
 
 # Era of Silence RPG

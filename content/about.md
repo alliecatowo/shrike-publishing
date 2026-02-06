@@ -1,7 +1,6 @@
 ---
 title: About Us - Shrike Publishing
-description: Learn about Shrike Publishing, our team, values, and commitment to
-  creating innovative tabletop games and literature.
+description: Learn about Shrike Publishing, our team, values, and commitment to creating innovative tabletop games and literature.
 ---
 
 ::u-page-hero

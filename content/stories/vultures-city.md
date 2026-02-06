@@ -1,18 +1,17 @@
 ---
-slug: vultures-city
 title: Era of Silence- Vulture's City
-description: An Era of Silence short story about transness, disability, and
-  trying to live on in a weird future fantasy fascist state.
-image: /images/stories/city-of-rings.jpg
-date: 2025-03-25
 author: R. Val
-type: free
+date: 2025-03-25T00:00:00.000Z
+description: An Era of Silence short story about transness, disability, and trying to live on in a weird future fantasy fascist state.
+featured: false
+image: /images/stories/city-of-rings.jpg
+published: true
+slug: vultures-city
 tags:
   - Era of Silence
   - Sci-Fi
   - Cyberpunk
-published: true
-featured: false
+type: free
 ---
 
 # Vulture’s City

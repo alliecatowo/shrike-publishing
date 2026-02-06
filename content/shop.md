@@ -1,16 +1,9 @@
 ---
 title: Shop Shrike Publishing
-description: Support independent tabletop game publishing. Purchase our games,
-  support us on Ko-fi, or browse our digital storefronts.
-seo:
-  title: Shop - Shrike Publishing
-  description: Purchase tabletop games from Shrike Publishing. Shop on Itch.io,
-    DriveThruRPG, or support us on Ko-fi.
-  keywords: buy tabletop games, indie RPG shop, itch.io, drivethrurpg, ko-fi, game store
+description: Support independent tabletop game publishing. Purchase our games, support us on Ko-fi, or browse our digital storefronts.
 featuredProducts:
   - title: Era of Silence Starter Kit
-    description: Everything you need to begin your journey in the post-apocalyptic
-      world of Era of Silence.
+    description: Everything you need to begin your journey in the post-apocalyptic world of Era of Silence.
     price: "15.00"
     icon: i-lucide-book-open
     badge:
@@ -30,4 +23,8 @@ featuredProducts:
     badge:
       text: Digital
       color: blue
+seo:
+  title: Shop - Shrike Publishing
+  description: Purchase tabletop games from Shrike Publishing. Shop on Itch.io, DriveThruRPG, or support us on Ko-fi.
+  keywords: buy tabletop games, indie RPG shop, itch.io, drivethrurpg, ko-fi, game store
 ---

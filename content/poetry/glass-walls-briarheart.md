@@ -1,16 +1,16 @@
 ---
-slug: glass-walls-briarhearts
 title: Glass Walls, Briarhearts
-description: A poetry collection.
-date: 2024-09-28
 author: Shrike Publishing
+date: 2024-09-28T00:00:00.000Z
+description: A poetry collection.
+featured: false
+published: true
+slug: glass-walls-briarhearts
 tags:
   - borderline personality
   - poetry
   - bird
   - ""
-published: true
-featured: false
 ---
 
 # Glass Walls, Briarhearts

@@ -1,19 +1,19 @@
 ---
-slug: ashen-silence-sky-over-saliana
 title: "Era of Silence: Sky Over Saliana"
-description: Intrigue, deception, and more in a simple conversation above the cloudline.
-thumbnail: /images/stories/saliana-vista.png
-image: /images/stories/saliana-vista.png
-date: 2023-09-03
 author: R. Val
-type: free
+date: 2023-09-03T00:00:00.000Z
+description: Intrigue, deception, and more in a simple conversation above the cloudline.
+featured: false
+image: /images/stories/saliana-vista.png
+published: true
+slug: ashen-silence-sky-over-saliana
 tags:
   - Era of Silence
   - Sci-Fi
   - Cyberpunk
   - Intrigue
-published: true
-featured: false
+thumbnail: /images/stories/saliana-vista.png
+type: free
 ---
 
 # Sky Over Saliana

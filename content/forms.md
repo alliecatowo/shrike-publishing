@@ -13,15 +13,6 @@ contactForm:
       value: Bug Report
     - label: Other
       value: Other
-newsletterMessages:
-  success:
-    title: Success!
-    description: You're subscribed to our newsletter
-    icon: i-lucide-check-circle
-  error:
-    title: Subscription failed
-    description: Failed to subscribe. Please try again.
-    icon: i-lucide-x-circle
 contactMessages:
   success:
     title: Message sent!
@@ -30,5 +21,14 @@ contactMessages:
   error:
     title: Error
     description: There was an error sending your message. Please try again.
+    icon: i-lucide-x-circle
+newsletterMessages:
+  success:
+    title: Success!
+    description: You're subscribed to our newsletter
+    icon: i-lucide-check-circle
+  error:
+    title: Subscription failed
+    description: Failed to subscribe. Please try again.
     icon: i-lucide-x-circle
 ---

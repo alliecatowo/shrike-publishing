@@ -1,7 +1,5 @@
 ---
 title: Contact - Shrike Publishing
-description: Get in touch with Shrike Publishing. Find us on social media,
-  support us on Patreon, and send us a message.
 business:
   address:
     name: Shrike Publishing
@@ -11,6 +9,7 @@ business:
   hours:
     - "Monday - Friday: 9:00 AM - 6:00 PM EST"
     - Email responses within 24-48 hours
+description: Get in touch with Shrike Publishing. Find us on social media, support us on Patreon, and send us a message.
 ---
 
 ::u-page-hero

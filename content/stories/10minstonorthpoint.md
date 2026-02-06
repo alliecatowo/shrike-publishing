@@ -1,18 +1,16 @@
 ---
-slug: 10minstonorthpoint
 title: "Era of Silence: 10 Minutes to North Point"
-description: A short heist story where two unlikely partners plan to pull off
-  the impossible, robbing a train at near super-sonic speeds before it reaches
-  North Point Station.
-image: /images/stories/Cover_2.png
-date: 2022-09-16
 author: R. Val
-type: free
+date: 2022-09-16T00:00:00.000Z
+description: A short heist story where two unlikely partners plan to pull off the impossible, robbing a train at near super-sonic speeds before it reaches North Point Station.
+featured: false
+image: /images/stories/Cover_2.png
+published: true
+slug: 10minstonorthpoint
 tags:
   - Stories
   - Era of Silence
-published: true
-featured: false
+type: free
 ---
 
 # Ten Minutes to North Point

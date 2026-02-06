@@ -1,15 +1,15 @@
 ---
 title: Steal the Kilogram - Game Cover
-description: Placeholder for the official cover art featuring the heist crew and the international prototype kilogram
-game: steal-the-kilogram
-type: cover
-artist: "Shrike Team"
-date: 2024-11-01
-fullImage: /ShrikeLogoNov2021.png
-thumbnail: /ShrikeLogoNov2021.png
-published: true
-featured: true
+artist: Shrike Team
 artworkNeeded: true
+date: 2024-11-01T00:00:00.000Z
+description: Placeholder for the official cover art featuring the heist crew and the international prototype kilogram
+featured: true
+fullImage: /ShrikeLogoNov2021.png
+game: steal-the-kilogram
+published: true
+thumbnail: /ShrikeLogoNov2021.png
+type: cover
 ---
 
 ## Placeholder: Cover Art Needed
