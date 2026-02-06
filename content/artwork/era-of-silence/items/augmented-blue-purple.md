@@ -15,5 +15,4 @@ tags:
 thumbnail: /images/era-of-silence/art/items/augmented-blue-purple.png
 type: item
 ---
-
 This unique augmentation features distinctive blue and purple elements, suggesting advanced energy systems or specialized functionality. The coloration may indicate power flow, status indicators, or unique materials used in its construction.

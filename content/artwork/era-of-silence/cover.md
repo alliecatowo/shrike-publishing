@@ -14,5 +14,4 @@ tags:
 thumbnail: /images/era-of-silence/sample-pages/cover_front.png
 type: cover
 ---
-
 The official cover artwork for Era of Silence, capturing the essence of this post-apocalyptic tabletop RPG. The imagery evokes a world of survival, ancient mysteries, and the struggle to rebuild civilization among the ruins of the old world.

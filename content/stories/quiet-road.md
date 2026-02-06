@@ -13,7 +13,6 @@ tags:
   - Stories
 type: free
 ---
-
 # **Quiet Road**
 
 ## ***Surreal horror in the Era of Silence***

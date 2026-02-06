@@ -14,5 +14,4 @@ tags:
   - PDF
 type: story-pdf
 ---
-
 [Download PDF](/downloads/stories/Era-of-Silence_-Vultures-City.pdf)

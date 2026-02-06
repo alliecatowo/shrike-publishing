@@ -10,5 +10,4 @@ published: true
 thumbnail: /images/era-of-silence/art/locations/approaching-atharas.png
 type: location
 ---
-
 Approaching Atharas captures the sense of wonder and danger that defines travel in Era of Silence. The ancient city rises from the wasteland, promising both knowledge and peril to those brave enough to seek its secrets.

@@ -10,5 +10,4 @@ published: true
 thumbnail: /images/era-of-silence/art/characters/alras.png
 type: character
 ---
-
 Alras stands as a mysterious presence in the world of Era of Silence, their story intertwined with the secrets of the fallen civilization and the path to humanity's future.

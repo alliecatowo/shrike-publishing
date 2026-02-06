@@ -11,5 +11,4 @@ tags: []
 thumbnail: /images/blood-neon/characters/blood-neon-four-characters.jpg
 type: character
 ---
-
 The four main characters of Blood Neon stand ready for action in this dynamic character lineup. Each character brings unique abilities and playstyles to the cyberpunk card game, set against the signature purple and pink neon aesthetic that defines Blood Neon's visual identity.

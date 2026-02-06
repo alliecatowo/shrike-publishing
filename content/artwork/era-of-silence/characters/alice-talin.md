@@ -10,5 +10,4 @@ published: true
 thumbnail: /images/era-of-silence/art/characters/alice-talin.png
 type: character
 ---
-
 Alice Talin is a central figure in Era of Silence's narrative, navigating the harsh realities of a post-apocalyptic world where civilization struggles to rebuild among ancient ruins and dangerous creatures.

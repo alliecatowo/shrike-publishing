@@ -47,7 +47,6 @@ testimonials:
     heading: Quality Products
     quote: You only get the best when you go with Shrike!
 ---
-
 ::u-page-hero
 ---
 class: bg-gradient-to-br from-primary/15 via-primary/5 to-secondary/10
@@ -68,29 +67,25 @@ title: Shrike Publishing
   :::
 ::
 
-::featured-games
----
-description: Discover our latest tabletop adventures
-title: Featured Games
----
-::
+:featured-games{description="Discover our latest tabletop adventures" title="Featured Games"}
 
-::featured-stories
----
-description: Read our latest published works
-title: Featured Stories
----
-::
+:featured-stories{description="Read our latest published works" title="Featured Stories"}
 
-::scroll-down
-::
+:scroll-down
 
 ::u-page-section
 ---
 description: Creating stories that resonate with audiences worldwide.
 title: Our Impact
 ---
-  :::u-page-grid{.gap-6 :cols='{"default":1,"sm":2,"lg":4}'}
+  :::u-page-grid
+  ---
+  cols:
+    default: 1
+    sm: 2
+    lg: 4
+  class: gap-6
+  ---
     ::::content-stat-card
     ---
     color: primary
@@ -99,7 +94,7 @@ title: Our Impact
     title: 100k+
     ---
     ::::
-  
+
     ::::content-stat-card
     ---
     color: secondary
@@ -108,7 +103,7 @@ title: Our Impact
     title: 100+
     ---
     ::::
-  
+
     ::::content-stat-card
     ---
     color: success
@@ -117,7 +112,7 @@ title: Our Impact
     title: "8"
     ---
     ::::
-  
+
     ::::content-stat-card
     ---
     color: warning
@@ -143,12 +138,7 @@ Subscribe to our newsletter and stay updated with our latest releases, behind-th
 We respect your privacy. Unsubscribe at any time.
 ::
 
-::testimonials-grid
----
-description: Testimonials from our community
-title: What Our Audience Says
----
-::
+:testimonials-grid{description="Testimonials from our community" title="What Our Audience Says"}
 
 ::u-page-section
 ---
@@ -166,7 +156,7 @@ title: Recent Releases
     title: Get In Loser, We're Going to Steal the Kilogram
     ---
     ::::
-  
+
     ::::timeline-item
     ---
     date: May 2025
@@ -175,7 +165,7 @@ title: Recent Releases
     title: "Era of Silence: Pit of Heaven- The Voidspire Job"
     ---
     ::::
-  
+
     ::::timeline-item
     ---
     date: April 2025
@@ -185,7 +175,7 @@ title: Recent Releases
     title: "Era of Silence: Vulture's City"
     ---
     ::::
-  
+
     ::::timeline-item
     ---
     date: February 2025

@@ -12,7 +12,6 @@ tags:
   - Card Game
 type: product-launch
 ---
-
 # Era of Silence RPG- Starter Kit
 
 **1000 years ago, the gods left us.**
@@ -21,7 +20,7 @@ type: product-launch
 
 **Now, we rely on alchemy and each other to survive.** 
 
-**This is the** ***Era of Silence***
+**This is the*&#x2A; &#x2A;**Era of Silence***
 
 :br
 

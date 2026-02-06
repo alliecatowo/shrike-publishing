@@ -15,5 +15,4 @@ tags:
 thumbnail: /images/era-of-silence/art/vehicles/buggy.jpg
 type: vehicle
 ---
-
 This desert buggy represents the practical engineering of Era of Silence's survivors. Built from scavenged parts and reinforced with salvaged armor, it's designed to withstand the harsh conditions of the wasteland while providing speed and maneuverability across treacherous terrain.

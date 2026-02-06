@@ -16,7 +16,6 @@ tags:
   - Cyberpunk
 type: free
 ---
-
 ## Ashen Silence: Memory Leak 
 
 Previous: [1. Mercenary]()
@@ -169,6 +168,6 @@ He didn’t say anything, just stormed inside. 
 
 I called to everyone, “We’re not staying here! Get your things.” 
 
-## [3. Thief](https://shrikepublishing.com/stories/memory-leak-3)
+## [3. Thief](https://shrikepublishing.com/stories/memory-leak-3){rel="&#x22;nofollow&#x22;"}
 
-## [RETURN TO MAIN PAGE](https://shrikepublishing.com/stories/memory-leak)
+## [RETURN TO MAIN PAGE](https://shrikepublishing.com/stories/memory-leak){rel="&#x22;nofollow&#x22;"}

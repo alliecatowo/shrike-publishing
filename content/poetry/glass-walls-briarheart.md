@@ -12,7 +12,6 @@ tags:
   - bird
   - ""
 ---
-
 # Glass Walls, Briarhearts
 
 ## A poetry collection.

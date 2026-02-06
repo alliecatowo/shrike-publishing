@@ -12,7 +12,6 @@ tags:
   - Era of Silence
 type: free
 ---
-
 # Ten Minutes to North Point
 
 ## A heist at epic speeds in the Era of Silence.

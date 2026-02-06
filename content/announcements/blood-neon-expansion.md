@@ -13,7 +13,6 @@ tags:
   - TTRPG
 type: expansion
 ---
-
 # Blood Neon Expansion - Atomic Shock
 
 **Get Ready for an Atomic Shock!**

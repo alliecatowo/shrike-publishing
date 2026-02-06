@@ -16,10 +16,9 @@ tags:
   - Cyberpunk
 type: free
 ---
-
 # Ashen Silence: Memory Leak
 
-### [Previous: 2. Waster](https://shrikepublishing.com/stories/memory-leak-2/)
+### [Previous: 2. Waster](https://shrikepublishing.com/stories/memory-leak-2/){rel="&#x22;nofollow&#x22;"}
 
 ## 3. Thief
 
@@ -355,4 +354,4 @@ I flashed my teeth. “We go loud.”
 
 ## [4. Soldier & Epilogue](/announcements)
 
-## [RETURN TO MAIN PAGE](https://shrikepublishing.com/stories/memory-leak)
+## [RETURN TO MAIN PAGE](https://shrikepublishing.com/stories/memory-leak){rel="&#x22;nofollow&#x22;"}

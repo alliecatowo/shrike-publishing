@@ -10,5 +10,4 @@ published: true
 thumbnail: /images/era-of-silence/art/characters/birdie-the-augur.jpg
 type: character
 ---
-
 Birdie The Augur represents the mystical elements of Era of Silence, where ancient powers and modern desperation collide. This detailed portrait captures the character's connection to forces beyond the physical world, rendered in the game's distinctive watercolor aesthetic.

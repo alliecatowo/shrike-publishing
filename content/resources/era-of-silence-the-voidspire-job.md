@@ -14,5 +14,4 @@ tags:
   - PDF
 type: story-pdf
 ---
-
 [Download PDF](/downloads/stories/4-Voidspire-Job.pdf)

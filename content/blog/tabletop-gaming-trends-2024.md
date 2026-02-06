@@ -12,7 +12,6 @@ tags:
   - fiction
   - industry
 ---
-
 # **Musings of the Shrike #2 10/5/2025**
 
 ![Creator profile picture](https://c10.patreonusercontent.com/4/patreon-media/p/campaign/3234039/2788e93ef83541efb2876ab1768b2d4a/eyJoIjozNjAsInciOjM2MH0%3D/4.png?token-hash=Gf1BXo0_x9ZKMUvAJkap4AkjIHXw1br4gy7VFPJJPok%3D\&token-time=1761955200)
@@ -37,7 +36,7 @@ So, I guess on some level it's just an honor to be known, but whenever someone t
 
 \------
 
-So what am I up to this month? One big thing is reworking the website with the help of Allison, who is a good friend. Also developing Shrike as a business, we're actually doing a big fund drive so expect some activity on this page as I try to get new blood (tell your friends!). Of course, working on an October story. Not quite a horror piece but a lot of religious disturbia, it's called *Contempt, My Shield.* Also hoping to start streaming again but I've been a little scrambled.
+So what am I up to this month? One big thing is reworking the website with the help of Allison, who is a good friend. Also developing Shrike as a business, we're actually doing a big fund drive so expect some activity on this page as I try to get new blood (tell your friends!). Of course, working on an October story. Not quite a horror piece but a lot of religious disturbia, it's called &#x2A;Contempt, My Shield.* Also hoping to start streaming again but I've been a little scrambled.
 
 :br
 

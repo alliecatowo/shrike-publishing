@@ -14,5 +14,4 @@ tags:
   - PDF
 type: story-pdf
 ---
-
 [Download PDF](/downloads/stories/Ashen-Silence_-Sky-Over-Saliana-Final-8_21.pdf)

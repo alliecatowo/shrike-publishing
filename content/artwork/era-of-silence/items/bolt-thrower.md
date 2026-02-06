@@ -15,5 +15,4 @@ tags:
 thumbnail: /images/era-of-silence/art/items/bolt-thrower.png
 type: item
 ---
-
 The Bolt Thrower is a formidable weapon combining ancient design principles with scavenged technology. It launches heavy bolts capable of piercing armor and bringing down large creatures, making it a favored weapon among hunters and defenders.

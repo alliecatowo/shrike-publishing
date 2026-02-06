@@ -10,5 +10,4 @@ published: true
 thumbnail: /images/era-of-silence/art/creatures/ashcrawler.png
 type: creature
 ---
-
 Ashcrawlers are among the most feared predators in the wastes of Era of Silence. These creatures have adapted to thrive in the ash-covered ruins, hunting unwary travelers who venture too far from civilization's protective walls.

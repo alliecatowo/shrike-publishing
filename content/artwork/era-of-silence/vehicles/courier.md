@@ -15,5 +15,4 @@ tags:
 thumbnail: /images/era-of-silence/art/vehicles/courier.png
 type: vehicle
 ---
-
 The Courier Vehicle is purpose-built for speed and reliability, carrying vital supplies and information between scattered settlements. Its reinforced cargo compartments and enhanced suspension system make it ideal for long-distance journeys through hostile terrain.
