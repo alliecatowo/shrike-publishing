@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/ui',      // Must be before @nuxt/content for prose components
     '@nuxt/content',
+    'nuxt-studio',
     '@nuxt/eslint',
     '@nuxt/image',
     '@nuxt/fonts',
@@ -47,11 +48,27 @@ export default defineNuxtConfig({
     collections: ['lucide']
   },
 
+  routeRules: {
+    // Static pages — prerendered at build time
+    '/': { prerender: true },
+    '/about': { prerender: true },
+    '/contact': { prerender: true },
+    '/licenses': { prerender: true },
+    '/support': { prerender: true },
+    '/portfolio': { prerender: true },
+    '/resources': { prerender: true },
+    '/shop': { prerender: true },
+    '/games/**': { prerender: true },
+
+    // Studio & API — always SSR, never cached
+    '/_studio': { ssr: true },
+    '/__nuxt_studio/**': { ssr: true },
+    '/api/**': { ssr: true }
+  },
+
   nitro: {
-    preset: 'github_pages',
     prerender: {
-      routes: [],
-      ignore: ['/api/']
+      ignore: ['/api/', '/_studio', '/__nuxt_studio']
     }
   },
 
@@ -71,17 +88,19 @@ export default defineNuxtConfig({
   },
 
   content: {
-    preview: {
-      api: 'https://api.nuxt.studio',
-      gitInfo: {
-        name: 'shrike-publishing',
-        owner: 'alliecatowo',
-        url: 'https://github.com/alliecatowo/shrike-publishing'
-      }
-    },
-    // Enable experimental features for better Studio integration
     experimental: {
-      search: true
+      search: true,
+      nativeSqlite: true
+    }
+  },
+
+  studio: {
+    dev: true,
+    repository: {
+      provider: 'github',
+      owner: 'alliecatowo',
+      repo: 'shrike-publishing',
+      branch: 'main'
     }
   }
 })
