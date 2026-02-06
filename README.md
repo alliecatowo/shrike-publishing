@@ -1,12 +1,20 @@
 # Shrike Publishing
 
-This is the official website for Shrike Publishing, a tabletop role-playing game company.
+This is the official website for Shrike Publishing, a tabletop role-playing game company. Built with Nuxt 4, deployed to Vercel, with content editing via Nuxt Studio.
 
 [![Made with Nuxt](https://img.shields.io/badge/Made%20with-Nuxt-00DC82?style=for-the-badge&logo=nuxt.js)](https://nuxt.com)
 [![Vue.js](https://img.shields.io/badge/Vue.js-3-4FC08D?style=for-the-badge&logo=vue.js)](https://vuejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 [![pnpm](https://img.shields.io/badge/pnpm-10-F69220?style=for-the-badge&logo=pnpm)](https://pnpm.io/)
+
+## For Content Editors (Robin)
+
+If you're here to edit the website content, see the **[Content Editing Guide](docs/content-editing-guide.md)** -- it has everything you need to get started with no coding required.
+
+## Developer Handoff
+
+If you're a developer taking over this project, see the **[Developer Handoff Guide](docs/developer-handoff.md)** -- it covers the full architecture, all accounts/credentials, and known quirks.
 
 ## Setup
 
