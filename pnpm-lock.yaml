@@ -29,6 +29,9 @@ importers:
       '@shikijs/engine-javascript':
         specifier: ^3.22.0
         version: 3.22.0
+      '@shikijs/engine-oniguruma':
+        specifier: ^3.22.0
+        version: 3.22.0
       better-sqlite3:
         specifier: ^12.5.0
         version: 12.6.2
