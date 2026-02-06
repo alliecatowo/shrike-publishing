@@ -10,5 +10,4 @@ published: true
 thumbnail: /images/era-of-silence/art/locations/city-of-rings.jpg
 type: location
 ---
-
 The City of Rings stands as a testament to humanity's determination to rebuild after the apocalypse. This breathtaking vista showcases the massive ringed structure against Era of Silence's signature pink and purple sky, blending cyberpunk aesthetics with post-apocalyptic desolation in a watercolor style that defines the game's unique visual identity.

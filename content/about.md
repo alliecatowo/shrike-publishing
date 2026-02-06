@@ -2,7 +2,6 @@
 title: About Us - Shrike Publishing
 description: Learn about Shrike Publishing, our team, values, and commitment to creating innovative tabletop games and literature.
 ---
-
 ::u-page-hero
 ---
 ui:
@@ -43,23 +42,19 @@ title: About Shrike Publishing
 ::u-page-section{.pt-0.max-w-6xl.mx-auto.px-4.py-6 title="Our Story"}
   :::u-card
   ### Shrike Publishing is a Baltimore-based storytelling studio. Our output focuses on telling stories of action and characters across tabletop games, written fiction, and other media!
-  
+
   Looking for your next ttrpg? Try the tactical chemipunk campaign RPG *Era of Silence*, and the brutal vaporwave nightmare that is *Blood Neon*. Here for a good story? Stop by our Stories section for the first part of the Era of Silence novel, and much more!
-  
+
   If you like any of our work you can support us on Patreon and Ko-Fi!
   :::
 ::
 
 ::u-page-section{.max-w-6xl.mx-auto.px-4.py-6 title="About Robin"}
-  :::about-user
-  ---
-  avatar-src: 
-  name: Robin Val
-  ---
+  :::about-user{:avatar-src='null' name="Robin Val"}
   ### R. Val (she/her)
-  
+
   **Founder and Head of Shrike Publishing.**
-  
+
   Robin Valencia Belle, writing as R. Val, is a multi-media creator and consultant in the DMV area. For over a decade she has been leading or assisting with projects all over the the written and tabletop spaces. In her spare time she enjoys lakeside meditation and rigorously sorting playlists.
   :::
 

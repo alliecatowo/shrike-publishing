@@ -16,10 +16,9 @@ tags:
   - Cyberpunk
 type: free
 ---
-
 #  Ashen Silence: Memory Leak
 
-### Previous: [3. Thief](https://shrikepublishing.com/stories/memory-leak-3)
+### Previous: [3. Thief](https://shrikepublishing.com/stories/memory-leak-3){rel="&#x22;nofollow&#x22;"}
 
 # 4. Soldier
 
@@ -141,4 +140,4 @@ I stepped out into the rest of my apartment. Like the rest of The Stacks, it was
 
 I picked it up and set it gently in my bag. The front hatch to my place hissed as it unsealed. I took a deep breath, and I got back to work. 
 
-## [RETURN TO MAIN PAGE](https://shrikepublishing.com/stories/memory-leak)
+## [RETURN TO MAIN PAGE](https://shrikepublishing.com/stories/memory-leak){rel="&#x22;nofollow&#x22;"}

@@ -10,5 +10,4 @@ published: true
 thumbnail: /images/era-of-silence/art/characters/arina-varan.png
 type: character
 ---
-
 Arina Varan embodies the resilience of humanity in Era of Silence, where the pink and purple tones of a dying sun paint the landscape of a world trying to remember what was lost.

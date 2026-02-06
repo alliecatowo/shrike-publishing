@@ -10,5 +10,4 @@ published: true
 thumbnail: /images/era-of-silence/art/creatures/bantam-spore.png
 type: creature
 ---
-
 Bantam Spores emerged from the biological contamination that followed the apocalypse. These fungal creatures spread their influence across the wasteland, representing the new life that has risen from humanity's fall.

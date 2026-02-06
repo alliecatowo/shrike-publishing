@@ -14,5 +14,4 @@ tags:
 thumbnail: /images/era-of-silence/sample-pages/cover-back.png
 type: cover
 ---
-
 An alternative cover design for Era of Silence, offering a different perspective on the game's themes and setting. This artwork complements the main cover while highlighting unique aspects of the post-apocalyptic world.

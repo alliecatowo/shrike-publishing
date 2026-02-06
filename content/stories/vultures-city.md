@@ -13,7 +13,6 @@ tags:
   - Cyberpunk
 type: free
 ---
-
 # Vulture’s City
 
 ## A day of life in the Era of Silence 

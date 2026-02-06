@@ -11,7 +11,6 @@ published: false
 thumbnail: /ShrikeLogoNov2021.png
 type: character
 ---
-
 ## Character Role: The Face
 
 **Role Description:**
@@ -23,6 +22,7 @@ You can talk your way into (and out of) anything. Master of deception, persuasio
 A charismatic smooth-talker who could convince a security guard that they belong in a vault. Think confidence personified with a touch of theatrical flair.
 
 **Visual Elements:**
+
 - Confident, engaging pose suggesting charm and persuasion
 - Sophisticated but approachable appearance
 - Props: fake ID badges, bluetooth earpiece, or business cards
@@ -30,6 +30,7 @@ A charismatic smooth-talker who could convince a security guard that they belong
 - Clothing: professional but with personality (maybe one detail that's slightly off)
 
 **Personality Through Design:**
+
 - Gender-neutral or can be adapted for any identity
 - Body language that suggests both confidence and adaptability
 - Should look like they're in the middle of telling a very convincing lie
@@ -38,6 +39,7 @@ A charismatic smooth-talker who could convince a security guard that they belong
 This character specializes in social engineering, impersonation, and fast-talking their way through security checkpoints. They're the one who convinces the guard that they're definitely supposed to be there.
 
 **Dimensions:**
+
 - Character portrait: 1000 x 1400 pixels (300 DPI)
 - Full body illustration: 2000 x 3000 pixels (300 DPI)
 - Icon version: 500 x 500 pixels

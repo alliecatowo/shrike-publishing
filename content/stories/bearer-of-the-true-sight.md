@@ -12,13 +12,11 @@ tags:
   - Ashen Silence
 type: free
 ---
-
 # BEARER OF THE TRUE SIGHT
 
 ## An acolyte’s journey in the Era of Silence
 
 ### R. Val 
-
 
 To my dearest friend, Dan. I have always been playing catch up to you, but there is no one’s shadow I’d rather be in.
 

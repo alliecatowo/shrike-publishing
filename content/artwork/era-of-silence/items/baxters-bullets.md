@@ -15,5 +15,4 @@ tags:
 thumbnail: /images/era-of-silence/art/items/baxters-bullets.png
 type: item
 ---
-
 Baxter's Bullets are renowned throughout the wasteland for their reliability and stopping power. Each round is carefully crafted by skilled artisans who have perfected the art of ammunition creation in a world where every shot counts.

@@ -15,5 +15,4 @@ tags:
 thumbnail: /images/era-of-silence/art/items/armor-reference.png
 type: item
 ---
-
 A comprehensive reference sheet showcasing various armor designs used by survivors and fighters in the post-apocalyptic world. These armor pieces combine salvaged materials with practical design, offering protection against both environmental hazards and combat threats.

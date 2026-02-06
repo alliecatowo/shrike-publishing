@@ -30,5 +30,4 @@ seo:
   description: Free downloads including character sheets, reference guides, and gaming resources for Era of Silence and Blood Neon.
   keywords: free RPG resources, character sheets, tabletop gaming tools, downloadable assets
 ---
-
 Coming soon!

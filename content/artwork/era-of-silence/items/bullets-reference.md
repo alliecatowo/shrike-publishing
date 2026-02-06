@@ -15,5 +15,4 @@ tags:
 thumbnail: /images/era-of-silence/art/items/bullets-reference.jpg
 type: item
 ---
-
 A detailed reference guide showcasing the variety of ammunition types available in Era of Silence. From standard rounds to specialized ammunition designed for specific threats, this reference illustrates the diversity of ballistic options in the wasteland.

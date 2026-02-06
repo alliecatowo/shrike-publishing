@@ -22,7 +22,6 @@ tags:
   - print-and-play
 thumbnail: /bafkreiahgxziaisasw5ec2xoi27d2mk5k5s2ye3fk7rjr4vkwpwngumtsi.jpg
 ---
-
 # Get in Loser, We're Going to Steal the Kilogram
 
 ![v2LeUW.png](/bafkreiahgxziaisasw5ec2xoi27d2mk5k5s2ye3fk7rjr4vkwpwngumtsi.jpg)
@@ -99,6 +98,6 @@ Your purchase includes the A5 sized singles and spreads for the document at prin
 
 A collaboration between Shrike Publishing and Rathayibacter. 
 
-<https://shrikepublishing.itch.io/get-in-loser-were-stealing-the-kilogram>
+<https://shrikepublishing.itch.io/get-in-loser-were-stealing-the-kilogram>{rel="&#x22;nofollow&#x22;"}
 
 ---

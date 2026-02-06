@@ -15,5 +15,4 @@ tags:
 thumbnail: /images/era-of-silence/art/scenes/healing-wounded.png
 type: scene
 ---
-
 In the aftermath of conflict, skilled healers work to save lives using a combination of scavenged medical technology and ancient healing practices. This scene captures the compassion and determination that allows humanity to endure in Era of Silence's harsh world.

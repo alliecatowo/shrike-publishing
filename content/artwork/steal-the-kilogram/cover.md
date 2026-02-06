@@ -11,7 +11,6 @@ published: true
 thumbnail: /ShrikeLogoNov2021.png
 type: cover
 ---
-
 ## Placeholder: Cover Art Needed
 
 Currently using Shrike Publishing logo as a placeholder.
@@ -21,6 +20,7 @@ Currently using Shrike Publishing logo as a placeholder.
 The cover art should capture the comedic heist energy of the game and include:
 
 **Visual Elements:**
+
 - The international prototype kilogram (a platinum-iridium cylinder under glass)
 - The diverse heist crew in action poses (5 characters representing the roles)
 - Climate-controlled vault or BIPM facility setting
@@ -28,6 +28,7 @@ The cover art should capture the comedic heist energy of the game and include:
 - Dynamic action composition suggesting both competence and chaos
 
 **Style Direction:**
+
 - Comedic but not cartoonish
 - Energetic and action-packed
 - Vibrant colors that suggest both sophistication and fun
@@ -38,6 +39,7 @@ The cover art should capture the comedic heist energy of the game and include:
 Professional criminals doing something ridiculous with complete commitment.
 
 **Dimensions:**
+
 - Primary: 2550 x 3300 pixels (300 DPI, standard game box cover ratio)
 - Web thumbnail: 600 x 776 pixels
 - Social media: 1200 x 630 pixels

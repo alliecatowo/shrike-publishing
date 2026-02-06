@@ -15,5 +15,4 @@ tags:
 thumbnail: /images/era-of-silence/art/scenes/chase-scene.png
 type: scene
 ---
-
 A dramatic chase unfolds across the treacherous terrain of Era of Silence. Vehicles race at breakneck speeds, their drivers pushing salvaged machines to their limits while evading pursuers or closing in on their prey in the harsh wasteland.

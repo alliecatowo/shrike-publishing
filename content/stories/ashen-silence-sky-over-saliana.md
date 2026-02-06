@@ -15,7 +15,6 @@ tags:
 thumbnail: /images/stories/saliana-vista.png
 type: free
 ---
-
 # Sky Over Saliana
 
 ## A story in the Era of Silence

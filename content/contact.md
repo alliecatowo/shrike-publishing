@@ -11,7 +11,6 @@ business:
     - Email responses within 24-48 hours
 description: Get in touch with Shrike Publishing. Find us on social media, support us on Patreon, and send us a message.
 ---
-
 ::u-page-hero
 ---
 ui:
@@ -21,7 +20,11 @@ title: Contact & Connect
 ---
 ::
 
-::u-page-grid{.gap-6.my-16 :cols="{ default: 1, md: 2, lg: 3 }"}
+::u-page-grid
+---
+:cols: "{ default: 1, md: 2, lg: 3 }"
+class: gap-6 my-16
+---
   :::social-link-card
   ---
   external: true

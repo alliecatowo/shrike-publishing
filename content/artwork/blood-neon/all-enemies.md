@@ -10,5 +10,4 @@ published: true
 thumbnail: /images/blood-neon/enemies/blood-neon-all-enemies.jpg
 type: enemy
 ---
-
 Face off against this formidable array of enemies in Blood Neon. Each adversary presents unique challenges and requires different strategies to overcome, adding depth to the game's tactical card-based combat system.

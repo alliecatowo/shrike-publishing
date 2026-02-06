@@ -15,5 +15,4 @@ tags:
 thumbnail: /images/era-of-silence/art/items/bio-eye.png
 type: item
 ---
-
 The Bio-Eye is a sophisticated ocular augmentation that grants enhanced vision, including night vision, threat detection, and targeting assistance. These rare devices are prized by scouts, snipers, and anyone who needs an edge in the dangerous world of Era of Silence.

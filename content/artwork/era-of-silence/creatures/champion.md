@@ -10,5 +10,4 @@ published: true
 thumbnail: /images/era-of-silence/art/creatures/champion.png
 type: creature
 ---
-
 Champions are elite adversaries in Era of Silence, whether they are mutated humans, augmented warriors, or creatures that have claimed dominance over their territory. Encountering a Champion means facing one of the wasteland's greatest challenges.

@@ -15,5 +15,4 @@ tags:
 thumbnail: /images/era-of-silence/art/vehicles/brass-ship.png
 type: vehicle
 ---
-
 The Brass Ship is a remarkable vessel crafted from salvaged materials and ancient technology, designed to traverse the harsh desert landscapes of the post-apocalyptic world. Its gleaming brass hull reflects the unforgiving sun as it cuts through sand dunes and ash wastes.

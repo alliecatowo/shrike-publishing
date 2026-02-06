@@ -16,7 +16,6 @@ tags:
   - Talonborne
 type: free
 ---
-
 # Memory Leak
 
 **A wasteland thriller in the Era of Silence**
@@ -37,11 +36,11 @@ Thank you for helping with editing and feedback, and every other magnificent thi
 
 ## TABLE OF CONTENTS
 
-1. [Mercenary](https://shrikepublishing.com/stories/memory-leak)
-2. [Waster](https://shrikepublishing.com/stories/memory-leak-2)
-3. [Thief](https://shrikepublishing.com/stories/memory-leak-3)
-4. [Soldier](https://shrikepublishing.com/stories/memory-leak-end)
-5. [Epilogue](https://shrikepublishing.com/stories/memory-leak-end)
+1. [Mercenary](https://shrikepublishing.com/stories/memory-leak){rel="&#x22;nofollow&#x22;"}
+2. [Waster](https://shrikepublishing.com/stories/memory-leak-2){rel="&#x22;nofollow&#x22;"}
+3. [Thief](https://shrikepublishing.com/stories/memory-leak-3){rel="&#x22;nofollow&#x22;"}
+4. [Soldier](https://shrikepublishing.com/stories/memory-leak-end){rel="&#x22;nofollow&#x22;"}
+5. [Epilogue](https://shrikepublishing.com/stories/memory-leak-end){rel="&#x22;nofollow&#x22;"}
 
 **1. Mercenary**
 
@@ -297,4 +296,4 @@ I looked at the door again, then looked at her. “We’re meeting at the Hungry
 
 She smiled like she’d just won the best prize at a festival booth.
 
-## [2. Waster](https://shrikepublishing.com/stories/memory-leak-2)
+## [2. Waster](https://shrikepublishing.com/stories/memory-leak-2){rel="&#x22;nofollow&#x22;"}

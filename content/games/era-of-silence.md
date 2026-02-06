@@ -21,7 +21,6 @@ tags:
   - dystopian
   - card-game
 ---
-
 # Era of Silence RPG
 
 ## Tactical chemipunk action for teams of 3-6 players.
@@ -32,7 +31,7 @@ tags:
 
 **Now, we rely on alchemy and each other to survive.** 
 
-**This is the** ***Era of Silence***
+**This is the*&#x2A; &#x2A;**Era of Silence***
 
 ![undefined](https://img.itch.zone/aW1nLzk2ODgzMDEuanBn/original/0BAo%2Fa.jpg)
 
@@ -60,6 +59,6 @@ The setting, Vian, was once a place of magic, wonder, and purpose, ruled by the 
 
 The *Era of Silence* Starter Kit comes with a digital Core Rulebook, which is a 197-page PDF with hyperlinks between important entries and alternative text for all images. As well as a form-fillable character sheet, optional rules,  quick reference material, and an introductory module.
 
-<https://shrikepublishing.itch.io/era-of-silence>
+<https://shrikepublishing.itch.io/era-of-silence>{rel="&#x22;nofollow&#x22;"}
 
 ![undefined](https://img.itch.zone/aW1nLzk2ODgzNTguanBn/original/Gqt2zp.jpg)

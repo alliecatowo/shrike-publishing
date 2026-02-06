@@ -15,5 +15,4 @@ tags:
 thumbnail: /images/era-of-silence/art/items/arm-augment.png
 type: item
 ---
-
 This arm augmentation represents the fusion of biological and mechanical engineering in Era of Silence. Designed to enhance strength and precision, these augments are sought after by warriors and laborers alike, though their installation carries significant risks.
