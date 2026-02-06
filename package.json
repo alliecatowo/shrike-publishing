@@ -12,11 +12,12 @@
   },
   "dependencies": {
     "@nuxt/content": "3.11.2",
-    "@shikijs/engine-javascript": "^3.22.0",
     "@nuxt/eslint": "1.9.0",
     "@nuxt/icon": "^2.0.0",
     "@nuxt/image": "1.11.0",
     "@nuxt/ui": "4.0.0",
+    "@nuxtjs/mdc": "^0.20.1",
+    "@shikijs/engine-javascript": "^3.22.0",
     "better-sqlite3": "^12.5.0",
     "eslint": "^9.36.0",
     "nuxt": "^4.1.2",
