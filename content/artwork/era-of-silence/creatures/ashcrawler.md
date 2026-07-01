@@ -7,6 +7,7 @@ featured: false
 fullImage: /images/era-of-silence/art/creatures/ashcrawler.png
 game: era-of-silence
 published: true
+tags: []
 thumbnail: /images/era-of-silence/art/creatures/ashcrawler.png
 type: creature
 ---

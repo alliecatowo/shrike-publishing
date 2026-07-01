@@ -8,6 +8,7 @@ featured: true
 fullImage: /ShrikeLogoNov2021.png
 game: steal-the-kilogram
 published: true
+tags: []
 thumbnail: /ShrikeLogoNov2021.png
 type: cover
 ---

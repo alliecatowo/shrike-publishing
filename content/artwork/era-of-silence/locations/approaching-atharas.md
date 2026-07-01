@@ -7,6 +7,7 @@ featured: true
 fullImage: /images/era-of-silence/art/locations/approaching-atharas.png
 game: era-of-silence
 published: true
+tags: []
 thumbnail: /images/era-of-silence/art/locations/approaching-atharas.png
 type: location
 ---

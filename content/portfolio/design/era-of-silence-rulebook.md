@@ -2,6 +2,7 @@
 title: Era of Silence Core Rulebook
 date: 2024-01-20T00:00:00.000Z
 description: Complete game design and layout for a 200+ page tabletop RPG.
+featured: false
 game: era-of-silence
 icon: i-lucide-book-open
 image: /images/era-of-silence/cover/era-of-silence-cover.png

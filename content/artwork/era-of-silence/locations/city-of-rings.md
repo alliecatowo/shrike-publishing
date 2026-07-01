@@ -7,6 +7,7 @@ featured: true
 fullImage: /images/era-of-silence/art/locations/city-of-rings.jpg
 game: era-of-silence
 published: true
+tags: []
 thumbnail: /images/era-of-silence/art/locations/city-of-rings.jpg
 type: location
 ---

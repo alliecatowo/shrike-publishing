@@ -273,6 +273,7 @@ export default defineContentConfig({
         icon: z.string().optional(),
         tags: z.array(z.string()).optional(),
         type: z.string().optional(),
+        date: z.date().optional(),
         duration: z.string().optional(),
         thumbnail: z.string().optional(),
         link: z.string().optional(),

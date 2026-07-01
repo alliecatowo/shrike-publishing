@@ -7,6 +7,7 @@ featured: true
 fullImage: /images/era-of-silence/art/characters/birdie-the-augur.jpg
 game: era-of-silence
 published: true
+tags: []
 thumbnail: /images/era-of-silence/art/characters/birdie-the-augur.jpg
 type: character
 ---

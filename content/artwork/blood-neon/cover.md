@@ -7,6 +7,7 @@ featured: true
 fullImage: /images/blood-neon/cover/blood-neon-cover.jpg
 game: blood-neon
 published: true
+tags: []
 thumbnail: /images/blood-neon/cover/blood-neon-cover.jpg
 type: cover
 ---

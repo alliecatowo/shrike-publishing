@@ -7,6 +7,7 @@ featured: false
 fullImage: /images/blood-neon/characters/blood-neon-infuser.jpg
 game: blood-neon
 published: true
+tags: []
 thumbnail: /images/blood-neon/characters/blood-neon-infuser.jpg
 type: character
 ---

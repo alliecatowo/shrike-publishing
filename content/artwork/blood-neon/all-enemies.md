@@ -7,6 +7,7 @@ featured: true
 fullImage: /images/blood-neon/enemies/blood-neon-all-enemies.jpg
 game: blood-neon
 published: true
+tags: []
 thumbnail: /images/blood-neon/enemies/blood-neon-all-enemies.jpg
 type: enemy
 ---

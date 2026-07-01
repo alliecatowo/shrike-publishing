@@ -7,6 +7,7 @@ featured: false
 fullImage: /images/era-of-silence/art/characters/alice-talin.png
 game: era-of-silence
 published: true
+tags: []
 thumbnail: /images/era-of-silence/art/characters/alice-talin.png
 type: character
 ---

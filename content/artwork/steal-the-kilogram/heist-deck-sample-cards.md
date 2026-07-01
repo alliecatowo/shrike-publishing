@@ -8,6 +8,7 @@ featured: false
 fullImage: /ShrikeLogoNov2021.png
 game: steal-the-kilogram
 published: false
+tags: []
 thumbnail: /ShrikeLogoNov2021.png
 type: game-component
 ---

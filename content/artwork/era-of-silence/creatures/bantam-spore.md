@@ -7,6 +7,7 @@ featured: false
 fullImage: /images/era-of-silence/art/creatures/bantam-spore.png
 game: era-of-silence
 published: true
+tags: []
 thumbnail: /images/era-of-silence/art/creatures/bantam-spore.png
 type: creature
 ---

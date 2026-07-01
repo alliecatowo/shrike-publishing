@@ -5,12 +5,11 @@ date: 2024-09-28T00:00:00.000Z
 description: A poetry collection.
 featured: false
 published: true
-slug: glass-walls-briarhearts
+slug: glass-walls-briarheart
 tags:
   - borderline personality
   - poetry
   - bird
-  - ""
 ---
 # Glass Walls, Briarhearts
 
