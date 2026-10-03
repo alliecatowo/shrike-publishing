@@ -439,4 +439,4 @@ These are optional -- you don't need any of this to edit content, but if you're 
 
 **Something broke?**
 - Don't panic! All changes are saved in Git, so anything can be reverted
-- Contact Allie: Allisonemilycoleman@gmail.com
+- Contact Allie: me@allisons.dev

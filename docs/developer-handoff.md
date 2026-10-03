@@ -94,7 +94,7 @@ These are configured in the Vercel dashboard under Settings > Environment Variab
 |----------|---------|
 | `STUDIO_GITHUB_CLIENT_ID` | GitHub OAuth App client ID |
 | `STUDIO_GITHUB_CLIENT_SECRET` | GitHub OAuth App client secret |
-| `STUDIO_GITHUB_MODERATORS` | Comma-separated emails authorized to edit (e.g., `Allisonemilycoleman@gmail.com,shriketabletop@gmail.com`) |
+| `STUDIO_GITHUB_MODERATORS` | Comma-separated emails authorized to edit (e.g., `me@allisons.dev,shriketabletop@gmail.com`) |
 | `LOOPS_API_KEY` | Loops newsletter service API key |
 | `NUXT_PUBLIC_LOOPS_FORM_ID` | Loops signup form ID |
 
@@ -251,4 +251,4 @@ NODE_OPTIONS="--max-old-space-size=4096" pnpm build
 
 ## Contact
 
-- **Allie Coleman** -- Allisonemilycoleman@gmail.com -- GitHub: [@alliecatowo](https://github.com/alliecatowo)
+- **Allie Coleman** -- me@allisons.dev -- GitHub: [@alliecatowo](https://github.com/alliecatowo)
