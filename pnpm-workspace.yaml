@@ -8,3 +8,9 @@ ignoredBuiltDependencies:
 onlyBuiltDependencies:
   - esbuild
   - sharp
+
+overrides:
+  # Force patched transitive versions (Dependabot alerts); nuxt-studio pins older copies.
+  esbuild: ^0.28.2
+  sharp: ^0.35.5
+  '@nuxtjs/mdc': ^0.23.2
