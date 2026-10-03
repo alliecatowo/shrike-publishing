@@ -16,7 +16,7 @@
     "@nuxt/icon": "^2.5.1",
     "@nuxt/image": "2.1.0",
     "@nuxt/ui": "4.11.3",
-    "@nuxtjs/mdc": "^0.23.2",
+    "@nuxtjs/mdc": "^0.22.1",
     "@shikijs/engine-javascript": "^4.5.0",
     "@shikijs/engine-oniguruma": "^4.5.0",
     "better-sqlite3": "^13.0.3",
@@ -39,5 +39,12 @@
     "tailwindcss": "^4.3.3",
     "turndown": "^7.2.4",
     "yaml": "^2.9.1"
+  },
+  "pnpm": {
+    "overrides": {
+      "@nuxtjs/mdc@<0.22.1": "^0.22.1",
+      "esbuild@<0.28.1": "^0.28.1",
+      "sharp@<0.35.4": "^0.35.4"
+    }
   }
 }
