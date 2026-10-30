@@ -47,8 +47,8 @@ importers:
         specifier: ^4.6.3
         version: 4.6.3(@babel/plugin-syntax-jsx@7.29.7(@babel/core@7.29.7))(@babel/plugin-syntax-typescript@7.29.7(@babel/core@7.29.7))(@oxc-project/types@0.155.0)(@types/node@26.6.5)(@vue/compiler-sfc@3.5.44)(acorn@8.19.0)(better-sqlite3@13.0.3)(confbox@0.3.1)(db0@0.3.4(better-sqlite3@13.0.3))(dotenv@17.4.2)(esbuild@0.28.2)(eslint@10.13.0(jiti@2.7.0))(giget@3.3.1)(ioredis@5.11.1)(lightningcss@1.33.0)(mlly@1.8.2)(optionator@0.9.4)(oxc-parser@0.139.0)(rolldown@1.2.15)(rollup-plugin-visualizer@7.1.1(rolldown@1.2.15)(rollup@4.65.1))(rollup@4.65.1)(srvx@1.0.8)(terser@5.51.2)(typescript@6.0.3)(vite@8.3.5(@types/node@26.6.5)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.1))(yaml@2.9.1)
       nuxt-loops:
-        specifier: ^1.1.0
-        version: 1.1.0(magicast@0.5.5)
+        specifier: ^2.0.0
+        version: 2.0.0(magicast@0.5.5)
       nuxt-studio:
         specifier: ^1.8.0
         version: 1.8.0(@nuxt/schema@4.6.3)(@oxc-project/types@0.155.0)(@types/node@26.6.5)(confbox@0.3.1)(db0@0.3.4(better-sqlite3@13.0.3))(dotenv@17.4.2)(giget@3.3.1)(ioredis@5.11.1)(rolldown@1.2.15)(srvx@1.0.8)(vue@3.5.44(typescript@6.0.3))
@@ -4391,8 +4391,8 @@ packages:
   longest-streak@3.1.0:
     resolution: {integrity: sha512-9Ri+o0JYgehTaVBBDoMqIl8GXtbWg711O3srftcHhZ0dqnETqLaoIK0x17fUw9rFSlK/0NlsKe0Ahhyl5pXE2g==}
 
-  loops@3.4.1:
-    resolution: {integrity: sha512-7PEdG+Tf9yYL8lOOg4OvnVP38UzKsBGBu+SQH24QHAyVSyWWrQtzZ2HWUCLgPXB7adRkVbSNdANjsRxkjLOsFQ==}
+  loops@7.3.0:
+    resolution: {integrity: sha512-9IqNv/xIFt2v7hUhtbn0qMadA3F+zzL7ot5XZxDesD0SyCQYX3paKhZdgAadIImPQCG5Sx4iVPL/+0CG4DsCGA==}
     engines: {node: '>=18'}
 
   lru-cache@10.4.3:
@@ -4786,8 +4786,9 @@ packages:
     resolution: {integrity: sha512-Lo++ctinehNtQvU1SdYdIfYvhUqFtP5nOQsMvbrpFYh53TqwoS97BrS/tjWQe68cfXQaerzhKPFY1Xb1EH4mJg==}
     hasBin: true
 
-  nuxt-loops@1.1.0:
-    resolution: {integrity: sha512-nWu3C/NeYbfM4S4TEuzEMCNoejF5Nol0FgAW88RCHCUhSk7c1c97ZFvwmUvNFMY2UvIC6qjfNa+Fl6pxg0KJIA==}
+  nuxt-loops@2.0.0:
+    resolution: {integrity: sha512-9sDmF/6sP+hij6k/SH8aW1nO7vHwwBS8FtgIJUcCH8PEl5DwfqCsLjqJIvZa8ZaPHSAYBZPjKaYOXWMeeYwRDw==}
+    engines: {node: '>=18'}
 
   nuxt-studio@1.8.0:
     resolution: {integrity: sha512-M+w0FS91+NwyU+wkO5tVhY0SYJO0iyCf4dvYcl0eqWpbBtor2SZ6dcxvcp37o1fYe6odtNkFhisRKAKpxlBw8Q==}
@@ -11572,7 +11573,7 @@ snapshots:
 
   longest-streak@3.1.0: {}
 
-  loops@3.4.1: {}
+  loops@7.3.0: {}
 
   lru-cache@10.4.3: {}
 
@@ -12279,11 +12280,11 @@ snapshots:
       - giget
       - rolldown
 
-  nuxt-loops@1.1.0(magicast@0.5.5):
+  nuxt-loops@2.0.0(magicast@0.5.5):
     dependencies:
       '@nuxt/kit': 3.21.11(magicast@0.5.5)
       defu: 6.1.7
-      loops: 3.4.1
+      loops: 7.3.0
     transitivePeerDependencies:
       - magicast
 
