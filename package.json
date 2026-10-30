@@ -13,7 +13,7 @@
   "dependencies": {
     "@nuxt/content": "3.16.2",
     "@nuxt/eslint": "1.17.0",
-    "@nuxt/icon": "^2.5.1",
+    "@nuxt/icon": "^2.6.1",
     "@nuxt/image": "2.2.0",
     "@nuxt/ui": "4.12.0",
     "@nuxtjs/mdc": "^0.23.2",
@@ -21,7 +21,7 @@
     "@shikijs/engine-oniguruma": "^4.5.0",
     "better-sqlite3": "^13.0.3",
     "eslint": "^10.13.0",
-    "nuxt": "^4.6.2",
+    "nuxt": "^4.6.3",
     "nuxt-loops": "^1.1.0",
     "nuxt-studio": "^1.8.0",
     "typescript": "^6.0.3",
@@ -31,7 +31,7 @@
   },
   "packageManager": "pnpm@10.17.0+sha512.fce8a3dd29a4ed2ec566fb53efbb04d8c44a0f05bc6f24a73046910fb9c3ce7afa35a0980500668fa3573345bd644644fa98338fa168235c80f4aa17aa17fbef",
   "devDependencies": {
-    "@iconify-json/lucide": "^1.2.146",
+    "@iconify-json/lucide": "^1.2.147",
     "@types/node": "^26.6.5",
     "@vueuse/core": "^15.0.0",
     "cheerio": "^1.2.0",
